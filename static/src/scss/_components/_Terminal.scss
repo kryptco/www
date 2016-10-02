@@ -9,6 +9,7 @@
     color: $c-terminal-color;
     background: $c-terminal-background;
     padding: 1em 1em;
+    white-space: nowrap;
     padding-right: 2em;
 
     span {

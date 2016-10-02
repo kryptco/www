@@ -3,7 +3,17 @@
 
 var _SomeComponent = require('./components/SomeComponent');
 
-$(function () {});
+$(function () {
+    $('#get-started-button').on('click', scrollToGetStartedSection);
+});
+
+function scrollToGetStartedSection() {
+    var offset = $('.Section--get-started').offset().top;
+
+    $('html, body').animate({
+        scrollTop: offset
+    }, 1000, 'easeInOutQuart');
+}
 
 },{"./components/SomeComponent":2}],2:[function(require,module,exports){
 "use strict";

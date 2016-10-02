@@ -6,7 +6,7 @@
     display: inline-block;
     padding: 1em 1.7em 1em 2.7em;
 
-    background: $c-gray-dark;
+    background: $c-green-accent; //$c-gray-dark;
     border-radius: 10em;
     color: $c-white;
     $easing: cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -29,13 +29,13 @@
 
     &:hover {
         @include transform (scale3d(1,1,1));
-        background: darken($c-gray-dark, 10%);
+        background: darken($c-green-accent, 10%);
         // box-shadow: 0 0.5em 1.2em 0 rgba($c-cta-background, 0.3);
     }
 
     &:focus, &:active {
         @include transform (scale3d(0.98,0.98,1));
-        background: darken($c-gray-dark, 25%);
+        background: darken($c-green-accent, 15%);
         // box-shadow: 0 0.4em 0.8em 0 rgba($c-cta-background, 0.4);
     }
 }

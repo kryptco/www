@@ -15,7 +15,7 @@
     @include align-items(center);
 
     h1 {
-        max-width: 13em;
+        max-width: 12em;
         text-align: center;
         margin-bottom: 1em;
     }
@@ -127,15 +127,6 @@
         @include flex-direction(column);
         position: relative;
 
-        @media (max-width: 50em) {
-            width: 100%;
-            @include align-items (center);
-
-            &__step {
-                width: 70%;
-            }
-        }
-
         &__step {
             position: relative;
             margin-left: 6em;
@@ -204,6 +195,16 @@
 
             p {
                 max-width: 26em;
+            }
+        }
+
+        @media (max-width: 50em) {
+            width: 100%;
+            @include align-items (center);
+
+            &__step {
+                width: 70%;
+                margin-left: 4em;
             }
         }
 

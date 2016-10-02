@@ -16,6 +16,7 @@
     position: relative;
     max-width: 100em;
     margin: 0 auto;
+    overflow: hidden;
     -webkit-overflow-scrolling: touch;
 
     @include display(flex);
