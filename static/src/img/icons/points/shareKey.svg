@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="75px" height="64px" viewBox="0 0 75 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <title>shareKey</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M54.7029971,16.3846375 C52.7805556,7.0763 44.7952485,0 35.0328947,0 C27.2633041,0 20.6378655,4.4737 17.2852339,10.970575 C9.23435673,11.7684875 2.96052632,18.697525 2.96052632,27.0703125 C2.96052632,36.022525 10.1580409,43.3125 18.9967105,43.3125 L53.7793129,43.3125 C61.1174708,43.3125 67.1052632,37.2477875 67.1052632,29.739325 C67.1052632,22.5966125 61.6192251,16.745575 54.7029971,16.3846375 L54.7029971,16.3846375 Z" id="path-1"></path>
+    </defs>
+    <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="shareKey">
+            <g id="Upload-and-share" transform="translate(0.000000, 1.000000)">
+                <g id="Group-13" transform="translate(52.302632, 5.906250)">
+                    <ellipse id="Oval-4-Copy-3" fill="#5BC894" opacity="0.100000001" cx="9.86842105" cy="9.84375" rx="9.86842105" ry="9.84375"></ellipse>
+                    <ellipse id="Oval-4" fill="#5AC894" cx="9.86842105" cy="9.84375" rx="2.96052632" ry="2.953125"></ellipse>
+                </g>
+                <g id="Group-13-Copy" transform="translate(0.000000, 0.984375)">
+                    <ellipse id="Oval-4-Copy-3" fill="#5BC894" opacity="0.100000001" cx="9.86842105" cy="9.84375" rx="9.86842105" ry="9.84375"></ellipse>
+                    <ellipse id="Oval-4" fill="#5AC894" cx="9.86842105" cy="9.84375" rx="2.96052632" ry="2.953125"></ellipse>
+                </g>
+                <g id="Group-13-Copy-2" transform="translate(18.750000, 42.328125)" fill="#5BC894">
+                    <ellipse id="Oval-4-Copy-3" opacity="0.100000001" cx="9.86842105" cy="9.84375" rx="9.86842105" ry="9.84375"></ellipse>
+                    <ellipse id="Oval-4" cx="9.86842105" cy="9.84375" rx="2.96052632" ry="2.953125"></ellipse>
+                </g>
+                <g id="Page-1-Copy">
+                    <use fill="#FFFFFF" fill-rule="evenodd" style="mix-blend-mode: lighten;" xlink:href="#path-1"></use>
+                    <use stroke="#5AC894" stroke-width="2" xlink:href="#path-1"></use>
+                </g>
+                <path d="M60.6907895,30.515625 C70.0228833,30.515625 75,36.7214674 75,36.7214674 C75,42.9273103 75,42.9273098 75,50.9949049 C75,59.0625 64.423627,62.1654212 60.6907895,62.7860054 L60.6907895,30.515625 Z M60.6907895,30.515625 C51.3586957,30.515625 46.3815789,36.7214674 46.3815789,36.7214674 C46.3815789,42.9273103 46.3815789,42.9273098 46.3815789,50.9949049 C46.3815789,59.0625 56.9579519,62.1654212 60.6907895,62.7860054 L60.6907895,30.515625 Z" id="Combined-Shape-Copy-4" fill="#5BC894" opacity="0.200000003"></path>
+                <g id="Group-14" transform="translate(44.407895, 27.562500)">
+                    <path d="M14.3092105,0 C23.6413043,0 28.6184211,6.20584239 28.6184211,6.20584239 C28.6184211,12.4116853 28.6184211,12.4116848 28.6184211,20.4792799 C28.6184211,28.546875 18.0420481,31.6497962 14.3092105,32.2703804 L14.3092105,0 Z M14.3092105,0 C4.9771167,0 1.08357767e-13,6.20584239 1.11910481e-13,6.20584239 C1.11910481e-13,12.4116853 1.15463195e-13,12.4116848 1.11910481e-13,20.4792799 C1.08357767e-13,28.546875 10.576373,31.6497962 14.3092105,32.2703804 L14.3092105,0 Z" id="Combined-Shape-Copy-3" fill="#5BC894"></path>
+                    <ellipse id="Oval-Copy-4" fill="#FFFFFF" cx="14.2877574" cy="15.2578125" rx="8.36670481" ry="8.3671875"></ellipse>
+                    <ellipse id="Oval-Copy-3" fill="#5BC894" cx="14.2877574" cy="15.2578125" rx="5.7923341" ry="5.79266827"></ellipse>
+                </g>
+                <g id="Group-12" transform="translate(24.671053, 33.468750)" stroke="#5BC894" stroke-width="2" stroke-linecap="round">
+                    <path d="M3.94736842,18.2109375 L3.94736842,0.956272922" id="Path-2"></path>
+                    <path d="M7.89473684,3.9375 L3.94736842,0" id="Path-2-Copy"></path>
+                    <path d="M3.94736842,3.9375 L0,0" id="Path-2-Copy-2" transform="translate(1.973684, 1.968750) scale(-1, 1) translate(-1.973684, -1.968750) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

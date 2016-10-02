@@ -1,0 +1,32 @@
+
+// Colors
+
+$c-white: #fff;
+$c-green-accent: #5BC894;
+$c-green-dark: darken($c-green-accent, 50%);
+$c-black: #313238;
+$c-gray-dark: #343434;
+
+$c-cta-background: $c-green-accent;
+$c-cta-color: $c-white;
+$c-link-color: $c-green-accent;
+$c-h-color: $c-gray-dark;
+$c-terminal-color: $c-white;
+$c-terminal-background: $c-gray-dark;
+
+// Transitions
+
+$t-std-duration: 0.3s;
+$t-std-delay: 0s;
+$t-std-easing: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+// Sizes
+
+$_size: 1em;
+
+// Fonts
+
+$f-title: 'Montserrat';
+$f-body: 'Karla';
+$f-cta: 'Montserrat';
+$f-terminal: 'Source Code Pro';

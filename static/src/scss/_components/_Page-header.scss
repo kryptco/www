@@ -1,0 +1,45 @@
+.Page-header {
+    @include display(flex);
+    @include justify-content(space-between);
+    @include align-items(center);
+    padding: 1em 1em;
+
+    &__left-block {
+        height: 3em;
+        position: relative;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    &__right-block {
+        @include display(flex);
+        @include justify-content(space-between);
+        @include align-items(center);
+
+        .Page-header__links {
+            &__link {
+                color: $c-gray-dark;
+
+                &--active {
+                    color: $c-link-color;
+                }
+
+                margin: 0em 1em;
+            }
+        }
+
+        .Page-header__download-app-button {
+            margin-left: 2em;
+        }
+
+        @media (max-width: 50em) {
+            display: none;
+        }
+    }
+
+    @media (max-width: 50em) {
+        @include justify-content(center);
+    }
+}

@@ -1,0 +1,80 @@
+@font-face {
+	font-family: 'Montserrat';
+	src: url('Montserrat-Regular.eot');
+	src: url('Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+		url('Montserrat-Regular.woff') format('woff'),
+		url('Montserrat-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('Montserrat-Bold.eot');
+	src: url('Montserrat-Bold.eot?#iefix') format('embedded-opentype'),
+		url('Montserrat-Bold.woff') format('woff'),
+		url('Montserrat-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('Montserrat-ExtraBold.eot');
+	src: url('Montserrat-ExtraBold.eot?#iefix') format('embedded-opentype'),
+		url('Montserrat-ExtraBold.woff') format('woff'),
+		url('Montserrat-ExtraBold.ttf') format('truetype');
+	font-weight: 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('Montserrat-UltraLight.eot');
+	src: url('Montserrat-UltraLight.eot?#iefix') format('embedded-opentype'),
+		url('Montserrat-UltraLight.woff') format('woff'),
+		url('Montserrat-UltraLight.ttf') format('truetype');
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('Montserrat-SemiBold.eot');
+	src: url('Montserrat-SemiBold.eot?#iefix') format('embedded-opentype'),
+		url('Montserrat-SemiBold.woff') format('woff'),
+		url('Montserrat-SemiBold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('Montserrat-Hairline.eot');
+	src: url('Montserrat-Hairline.eot?#iefix') format('embedded-opentype'),
+		url('Montserrat-Hairline.woff') format('woff'),
+		url('Montserrat-Hairline.ttf') format('truetype');
+	font-weight: 100;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('Montserrat-Black.eot');
+	src: url('Montserrat-Black.eot?#iefix') format('embedded-opentype'),
+		url('Montserrat-Black.woff') format('woff'),
+		url('Montserrat-Black.ttf') format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('Montserrat-Light.eot');
+	src: url('Montserrat-Light.eot?#iefix') format('embedded-opentype'),
+		url('Montserrat-Light.woff') format('woff'),
+		url('Montserrat-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}

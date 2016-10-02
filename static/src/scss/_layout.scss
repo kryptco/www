@@ -1,0 +1,31 @@
+@mixin media-md {
+    @media (max-width: 800px), (max-height: 500px) {
+        @content;
+    }
+}
+
+@mixin media-sm {
+    @media (max-width: 400px) {
+        @content;
+    }
+}
+
+#page-wrapper {
+    @include size(100% auto);
+    min-height: 100%;
+    position: relative;
+    max-width: 100em;
+    margin: 0 auto;
+    -webkit-overflow-scrolling: touch;
+
+    @include display(flex);
+    @include flex-direction(column);
+
+    footer {
+        font-size: 1em;
+        opacity: 0.4;
+        text-align: center;
+        width: 100%;
+        line-height: 3em;
+    }
+}

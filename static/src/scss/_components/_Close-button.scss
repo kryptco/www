@@ -1,0 +1,31 @@
+.Close-button {
+    cursor: pointer;
+    position: relative;
+
+    $t-std-easing: cubic-bezier(0.77, 0, 0.175, 1);
+
+    $size: 1em;
+    $height: $size/10;
+
+    @include size($size $size);
+    @include transition(all .3s $t-std-delay $t-std-easing);
+
+    &:before, &:after {
+        @include size($size $height);
+        @include transform-origin(center);
+
+        content: "";
+        position: absolute;
+        background: $c-white;
+    }
+    &:after {
+        @include transform(translateY($size*2/5) rotate(-45deg));
+    }
+    &:before {
+        @include transform(translateY($size*2/5) rotate(45deg));
+    }
+
+    &:hover {
+        @include transform(rotate(90deg));
+    }
+}

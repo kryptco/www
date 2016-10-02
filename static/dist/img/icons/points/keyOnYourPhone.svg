@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="41px" height="64px" viewBox="0 0 41 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <title>keyOnYourPhone</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="37.72" height="60.7179487" rx="3"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="37.72" height="60.7179487" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="keyOnYourPhone">
+            <g id="Key-on-your-phone">
+                <use id="Rectangle-9-Copy-19" stroke="#5BC894" mask="url(#mask-2)" stroke-width="4" xlink:href="#path-1"></use>
+                <path d="M3.28,5.4713244 C3.28,3.80906553 4.62247477,2.46153846 6.27135392,2.46153846 L38.0086461,2.46153846 C39.6607252,2.46153846 41,3.80408724 41,5.4713244 L41,60.9902141 C41,62.6524729 39.6575252,64 38.0086461,64 L6.27135392,64 C4.61927477,64 3.28,62.6574512 3.28,60.9902141 L3.28,5.4713244 Z M3.28,5.46867398 C3.28,3.80787889 4.61869062,2.46153846 6.27832922,2.46153846 L33.9016708,2.46153846 C35.5576023,2.46153846 36.9,3.79673674 36.9,5.46867398 L36.9,56.8903004 C36.9,58.5510955 35.5613094,59.8974359 33.9016708,59.8974359 L6.27832922,59.8974359 C4.62239772,59.8974359 3.28,58.5622376 3.28,56.8903004 L3.28,5.46867398 Z" id="Combined-Shape" fill="#5BC894" opacity="0.200000003"></path>
+                <path d="M19.27,14.7692308 C27.0243478,14.7692308 31.16,19.942029 31.16,19.942029 C31.16,25.1148276 31.16,25.1148272 31.16,31.8394649 C31.16,38.5641026 22.3717391,41.1505017 19.27,41.6677815 L19.27,14.7692308 Z M19.27,14.7692308 C11.5156522,14.7692308 7.38,19.942029 7.38,19.942029 C7.38,25.1148276 7.38,25.1148272 7.38,31.8394649 C7.38,38.5641026 16.1682609,41.1505017 19.27,41.6677815 L19.27,14.7692308 Z" id="Combined-Shape-Copy-3" fill="#5BC894"></path>
+                <ellipse id="Oval-Copy-4" fill="#FFFFFF" cx="19.2521739" cy="27.4871795" rx="6.95217391" ry="6.97435897"></ellipse>
+                <ellipse id="Oval-Copy-3" fill="#5BC894" cx="19.2521739" cy="27.4871795" rx="4.81304348" ry="4.82840237"></ellipse>
+                <rect id="Rectangle-9-Copy-16" fill="#5BC894" x="16.4" y="3.28205128" width="4.92" height="1.64102564" rx="0.820512821"></rect>
+                <ellipse id="Oval-3-Copy-5" fill="#5BC894" cx="18.86" cy="52.5128205" rx="3.28" ry="3.28205128"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>

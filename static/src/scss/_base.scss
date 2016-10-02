@@ -1,0 +1,78 @@
+// 24px - line heigh for vertical rythm
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: $f-title;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    background: $c-white;
+
+    @include size(100% 100%);
+    @include font-feature-settings("liga", "kern");
+
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+}
+
+html {
+    // overflow: hidden;
+}
+
+body {
+    @media (max-width: 500px) {
+        font-size: 0.9em;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-tap-highlight-color: initial;
+    -webkit-text-size-adjust: 100%;
+}
+
+h1 ,h2, h3, h4, h5 {
+    color: $c-h-color;
+    font-family: $f-title;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 200%;
+    line-height: (44/32)*1em;
+}
+
+h2 {
+    font-weight: 300;
+    font-size: 200%;
+    line-height: (44/32)*1em;
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 150%;
+    line-height: (32/24)*1em;
+}
+
+p {
+    font-size: 100%;
+    line-height: 150%;
+    font-family: $f-body;
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+}
+
+a {
+    color: $c-link-color;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:visited {
+        @extend a;
+    }
+}

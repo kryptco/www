@@ -1,0 +1,26 @@
+.Link-with-underline {
+    @extend a; 
+
+    white-space: nowrap;
+    color: $c-link-color;
+    position: relative;
+    font-weight: 500;
+
+    &:after {
+        content: '';
+        @include position(absolute);
+        @include size(100% 0.1em);
+        @include transition(all $t-std-duration $t-std-delay $t-std-easing);
+
+        @include transform(scale(0,1));
+        background: $c-link-color;
+        left: 0;
+        bottom: -0.4em;
+    }
+
+    &:hover, &:active, &:focus {
+        &:after {
+            @include transform (scale(1,1));
+        }
+    }
+}

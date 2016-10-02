@@ -1,0 +1,63 @@
+.CTA {
+    font-size: 1em;
+    line-height: 1em;
+    position: relative;
+    display: inline-block;
+    padding: 1em 2.5em;
+
+    background: $c-cta-background;
+    color: $c-cta-color;
+    $easing: cubic-bezier(0.645, 0.045, 0.355, 1); //cubic-bezier(0.77, 0, 0.175, 1);
+
+    border-radius: 10em;
+
+    text-transform: uppercase;
+    font-family: $f-cta;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    cursor: pointer;
+
+    @include user-select(none);
+
+//    @include transform (scale3d(0.95,0.95,1));
+    @include transition (transform 0.3s $easing, box-shadow 0.3s $easing, background 0.3s $easing);
+
+    // box-shadow: 0 0.4em 1em 0 rgba($c-cta-background, 0.3);
+
+    &:hover {
+        @include transform (scale3d(1,1,1));
+        background: darken($c-cta-background, 10%);
+        // box-shadow: 0 0.5em 1.2em 0 rgba($c-cta-background, 0.3);
+    }
+
+    &:focus, &:active {
+        @include transform (scale3d(0.98,0.98,1));
+        background: darken($c-cta-background, 15%);
+        // box-shadow: 0 0.4em 0.8em 0 rgba($c-cta-background, 0.4);
+    }
+
+    &--shiny {
+        @extend .CTA;
+        background: linear-gradient(270deg, $c-cta-background, $c-cta-background);
+        background-size: 600% 600%;
+        @include animation(gradientAnimation 8s $easing infinite);
+    }
+
+    &--inverted {
+        @extend .CTA;
+
+        background: $c-white;
+        color: $c-cta-background;
+        // box-shadow: 0 0.4em 1em 0 rgba($c-gray-dark, 0.3);
+
+        &:hover {
+            @include transform (scale3d(1,1,1));
+            // box-shadow: 0 0.5em 1.2em 0 rgba($c-gray-dark, 0.4);
+        }
+
+        &:focus, &:active {
+            @include transform (scale3d(0.98,0.98,1));
+            // box-shadow: 0 0.4em 0.8em 0 rgba($c-gray-dark, 0.4);
+        }
+    }
+}

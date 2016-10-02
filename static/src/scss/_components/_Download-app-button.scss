@@ -1,0 +1,46 @@
+.Download-app-button {
+    font-size: 1em;
+    line-height: 1em;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    padding: 1em 1.7em 1em 2.7em;
+
+    background: $c-gray-dark;
+    border-radius: 10em;
+    color: $c-white;
+    $easing: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    &:before {
+        content: '';
+        @include size(1em 1em);
+        @include position(absolute, 1em null null 1em);
+        background: url('/static/dist/img/icons/apple-logo.svg');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+    }
+
+
+    cursor: pointer;
+
+    @include user-select(none);
+    @include transition (transform 0.3s $easing, box-shadow 0.3s $easing, background 0.3s $easing);
+
+    &:hover {
+        @include transform (scale3d(1,1,1));
+        background: darken($c-gray-dark, 10%);
+        // box-shadow: 0 0.5em 1.2em 0 rgba($c-cta-background, 0.3);
+    }
+
+    &:focus, &:active {
+        @include transform (scale3d(0.98,0.98,1));
+        background: darken($c-gray-dark, 25%);
+        // box-shadow: 0 0.4em 0.8em 0 rgba($c-cta-background, 0.4);
+    }
+}
+
+
+.Download-app-button--apple {
+    @extend .Download-app-button;
+}

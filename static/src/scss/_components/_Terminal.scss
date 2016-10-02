@@ -1,0 +1,18 @@
+.Terminal {
+    font-family: $f-terminal;
+    line-height: 1em;
+    font-size: (14/16)*1em;
+    font-weight: 700;
+    border-radius: 0.2em;
+    display: inline-block;
+    // max-width: 24em;
+    color: $c-terminal-color;
+    background: $c-terminal-background;
+    padding: 1em 1em;
+    padding-right: 2em;
+
+    span {
+        margin-right: 0.5em;
+        font-weight: 600;
+    }
+}

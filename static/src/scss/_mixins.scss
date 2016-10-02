@@ -1,0 +1,22 @@
+@mixin FullSize() {
+  @include size(100% 100%);
+}
+
+@mixin CenterXY() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translateX(-50%) translateY(-50%));
+}
+
+@mixin CenterX() {
+  position: absolute;
+  left: 50%;
+  @include transform(translateX(-50%));
+}
+
+@mixin CenterY() {
+  position: absolute;
+  top: 50%;
+  @include transform(translateY(-50%));
+}

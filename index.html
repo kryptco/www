@@ -1,8 +1,150 @@
-<!DOCTYPE HTML>
-<html>
-	<head></head>
-	<body>
-		Hello Alex, mofo
-	</body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Kryptonite - The new way to protect your private key.</title>
 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Kryptonite is the future of private SSH key management.">
+    <meta name="keywords" content="Kryptonite, SSH, key, private key, public key">
+    <meta name="google-site-verification" content="" />
+    <meta name="msvalidate.01" content="" />
+
+    <meta name='description' content='Kryptonite is the future of private SSH key management.'>
+    <meta property='og:title' content='Kryptonite - The new way to protect your private key.'>
+    <meta property='og:type' content='website'>
+    <meta property='og:description' content='Kryptonite - The new way to protect your private key.'>
+    <meta property='og:image' content='/static/dist/img/facebook-meta-image.png'>
+    <meta property='og:image:width' content='1000'>
+    <meta property='og:image:height' content='600'>
+
+    <meta property='twitter:card' content='summary_large_image'>
+    <meta property='twitter:title' content='Kryptonite - The new way to protect your private key.'>
+    <meta property='twitter:description' content='Kryptonite - The new way to protect your private key.'>
+    <meta property='twitter:image' content='/static/dist/img/twitter-meta-image.png'>
+
+    <link rel="apple-touch-icon" href='/static/dist/img/apple-touch-icon.png'>
+    <link rel="icon" type="image/png" href='/static/dist/img/favicon.png'/>
+    <link rel="stylesheet" href='/static/dist/fonts/Montserrat/font_montserrat.css' />
+	<link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:600,700" rel="stylesheet">
+    <link rel="stylesheet" href='/static/dist/css/main.css' />
+</head>
+
+<body>
+    <div id="page-wrapper" class='Page-home'>
+		<header id='page-header' class='Page-header'>
+			<div class='Page-header__left-block'>
+				<img src='/static/dist/img/kryptonite-logo-green-on-white.svg' />
+			</div>
+			<div class='Page-header__right-block'>
+				<div class='Page-header__links'>
+					<a href='/faq' class='Page-header__links__link'>FAQ</a>
+					<a href='/about' class='Page-header__links__link'>About</a>
+					<a href='/blog' class='Page-header__links__link'>Blog</a>
+				</div>
+				<div class='Page-header__download-app-button Download-app-button--apple'>Download iOS App</div>
+			</div>
+		</header>
+
+		<main>
+			<section class='Section--hero'>
+				<h1>The new home for your SSH private key</h1>
+				<div class='CTA'>Get started</div>
+				<div class='Section--hero__hero-graphic Hero-graphic'>
+					<img src='/static/dist/img/temporary-hero-graphics.png' />
+				</div>
+			</section>
+			<section class='Section--value-prop'>
+				<h2>Kryptonite is the future of SSH key management</h2>
+				<div class='Section--value-prop__points'>
+					<div class='Section--value-prop__points__point Point'>
+						<img src='/static/dist/img/icons/points/keyOnYourPhone.svg' />
+						<h3>Private key is stored on your phone</h3>
+						<p>Your phone is the gatekeeper for all of your SSH auth.
+							<br>
+							<a href='/faq?faq=keyOnYourPhone'>Read more</a>
+						</p>
+					</div>
+					<div class='Section--value-prop__points__point Point'>
+						<img src='/static/dist/img/icons/points/shareKey.svg' />
+						<h3>Easily upload & share your public key</h3>
+						<p>Upload your key to Github, Digital Ocean and other services right from Kryptonite mobile app.
+							<br>
+							<a href='/faq?faq=shareKey'>Read more</a>
+						</p>
+					</div>
+					<div class='Section--value-prop__points__point Point'>
+						<img src='/static/dist/img/icons/points/pairComputer.svg' />
+						<h3>Pair your phone with multiple computers</h3>
+						<p>Use SSH as you normally would on all of your computers after pairing them with your iPhone.
+							<br>
+							<a href='/faq?faq=pairComputer'>Read more</a>
+						</p>
+					</div>
+				</div>
+			</section>
+			<section class='Section--get-started'>
+				<h2>Get Started in 3 steps</h2>
+				<div class='Section--get-started__steps'>
+					<div class='Section--get-started__steps__step Step'>
+						<div class='Step__counter'><span>1</span></div>
+						<h3>Install Kryptonite</h3>
+						<div class='row'>
+							<div>
+								<p>Install Kryptonite iOS app</p>
+								<div class='Download-app-button--apple'>Download iOS App</div>
+								<p>Android app coming soon</p>
+							</div>
+							<div class='huge-ampersand'>&</div>
+							<div>
+								<p>Install CLI tool on your computer</p>
+								<div class='Terminal'>
+									<span>$</span>brew install kryptco/tap/kr
+								</div>
+								<p>Don't have brew? <a href='/faq?faq=installKR'>Other ways to install KR</a></p>
+							</div>
+						</div>
+					</div>
+					<div class='Section--get-started__steps__step Step'>
+						<div class='Step__counter'><span>2</span></div>
+						<h3>Pair your computer</h3>
+						<p>Open iOS app and pair with your computer. Run ‘kr pair’ and scan QR code using iOS app on your phone.</p>
+						<div class='Terminal'>
+							<span>$</span>kr pair
+						</div>
+					</div>
+					<div class='Section--get-started__steps__step Step'>
+						<div class='Step__counter'><span>3</span></div>
+						<h3>Use SSH normally</h3>
+						<p>After you upload your public key to the servers using the app you can use SSH as you normaly would.</p>
+						<div class='Terminal'>
+							<span>$</span>ssh root@server
+						</div>
+						<p>Every time you SSH, your computer will request a signature from your phone. <br> <a href='/faq?signature'>Read more</a></p>
+					</div>
+				</div>
+			</section>
+			<section class='Section--contact-us'>
+				<h2>Have questions? <a href='mailto:hello@krypt.co'>hello@krypt.co</a></h2>
+			</section>
+		</main>
+
+		<footer>© 2016 KryptCo, Inc.</footer>
+    </div>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-85073737-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser-polyfill.min.js'></script>
+    <script src='/static/dist/js/app.js'></script>
+</body>
+</html>
