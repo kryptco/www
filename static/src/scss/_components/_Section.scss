@@ -223,3 +223,17 @@
         font-size: 1.5em;
     }
 }
+
+.Section--faq {
+    @include display(flex);
+    @include flex-direction(column);
+    @include align-items(center);
+
+    padding: 4em 0;
+
+    .FAQ {
+        margin-top: 2em;
+        width: 100%;
+        max-width: 40em;
+    }
+}
