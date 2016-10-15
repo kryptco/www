@@ -1,0 +1,257 @@
+$c-gray-light: #E9E9E9;
+
+.Hero-graphic {
+    // margin: 10em 0;
+    @include display(flex);
+    @include align-items(flex-end);
+    @include justify-content(center);
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        background: $c-gray-light;
+        @include size(102% 0.4em);
+        border-radius: 100em;
+        @include position(absolute, 100% null null -1%);
+        margin-top: -0.4em;
+        z-index: 10;
+
+        @include animation(loadingLine 0.5s cubic-bezier(0.165, 0.84, 0.44, 1));
+        @include animation-fill-mode(both);
+        @include keyframes(loadingLine) {
+            0% {
+                opacity: 0;
+                @include transform(scale(0, 1));
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 1;
+                @include transform(scale(1, 1));
+            }
+        }
+    }
+
+    &__terminal {
+        color: $c-green-accent;
+        font-family: $f-terminal;
+        background: $c-gray-dark;
+        position: relative;
+        width: 24em;
+        height: 12em;
+        border-top-left-radius: 0.3em;
+        // border-top-right-radius: 0.3em;
+        overflow: hidden;
+        padding: 1em;
+
+        &:before {
+            content: '';
+            @include position(absolute, 0 0 null null);
+            @include size(0.5em 100%);
+            background: rgba(0,0,0,0.4);
+        }
+
+        @include animation(loadingTerminal 0.5s cubic-bezier(0.165, 0.84, 0.44, 1));
+        // @include animation-fill-mode(both);
+        @include keyframes(loadingTerminal) {
+            0% {
+                // opacity: 0;
+                @include transform(translateY(20em));
+            }
+            100% {
+                // opacity: 1;
+                @include transform(translateY(0));
+            }
+        }
+
+        header {
+            position: relative;
+            margin-bottom: 1em;
+            height: 0.8em;
+            span, span:before, span:after {
+                @include size(0.8em 0.8em);
+                background: rgba(0,0,0,0.5);
+                position: absolute;
+                top: 0;
+                border-radius: 0.4em;
+            }
+
+            span:before {
+                content: '';
+                left: 1.2em;
+            }
+            span:after {
+                left: 2.4em;
+                content: '';
+            }
+        }
+
+        main {
+
+        }
+
+        &__line {
+            font-weight: 800;
+            margin-bottom: 0.2em;
+            &>span {
+                color: white;
+                font-weight: 400;
+                margin-right: 0.5em;
+            }
+
+            &>div {
+                display: inline-block;
+            }
+
+            @include animation(fadeIn 0.5s ease-out);
+            @include animation-fill-mode (both);
+            @include keyframes(fadeIn) {
+                0% {opacity: 0}
+                100% {opacity: 1}
+            }
+        }
+
+        .cursor {
+            display: inline-block;
+            @include size(0.5em 1.2em);
+            background: $c-green-accent;
+            position: relative;
+            @include transform(translateY(0.3em));
+
+            &.blink {
+                @include animation(blink 1s ease-in-out infinite);
+
+                @include keyframes(blink) {
+                    0% {opacity: 0};
+                    40% {opacity: 1};
+                    60% {opacity: 1};
+                    100% {opacity: 0};
+                }
+            }
+        }
+    }
+
+    &__phone {
+        @include size(13em 20em);
+        position: relative;
+        background: $c-gray-light;
+        border-top-left-radius: 1.5em;
+        border-top-right-radius: 1.5em;
+        overflow: hidden;
+
+        @include animation(loadingPhone 0.5s 0.1s cubic-bezier(0.165, 0.84, 0.44, 1));
+        @include animation-fill-mode(both);
+        @include keyframes(loadingPhone) {
+            0% {
+                // opacity: 0;
+                @include transform(translateY(20em));
+            }
+            100% {
+                // opacity: 1;
+                @include transform(translateY(0));
+            }
+        }
+
+        & > header {
+            height: 2.8em;
+            width: 100%;
+            @include display(flex);
+            @include align-items(center);
+            @include justify-content(center);
+
+            span {
+                top: 0.1em;
+                width: 1.8em;
+                height: 0.26em;
+                background: rgba(0,0,0,0.2);
+                border-radius: 0.13em;
+                display: inline-block;
+                position: relative;
+
+                &:before {
+                    background: rgba(0,0,0,0.2);
+                    border-radius: 0.23em;
+                    content: '';
+                    @include size(0.46em 0.46em);
+                    @include position(absolute, -0.12em null null -1em);
+                }
+            }
+        }
+
+        & > main {
+            background: $c-gray-dark;
+            height: 17.2em;
+            width: 11.6em;
+            margin: 0 0.7em;
+            position: relative;
+        }
+
+        &__time {
+            font-family: Helvetica Neue, Arial;
+            text-align: center;
+            color: $c-white;
+            font-size: 0.8em;
+            padding-top: 3em;
+            padding-bottom: 1em;
+
+            &__time {
+                font-size: 3.7em;
+                font-weight: 100;
+                letter-spacing: -0.02em;
+                margin-bottom: 0.2em;
+            }
+
+            &__date {
+                font-weight: 400;
+            }
+        }
+
+        &__card {
+            width: 90%;
+            position: relative;
+            opacity: 0;
+            left: 5%;
+            font-family: Helvetica Neue, Helvetica, Arial;
+            border-radius: 0.3em;
+            background: #F4F4F4;
+            overflow: hidden;
+
+            header {
+                background: $c-white;
+                @include display(flex);
+                @include align-items(center);
+                @include justify-content(space-between);
+                padding: 0.2em 0.4em;
+                & > img {
+                    height: 1.2em;
+                }
+                & > span {
+                    color: #828282;
+                    font-size: 0.6em;
+                }
+            }
+
+            main {
+                color: $c-gray-dark;
+                padding: 1em 0.6em;
+                font-size: 0.7em;
+                font-weight: 500;
+                line-height: 1.3em;
+            }
+        }
+
+        &__loading, .jsgif {
+            display: none;
+            width: 40%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            @include transform(translateX(-50%) translateY(-50%));
+
+            canvas {
+                width: 100%;
+            }
+        }
+    }
+}

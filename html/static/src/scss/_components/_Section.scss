@@ -25,11 +25,6 @@
         width: 100%;
         position: relative;
         max-width: 42em;
-
-        img {
-            width: 104%;
-            margin-left: -2%;
-        }
     }
 }
 
@@ -38,7 +33,7 @@
     @include flex-direction(column);
     @include align-items(center);
 
-    padding: 2em 0;
+    padding: 4em 0;
 
     h2 {
         max-width: 14em;
