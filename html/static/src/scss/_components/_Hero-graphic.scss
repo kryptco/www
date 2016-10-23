@@ -1,4 +1,6 @@
 $c-gray-light: #E9E9E9;
+$dur: 1s;
+$del: 0.1s;
 
 .Hero-graphic {
     // margin: 10em 0;
@@ -16,7 +18,7 @@ $c-gray-light: #E9E9E9;
         margin-top: -0.4em;
         z-index: 10;
 
-        @include animation(loadingLine 0.5s cubic-bezier(0.165, 0.84, 0.44, 1));
+        @include animation(loadingLine $dur cubic-bezier(0.165, 0.84, 0.44, 1));
         @include animation-fill-mode(both);
         @include keyframes(loadingLine) {
             0% {
@@ -52,7 +54,7 @@ $c-gray-light: #E9E9E9;
             background: rgba(0,0,0,0.4);
         }
 
-        @include animation(loadingTerminal 0.5s cubic-bezier(0.165, 0.84, 0.44, 1));
+        @include animation(loadingTerminal $dur cubic-bezier(0.165, 0.84, 0.44, 1));
         // @include animation-fill-mode(both);
         @include keyframes(loadingTerminal) {
             0% {
@@ -104,7 +106,7 @@ $c-gray-light: #E9E9E9;
                 display: inline-block;
             }
 
-            @include animation(fadeIn 0.5s ease-out);
+            @include animation(fadeIn $dur ease-out);
             @include animation-fill-mode (both);
             @include keyframes(fadeIn) {
                 0% {opacity: 0}
@@ -140,7 +142,7 @@ $c-gray-light: #E9E9E9;
         border-top-right-radius: 1.5em;
         overflow: hidden;
 
-        @include animation(loadingPhone 0.5s 0.1s cubic-bezier(0.165, 0.84, 0.44, 1));
+        @include animation(loadingPhone $dur $del cubic-bezier(0.165, 0.84, 0.44, 1));
         @include animation-fill-mode(both);
         @include keyframes(loadingPhone) {
             0% {
@@ -222,22 +224,25 @@ $c-gray-light: #E9E9E9;
                 @include display(flex);
                 @include align-items(center);
                 @include justify-content(space-between);
-                padding: 0.2em 0.4em;
+                padding: 0 0.4em;
                 & > img {
-                    height: 1.2em;
+                    height: 0.8em;
                 }
                 & > span {
                     color: #828282;
                     font-size: 0.6em;
+                    line-height: 2.2em;
                 }
             }
 
             main {
                 color: $c-gray-dark;
-                padding: 1em 0.6em;
+                padding: 0.6em 0.6em;
                 font-size: 0.7em;
-                font-weight: 500;
-                line-height: 1.3em;
+                font-family: $f-body;
+                font-weight: 700;
+                line-height: 1.5em;
+                letter-spacing: -0.01em;
             }
         }
 

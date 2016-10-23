@@ -1,13 +1,11 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _SomeComponent = require('./components/SomeComponent');
 
-var _libgif = require('./lib/libgif');
+var _AnimatedGif = require('./components/AnimatedGif');
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var _AnimatedTerminal = require('./components/AnimatedTerminal');
 
 $(function () {
     $('#get-started-button').on('click', scrollToGetStartedSection);
@@ -15,7 +13,17 @@ $(function () {
         $(this).toggleClass('open');
         $(this).find('.FAQ__question__answer').slideToggle(500, 'easeInOutQuad');
     });
-    animateGif();
+    // AnimatedGif();
+
+    var lines = [
+    //['$', 'brew install kryptco/tap/kr'],
+    //['$', 'kr pair'],
+    ['$', 'ssh root@server'], ['root:~#', '']];
+
+    lines = [['$', 'git pull origin master', true], ['', 'Updating c21fc5a..3b8a0a5', false, 10], ['', '7 files changed, done.', false], ['$', '', true, 4000]];
+
+    var animatedTerminal = new _AnimatedTerminal.AnimatedTerminal(lines);
+    animatedTerminal.startAnimation();
 });
 
 function scrollToGetStartedSection() {
@@ -26,7 +34,17 @@ function scrollToGetStartedSection() {
     }, 1000, 'easeInOutQuart');
 }
 
-function animateGif(cb) {
+},{"./components/AnimatedGif":2,"./components/AnimatedTerminal":3,"./components/SomeComponent":5}],2:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.AnimatedGif = undefined;
+
+var _libgif = require('../lib/libgif');
+
+var AnimatedGif = exports.AnimatedGif = function AnimatedGif(cb) {
     var loadingGif = new _libgif.SuperGif({
         gif: $('.Hero-graphic__phone__loading')[0],
         show_progress_bar: false,
@@ -43,52 +61,120 @@ function animateGif(cb) {
     loadingGif.load(function () {
         loadingGif.play();
     });
-}
+};
 
-$(function () {
-    animateTerminal();
+},{"../lib/libgif":6}],3:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.AnimatedTerminal = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _Line = require('./Line');
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var AnimatedTerminal = exports.AnimatedTerminal = function () {
+    function AnimatedTerminal(lines, options) {
+        _classCallCheck(this, AnimatedTerminal);
+
+        this.lines = lines;
+        this.notificationText = 'Your private key was used: <br> <span style="">git pull github:hello.git</span>'; //ssh root@server</span>';
+    }
+
+    _createClass(AnimatedTerminal, [{
+        key: 'startAnimation',
+        value: function startAnimation() {
+            this.animateLine(0);
+        }
+    }, {
+        key: 'animateLine',
+        value: function animateLine(i) {
+            var _this = this;
+
+            var _l = new _Line.Line([this.lines[i][0], this.lines[i][1]], { showCursor: this.lines[i][2] });
+
+            var animateNextLine = function animateNextLine() {
+                if (i < _this.lines.length - 1) {
+                    _l.hideCursor();
+
+                    if (i == 0) {
+                        _this.showNotification(_this.notificationText, function () {
+                            _this.animateLine(i + 1);
+                        });
+                    } else {
+                        _this.animateLine(i + 1);
+                    }
+                } else {
+                    _this.animationComplete();
+                    // showNotification(notificationText, animationComplete);
+                }
+            };
+
+            setTimeout(function () {
+                _l.animate(animateNextLine, { shouldAnimate: _this.lines[i][2] });
+            }, this.lines[i][3] ? this.lines[i][3] : 1000);
+        }
+    }, {
+        key: 'animationComplete',
+        value: function animationComplete() {
+            var _this2 = this;
+
+            setTimeout(function () {
+                _this2.hideNotification(function () {});
+                $('#terminal').html('');
+                _this2.animateLine(0);
+            }, 2000);
+        }
+    }, {
+        key: 'showNotification',
+        value: function showNotification(text, cb) {
+            $('#notification-card main').html(text);
+            $('#notification-card').css({
+                top: '20px'
+            }).animate({
+                opacity: 1,
+                top: '0px'
+            }, 1000, 'easeOutCubic', function () {
+                cb();
+            });
+        }
+    }, {
+        key: 'hideNotification',
+        value: function hideNotification(cb) {
+            $('#notification-card').animate({
+                opacity: 0
+            }, 100, 'easeInCubic', cb);
+        }
+    }]);
+
+    return AnimatedTerminal;
+}();
+
+},{"./Line":4}],4:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
 });
 
-function animateTerminal() {
-    var lines = [
-    //['$', 'brew install kryptco/tap/kr'],
-    //['$', 'kr pair'],
-    ['$', 'ssh root@server'], ['root:~#', '']];
-    var notificationText = 'Private key has been used. ssh root@server';
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-    animateLine(0);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-    function animateLine(i) {
-        var _l = new Line(lines[i]);
-
-        setTimeout(function () {
-            _l.animate(animateNextLine);
-        }, 1000);
-
-        function animateNextLine() {
-            if (i < lines.length - 1) {
-                _l.hideCursor();
-                animateLine(i + 1);
-            } else {
-                showNotification(notificationText, animationComplete);
-            }
-        }
-    }
-
-    function animationComplete() {
-        setTimeout(function () {
-            hideNotification();
-            $('#terminal').html('');
-            animateLine(0);
-        }, 2000);
-    }
-}
-
-var Line = function () {
-    function Line(line) {
+var Line = exports.Line = function () {
+    // Terminal line consists of two parts for ex. '$' and 'ssh root'.
+    // Array(2) line - ['$', 'ssh root']
+    // Object Options:
+    // Boolean showCursor - whether or not there should be a cursor the begining
+    function Line(line, options) {
         _classCallCheck(this, Line);
 
         this.id = this.uniqId();
+        this.options = options;
         this.line = line;
         this.theater = theaterJS();
 
@@ -101,26 +187,58 @@ var Line = function () {
             this.createElement();
             this.appendToTerminal();
             this.prepareTheater();
-            this.showCursor();
+
+            if (this.options.showCursor) {
+                this.showCursor();
+            }
+
             this.enableCursorBlink();
         }
+
+        // Creates a jQuery element out of line parts
+
     }, {
         key: 'createElement',
         value: function createElement() {
             console.log(this.line);
-            this.$line = $('<div></div>').addClass('Hero-graphic__terminal__line').append('<span class="pre">' + this.line[0] + '</span>').append('<div id="' + this.id + '" class="text"></div>').append('<div class="cursor"></div>');
+            this.$line = $('<div></div>').addClass('Hero-graphic__terminal__line');
+
+            if (this.line[0] != '') {
+                this.$line.append('<span class="pre">' + this.line[0] + '</span>');
+            }
+
+            this.$line.append('<div id="' + this.id + '" class="text"></div>').append('<div class="cursor" style="display: none"></div>');
         }
+
+        // Set options for animator
+
     }, {
         key: 'prepareTheater',
         value: function prepareTheater() {
             this.theater.addActor(this.id, { accuracy: 1, speed: 1 });
         }
+
+        // Options:
+        // Boolean shouldNotAnimate
+
     }, {
         key: 'animate',
-        value: function animate(cb) {
+        value: function animate(cb, opt) {
             var _this = this;
 
+            var options = {
+                shouldAnimate: true
+            };
+            $.extend(true, options, opt);
+
             if (!this.line[1].length) {
+                cb();
+                return;
+            }
+
+            if (!options.shouldAnimate) {
+                this.hideCursor();
+                this.$line.find('.text').html(this.line[1]);
                 cb();
                 return;
             }
@@ -177,25 +295,7 @@ var Line = function () {
     return Line;
 }();
 
-function showNotification(text, cb) {
-    $('#notification-card main').html(text);
-    $('#notification-card').css({
-        top: '20px'
-    }).animate({
-        opacity: 1,
-        top: '0px'
-    }, 1000, 'easeOutCubic', function () {
-        cb();
-    });
-};
-
-function hideNotification(cb) {
-    $('#notification-card').animate({
-        opacity: 0
-    }, 300, 'easeInCubic', cb);
-};
-
-},{"./components/SomeComponent":2,"./lib/libgif":3}],2:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -203,7 +303,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var SomeComponent = exports.SomeComponent = {};
 
-},{}],3:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
