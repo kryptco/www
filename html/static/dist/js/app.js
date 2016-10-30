@@ -7,23 +7,34 @@ var _AnimatedGif = require('./components/AnimatedGif');
 
 var _AnimatedTerminal = require('./components/AnimatedTerminal');
 
+var _ActionSet = require('./data/ActionSet');
+
 $(function () {
     $('#get-started-button').on('click', scrollToGetStartedSection);
     $('.FAQ__question').on('click', function () {
         $(this).toggleClass('open');
         $(this).find('.FAQ__question__answer').slideToggle(500, 'easeInOutQuad');
     });
-    // AnimatedGif();
 
-    var lines = [
-    //['$', 'brew install kryptco/tap/kr'],
-    //['$', 'kr pair'],
-    ['$', 'ssh root@server'], ['root:~#', '']];
+    var actions = [{
+        lines: [['$', 'ssh root@server', true], ['root:~#', '', true]],
+        notificationText: 'Your private key was used: <br> <span style="">ssh root@server</span>',
+        notificationIndex: 0
+    }, {
+        lines: [['$', 'git pull origin master', true], ['', 'Updating c21fc5a..3b8a0a5', false, 10], ['', '7 files changed, done.', false], ['$', '', true, 4000]],
+        notificationIndex: 0,
+        notificationText: 'Your private key was used: <br> <span style="">git pull github:hello.git</span>'
+    }];
 
-    lines = [['$', 'git pull origin master', true], ['', 'Updating c21fc5a..3b8a0a5', false, 10], ['', '7 files changed, done.', false], ['$', '', true, 4000]];
+    animateAction(0);
 
-    var animatedTerminal = new _AnimatedTerminal.AnimatedTerminal(lines);
-    animatedTerminal.startAnimation();
+    function animateAction(i) {
+        var a = actions[i];
+        var animatedTerminal = new _AnimatedTerminal.AnimatedTerminal(a.lines, { notificationIndex: 0, notificationText: a.notificationText });
+        animatedTerminal.startAnimation(function () {
+            i == actions.length - 1 ? animateAction(0) : animateAction(i + 1);
+        });
+    }
 });
 
 function scrollToGetStartedSection() {
@@ -34,7 +45,7 @@ function scrollToGetStartedSection() {
     }, 1000, 'easeInOutQuart');
 }
 
-},{"./components/AnimatedGif":2,"./components/AnimatedTerminal":3,"./components/SomeComponent":5}],2:[function(require,module,exports){
+},{"./components/AnimatedGif":2,"./components/AnimatedTerminal":3,"./components/SomeComponent":5,"./data/ActionSet":6}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -63,7 +74,7 @@ var AnimatedGif = exports.AnimatedGif = function AnimatedGif(cb) {
     });
 };
 
-},{"../lib/libgif":6}],3:[function(require,module,exports){
+},{"../lib/libgif":7}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -82,26 +93,42 @@ var AnimatedTerminal = exports.AnimatedTerminal = function () {
         _classCallCheck(this, AnimatedTerminal);
 
         this.lines = lines;
-        this.notificationText = 'Your private key was used: <br> <span style="">git pull github:hello.git</span>'; //ssh root@server</span>';
+        this.notificationIndex = options.notificationIndex;
+        this.notificationText = options.notificationText;
     }
 
     _createClass(AnimatedTerminal, [{
         key: 'startAnimation',
-        value: function startAnimation() {
+        value: function startAnimation(cb) {
+            this.completionCallback = cb;
             this.animateLine(0);
+        }
+    }, {
+        key: 'typeOutLine',
+        value: function typeOutLine(a, cb) {
+            var options = {
+                showCursor: true,
+                shouldTypeOut: true
+            };
+
+            $.extend(true, options, a);
+
+            var _l = new _Line.Line(a.line);
+            _l.animate(cb ? cb : {}, options);
         }
     }, {
         key: 'animateLine',
         value: function animateLine(i) {
             var _this = this;
 
+            console.log(this.lines[i]);
             var _l = new _Line.Line([this.lines[i][0], this.lines[i][1]], { showCursor: this.lines[i][2] });
 
             var animateNextLine = function animateNextLine() {
                 if (i < _this.lines.length - 1) {
                     _l.hideCursor();
 
-                    if (i == 0) {
+                    if (i == _this.notificationIndex) {
                         _this.showNotification(_this.notificationText, function () {
                             _this.animateLine(i + 1);
                         });
@@ -123,10 +150,11 @@ var AnimatedTerminal = exports.AnimatedTerminal = function () {
         value: function animationComplete() {
             var _this2 = this;
 
+            console.log('animation complete');
             setTimeout(function () {
                 _this2.hideNotification(function () {});
                 $('#terminal').html('');
-                _this2.animateLine(0);
+                _this2.completionCallback();
             }, 2000);
         }
     }, {
@@ -304,6 +332,75 @@ Object.defineProperty(exports, "__esModule", {
 var SomeComponent = exports.SomeComponent = {};
 
 },{}],6:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var actionSet = [];
+
+actionSet[0] = [{
+    actor: 'Terminal',
+    action: {
+        type: 'typeOutLine',
+        line: ['$', 'ssh root@server']
+    }
+}, {
+    actor: 'Phone',
+    action: {
+        type: 'showNotification',
+        notificationText: 'Your private key was used: <br> <span style="">ssh root@server</span>'
+    }
+}, {
+    actor: 'Terminal',
+    action: {
+        type: 'typeOutLine',
+        line: ['root:~#', '']
+    },
+    delayAfterFinish: 4000
+}];
+
+actionSet[1] = [{
+    actor: 'Terminal',
+    action: {
+        type: 'typeOutLine',
+        line: ['$', 'git pull origin master']
+    }
+}, {
+    actor: 'Phone',
+    action: {
+        type: 'showNotification',
+        notificationText: 'Your private key was used: <br> <span style="">git pull github:hello.git</span>'
+    }
+}, {
+    actor: 'Terminal',
+    action: {
+        type: 'typeOutLine',
+        line: ['', 'Updating c21fc5a..3b8a0a5'],
+        showCursor: false,
+        shouldTypeOut: false
+    },
+    delayAfterFinish: 10
+}, {
+    actor: 'Terminal',
+    action: {
+        type: 'typeOutLine',
+        line: ['', '7 files changed, done.'],
+        showCursor: false,
+        shouldTypeOut: false
+    }
+}, {
+    actor: 'Terminal',
+    action: {
+        type: 'typeOutLine',
+        line: ['$', '']
+    },
+    delayAfterFinish: 4000
+}];
+
+exports.actionSet = actionSet;
+
+},{}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
