@@ -71,13 +71,14 @@ ga('send', 'pageview');
                     <div class='Hero-graphic__phone'>
                         <header><span></span></header>
                         <main>
-                            <div class='Hero-graphic__phone__time'>
-                                <div class='Hero-graphic__phone__time__time'>2:30</div>
-                                <div class='Hero-graphic__phone__time__date'>Wednesday, 15 October</div>
-                            </div>
-                            <img class='Hero-graphic__phone__loading' width="20em" height="20em" rel:animated_src='/static/dist/img/Loading_green_on_dark.gif' />
+						<img id="phoneGIF" style="z-index: 100; position:absolute; width:100%;"/>
+                            <!--<div class='Hero-graphic__phone__time'>-->
+                                <!--<div class='Hero-graphic__phone__time__time'>2:30</div>-->
+                                <!--<div class='Hero-graphic__phone__time__date'>Wednesday, 15 October</div>-->
+                            <!--</div>-->
+                            <!--<img class='Hero-graphic__phone__loading' width="20em" height="20em" rel:animated_src='/static/dist/img/Loading_green_on_dark.gif' />-->
                             <!-- <img class='Hero-graphic__phone__card' src='/static/dist/img/NotificationCard.png' /> -->
-                            <div id='notification-card' class='Hero-graphic__phone__card'>
+                            <div style="display:none;" id='notification-card' class='Hero-graphic__phone__card'>
                                 <header><img src='/static/dist/img/favicon.png' /><span>Just now</span></header>
                                 <main>Private key has been used. ssh root@server</main>
                             </div>
@@ -164,15 +165,6 @@ ga('send', 'pageview');
 
 		<footer>© 2016 KryptCo, Inc.</footer>
     </div>
-
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-85073737-1', 'auto');
-        ga('send', 'pageview');
-    </script>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
     <script src='//cdn.jsdelivr.net/theaterjs/latest/theater.min.js'></script>

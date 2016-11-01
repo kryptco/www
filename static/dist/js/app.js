@@ -9,7 +9,14 @@ var _AnimatedTerminal = require('./components/AnimatedTerminal');
 
 var _ActionSet = require('./data/ActionSet');
 
-$(function () {
+var started = false;
+
+var initFn = function initFn() {
+    if (started) {
+        return;
+    }
+    started = true;
+    $('#phoneGIF').attr('src', "https://s3.amazonaws.com/kryptco-assets/krypt-gif.gif");
     $('#get-started-button').on('click', scrollToGetStartedSection);
     $('.FAQ__question').on('click', function () {
         $(this).toggleClass('open');
@@ -17,24 +24,34 @@ $(function () {
     });
 
     var actions = [{
-        lines: [['$', 'ssh root@server', true], ['root:~#', '', true]],
+        lines: [['$', 'ssh root@server', true], ['root:~#', '', true, 1000]],
         notificationText: 'Your private key was used: <br> <span style="">ssh root@server</span>',
-        notificationIndex: 0
+        notificationIndex: 0,
+        notificationDelay: 6000
     }, {
         lines: [['$', 'git pull origin master', true], ['', 'Updating c21fc5a..3b8a0a5', false, 10], ['', '7 files changed, done.', false], ['$', '', true, 4000]],
         notificationIndex: 0,
-        notificationText: 'Your private key was used: <br> <span style="">git pull github:hello.git</span>'
+        notificationText: 'Your private key was used: <br> <span style="">git pull github:hello.git</span>',
+        notificationDelay: 1000
     }];
 
     animateAction(0);
 
     function animateAction(i) {
         var a = actions[i];
-        var animatedTerminal = new _AnimatedTerminal.AnimatedTerminal(a.lines, { notificationIndex: 0, notificationText: a.notificationText });
+        var animatedTerminal = new _AnimatedTerminal.AnimatedTerminal(a.lines, { notificationIndex: 0, notificationText: a.notificationText, notificationDelay: a.notificationDelay });
         animatedTerminal.startAnimation(function () {
             i == actions.length - 1 ? animateAction(0) : animateAction(i + 1);
         });
     }
+};
+
+$(document).ready(function () {
+    $('#phoneGIF').attr('src', "https://s3.amazonaws.com/kryptco-assets/krypt-gif.gif");
+    $("#phoneGIF").load(initFn);
+    setTimeout(function () {
+        initFn();
+    }, 6000);
 });
 
 function scrollToGetStartedSection() {
@@ -95,6 +112,7 @@ var AnimatedTerminal = exports.AnimatedTerminal = function () {
         this.lines = lines;
         this.notificationIndex = options.notificationIndex;
         this.notificationText = options.notificationText;
+        this.notificationDelay = options.notificationDelay;
     }
 
     _createClass(AnimatedTerminal, [{
@@ -131,7 +149,7 @@ var AnimatedTerminal = exports.AnimatedTerminal = function () {
                     if (i == _this.notificationIndex) {
                         _this.showNotification(_this.notificationText, function () {
                             _this.animateLine(i + 1);
-                        });
+                        }, _this.notificationDelay);
                     } else {
                         _this.animateLine(i + 1);
                     }
@@ -159,14 +177,14 @@ var AnimatedTerminal = exports.AnimatedTerminal = function () {
         }
     }, {
         key: 'showNotification',
-        value: function showNotification(text, cb) {
+        value: function showNotification(text, cb, delay) {
             $('#notification-card main').html(text);
             $('#notification-card').css({
                 top: '20px'
             }).animate({
                 opacity: 1,
                 top: '0px'
-            }, 1000, 'easeOutCubic', function () {
+            }, delay || 2000, 'easeOutCubic', function () {
                 cb();
             });
         }

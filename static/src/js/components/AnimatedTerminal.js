@@ -5,6 +5,7 @@ export class AnimatedTerminal {
         this.lines = lines;
         this.notificationIndex = options.notificationIndex;
         this.notificationText = options.notificationText;
+		this.notificationDelay = options.notificationDelay;
     }
 
     startAnimation (cb) {
@@ -37,7 +38,7 @@ export class AnimatedTerminal {
                         this.notificationText,
                         () => {
                             this.animateLine(i+1)
-                        });
+                        }, this.notificationDelay);
                 } else {
                     this.animateLine (i+1);
                 }
@@ -61,7 +62,7 @@ export class AnimatedTerminal {
         }, 2000);
     }
 
-    showNotification(text, cb){
+    showNotification(text, cb, delay){
         $('#notification-card main').html(text);
         $('#notification-card')
             .css({
@@ -70,7 +71,7 @@ export class AnimatedTerminal {
             .animate({
                 opacity: 1,
                 top: '0px'
-            }, 1000, 'easeOutCubic', () => {
+            }, delay || 2000, 'easeOutCubic', () => {
                 cb();
             });
     };
