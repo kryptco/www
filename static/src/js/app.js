@@ -11,11 +11,6 @@ var initFn = function() {
 	}
 	started = true;
 	$('#phoneGIF').attr('src', "https://s3.amazonaws.com/kryptco-assets/krypt-gif.gif")
-    $('#get-started-button').on('click', scrollToGetStartedSection);
-    $('.FAQ__question').on('click', function() {
-        $(this).toggleClass('open');
-        $(this).find('.FAQ__question__answer').slideToggle(500, 'easeInOutQuad');
-    });
 
 
     let actions = [
@@ -87,6 +82,11 @@ function betaFormSubmit() {
 }
 
 $(document).ready(function() {
+    $('#get-started-button').on('click', scrollToGetStartedSection);
+    $('.FAQ__question').on('click', function() {
+        $(this).toggleClass('open');
+        $(this).find('.FAQ__question__answer').slideToggle(500, 'easeInOutQuad');
+    });
 	$("#betaFormSubmit").click(betaFormSubmit);
 	$('#phoneGIF').attr('src', "https://s3.amazonaws.com/kryptco-assets/krypt-gif.gif")
 	$("#phoneGIF").load(initFn);

@@ -17,11 +17,6 @@ var initFn = function initFn() {
 	}
 	started = true;
 	$('#phoneGIF').attr('src', "https://s3.amazonaws.com/kryptco-assets/krypt-gif.gif");
-	$('#get-started-button').on('click', scrollToGetStartedSection);
-	$('.FAQ__question').on('click', function () {
-		$(this).toggleClass('open');
-		$(this).find('.FAQ__question__answer').slideToggle(500, 'easeInOutQuad');
-	});
 
 	var actions = [{
 		lines: [['$', 'ssh root@server', true], ['root:~#', '', true, 1000]],
@@ -82,6 +77,11 @@ function betaFormSubmit() {
 }
 
 $(document).ready(function () {
+	$('#get-started-button').on('click', scrollToGetStartedSection);
+	$('.FAQ__question').on('click', function () {
+		$(this).toggleClass('open');
+		$(this).find('.FAQ__question__answer').slideToggle(500, 'easeInOutQuad');
+	});
 	$("#betaFormSubmit").click(betaFormSubmit);
 	$('#phoneGIF').attr('src', "https://s3.amazonaws.com/kryptco-assets/krypt-gif.gif");
 	$("#phoneGIF").load(initFn);
