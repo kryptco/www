@@ -52,36 +52,60 @@
 			<section class='Section--faq'>
                 <h1>Frequently Asked Questions</h1>
                 <div class='FAQ'>
-                    <div class='FAQ__question' name='whatIsKryptonite'>
+                    <div class='FAQ__question' name='homeFolder'>
                         <div class='FAQ__question__question'>
-                            What is Kryptonite?
+							I keep my private key in ~/.ssh, why should I use Kryptonite?
                         </div>
                         <div class='FAQ__question__answer'>
-                            Kryptonite is something awesome
+							Any application you run can read, use, and send off your private key without your knowledge. Kryptonite requires your explicit permission to use the private key and records every SSH access.
                         </div>
                     </div>
-                    <div class='FAQ__question' name='howPairingWorks'>
+                    <div class='FAQ__question' name='github2FA'>
                         <div class='FAQ__question__question'>
-                            How does pairing work?
+							I have two-factor authentication enabled on my GitHub account. Why should I use Kryptonite?
                         </div>
                         <div class='FAQ__question__answer'>
-                            Pairing works like magic
+							GitHub does not enforce two-factor authentication when you push or pull code with SSH. Using Kryptonite requires access to your phone to use the SSH key.
                         </div>
                     </div>
-                    <div class='FAQ__question' name='pairingMaltipleDevices'>
+                    <div class='FAQ__question' name='privateKeyKryptCo'>
                         <div class='FAQ__question__question'>
-                            Can I pair more than one computer?
+							Does KryptCo have access to my SSH private key?
                         </div>
                         <div class='FAQ__question__answer'>
-                            Yes! You can pair as many devices as you want. First, install `kr` on your computer, then run `kr pair`. Boom.
+							No, the SSH private key is generated on the mobile device and never leaves.
                         </div>
                     </div>
-                    <div class='FAQ__question' name='whoIsAlexGrinman'>
+                    <div class='FAQ__question' name='privateKeyOnPhone'>
                         <div class='FAQ__question__question'>
-                            Who is Alex Grinman?
+							If the SSH private key never leaves my phone, how does it work?
                         </div>
                         <div class='FAQ__question__answer'>
-                            If only we knew...
+							The role of a private key in an SSH login is to sign the SSH handshake. When a signature is required, your workstation calls out to Kryptonite running on the paired phone with the data that must be signed. If authorized, Kryptonite performs the signature using the private key and returns only the signature to the workstation.
+                        </div>
+                    </div>
+                    <div class='FAQ__question' name='losePhone'>
+                        <div class='FAQ__question__question'>
+							What happens if I lose my phone?
+                        </div>
+                        <div class='FAQ__question__answer'>
+							First make sure you remove the old SSH public key from any of your accounts. Once you have Kryptonite installed on your new phone, add the new public key to the accounts you were using SSH with before.
+                        </div>
+                    </div>
+                    <div class='FAQ__question' name='communicate'>
+                        <div class='FAQ__question__question'>
+							How does my phone communicate with my computer securely?
+                        </div>
+                        <div class='FAQ__question__answer'>
+							Your phone generates a session key and sends it to your workstation upon pairing. All communication is encrypted and authenticated using this session key.
+                        </div>
+                    </div>
+                    <div class='FAQ__question' name='backup'>
+                        <div class='FAQ__question__question'>
+							Can I backup my private key?
+                        </div>
+                        <div class='FAQ__question__answer'>
+							Backing up your private key reduces its security to the security of the backup. We do not currently support backing up your private key, but may add optional backing up to iCloud in a future release.
                         </div>
                     </div>
                 </div>
