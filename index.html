@@ -54,7 +54,6 @@ ga('send', 'pageview');
 					<a href='/about/' class='Page-header__links__link'>About</a>
 					<a href='/blog/' class='Page-header__links__link'>Blog</a>
 				</div>
-				<div class='Page-header__download-app-button Download-app-button--apple'>Download iOS App</div>
 			</div>
 		</header>
 
@@ -122,27 +121,19 @@ ga('send', 'pageview');
 				<div class='Section--get-started__steps'>
 					<div class='Section--get-started__steps__step Step'>
 						<div class='Step__counter'><span>1</span></div>
-						<h3>Install Kryptonite</h3>
-						<div class='row'>
-							<div>
-								<p>Install the Kryptonite iOS app</p>
-								<div class='Download-app-button--apple'>Download iOS App</div>
-								<p>Android app coming soon</p>
-							</div>
-							<div class='huge-ampersand'>&</div>
-							<div>
-								<p>Install the CLI tool on your computer</p>
-								<div class='Terminal'>
-									<span>$</span>brew install kryptco/tap/kr
-								</div>
-								<p>Don't have brew? <a href='/faq/?faq=installKR'>Other ways to install KR</a></p>
+						<h3>Request a Kryptonite Beta invite</h3>
+						<p>We will send you an invitation to download our iOS app. An Android version is coming soon!</p>
+						<div>
+							<div id="betaForm">
+								<div><input style="border:0px; border-bottom: solid gray 2px; font-family: Karla; font-size:2em; margin:10px; " id="betaFormEmail" type="text" name="entry.1643900225" placeholder="Email"></input></div>
+								<div class="CTA" id="betaFormSubmit" >Submit</div>
 							</div>
 						</div>
 					</div>
 					<div class='Section--get-started__steps__step Step'>
 						<div class='Step__counter'><span>2</span></div>
 						<h3>Pair your computer</h3>
-						<p>Open iOS app and pair with your computer. Run ‘kr pair’ and scan the QR code using Kryptonite on your phone.</p>
+						<p>Open the iOS app and pair with your computer. Run ‘kr pair’ and scan the QR code using Kryptonite on your phone.</p>
 						<div class='Terminal'>
 							<span>$</span>kr pair
 						</div>
