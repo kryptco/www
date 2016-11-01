@@ -14,7 +14,7 @@ $c-light-gray: #E9E9E9;
         &__question {
             font-family: $f-title;
             font-weight: 300;
-            font-size: 1.5em;
+            font-size: 1.4em;
 
             @include transition(0.5s $t-std-easing);
         }
