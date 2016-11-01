@@ -40,9 +40,9 @@
 			</div>
 			<div class='Page-header__right-block'>
 				<div class='Page-header__links'>
-					<a href='/faq' class='Page-header__links__link'>FAQ</a>
-					<a href='/about' class='Page-header__links__link'>About</a>
-					<a href='/blog' class='Page-header__links__link'>Blog</a>
+					<a href='/faq/' class='Page-header__links__link'>FAQ</a>
+					<a href='/about/' class='Page-header__links__link'>About</a>
+					<a href='/blog/' class='Page-header__links__link'>Blog</a>
 				</div>
 				<div class='Page-header__download-app-button Download-app-button--apple'>Download iOS App</div>
 			</div>
@@ -52,6 +52,15 @@
 			<section class='Section--faq'>
                 <h1>Frequently Asked Questions</h1>
                 <div class='FAQ'>
+                    <div class='FAQ__question' name='installKR'>
+                        <div class='FAQ__question__question'>
+							What are other ways to install kr on my workstation?
+                        </div>
+                        <div class='FAQ__question__answer'>
+							npm install -g krd <br/>
+							curl https://krypt.co/kr | sh
+                        </div>
+                    </div>
                     <div class='FAQ__question' name='homeFolder'>
                         <div class='FAQ__question__question'>
 							I keep my private key in ~/.ssh, why should I use Kryptonite?
