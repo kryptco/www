@@ -45,7 +45,7 @@ var initFn = function initFn() {
 };
 
 function formSuccess() {
-	$("#betaForm").html("<p><strong>Thanks for signing up! Look out for an invite in the next few days.</strong></p>");
+	$("#betaForm").html("<p><strong>Thanks for signing up! Look out for an invite shortly.</strong></p>");
 }
 
 function formError() {}
