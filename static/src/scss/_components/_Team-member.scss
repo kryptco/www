@@ -24,6 +24,10 @@ $_photo-right-margin: 1em;
 
         @include transition(color 0.3s ease-in-out);
         color: $c-gray-dark;
+
+        &:visited {
+            color: $c-gray-dark;
+        }
         &:hover {
             color: $c-green-accent;
         }
