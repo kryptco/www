@@ -1,0 +1,52 @@
+$_photo-size: 5em;
+$_photo-right-margin: 1em;
+
+.Team-member {
+    padding: 0 1em;
+
+    &__photo {
+        background: $c-light-gray;
+        width: $_photo-size;
+        height: $_photo-size;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        float: left;
+        margin-right: $_photo-right-margin;
+        border-radius: 100em;
+        border: 0.3em solid #eee;
+    }
+
+    &__name {
+        font-size: 1.2em;
+        margin-bottom: 0.2em;
+        font-weight: bold;
+    }
+
+    &__bio {
+        font-family: $f-body;
+        padding-left: $_photo-size + $_photo-right-margin;
+    }
+
+    &--advisor {
+        padding: 0 1em;
+
+        @include display(flex);
+        @include align-items(center);
+        @include flex-direction(column);
+
+        text-align: center;
+
+        .Team-member__photo {
+            float: none;
+            margin-right: 0;
+            margin-bottom: 0.7em;
+        }
+        .Team-member__name {
+            margin-bottom: 0;
+        }
+        .Team-member__bio {
+            padding-left: 0;
+        }
+    }
+}

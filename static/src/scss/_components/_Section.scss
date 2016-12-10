@@ -233,3 +233,42 @@
         max-width: 40em;
     }
 }
+
+.Section--about-us {
+    h1 {
+        text-align: center;
+        margin-bottom: 1em;
+    }
+}
+
+.Section--team {
+    h2 {
+        text-align: center;
+        margin-bottom: 1em;
+        opacity: 0.4;
+    }
+    .Section--team__team {
+        .Team-member + .Team-member {
+            margin-top: 3em;
+        }
+    }
+}
+
+.Section--advisors {
+    @extend .Section--team !optional;
+
+    .Section--advisors__advisors {
+        @include display(flex);
+        @include flex-wrap(wrap);
+        @include justify-content(space-around);
+
+        & > * {
+            @include flex(1 1 33%);
+            margin: 1em 0;
+
+            @media (max-width: 600px) {
+                @include flex(1 1 50%);
+            }
+        }
+    }
+}
