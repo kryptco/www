@@ -110,6 +110,19 @@
 							First make sure you remove the old SSH public key from any of your accounts. Once you have Kryptonite installed on your new phone, add the new public key to the accounts you were using SSH with before.
                         </div>
                     </div>
+                    <div class='FAQ__question' name='config'>
+                        <div class='FAQ__question__question'>
+							How does Kryptonite affect my SSH client?
+                        </div>
+                        <div class='FAQ__question__answer'>
+							Upon install, Kryptonite adds two lines to your SSH
+							configuration (at ~/.ssh/config) that cause SSH to
+							offer your Kryptonite key. Your other keys will
+							still be presented and your Kryptonite key will
+							only be used if it has access to the service you
+							are connecting to.
+                        </div>
+                    </div>
                     <div class='FAQ__question' name='communicate'>
                         <div class='FAQ__question__question'>
 							How does my phone communicate with my computer securely?
