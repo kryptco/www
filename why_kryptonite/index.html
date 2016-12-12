@@ -42,7 +42,7 @@
 </head>
 
 <body>
-    <div id="page-wrapper" class='Page-about'>
+    <div id="page-wrapper" class='Page-why_kryptonite'>
 		<header id='page-header' class='Page-header'>
 			<div class='Page-header__left-block'>
 				<a href='/'><img src='/static/dist/img/kryptonite-logo-green-on-white.svg' /></a>
@@ -59,10 +59,23 @@
 		</header>
         <main>
             <section class='Section--why-kryptonite'>
-				<h1>Why Kryptonite?</h1>
+				<!--<h1>Why?</h1>-->
 				<p>
-				Current solutions for SSH authentication are both <em>insecure</em> and <em>inconvenient</em>.
+				<strong class="kr">Kryptonite</strong> combines the secure key storage of
+				a USB smart card with a familiar mobile phone interface. The
+				Kryptonite app performs SSH signatures without revealing the
+				private key to a paired computer. A Kryptonite SSH key can be
+				used without modifying any servers, allowing users to secure
+				their GitHub, AWS, and Google Cloud SSH authentication without
+				any changes to their infrastructure. Communication with
+				Kryptonite occurs over encrypted push notifications and
+				Bluetooth, ensuring high availability and low latency.
 				</p>
+
+				<h4>
+				Other solutions for SSH authentication are both
+				<em>insecure</em> and <em>inconvenient</em>.
+				</h4>
 
 				<p>
 				<strong>Password-based authentication</strong> transmits the password directly to the server. It
@@ -103,16 +116,6 @@
 				workstation itself, which may be compromised. When the user approves a
 				signature, the only information conveyed to them is a blinking light, meaning
 				they have no idea what is actually being signed.
-				</p>
-
-				<p>
-				<strong>Kryptonite</strong> combines the secure key storage of a smart card with a familiar
-				mobile phone interface. The Kryptonite app performs SSH signatures without
-				revealing the private key to a paired computer. A Kryptonite SSH key can be
-				used without modifying any servers, allowing users to secure their GitHub, AWS,
-				and Google Cloud SSH authentication without any changes to their
-				infrastructure. Communication with Kryptonite occurs over encrypted push
-				notifications and Bluetooth, ensuring high availability and low latency.
 				</p>
 			</section>
 			<section class='Section--contact-us'>
