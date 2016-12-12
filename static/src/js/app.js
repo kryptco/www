@@ -48,14 +48,14 @@ var initFn = function() {
 };
 
 function formSuccess() {
-	$("#betaForm").html("<p><strong>Thanks for signing up! Look out for an invite shortly.</strong></p>");
+	$("#signupForm").html("<p><strong>Thanks for signing up! Look out for an invite shortly.</strong></p>");
 }
 
 function formError() {
 
 }
 
-function betaFormSubmit() {
+function signupFormSubmit() {
 	// Add the iframe with a unique name
 	var iframe = document.createElement("iframe");
 	var uniqueString = String(Math.random());
@@ -73,7 +73,7 @@ function betaFormSubmit() {
 	var input = document.createElement("input");
 	input.type = "hidden";
 	input.name = "entry.1643900225";
-	input.value = $("#betaFormEmail").val();
+	input.value = $("#signupFormEmail").val();
 	form.appendChild(input);
 
 	document.body.appendChild(form);
@@ -87,14 +87,14 @@ $(document).ready(function() {
         $(this).toggleClass('open');
         $(this).find('.FAQ__question__answer').slideToggle(500, 'easeInOutQuad');
     });
-	$("#betaFormSubmit").click(betaFormSubmit);
+	$("#signupFormSubmit").click(signupFormSubmit);
 	$('#phoneGIF').attr('src', "https://s3.amazonaws.com/kryptco-assets/krypt-gif.gif")
 	$("#phoneGIF").load(initFn);
 	setTimeout(function() {
 		initFn();
 	}, 6000);
-	$('#betaFormEmail').bind("enterKey",betaFormSubmit);
-	$('#betaFormEmail').keyup(function(e){
+	$('#signupFormEmail').bind("enterKey",signupFormSubmit);
+	$('#signupFormEmail').keyup(function(e){
 		if(e.keyCode == 13)
 		{
 			$(this).trigger("enterKey");
