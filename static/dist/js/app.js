@@ -17,6 +17,7 @@ var initFn = function initFn() {
 	}
 	started = true;
 	$('#phoneGIF').attr('src', "https://s3.amazonaws.com/kryptco-assets/krypt-gif.gif");
+	$('#phoneGIFFirstFrame').detach();
 
 	var actions = [{
 		lines: [['$', 'ssh root@server', true], ['root:~#', '', true, 1000]],

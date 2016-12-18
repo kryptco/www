@@ -10,7 +10,8 @@ var initFn = function() {
 		return;
 	}
 	started = true;
-	$('#phoneGIF').attr('src', "https://s3.amazonaws.com/kryptco-assets/krypt-gif.gif")
+	$('#phoneGIF').attr('src', "https://s3.amazonaws.com/kryptco-assets/krypt-gif.gif");
+	$('#phoneGIFFirstFrame').detach();
 
 
     let actions = [
