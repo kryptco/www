@@ -101,6 +101,20 @@ $(document).ready(function() {
 			$(this).trigger("enterKey");
 		}
 	});
+	$('.Page-header__menu-button').on('click', function () {
+		let $p = $(this).parent();
+		if ($p.hasClass('open')) {
+			$('html, body').css('overflow', 'initial');
+		} else {
+			$('html, body').css('overflow', 'hidden');
+		}
+		$p.toggleClass('open');
+	});
+	$('.Page-header__overlay').on('click', function () {
+		let $p = $(this).parent();
+		$('html, body').css('overflow', 'initial');
+		$p.toggleClass('open');
+	});
 });
 
 function scrollToGetStartedSection () {
@@ -110,4 +124,3 @@ function scrollToGetStartedSection () {
         scrollTop: offset
     }, 1000, 'easeInOutQuart');
 }
-

@@ -1,0 +1,47 @@
+$button-color: $c-green-accent;
+$size: 1em;
+$height: $size/10;
+
+.Hamburger-button {
+    font-size: 1.5em;
+    cursor: pointer;
+    position: relative;
+
+
+
+    @include size($size $size);
+
+    &:before, &:after {
+        @include size($size $height);
+        @include transform-origin(center);
+        @include transition(all 0.4s $t-std-delay $t-std-easing);
+
+        content: "";
+        position: absolute;
+        background: $button-color;
+    }
+    &:after {
+        @include transform(translateY($size/5));
+    }
+    &:before {
+        @include transform(translateY($size*3/5));
+    }
+
+    &:hover:not(.opened) {
+        // &:after {
+        //     @include transform(translateX(-$size/8) translateY($size/5));
+        // }
+        // &:before {
+        //     @include transform(translateX($size/8) translateY($size*3/5));
+        // }
+    }
+}
+
+.open .Hamburger-button {
+    &:after {
+        @include transform(translateY($size*2/5) rotate(-135deg));
+    }
+    &:before {
+        @include transform(translateY($size*2/5) rotate(135deg));
+    }
+}

@@ -95,6 +95,20 @@ $(document).ready(function () {
 			$(this).trigger("enterKey");
 		}
 	});
+	$('.Page-header__menu-button').on('click', function () {
+		var $p = $(this).parent();
+		if ($p.hasClass('open')) {
+			$('html, body').css('overflow', 'initial');
+		} else {
+			$('html, body').css('overflow', 'hidden');
+		}
+		$p.toggleClass('open');
+	});
+	$('.Page-header__overlay').on('click', function () {
+		var $p = $(this).parent();
+		$('html, body').css('overflow', 'initial');
+		$p.toggleClass('open');
+	});
 });
 
 function scrollToGetStartedSection() {

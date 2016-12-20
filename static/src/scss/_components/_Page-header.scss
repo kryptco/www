@@ -19,6 +19,9 @@
         @include align-items(center);
 
         .Page-header__links {
+            position: relative;
+            z-index: 13;
+
             &__link {
                 color: $c-gray-dark;
 
@@ -30,16 +33,86 @@
             }
         }
 
+        .Page-header__menu-button {
+            display: none;
+            position: relative;
+            z-index: 13;
+        }
+
         .Page-header__download-app-button {
             margin-left: 2em;
         }
 
+        .Page-header__overlay {
+            @include position(absolute, 0 null null 0);
+            @include size(100vw 100vh);
+            z-index: 11;
+            opacity: 0;
+            pointer-events: none;
+            background: rgba(black, 0.7);
+            @include transition(0.3s linear);
+        }
+        $s-menu-width: 15em;
+
+        &:after, &:before {
+            content: '';
+            @include position(absolute, 0 0 null null);
+            @include size($s-menu-width 100vh);
+            z-index: 12;
+            opacity: 1;
+            background: #efefef;
+            @include transform(translateX($s-menu-width));
+            @include transition(all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1));
+        }
+        &:after {
+            background: $c-white;
+            right: -0.5em;
+        }
+        &:before {
+            opacity: 0;
+            @include transition(all 0.38s cubic-bezier(0.645, 0.045, 0.355, 1));
+        }
+
         @media (max-width: 50em) {
-            display: none;
+            .Page-header__menu-button {
+                display: block;
+            }
+            .Page-header__links {
+                opacity: 0;
+                font-size: 1.2em;
+                @include display(flex);
+                @include flex-direction(column);
+                @include position(absolute, 5em 1em null null);
+                text-align: right;
+
+                @include transform(translateX($s-menu-width));
+                @include transition(all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1));
+
+                &__link {
+                    margin: 1em 0;
+                }
+            }
+
+            &.open {
+                .Page-header__overlay {
+                    display: block;
+                    opacity: 1;
+                    pointer-events: all;
+                }
+                &:after, &:before {
+                    display: initial;
+                    opacity: 1;
+                    @include transform(translateX(0));
+                }
+                .Page-header__links {
+                    opacity: 1;
+                    @include transform(translateX(0));
+                }
+            }
         }
     }
 
     @media (max-width: 50em) {
-        @include justify-content(center);
+        // @include justify-content(center);
     }
 }
