@@ -3,7 +3,7 @@
 VERSION=1.0.14
 
 install_darwin() {
-	command -v brew &>/dev/null && test "$1" != "no-brew"
+	command -v brew &>/dev/null && test "$1" = "brew"
 	if [ "$?" != "0" ]; then
 		say Installing Kryptonite...
 		install_darwin_manual
@@ -15,7 +15,7 @@ install_darwin() {
 			ensure brew update -v
 			ensure brew upgrade kryptco/tap/kr && brew link --overwrite kryptco/tap/kr
 		else
-			say "Installing Kryptonite with Homebrew. If Homebrew is too slow or fails, try \"curl https://krypt.co/kr | bash -s no-brew\""
+			say "Installing Kryptonite with Homebrew. If Homebrew is too slow or fails, try \"curl https://krypt.co/kr | sh\""
 			ensure brew update -v
 			ensure brew install kryptco/tap/kr && brew link --overwrite kryptco/tap/kr
 			if [ "$?" != "0"  ]; then
@@ -84,10 +84,10 @@ install_darwin_manual() {
 	ensure mkdir -p ~/.ssh
 	ensure touch ~/.ssh/config
 	#	remove old ssh_configs
-	perl -0777 -pi -e 's/\n# Added by Kryptonite\nHost \*\n\tPKCS11Provider \/usr\/local\/lib\/kr-pkcs11.so\n\tProxyCommand \`find \/usr\/local\/bin\/krssh 2\>\/dev\/null \|\| which nc\` %h %p\n\tIdentityFile kryptonite//g' ~/.ssh/config
-	perl -0777 -pi -e 's/\n# Added by Kryptonite\nHost \*\n\tPKCS11Provider \/usr\/local\/lib\/kr-pkcs11.so//g' ~/.ssh/config
+	perl -0777 -p -i.bak1 -e 's/\n# Added by Kryptonite\nHost \*\n\tPKCS11Provider \/usr\/local\/lib\/kr-pkcs11.so\n\tProxyCommand \`find \/usr\/local\/bin\/krssh 2\>\/dev\/null \|\| which nc\` %h %p\n\tIdentityFile ~\/.ssh\/id_kryptonite\n\tIdentityFile ~\/.ssh\/id_ed25519\n\tIdentityFile ~\/.ssh\/id_rsa\n\tIdentityFile ~\/.ssh\/id_ecdsa\n\tIdentityFile ~\/.ssh\/id_dsa//g' ~/.ssh/config
+	perl -0777 -p -i.bak2 -e 's/\n# Added by Kryptonite\nHost \*\n\tPKCS11Provider \/usr\/local\/lib\/kr-pkcs11.so//g' ~/.ssh/config
 
-	perl -0777 -ne '/\n# Added by Kryptonite\nHost \*\n\tPKCS11Provider \/usr\/local\/lib\/kr-pkcs11.so\n\tProxyCommand \`find \/usr\/local\/bin\/krssh 2\>\/dev\/null \|\| which nc\` %h %p\n\tIdentityFile kryptonite/ || exit(1)' ~/.ssh/config || printf "\n# Added by Kryptonite\nHost *\n\tPKCS11Provider /usr/local/lib/kr-pkcs11.so\n\tProxyCommand \`find /usr/local/bin/krssh 2>/dev/null || which nc\` %%h %%p\n\tIdentityFile kryptonite" >> ~/.ssh/config
+	perl -0777 -ne '/\n# Added by Kryptonite\nHost \*\n\tPKCS11Provider \/usr\/local\/lib\/kr-pkcs11.so\n\tProxyCommand \`find \/usr\/local\/bin\/krssh 2\>\/dev\/null \|\| which nc\` %h %p\n\tIdentityFile kryptonite/ || exit(1)' ~/.ssh/config || printf "\n# Added by Kryptonite\nHost *\n\tPKCS11Provider /usr/local/lib/kr-pkcs11.so\n\tProxyCommand \`find /usr/local/bin/krssh 2>/dev/null || which nc\` %%h %%p\n\tIdentityFile ~/.ssh/id_kryptonite\n\tIdentityFile ~/.ssh/id_ed25519\n\tIdentityFile ~/.ssh/id_rsa\n\tIdentityFile ~/.ssh/id_ecdsa\n\tIdentityFile ~/.ssh/id_dsa" >> ~/.ssh/config
 
 	say Kryptonite installed successfully. Type \"kr pair\" to pair with the Kryptonite mobile app.
 	kr restart &>/dev/null
