@@ -52,7 +52,7 @@
 
         <h2>Private Key Storage</h2>
         <p>
-            Kryptonite generates a 4096-bit RSA key pair using the Apple iOS Security framework and stores it in the iOS Keychain with accessibility level “kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly”. To learn more about the security of Apple cryptography libaries and the Apple iOS Keychain see: https://www.apple.com/business/docs/iOS_Security_Guide.pdf.
+            Kryptonite generates a 4096-bit RSA key pair using the Apple iOS Security framework or optionally an Ed25519 key pair using <a href="https://download.libsodium.org/doc/">libsodium</a>. Kryptonite stores the private key in the iOS Keychain with accessibility level “kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly”. To learn more about the security of Apple cryptography libaries and the Apple iOS Keychain see: https://www.apple.com/business/docs/iOS_Security_Guide.pdf.
         </p>
 
         <h1>What information do we collect?</h1>
@@ -76,7 +76,9 @@
             We do <b>NOT</b> collect any properties of your SSH communication. These are examples of things we <b>DO NOT</b> collect:
             <ul>
                 <li>Private key</li>
-                <li>SSH commands</li>
+                <li>SSH remote host names</li>
+				<li>SSH remote host public keys</li>
+				<li>SSH session ids</li>
                 <li>SSH User names</li>
                 <li>Computer names</li>
             </ul>
