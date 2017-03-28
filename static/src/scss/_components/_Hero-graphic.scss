@@ -9,32 +9,6 @@ $del: 0.1s;
     @include justify-content(center);
     overflow: hidden;
 
-    &:before {
-        content: '';
-        background: $c-gray-light;
-        @include size(102% 0.4em);
-        border-radius: 100em;
-        @include position(absolute, 100% null null -1%);
-        margin-top: -0.4em;
-        z-index: 10;
-
-        @include animation(loadingLine $dur cubic-bezier(0.165, 0.84, 0.44, 1));
-        @include animation-fill-mode(both);
-        @include keyframes(loadingLine) {
-            0% {
-                opacity: 0;
-                @include transform(scale(0, 1));
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 1;
-                @include transform(scale(1, 1));
-            }
-        }
-    }
-
     &__terminal {
         color: $c-green-accent;
         font-family: $f-terminal;

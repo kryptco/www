@@ -21,7 +21,7 @@
     }
 
     &__hero-graphic {
-        margin-top: 4em;
+        margin-top: 2em;
         width: 100%;
         position: relative;
         max-width: 42em;
@@ -32,8 +32,6 @@
     @include display(flex);
     @include flex-direction(column);
     @include align-items(center);
-
-    padding: 4em 0;
 
     h2 {
         max-width: 14em;
