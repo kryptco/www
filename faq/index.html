@@ -52,12 +52,12 @@
                 <div class='Page-header__menu-button Hamburger-button'></div>
 				<div class='Page-header__links'>
 					<a href="https://appsto.re/us/weWofb.i" target="blank"><img src="/static/dist/img/apple_app_store_badge.svg" style="vertical-align:middle;"></img></a>
+					<a href='https://play.google.com/store/apps/details?id=co.krypt.kryptonite&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="blank"><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' style="height: 60px; vertical-align: middle; margin-right: -10px;"/></a>
 					<a href='/why_kryptonite/' class='Page-header__links__link'>Why Kryptonite?</a>
 					<a href='/faq/' class='Page-header__links__link'>FAQ</a>
 					<a href='/about/' class='Page-header__links__link'>About</a>
 					<a href='//medium.com/@kryptco' class='Page-header__links__link'>Blog</a>
 				</div>
-				<!--<div class='Page-header__download-app-button Download-app-button--apple'>Download iOS App</div>-->
 			</div>
 		</header>
 
@@ -67,10 +67,9 @@
                 <div class='FAQ'>
                     <div class='FAQ__question' name='installKR'>
                         <div class='FAQ__question__question'>
-							What are other ways to install kr on my workstation?
+							How do I install <code>kr</code> on my computer?
                         </div>
                         <div class='FAQ__question__answer'>
-							<code>npm install -g krd</code> <br/>
 							<code>curl https://krypt.co/kr | sh</code>
                         </div>
                     </div>
@@ -98,6 +97,19 @@
 							No, the SSH private key is generated on the mobile device and never leaves.
                         </div>
                     </div>
+                    <div class='FAQ__question' name='privateKeyStorage'>
+                        <div class='FAQ__question__question'>
+							How is the SSH private key stored on my phone?
+                        </div>
+                        <div class='FAQ__question__answer'>
+							<p>
+							On iOS, Kryptonite generates a 4096-bit RSA key pair using the Apple iOS Security framework or optionally an Ed25519 key pair using <a href="https://download.libsodium.org/doc/">libsodium</a>. Kryptonite stores the private key in the iOS Keychain with accessibility level “kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly”. To learn more about the security of Apple cryptography libaries and the Apple iOS Keychain see: <a href="https://www.apple.com/business/docs/iOS_Security_Guide.pdf">https://www.apple.com/business/docs/iOS_Security_Guide.pdf</a>.
+							</p>
+							<p>
+							On Android, Kryptonite generates a 3072-bit RSA key pair (because of the long secure hardware key generation time). The private key is stored in secure hardware called the <a href="https://developer.android.com/training/articles/keystore.html">Android Keystore</a> and cannot be extracted, even by Kryptonite. The Android Keystore performs private key operations as a black box.
+							</p>
+                        </div>
+                    </div>
                     <div class='FAQ__question' name='keyOnYourPhone'>
                         <div class='FAQ__question__question'>
 							If the SSH private key never leaves my phone, how does it work?
@@ -119,7 +131,7 @@
 							How does Kryptonite affect my SSH client?
                         </div>
                         <div class='FAQ__question__answer'>
-							Upon install, Kryptonite adds two lines to your SSH
+							Upon install, Kryptonite adds a few lines to your SSH
 							configuration (at ~/.ssh/config) that cause SSH to
 							offer your Kryptonite key. Your other keys will
 							still be presented and your Kryptonite key will
@@ -132,7 +144,7 @@
 							How does my phone communicate with my computer securely?
                         </div>
                         <div class='FAQ__question__answer'>
-							Your phone generates a session key and encrypts it to your workstation upon pairing. All communication is encrypted and authenticated using this session key.
+							Your phone generates a session key pair and encrypts the public key to your workstation upon pairing. All communication is encrypted and authenticated using session key pairs.
                         </div>
                     </div>
                     <div class='FAQ__question' name='backup'>

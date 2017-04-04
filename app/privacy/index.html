@@ -47,20 +47,23 @@
 
         <h1>What are Kryptonite and krd?</h1>
         <p>
-            Kryptonite is an iOS application that generates and stores a key pair for use with SSH (Secure Shell) and provides a mechanism to delegate access to the private key to computers running krd. The private key never leaves Kryptonite. Instead, through a pairing procedure, Kryptonite creates a channel for krd  to send “signature requests” whereby upon a valid request, Kryptonite cryptographically signs the requested data with the private key and only sends the resulting signature back to krd. This communication channel is encrypted and signed with a session key established during the pairing procedure.
+            Kryptonite is an iOS and Android application that generates and stores a key pair for use with SSH (Secure Shell) and provides a mechanism to delegate access to the private key to computers running krd. The private key never leaves Kryptonite. Instead, through a pairing procedure, Kryptonite creates a channel for krd  to send “signature requests” whereby upon a valid request, Kryptonite cryptographically signs the requested data with the private key and only sends the resulting signature back to krd. This communication channel is encrypted and signed with a session key established during the pairing procedure.
         </p>
 
         <h2>Private Key Storage</h2>
         <p>
-            Kryptonite generates a 4096-bit RSA key pair using the Apple iOS Security framework or optionally an Ed25519 key pair using <a href="https://download.libsodium.org/doc/">libsodium</a>. Kryptonite stores the private key in the iOS Keychain with accessibility level “kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly”. To learn more about the security of Apple cryptography libaries and the Apple iOS Keychain see: https://www.apple.com/business/docs/iOS_Security_Guide.pdf.
+            On iOS, Kryptonite generates a 4096-bit RSA key pair using the Apple iOS Security framework or optionally an Ed25519 key pair using <a href="https://download.libsodium.org/doc/">libsodium</a>. Kryptonite stores the private key in the iOS Keychain with accessibility level “kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly”. To learn more about the security of Apple cryptography libaries and the Apple iOS Keychain see: https://www.apple.com/business/docs/iOS_Security_Guide.pdf.
         </p>
+		<p>
+		On Android, Kryptonite generates a 3072-bit RSA key pair (because of the long secure hardware key generation time). The private key is stored in secure hardware called the <a href="https://developer.android.com/training/articles/keystore.html">Android Keystore</a> and cannot be extracted, even by Kryptonite. The Android Keystore performs private key operations as a black box.
+		</p>
 
         <h1>What information do we collect?</h1>
         <p>
             If analytics is enabled, we collect the following information about usage of the Kryptonite app:
             <ul>
                 <li>App version</li>
-                <li>iOS Model, Version, Carrier, ISP</li>
+                <li>iOS/Android Model, Version, Carrier, ISP</li>
                 <li>Frequency of use for each app screen</li>
                 <li>Frequency of approval requests</li>
                 <li>Type of approval request: manual or automatic</li>
@@ -87,7 +90,7 @@
 
         <h1>How do we collect information?</h1>
         <p>
-            We report all collected information, except user email addresses, to Google Analytics by sending HTTP requests to the Google Analytics Measurement Protocol detailed at https://developers.google.com/analytics/devguides/collection/protocol/v1/. This data is governed by the Google privacy policy located at https://www.google.com/policies/privacy/. We do NOT use the Google Analytics iOS SDK. Every Kryptonite app generates a 128-bit random ID to be used only for analytics. User email addresses, along with the 128-bit analytics ID, are stored in Amazon Web Services’ DynamoDB Service, governed by the AWS privacy policy located at https://aws.amazon.com/privacy/. Using the email address and analytics ID stored in DynamoDB, KryptCo is able to associate a Google Analytics session to the corresponding user’s email address.
+            We report all collected information, except user email addresses, to Google Analytics by sending HTTP requests to the Google Analytics Measurement Protocol detailed at https://developers.google.com/analytics/devguides/collection/protocol/v1/. This data is governed by the Google privacy policy located at https://www.google.com/policies/privacy/. We do NOT use the Google Analytics iOS or Android SDKs. Every Kryptonite app generates a 128-bit random ID to be used only for analytics. User email addresses, along with the 128-bit analytics ID, are stored in Amazon Web Services’ DynamoDB Service, governed by the AWS privacy policy located at https://aws.amazon.com/privacy/. Using the email address and analytics ID stored in DynamoDB, KryptCo is able to associate a Google Analytics session to the corresponding user’s email address.
         </p>
 
         <h1>Disable information collection</h1>
