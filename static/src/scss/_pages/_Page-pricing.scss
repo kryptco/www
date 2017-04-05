@@ -134,7 +134,19 @@ a .price {
 	font-size: 20px;
 	font-weight: 600;
 
-	color: $c-green-accent;
+	color: black;
+	text-decoration: underline dotted $c-green-accent;
+
+	margin-bottom: 0;
+}
+
+.feature-title-2{
+	text-align: left;
+
+	font-size: 20px;
+	font-weight: 600;
+
+	color: black;
 	text-decoration: underline dotted $c-green-accent;
 
 	margin-bottom: 0;
