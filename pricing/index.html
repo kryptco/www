@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Kryptonite - The new way to protect your private key.</title>
+    <title>Pricing | Kryptonite</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -64,63 +64,152 @@ ga('send', 'pageview');
 
 		<main>
 			<section class='Section--pricing-grid'>
-				<h2>Pricing</h2>
+				<h1><b>Pricing</b></h1>
+                <br />
 				<div class='Section--pricing-grid__points'>
 					<div class='Section--pricing-grid__points__point Point'>
 						<center>
 							<img src='/static/dist/img/icons/points/keyOnYourPhone.svg' />
 						</center>
-						<h2>Core</h2>
-						<em>Protect your SSH private key</em>
-						<p>
-						Export your public key to GitHub, DigitalOcean, AWS, Bitbucket, etc.
-						</p>
-						<p>
-						Export your own audit logs
-						</p>
-						<p>
-						Pair with unlimited computers
-						</p>
-						<p>
-						Email Support
-						</p>
+                        <hr class="option-line"/>
+                        <h2 class="price">Free</h2>
+                        <p class="price-detail">Free as in $0. Free forever.</p>
+                        <p>&nbsp;</p>
+
+                        <hr class="option-line"/>
+						<p class="option-name">Core</p>
+						<p class="option-detail">Protect your SSH private key</p>
+
+
+                        <ul class="option-feature-list">
+                            <li>
+                                <p class="feature-title">
+                                    Kryptonite app
+                                </p>
+                                <p class="feature-description">
+                                    A secure, convenient new home for you SSH private key on your phone.
+                                </p>
+                            </li>
+                            <li>
+                                <p class="feature-title">
+                                    Easy Public Key Export
+                                </p>
+                                <p class="feature-description">
+                                    Easily upload your public key to services like: GitHub, DigitalOcean, AWS, Bitbucket, and more.
+                                </p>
+                            </li>
+                            <li>
+                                <p class="feature-title">
+                                    Audit Logging
+                                </p>
+                                <p class="feature-description">
+                                    Manually export your audit logs wherever you'd like.
+                                </p>
+                            </li>
+                            <li>
+                                <p class="feature-title">
+                                    Unlimited Pairings
+                                </p>
+                                <p class="feature-description">
+                                    Pair with Kryptonite on as many computers as you'd like.
+                                </p>
+                            </li>
+                            <li>
+                                <p class="feature-title">
+                                    Email Support
+                                </p>
+                                <p class="feature-description">
+                                    Need help? Email us at <a href="mailto:support@krypt.co">support@krypt.co</a> and we'll get back to you as soon as we can.
+                                </p>
+                            </li>
+						<!-- <p>&nbsp;</p>
 						<p>&nbsp;</p>
 						<p>&nbsp;</p>
-						<p>&nbsp;</p>
-						<p>&nbsp;</p>
-						<h3>$0, Free Forever</h3>
+						<p>&nbsp;</p> -->
+
 					</div>
 					<div class='Section--pricing-grid__points__point Point'>
 						<center>
 							<img src='/static/dist/img/icons/points/shareKey.svg' />
 						</center>
-						<h2>Command</h2>
-						<em>Control your team's access</em>
-						<p>
-						All the features of <strong>Kryptonite Core</strong>
-						</p>
-						<p>
-						Sync <code>known_hosts</code> files with your team
-						</p>
-						<p>
-						Two-Person Rule (PCI Dual Control)
-						</p>
-						<p>
-						LDAP/ActiveDirectory Integration
-						</p>
-						<p>
-						Public Key Access Dashboard 
-						</p>
-						<p>
-						Automatic Audit Logging Aggregation
-						</p>
-						<p>
-						Multiple Kryptonite Private Keys
-						</p>
-						<p>
-						Email, Chat, Phone support
-						</p>
-						<a href='mailto:hello@krypt.co'><h3>Contact Us</h3></a>
+                        <hr class="option-line"/>
+                        <a href='mailto:hello@krypt.co'><h2 class="price">Contact</h2></a>
+                        <p class="price-detail">We'd love to learn what your team needs. Get in touch at <a href="mailto:hello@krypt.co?subject='Kryptonite%20Command'">hello@krypt.co</a>and we'll help you get started.<p>
+
+                        <hr class="option-line"/>
+
+                        <p class="option-name">Command</p>
+
+						<p class="option-detail">Control your team's access</p>
+
+
+                        <ul class="option-feature-list">
+                            <li>
+                                <p class="feature-title">
+                                    Kryptonite Core
+                                </p>
+                                <p class="feature-description">
+                                    All the features of <strong>Kryptonite Core</strong>.
+                                </p>
+                            </li>
+                            <li>
+                                <p class="feature-title">
+                                    Audit Logging
+                                </p>
+                                <p class="feature-description">
+                                    Automatically export and aggregrate your team's SSH access logs to an S3 bucket or logging service.
+                                </p>
+                            </li>
+                            <li>
+                                <p class="feature-title">
+                                    Host Verification
+                                </p>
+                                <p class="feature-description">
+                                    Prevent blindly trusting SSH servers on first use.
+                                    Distribute <code>known_hosts</code> files to your entire team automatically.
+                                </p>
+                            </li>
+
+                            <li>
+                                <p class="feature-title">
+                                    Two-Person Rule
+                                </p>
+                                <p class="feature-description">
+                                    Protect production servers and code repositories by requiring 2-out-of-3 team members to approve deployments.
+                                    Vital resources should not be accessible by any single team member.
+                                    Also known as <code>PCI Dual Control</code>.
+                                </p>
+                            </li>
+
+                            <li>
+                                <p class="feature-title">
+                                    LDAP/ActiveDirectory
+                                </p>
+                                <p class="feature-description">
+                                    An LDAP/ActiveDirectory Integration so your team can store their SSH private key with Kryptonite without modifying your authorization infrastructure.
+                                </p>
+                            </li>
+
+                            <li>
+                                <p class="feature-title">
+                                    Public Key Dashboard
+                                </p>
+                                <p class="feature-description">
+                                    Team members Kryptonite public key's automatically uploaded to your internal dashboard. Integrates with AWS, Google Cloud, and DigitalOcean to automatically grant/revoke access to cloud instances. Your one place for all SSH access control.
+                                </p>
+                            </li>
+                            <li>
+                                <p class="feature-title">
+                                    Email, Chat, &amp; Phone
+                                </p>
+                                <p class="feature-description">
+                                    Need help? We'll provide support by phone, chat, or email. Contact us <a href="mailto:hello@krypt.co">hello@krypt.co</a> to get started.
+                                </p>
+                            </li>
+
+                        </ul>
+
+
 					</div>
 				</div>
 			</section>
