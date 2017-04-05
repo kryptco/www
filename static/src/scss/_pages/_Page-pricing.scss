@@ -1,0 +1,61 @@
+.Section--pricing-grid {
+	margin-top: 2em;
+    @include display(flex);
+    @include flex-direction(column);
+    @include align-items(center);
+
+    h1 {
+        max-width: 14em;
+        text-align: center;
+		font-size: 2.5em;
+		font-weight: 300;
+    }
+
+    h2 {
+        max-width: 14em;
+        text-align: center;
+    }
+
+    &__points {
+        width: 100%;
+        margin: 0 auto;
+        @include display(flex);
+        @include justify-content(center);
+        @include align-items(flex-start);
+        @include flex-wrap(wrap);
+
+        &__point {
+            position: relative;
+
+
+            margin: 0 3em 0 8em;
+            max-width: 18em;
+        }
+
+        @media (max-width: 88em) {
+            @include justify-content(flex-start);
+            max-width: 58em;
+        }
+
+        @media (max-width: 60em) {
+            @include justify-content(flex-start);
+            max-width: 48em;
+
+            &__point {
+                margin: 0 3em;
+                margin-top: 5em;
+            }
+        }
+        @media (max-width: 50em) {
+            @include flex-direction(column);
+            @include align-items(center);
+            max-width: 100%;
+            @include justify-content(center);
+
+            &__point {
+                text-align: center;
+                margin: 2em 0;
+            }
+        }
+    }
+}
