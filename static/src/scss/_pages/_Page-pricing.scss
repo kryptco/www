@@ -3,6 +3,12 @@
     @include display(flex);
     @include flex-direction(column);
     @include align-items(center);
+	
+	a {
+		h3 {
+			color: $c-green-accent;
+		}
+	}
 
     h1 {
         max-width: 14em;
@@ -28,7 +34,7 @@
             position: relative;
 
 
-            margin: 0 3em 0 8em;
+            margin: 0 5.5em 0 5.5em;
             max-width: 18em;
         }
 
