@@ -100,9 +100,45 @@ gulp.task('watch', ['build', 'clean', 'styles'], function () {
 
 gulp.task('build', ['clean'], function () {
     process.env.NODE_ENV = 'production';
+	gulp.start(['fileinclude']);
     gulp.start(['fonts']);
     gulp.start(['data']);
     gulp.start(['images']);
     gulp.start(['styles']);
     gulp.start(['browserify']);
+});
+
+var fileinclude = require('gulp-file-include');
+ 
+gulp.task('fileinclude', function() {
+  gulp.src(['static/src/pricing/index.html'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('./pricing/'));
+  gulp.src(['static/src/faq/index.html'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('./faq/'));
+  gulp.src(['static/src/why_kryptonite/index.html'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('./why_kryptonite/'));
+  gulp.src(['static/src/about/index.html'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('./about/'));
+  gulp.src(['static/src/index.html'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('./'));
 });
