@@ -1,6 +1,6 @@
 #! /bin/sh
 
-VERSION=1.0.14
+VERSION=2.0.3
 
 install_darwin() {
 	command -v brew &>/dev/null && test "$1" = "brew"
@@ -52,9 +52,9 @@ install_darwin_manual() {
 
 	MAJOR_MAC_VERSION=$(sw_vers -productVersion | awk -F '.' '{print $1 "." $2}')
 	case $MAJOR_MAC_VERSION in
-		10.10) OS_NAME=yosemite; BOTTLE_HASH=cf2da43450aea8ada00f64ff96ed36e9c5b67cf81bbd60779db60f1bfa879ac3;;
-		10.11) OS_NAME=el_capitan; BOTTLE_HASH=5d532e1c3ee22fe344db4ca56e0d6fbc12c031ef5a2415554b03671b65740765;;
-		10.12) OS_NAME=sierra; BOTTLE_HASH=36372e113bd3966c728efe7a3e11448b2405f77d65afaa5d7ef8eb16d5cfd008;;
+		10.10) OS_NAME=yosemite; BOTTLE_HASH=dbcf28b9f00bd0b85d7670ad646aca0d5052bd0785e4f311211ff3bd82d061a8;;
+		10.11) OS_NAME=el_capitan; BOTTLE_HASH=aa5eba355ce043899911146b133be01a965a3e5302bd6e4e8a8b8136c49b4f7d;;
+		10.12) OS_NAME=sierra; BOTTLE_HASH=67daf0d9f68734afe0183091c6693c697865fac167afa2b303431047b2329767;;
 		*) say "Unsupported OS X version $MAJOR_MAC_VERSION. Kryptonite requires 10.10+" && exit 1 ;;
 	esac
 	say Downloading Kryptonite.
@@ -83,7 +83,11 @@ install_darwin_manual() {
 	
 	ensure mkdir -p ~/.ssh
 	ensure touch ~/.ssh/config
-	perl -0777 -ne '/\n# Added by Kryptonite\nHost \*\n\tPKCS11Provider \/usr\/local\/lib\/kr-pkcs11.so/ || exit(1)' ~/.ssh/config || printf "\n# Added by Kryptonite\nHost *\n\tPKCS11Provider /usr/local/lib/kr-pkcs11.so" >> ~/.ssh/config
+	#	remove old ssh_configs
+	perl -0777 -p -i.bak1 -e 's/\n# Added by Kryptonite\nHost \*\n\tPKCS11Provider \/usr\/local\/lib\/kr-pkcs11.so\n\tProxyCommand \`find \/usr\/local\/bin\/krssh 2\>\/dev\/null \|\| which nc\` %h %p\n\tIdentityFile ~\/.ssh\/id_kryptonite\n\tIdentityFile ~\/.ssh\/id_ed25519\n\tIdentityFile ~\/.ssh\/id_rsa\n\tIdentityFile ~\/.ssh\/id_ecdsa\n\tIdentityFile ~\/.ssh\/id_dsa//g' ~/.ssh/config
+	perl -0777 -p -i.bak2 -e 's/\n# Added by Kryptonite\nHost \*\n\tPKCS11Provider \/usr\/local\/lib\/kr-pkcs11.so//g' ~/.ssh/config
+
+	perl -0777 -ne '/\n# Added by Kryptonite\nHost \*\n\tPKCS11Provider \/usr\/local\/lib\/kr-pkcs11.so\n\tProxyCommand \`find \/usr\/local\/bin\/krssh 2\>\/dev\/null \|\| which nc\` %h %p\n\tIdentityFile kryptonite/ || exit(1)' ~/.ssh/config || printf "\n# Added by Kryptonite\nHost *\n\tPKCS11Provider /usr/local/lib/kr-pkcs11.so\n\tProxyCommand \`find /usr/local/bin/krssh 2>/dev/null || which nc\` %%h %%p\n\tIdentityFile ~/.ssh/id_kryptonite\n\tIdentityFile ~/.ssh/id_ed25519\n\tIdentityFile ~/.ssh/id_rsa\n\tIdentityFile ~/.ssh/id_ecdsa\n\tIdentityFile ~/.ssh/id_dsa" >> ~/.ssh/config
 
 	say Kryptonite installed successfully. Type \"kr pair\" to pair with the Kryptonite mobile app.
 	kr restart &>/dev/null
@@ -103,7 +107,7 @@ install_linux() {
 	sleep 1
 	ignore sudo add-apt-repository --remove "deb http://kryptco.github.io/deb beta beta" &>/dev/null
 	sleep 1
-	ensure sudo add-apt-repository "deb http://kryptco.github.io/deb kryptco main"
+	ensure sudo add-apt-repository "deb http://kryptco.github.io/deb beta beta"
 	sleep 1
 	ensure sudo apt-get update
 	say Installing kr...
