@@ -1,9 +1,4 @@
 .aws
 node_modules/*
 .DS_Store
-pricing
-about
-faq
-why_kryptonite
-index.html
 
