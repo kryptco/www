@@ -20,7 +20,7 @@
     <meta property='og:image:height' content='600'>
 
     <meta property='twitter:card' content='summary_large_image'>
-    <meta property='twitter:title' content='Kryptonite - The new way to protect your private key.'>
+    <meta property='twitter:title' content='Why Kryptonite?'>
     <meta property='twitter:description' content='Kryptonite - The new way to protect your private key.'>
     <meta property='twitter:image' content='/static/dist/img/twitter-meta-image.png'>
 
@@ -64,65 +64,85 @@
 
         <main>
             <section class='Section--why-kryptonite'>
-				<h1>Why Kryptonite?</h1>
-				<p>
-				<strong>Kryptonite</strong> combines the secure key storage of
-				a USB smart card with a familiar mobile phone interface. The
-				Kryptonite app performs SSH signatures without revealing the
-				private key to a paired computer. A Kryptonite SSH key can be
-				used without modifying any servers, allowing users to secure
-				their GitHub, AWS, and Google Cloud SSH authentication without
-				any changes to their infrastructure. Communication with
-				Kryptonite occurs over encrypted push notifications and
-				Bluetooth, ensuring high availability and low latency.
-				</p>
+                <h1>Why Kryptonite?</h1>
+
+                <p class="solution-title kr">
+                    Kryptonite
+                </p>
+                <p class="solution-description kr">
+                    Combine the secure key storage of
+                    a USB smart card with a familiar mobile phone interface. The
+                    Kryptonite app performs SSH signatures without revealing the
+                    private key to a paired computer. A Kryptonite SSH key can be
+                    used without modifying any servers, allowing users to secure
+                    their GitHub, AWS, and Google Cloud SSH authentication without
+                    any changes to their infrastructure. Communication with
+                    Kryptonite occurs over encrypted and signed push notifications and
+                    Bluetooth, ensuring high availability and low latency.
+                </p>
 
 				<hr/>
 
-				<h1>
-				Other solutions: insecure &amp; inconvenient.
-				</h1>
+				<h2>
+				    What's wrong with other solutions?
+                </h2>
 
-				<p>
-				<strong>Password-based authentication</strong> transmits the password directly to the server. It
-				is well known that users reuse passwords or small variations on passwords for
-				different services, allowing a compromise of one to cause the compromise of
-				many. Requiring users to remember highly random passwords for every different
-				service is unreasonable, and many passwords are brute-forceable. Finally,
-				passwords must be typed every time code is pushed or a server is logged into,
-				resulting in an annoyance for engineers
-				</p>
+                <p class="solution-title">
+                    Password-based authentication
+                </p>
+                <p class="solution-description">
+                    It is well known that users reuse passwords or small variations on passwords for
+                    different services, allowing a compromise of one to cause the compromise of
+                    many. Requiring users to remember highly random passwords for every different
+                    service is unreasonable, and many passwords are brute-forceable. Finally, passswords are
+                    annoying to type every time code is pushed or you login to a server.
+                </p>
 
-				<p>
-				<strong>Public key authentication</strong> requires storage of a private key, and generally this
-				key is stored in plaintext in users’ home directories (~/.ssh). Any user-level
-				process or malware can read, use, and exfiltrate the private key without the
-				knowledge of the user. A passphrase-encrypted key is decrypted upon entry of
-				the password and given to a running SSH agent. A user-level process or malware
-				can use a decrypted key stored in an agent without knowledge of the user.
-				Furthermore, the same malware can pose as an SSH agent and direct SSH to use it
-				using the SSH_AUTH_SOCK environment variable, receiving the key in plaintext
-				the first time it is used.
-				</p>
+                <p class="solution-title">
+                    Public-key authentication
+                </p>
+                <p class="solution-description">
+                    Public key authentication requires storage of a private key, and generally this
+                    key is stored in plaintext in users’ home directories (~/.ssh). Any user-level
+                    process or malware can read, use, and exfiltrate the private key without the
+                    knowledge of the user. A passphrase-encrypted key is decrypted upon entry of
+                    the password and given to a running SSH agent. A user-level process or malware
+                    can use a decrypted key stored in an agent without knowledge of the user.
+                    Furthermore, the same malware can pose as an SSH agent and direct SSH to use it
+                    using the <code>SSH_AUTH_SOCK</code> environment variable, receiving the key in plaintext
+                    the first time it is used.
+                </p>
 
-				<p>
-				Adding <strong>two-factor authentication</strong> to either password or public key
-				authentication requires changes to every SSH server. In some cases, such as
-				third-party hosted services (GitHub, Bitbucket, etc.), integrating third-party
-				two-factor is impossible. Many solutions require users to type a 6-digit
-				passcode for every login, and others rely on a centralized server to perform
-				the two-factor verification.
-				</p>
+                <p class="solution-title">
+                    Two-factor authentication
+                </p>
+                <p class="solution-description">
+                    Adding two-factor authentication to either password or public key
+    				authentication requires changes to every SSH server. In some cases, such as
+    				third-party hosted services (GitHub, Bitbucket, etc.), integrating third-party
+    				two-factor is impossible. Many solutions require users to type a 6-digit
+    				passcode for every login, and others rely on a centralized server to perform
+    				the two-factor verification.
+                </p>
 
-				<p>
-				<strong>Smart cards</strong> allow users to generate and store SSH keys in a separate piece of
-				hardware connected via USB. While the private key cannot be extracted from the
-				device, users now have to purchase and carry around another piece of hardware
-				that takes up a USB port. Configuration of the smart card occurs on the
-				workstation itself, which may be compromised. When the user approves a
-				signature, the only information conveyed to them is a blinking light, meaning
-				they have no idea what is actually being signed.
-				</p>
+                <p class="solution-title">
+                    Smart Cards
+                </p>
+                <p class="solution-description">
+                    With a smart cards you can generate and store SSH keys in a separate piece of
+                    hardware connected via USB. While the private key might not be extractable from the
+                    device, users now have to purchase and carry around another piece of hardware
+                    that takes up a USB port. Configuration of the smart card occurs on the
+                    workstation itself, which may be compromised. When you approve a
+                    signature, the only information conveyed to you is a blinking light, meaning
+                    you don't know what you're actually signing.
+                </p>
+                <hr/>
+
+                <h3>
+                    Read more on <a href="https://blog.krypt.co">our blog</a>
+                </h3>
+
 			</section>
 			<section class='Section--contact-us'>
 				<h2>Say hello! <a href='mailto:hello@krypt.co'>hello@krypt.co</a></h2>
