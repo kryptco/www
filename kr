@@ -138,7 +138,7 @@ install_yum() {
 	need_cmd gpg
 
 	ensure gpg --recv-keys "C4A05888A1C4FA02E1566F859F2A29A569653940"
-	ensure gpg --export --armor > /tmp/kryptco.key
+	ensure gpg --export --armor C4A05888A1C4FA02E1566F859F2A29A569653940 > /tmp/kryptco.key
 	ensure sudo rpm --import /tmp/kryptco.key
 	ignore rm /tmp/kryptco.key
 	ensure sudo yum-config-manager --add-repo https://kryptco.github.io/yum
