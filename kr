@@ -142,7 +142,7 @@ install_yum() {
 	ensure sudo rpm --import /tmp/kryptco.key
 	ignore rm /tmp/kryptco.key
 	ensure sudo yum-config-manager --add-repo https://kryptco.github.io/yum
-	ensure sudo yum install kr
+	ensure sudo yum install kr -y
 }
 
 install_debian() {
