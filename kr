@@ -93,7 +93,61 @@ install_darwin_manual() {
 	kr restart &>/dev/null
 }
 
+set_os() {
+	#!/bin/bash
+	# Check for FreeBSD in the uname output
+	# If it's not FreeBSD, then we move on!
+	if [ "$(uname -s)" == 'FreeBSD' ]; then
+	  OS='freebsd'
+	# Check for a redhat-release file and see if we can
+	# tell which Red Hat variant it is
+	elif [ -f "/etc/redhat-release" ]; then
+	  RHV=$(egrep -o 'Fedora|CentOS|Red\ Hat|Red.Hat' /etc/redhat-release)
+	  case $RHV in
+	    Fedora)  OS='fedora';;
+	    CentOS)  OS='centos';;
+	   Red\ Hat)  OS='redhat';;
+	   Red.Hat)  OS='redhat';;
+	  esac
+	# Check for debian_version
+	elif [ -f "/etc/debian_version" ]; then
+	  OS='debian'
+	# Check for arch-release
+	elif [ -f "/etc/arch-release" ]; then
+	  OS='arch'
+	# Check for SuSE-release
+	elif [ -f "/etc/SuSE-release" ]; then
+	  OS='suse'
+	fi
+	# echo the result
+	echo "$OS"
+}
+
 install_linux() {
+	set_os
+	  case $OS in
+	    fedora)  install_yum;;
+	    centos)  install_yum;;
+	    redhat)  install_yum;;
+	    *) install_debian
+	  esac
+}
+
+install_yum() {
+	need_cmd yum
+	need_cmd rpm
+	need_cmd yum-config-manager
+	need_cmd gpg
+
+	ensure gpg --recv-keys "C4A05888A1C4FA02E1566F859F2A29A569653940"
+	ensure gpg --export --armor > /tmp/kryptco.key
+	ensure sudo rpm --import /tmp/kryptco.key
+	ignore rm /tmp/kryptco.key
+	ensure sudo yum-config-manager --add-repo https://kryptco.github.io/yum
+	ensure sudo yum install kr
+}
+
+install_debian() {
 	need_cmd apt-get
 	need_cmd apt-add-repository
 	need_cmd apt-key
