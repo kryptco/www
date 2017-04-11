@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 VERSION=2.0.3
 
@@ -97,7 +97,7 @@ set_os() {
 	#!/bin/bash
 	# Check for FreeBSD in the uname output
 	# If it's not FreeBSD, then we move on!
-	if [ "$(uname -s)" == 'FreeBSD' ]; then
+	if [ "$(uname -s)" = 'FreeBSD' ]; then
 	  OS='freebsd'
 	# Check for a redhat-release file and see if we can
 	# tell which Red Hat variant it is
@@ -119,8 +119,6 @@ set_os() {
 	elif [ -f "/etc/SuSE-release" ]; then
 	  OS='suse'
 	fi
-	# echo the result
-	echo "$OS"
 }
 
 install_linux() {
