@@ -131,19 +131,31 @@ install_linux() {
 	  esac
 }
 
-install_yum() {
-	need_cmd yum
-	need_cmd rpm
-	need_cmd yum-config-manager
-	need_cmd gpg
-
-	ensure gpg --recv-keys "C4A05888A1C4FA02E1566F859F2A29A569653940"
-	ensure gpg --export --armor C4A05888A1C4FA02E1566F859F2A29A569653940 > /tmp/kryptco.key
-	ensure sudo rpm --import /tmp/kryptco.key
-	ignore rm /tmp/kryptco.key
-	ensure sudo yum-config-manager --add-repo https://kryptco.github.io/yum
-	ensure sudo yum install kr -y
+install_linux() {
+        set_os
+          case $OS in
+            fedora)  install_yum "yum config-manager";;
+            centos)  need_cmd yum-config-manager && install_yum "yum-config-manager";;
+            redhat)  need_cmd yum-config-manager && install_yum "yum-config-manager";;
+            *) install_debian
+          esac
 }
+
+install_yum() {
+        export YUM_CONFIG_MANAGER=$1
+
+        need_cmd yum
+        need_cmd rpm
+        need_cmd gpg
+
+        ensure gpg --recv-keys "C4A05888A1C4FA02E1566F859F2A29A569653940"
+        ensure gpg --export --armor C4A05888A1C4FA02E1566F859F2A29A569653940 > /tmp/kryptco.key
+        ensure sudo rpm --import /tmp/kryptco.key
+        ignore rm /tmp/kryptco.key
+        ensure sudo $YUM_CONFIG_MANAGER --add-repo https://kryptco.github.io/yum
+        ensure sudo yum install kr -y
+}
+
 
 install_debian() {
 	need_cmd apt-get
