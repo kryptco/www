@@ -99,7 +99,7 @@ install_linux() {
 	need_cmd apt-key
 	need_cmd sleep
 	say Adding KryptCo signing key...
-	ensure sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 5A09AF10221D7066
+	ensure sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C4A05888A1C4FA02E1566F859F2A29A569653940
 	which kr && say Removing old version of kr...
 	ignore sudo apt-get remove kr -y &>/dev/null
 	say Adding KryptCo repository...
@@ -109,7 +109,7 @@ install_linux() {
 	sleep 1
 	ensure sudo add-apt-repository "deb http://kryptco.github.io/deb beta beta"
 	sleep 1
-	ensure sudo apt-get update
+	ignore sudo apt-get update
 	say Installing kr...
 	ensure sudo apt-get install kr -y
 }
