@@ -171,8 +171,6 @@ install_debian() {
 	which kr && say Removing old version of kr...
 	ignore sudo apt-get remove kr -y &>/dev/null
 	say Adding KryptCo repository...
-	ignore sudo add-apt-repository --remove "deb http://kryptco.github.io/deb kryptco main" &>/dev/null
-	sleep 1
 	ignore sudo add-apt-repository --remove "deb http://kryptco.github.io/deb beta beta" &>/dev/null
 	sleep 1
 	ensure sudo add-apt-repository "deb http://kryptco.github.io/deb kryptco main"
