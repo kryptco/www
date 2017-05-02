@@ -121,16 +121,6 @@ set_os() {
 }
 
 install_linux() {
-	set_os
-	  case $OS in
-	    fedora)  install_yum;;
-	    centos)  install_yum;;
-	    redhat)  install_yum;;
-	    *) install_debian
-	  esac
-}
-
-install_linux() {
         set_os
           case $OS in
             fedora)  install_yum "yum config-manager";;
