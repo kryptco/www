@@ -85,9 +85,8 @@ install_darwin_manual() {
 	ensure touch ~/.ssh/config
 	#	remove old ssh_configs
 	perl -0777 -p -i.bak1 -e 's/\n# Added by Kryptonite\nHost \*\n\tPKCS11Provider \/usr\/local\/lib\/kr-pkcs11.so\n\tProxyCommand \`find \/usr\/local\/bin\/krssh 2\>\/dev\/null \|\| which nc\` %h %p\n\tIdentityFile ~\/.ssh\/id_kryptonite\n\tIdentityFile ~\/.ssh\/id_ed25519\n\tIdentityFile ~\/.ssh\/id_rsa\n\tIdentityFile ~\/.ssh\/id_ecdsa\n\tIdentityFile ~\/.ssh\/id_dsa//g' ~/.ssh/config
-	perl -0777 -p -i.bak2 -e 's/\n# Added by Kryptonite\nHost \*\n\tPKCS11Provider \/usr\/local\/lib\/kr-pkcs11.so//g' ~/.ssh/config
 
-	perl -0777 -ne '/\n# Added by Kryptonite\nHost \*\n\tPKCS11Provider \/usr\/local\/lib\/kr-pkcs11.so\n\tProxyCommand \`find \/usr\/local\/bin\/krssh 2\>\/dev\/null \|\| which nc\` %h %p\n\tIdentityFile kryptonite/ || exit(1)' ~/.ssh/config || printf "\n# Added by Kryptonite\nHost *\n\tPKCS11Provider /usr/local/lib/kr-pkcs11.so\n\tProxyCommand \`find /usr/local/bin/krssh 2>/dev/null || which nc\` %%h %%p\n\tIdentityFile ~/.ssh/id_kryptonite\n\tIdentityFile ~/.ssh/id_ed25519\n\tIdentityFile ~/.ssh/id_rsa\n\tIdentityFile ~/.ssh/id_ecdsa\n\tIdentityFile ~/.ssh/id_dsa" >> ~/.ssh/config
+	perl -0777 -ne '/\n# Added by Kryptonite\nHost \*\n\tPKCS11Provider \/usr\/local\/lib\/kr-pkcs11.so\n\tProxyCommand \/usr\/local\/bin\/krssh %h %p\n\tIdentityFile ~\/.ssh\/id_kryptonite/ || exit(1)' ~/.ssh/config || printf "\n# Added by Kryptonite\nHost *\n\tPKCS11Provider /usr/local/lib/kr-pkcs11.so\n\tProxyCommand /usr/local/bin/krssh %%h %%p\n\tIdentityFile ~/.ssh/id_kryptonite\n\tIdentityFile ~/.ssh/id_ed25519\n\tIdentityFile ~/.ssh/id_rsa\n\tIdentityFile ~/.ssh/id_ecdsa\n\tIdentityFile ~/.ssh/id_dsa" >> ~/.ssh/config
 
 	say Kryptonite installed successfully. Type \"kr pair\" to pair with the Kryptonite mobile app.
 	kr restart &>/dev/null
