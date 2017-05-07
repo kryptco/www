@@ -169,7 +169,7 @@ install_debian() {
 	is_kali
 	if [ "$KALI" = 'yes' ]; then
 		# Kali linux add-apt-repository checks for kali-rolling template
-		grep "deb http://kryptco.github.io/deb kryptco main" "/etc/apt/sources.list" || ensure sudo printf "deb http://kryptco.github.io kryptco main" >> /etc/apt/sources.list
+		grep "deb http://kryptco.github.io/deb kryptco main" "/etc/apt/sources.list" || ensure sudo printf "deb http://kryptco.github.io/deb kryptco main" >> /etc/apt/sources.list
 	else
 		ensure sudo add-apt-repository "deb http://kryptco.github.io/deb kryptco main"
 	fi
