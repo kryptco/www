@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Installing kr</title>
+		<meta charset="utf-8" />
+		<link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway|Source+Code+Pro" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<style>
+body {
+	background-color: #fafafa;
+	font-family: 'Avenir Next';
+
+}
+
+			code {
+				font-family: 'Source Code Pro';
+				display: inline-block;
+					margin: 2px;
+			}
+
+			.code {
+				font-size: 14px;
+				background: #f0f0f0;
+				padding: 10px;
+				border-radius: 10px;
+			}
+
+			li {
+				font-family: 'Avenir Next';
+				color: rgb(65, 65, 65);
+
+			}
+
+			.title {
+				font-size: 30px;
+				font-weight: 600;
+				color: #5BC894;
+			}
+			h1 {
+				font-size: 24px;
+
+			}
+			h2 {
+				font-size: 20px;
+
+			}
+			p {
+				color: rgb(65, 65, 65);
+				font-family: 'Avenir Next';
+				font-size: 16px;
+				margin: 0px;
+			}
+		</style>
+	</head>
+	<body style="max-width: 1000px;">
+		<div class="title">
+			Installing <code>kr</code>
+		</div>
+
+		<div style="margin-top: 10px;">
+		<p>
+		<code class="code">curl https://krypt.co/kr | sh</code> is the easiest way to install <code>kr</code> on any supported machine. You can check out the <a href="https://github.com/kryptco/www/blob/master/kr">source</a> or download the script locally with <code class="code">curl https://krypt.co/kr &gt; kr</code> and inspect it. The script does the following:
+		</p>
+		</div>
+
+			<h2>macOS</h2>
+			<ul>
+				<li>Download the correct homebrew bottle from GitHub and verify its hash</li>
+				<li>Untar and install <code>kr</code>, <code>krd</code>, <code>kr-pkcs11.so</code>, and <code>krssh</code> binaries</li>
+				<li>Backup and append to your <code>~/.ssh/config</code> to point to <code>krd</code></li>
+			</ul>
+
+			<h2>debian Linux (Ubuntu, Kali)</h2>
+			<ul>
+				<li>Install necessary software for adding new repository: <code>software-properties-common</code>, <code>dirmngr</code>, <code>apt-transport-https</code></li>
+				<li>Add krypt.co's binary signing key from the Ubuntu keyserver (fingerprint <code>C4A05888A1C4FA02E1566F859F2A29A569653940</code>)</li>
+				<li>Add krypt.co's <code>apt</code> repository hosted at <code>kryptco.github.io/deb</code></li>
+				<li><code>apt-get install kr</code></li>
+			</ul>
+			<strong><em>Equivalent Commands</em></strong>, feel free to copy and paste these one at a time:
+			<div class="code">
+				<code>$ sudo apt-get install software-properties-common dirmngr apt-transport-https -y</code>
+				<br/>
+				<code>$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C4A05888A1C4FA02E1566F859F2A29A569653940</code>
+				<br/>
+				<code>$ sudo add-apt-repository "deb http://kryptco.github.io/deb kryptco main" # non-Kali Linux</code>
+				<br/>
+				<code>$ sudo printf "deb http://kryptco.github.io/deb kryptco main" &gt;&gt; /etc/apt/sources.list # Kali Linux</code>
+				<br/>
+				<code>$ sudo apt-get update</code>
+				<br/>
+				<code>$ sudo apt-get install kr -y</code>
+				<br/>
+			</div>
+
+			<h2>rpm Linux (RedHat, CentOS, Fedora)</h2>
+			<ul>
+				<li>Add krypt.co's binary signing key from the MIT keyserver (fingerprint <code>C4A05888A1C4FA02E1566F859F2A29A569653940</code>)</li>
+				<li>Add krypt.co's <code>yum</code> repository hosted at <code>kryptco.github.io/yum</code></li>
+				<li><code>yum install kr</code></li>
+			</ul>
+			<strong><em>Equivalent Commands</em></strong>, feel free to copy and paste these one at a time:
+			<div class="code">
+				<code>$ gpg --keyserver=hkp://pgp.mit.edu:80 --recv-keys "C4A05888A1C4FA02E1566F859F2A29A569653940"</code>
+				<br/>
+				<code>$ gpg --export --armor C4A05888A1C4FA02E1566F859F2A29A569653940 &gt; /tmp/kryptco.key</code>
+				<br/>
+				<code>$ sudo rpm --import /tmp/kryptco.key</code>
+				<br/>
+				<code>$ sudo yum-config-manager --add-repo https://kryptco.github.io/yum # non-fedora</code>
+				<br/>
+				<code>$ sudo yum config-manager --add-repo https://kryptco.github.io/yum # fedora</code>
+				<br/>
+				<code>$ sudo yum install kr -y</code>
+				<br/>
+			</div>
+
+		<h1>Installing from source</h1>
+		<p>
+		</p>
+
+
+		<h2>On macOS (automatically installs golang and rust)</h2>
+		<div class="code">
+			<p>
+			<code>$ brew install --HEAD kryptco/tap/kr</code>
+			</p>
+		</div>
+
+		<h2>On linux</h2>
+		<div class="code">
+			<p>
+			<a target="_blank" href="https://golang.org/doc/install">Install Go 1.7+</a>
+			<br/>
+			<a target="_blank" href="https://www.rustup.rs/">Install Rust 1.15+ and cargo</a>
+			<br/>
+			<code>$ git clone https://github.com/kryptco/kr src/github.com/kryptco/kr</code>
+			<br/>
+			<code>$ export GOPATH=$PWD &amp;&amp; cd src/github.com/kryptco/kr &amp;&amp; make install &amp;&amp; kr restart</code>
+			</p>
+		</div>
+
+
+		<footer>© 2017 KryptCo, Inc.</footer>
+	</body>
+
+</html>
