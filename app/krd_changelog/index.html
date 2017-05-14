@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>krd changelog</title>
+		<meta charset="utf-8" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway|Source+Code+Pro" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<style>
+			body {
+				background-color: #fafafa;
+                font-family: 'Avenir Next';
+
+			}
+
+            li {
+                font-family: 'Avenir Next';
+                color: rgb(65, 65, 65);
+
+            }
+
+            .title {
+                font-size: 30px;
+                font-weight: 600;
+                color: #5BC894;
+            }
+            h1 {
+                font-size: 24px;
+
+            }
+            h2 {
+                font-size: 20px;
+
+            }
+            p {
+                color: rgb(65, 65, 65);
+                font-family: 'Avenir Next';
+                font-size: 16px;
+            }
+		</style>
+	</head>
+	<body>
+        <div class="title">
+			krd changelog
+        </div>
+
+        <h1>2.1.0</h1>
+        <ul>
+			<li>
+				Support <code>rsa-sha2-256</code> and <code>rsa-sha2-512</code> private key signature algorithms.
+			</li>
+			<li>
+				Support verification of host signatures using <code>rsa-sha2-256</code> and <code>rsa-sha2-512</code> signature algorithms.
+			</li>
+			<li>
+				Terminate SSH session when the host public key does not match the Kryptonite pinned key.
+			</li>
+			<li>
+				Add analytics to <code>kr</code> commands (respects disable analytics setting on phone).
+			</li>
+			<li>
+				Add <code>kr debugaws</code> command to test connection to AWS SQS.
+			</li>
+			<li>
+				Fix <code>kr upgrade</code> notice to only show once.
+			</li>
+        </ul>
+
+
+		<footer>© 2017 KryptCo, Inc.</footer>
+	</body>
+
+</html>
