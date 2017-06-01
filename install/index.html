@@ -162,6 +162,42 @@ ga('send', 'pageview');
 			</p>
 		</div>
 
+		<h1>How Kryptonite interfaces with SSH</h1>
+		<p>
+		Kryptonite automatically adds the following to your <code>~/.ssh/config</code> file:
+		</p>
+		<div class="code">
+			# Added by Kryptonite
+			<br/>
+			Host *
+			<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;PKCS11Provider /usr/local/lib/kr-pkcs11.so
+			<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;ProxyCommand /usr/local/bin/krssh %h %p
+			<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;IdentityFile ~/.ssh/id_kryptonite
+			<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;IdentityFile ~/.ssh/id_ed25519
+			<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;IdentityFile ~/.ssh/id_rsa
+			<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;IdentityFile ~/.ssh/id_ecdsa
+			<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;IdentityFile ~/.ssh/id_dsa
+			<br/>
+		</div>
+
+		<ul>
+			<li>
+				Kryptonite's <code>PKCS11Provider</code> directs SSH to <code>krd</code> as an SSH agent by setting the <code>SSH_AUTH_SOCK</code> environment variable. It also links <code>~/.kr/original-agent.sock</code> to any already-running SSH agent. This allows <code>krd</code> to fallback to the original agent if necessary.
+			</li>
+			<li>
+				The <code>krssh</code> ProxyCommand detects which host is being connected to and reads the signature returned from the remote server. These are transmitted to <code>krd</code> and eventually verified by the Kryptonite phone app.
+			</li>
+			<li>
+				The <code>IdentityFile</code> options make sure that the Kryptonite public key is presented to servers when trying to log in, as well as any default-named SSH keys users already have.
+			</li>
+		</ul>
 		<h1>Have a question or problem?</h1>
 		Open a <a target="_blank" href="https://github.com/kryptco/kr/issues/new">GitHub issue</a> or reach out to <a target="_blank" href="mailto:support@krypt.co">support@krypt.co</a>.
 
