@@ -45,18 +45,28 @@
 			krd changelog
         </div>
 
-        <h1>2.1.1</h1>
+        <h1>2.1.2</h1>
         <ul>
+			<li>
+				Warn and instruct user to sync system time when AWS returns a SignatureExpired error.
+			</li>
+			<li>
+				Support bare IPv6 hostnames in krssh (contributed by <a href="https://github.com/stigtsp">@stigtsp</a>).
+			</li>
+		</ul>
+
+		<h1>2.1.1</h1>
+		<ul>
 			<li>
 				Append <code>:port</code> to hostnames not using port 22.
 			</li>
 			<li>
 				Unset AWS configuration ENV vars that could potentially throw errors if config files are not able to be parsed.
 			</li>
-        </ul>
+		</ul>
 
-        <h1>2.1.0</h1>
-        <ul>
+		<h1>2.1.0</h1>
+		<ul>
 			<li>
 				Support <code>rsa-sha2-256</code> and <code>rsa-sha2-512</code> private key signature algorithms.
 			</li>
@@ -75,7 +85,7 @@
 			<li>
 				Fix <code>kr upgrade</code> notice to only show once.
 			</li>
-        </ul>
+		</ul>
 
 
 		<footer>© 2017 KryptCo, Inc.</footer>
