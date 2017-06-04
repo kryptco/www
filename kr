@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=2.1.1
+VERSION=2.1.2
 
 install_darwin() {
 	command -v brew &>/dev/null && test "$1" = "brew"
@@ -52,9 +52,9 @@ install_darwin_manual() {
 
 	MAJOR_MAC_VERSION=$(sw_vers -productVersion | awk -F '.' '{print $1 "." $2}')
 	case $MAJOR_MAC_VERSION in
-		10.10) OS_NAME=yosemite;   BOTTLE_HASH=26ef987f10fa141d03b71aff810bec869cc4ee24b41bb372345201bb24d1a1bb;;
-		10.11) OS_NAME=el_capitan; BOTTLE_HASH=4616c81978a4901c17f142371781756d58ac52a396906c83f7f166c0cef357d0;;
-		10.12) OS_NAME=sierra;     BOTTLE_HASH=e5d359dadb8e82725926692f4c04dac69996820c16661bb95fb411db25fe6c79;;
+		10.10) OS_NAME=yosemite;   BOTTLE_HASH=e8163c0341eafc6001bdcbc555938b024291e004811aaed1ac9a5c664af5161f;;
+		10.11) OS_NAME=el_capitan; BOTTLE_HASH=f495a770af3c6dda201c176b409c25b6426243800e43339ff56eeaeccd30d5cb;;
+		10.12) OS_NAME=sierra;     BOTTLE_HASH=27695843f38797cf008a154d461d88c28fed3905c84d2e6f90b84f96f9c9a24d;;
 		*) say "Unsupported OS X version $MAJOR_MAC_VERSION. Kryptonite requires 10.10+" && exit 1 ;;
 	esac
 	say Downloading Kryptonite.
