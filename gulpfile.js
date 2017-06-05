@@ -129,6 +129,12 @@ gulp.task('fileinclude', function() {
       basepath: '@file'
     }))
     .pipe(gulp.dest('./why_kryptonite/'));
+  gulp.src(['static/src/why_kryptonite_/index.html'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('./why_kryptonite_/'));
   gulp.src(['static/src/about/index.html'])
     .pipe(fileinclude({
       prefix: '@@',
