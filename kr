@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=2.1.2
+VERSION=2.2.0
 
 install_darwin() {
 	command -v brew &>/dev/null && test "$1" = "brew"
@@ -52,11 +52,11 @@ install_darwin_manual() {
 
 	MAJOR_MAC_VERSION=$(sw_vers -productVersion | awk -F '.' '{print $1 "." $2}')
 	case $MAJOR_MAC_VERSION in
-		10.10) OS_NAME=yosemite;   BOTTLE_HASH=e8163c0341eafc6001bdcbc555938b024291e004811aaed1ac9a5c664af5161f;;
-		10.11) OS_NAME=el_capitan; BOTTLE_HASH=f495a770af3c6dda201c176b409c25b6426243800e43339ff56eeaeccd30d5cb;;
-		10.12) OS_NAME=sierra;     BOTTLE_HASH=27695843f38797cf008a154d461d88c28fed3905c84d2e6f90b84f96f9c9a24d;;
+		10.10) OS_NAME=yosemite;   BOTTLE_HASH=fd79e07fadc38b70becf5f8a518f293ab39020f711e0ad05c8edbe21ee572c53;;
+		10.11) OS_NAME=el_capitan; BOTTLE_HASH=8348bed84058ca9be824da1b22d43853625661971a326bacb9ba7f132c89d2fc;;
+		10.12) OS_NAME=sierra;     BOTTLE_HASH=91df34efae60a22eedba8b07622b2f9c79efdbecf30675c9ffdb401d2da5cfbe;;
 		#	use 10.12 bottle for 10.13 until build dependencies are compilable on 10.13
-		10.13) OS_NAME=sierra;     BOTTLE_HASH=27695843f38797cf008a154d461d88c28fed3905c84d2e6f90b84f96f9c9a24d;;
+		10.13) OS_NAME=sierra;     BOTTLE_HASH=91df34efae60a22eedba8b07622b2f9c79efdbecf30675c9ffdb401d2da5cfbe;;
 		*) say "Unsupported OS X version $MAJOR_MAC_VERSION. Kryptonite requires 10.10+" && exit 1 ;;
 	esac
 	say Downloading Kryptonite.
