@@ -141,6 +141,12 @@ gulp.task('fileinclude', function() {
       basepath: '@file'
     }))
     .pipe(gulp.dest('./about/'));
+  gulp.src(['static/src/get_started/index.html'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('./get_started/'));    
   gulp.src(['static/src/index.html'])
     .pipe(fileinclude({
       prefix: '@@',
