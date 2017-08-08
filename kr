@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 VERSION=2.2.5
 
@@ -65,20 +65,23 @@ install_darwin_manual() {
 	ensure curl -# -o /tmp/$KR_FILE_PREFIX.tar.gz -L https://github.com/KryptCo/bottles/raw/master/$KR_FILE_PREFIX.bottle.tar.gz
 
 	command -v openssl &>/dev/null && verify_bottle_hash
+	PREFIX=${PREFIX:-$HOMEBREW_PREFIX}
+	PREFIX=${PREFIX:-/usr/local}
 
-	ensure mk_owned_dir_if_not_exists /usr/local/lib
-	ensure mk_owned_dir_if_not_exists /usr/local/bin
-	ensure mk_owned_dir_if_not_exists /usr/local/share/kr
+	ensure mk_owned_dir_if_not_exists $PREFIX/lib
+	ensure mk_owned_dir_if_not_exists $PREFIX/bin
+	ensure mk_owned_dir_if_not_exists $PREFIX/share/kr
 
 	ignore rm -rf /tmp/kr
 	ensure tar xf /tmp/$KR_FILE_PREFIX.tar.gz -C /tmp/
-	ensure mv_maybe_sudo "/tmp/kr/$VERSION/bin/*" /usr/local/bin/
-	ensure mv_maybe_sudo "/tmp/kr/$VERSION/lib/*" /usr/local/lib/
-	ensure mv_maybe_sudo "/tmp/kr/$VERSION/share/kr/*" /usr/local/share/kr/
+	ensure mv_maybe_sudo "/tmp/kr/$VERSION/bin/*" $PREFIX/bin/
+	ensure mv_maybe_sudo "/tmp/kr/$VERSION/lib/*" $PREFIX/lib/
+	ensure mv_maybe_sudo "/tmp/kr/$VERSION/share/kr/*" $PREFIX/share/kr/
 
-	perl -0777 -pi -e 's/\@\@HOMEBREW_PREFIX\@\@/\/usr\/local/' /usr/local/share/kr/co.krypt.krd.plist
+	ESCAPED_PREFIX=${PREFIX//\//\\\/}
+	perl -0777 -pi -e "s/\\@\\@HOMEBREW_PREFIX\\@\\@/$ESCAPED_PREFIX/" $PREFIX/share/kr/co.krypt.krd.plist
 	ensure mkdir -p ~/Library/LaunchAgents/
-	ensure cp /usr/local/share/kr/co.krypt.krd.plist ~/Library/LaunchAgents/
+	ensure cp $PREFIX/share/kr/co.krypt.krd.plist ~/Library/LaunchAgents/
 
 	ignore launchctl stop ~/Library/LaunchAgents/co.krypt.krd.plist &>/dev/null
 	ignore launchctl unload ~/Library/LaunchAgents/co.krypt.krd.plist &>/dev/null
@@ -86,11 +89,7 @@ install_darwin_manual() {
 	
 	ensure mkdir -p ~/.ssh
 	ensure touch ~/.ssh/config
-	#	remove old ssh_configs
-	perl -0777 -p -i.bak1 -e 's/\n# Added by Kryptonite\nHost \*\n\tPKCS11Provider \/usr\/local\/lib\/kr-pkcs11.so\n\tProxyCommand \`find \/usr\/local\/bin\/krssh 2\>\/dev\/null \|\| which nc\` %h %p\n\tIdentityFile ~\/.ssh\/id_kryptonite\n\tIdentityFile ~\/.ssh\/id_ed25519\n\tIdentityFile ~\/.ssh\/id_rsa\n\tIdentityFile ~\/.ssh\/id_ecdsa\n\tIdentityFile ~\/.ssh\/id_dsa//g' ~/.ssh/config
-
-	perl -0777 -ne '/\n# Added by Kryptonite\nHost \*\n\tPKCS11Provider \/usr\/local\/lib\/kr-pkcs11.so\n\tProxyCommand \/usr\/local\/bin\/krssh %h %p\n\tIdentityFile ~\/.ssh\/id_kryptonite/ || exit(1)' ~/.ssh/config || printf "\n# Added by Kryptonite\nHost *\n\tPKCS11Provider /usr/local/lib/kr-pkcs11.so\n\tProxyCommand /usr/local/bin/krssh %%h %%p\n\tIdentityFile ~/.ssh/id_kryptonite\n\tIdentityFile ~/.ssh/id_ed25519\n\tIdentityFile ~/.ssh/id_rsa\n\tIdentityFile ~/.ssh/id_ecdsa\n\tIdentityFile ~/.ssh/id_dsa" >> ~/.ssh/config
-
+	
 	say Kryptonite installed successfully. Type \"kr pair\" to pair with the Kryptonite mobile app.
 	kr restart &>/dev/null
 }
