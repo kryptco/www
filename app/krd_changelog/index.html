@@ -45,6 +45,58 @@
 			krd changelog
         </div>
 
+        <h1>2.2.7</h1>
+        <ul>
+			<li>Create <code>~/Library/LaunchAgents</code> on macOS if not present.</li>
+		</ul>
+
+        <h1>2.2.6</h1>
+        <ul>
+			<li>Move ssh config logic to `kr pair` (overriden by KR_SKIP_SSH_CONFIG=1).</li>
+			<li>Move macOS daemon setup to `kr pair` (required because of homebrew 1.13+).</li>
+			<li>Add `kr sshconfig` command for manual SSH configuration.</li>
+			<li>Add `kr env` to explain useful environment variables.</li>
+			<li>Fix launchctl commands run by `kr` when tmux is in use by wrapping command in <code>reattach-to-user-namespace</code>.</li>
+			<li>Ignore SSH_AUTH_SOCK=~/.kr/krd-agent.sock as backup agent.</li>
+		</ul>
+
+        <h1>2.2.5</h1>
+        <ul>
+			<li>Support arbitrary number of parents in a merge commit (octopus merge).</li>
+			<li>Fall back to <code>gpg</code> when <code>krgpg</code> fails.</li>
+		</ul>
+
+        <h1>2.2.4</h1>
+        <ul>
+			<li>Verify <code>git</code> binary located in <code>/usr[/local]/bin</code> during <code>kr codesign</code></li>
+			<li>Print public key contents when terminal does not have clipboard functionality.</li>
+		</ul>
+
+        <h1>2.2.3</h1>
+        <ul>
+			<li>Add <code>KR_SILENCE_WARNINGS=1</code> env var to silence not-paired and update warnings.</li>
+			<li>Add <code>kr ghe</code> and <code>kr ghe pgp</code> GitHub Enterprise commands.</li>
+		</ul>
+
+        <h1>2.2.2</h1>
+        <ul>
+			<li>Verify user has <code>user.name</code> and <code>user.email</code> set in global git config.</li>
+		</ul>
+
+        <h1>2.2.1</h1>
+        <ul>
+			<li>
+				<code>kr codesign</code> onboarding bug fix.
+			</li>
+		</ul>
+
+        <h1>2.2.0</h1>
+        <ul>
+			<li>
+				Add PGP commit and tag signing.
+			</li>
+		</ul>
+
         <h1>2.1.2</h1>
         <ul>
 			<li>
