@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Docs | Kryptonite - The new home for your private key</title>
+    
+    <link href="/docs/css/bootstrap.min.css" rel="stylesheet">           
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content="Kryptonite is the new home for your SSH private key.">
+<meta name="keywords" content="Kryptonite, SSH, key, private key, public key">
+<meta name="google-site-verification" content="" />
+<meta name="msvalidate.01" content="" />
+
+<meta property='og:title' content='Kryptonite - the new home for your SSH private key.'>
+<meta property='og:type' content='website'>
+<meta property='og:description' content='The private key never leaves your phone.'>
+<meta property='og:image' content='https://krypt.co/static/dist/img/twitter-meta.png'>
+
+<meta property='twitter:card' content='summary_large_image'>
+<meta property='twitter:title' content='Kryptonite - The new way to protect your private key.'>
+<meta property='twitter:description' content='The private key never leaves your phone.'>
+<meta property='twitter:image' content='https://krypt.co/static/dist/img/twitter-meta.png'>
+
+<link rel="apple-touch-icon" href='/static/dist/img/apple-touch-icon.png'>
+<link rel="icon" type="image/png" href='/static/dist/img/favicon.png'/>
+<link rel="stylesheet" href='/static/dist/fonts/Montserrat/font_montserrat.css' />
+<link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600,700" rel="stylesheet">
+<link rel="stylesheet" href='/static/dist/css/main.css' />
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-85073737-2', 'auto');
+ga('send', 'pageview');
+</script>
+  
+    <link rel="stylesheet" href="/docs/css/syntax.css">    
+    <link rel="stylesheet" href="/docs/css/main.css">    
+</head>
+
+<body>
+        <header id='page-header' class='Page-header'>
+	<div class='Page-header__left-block'>
+		<a href='/'><img src='/static/dist/img/kryptonite-logo-green-on-white.svg' /></a>
+	</div>
+	<div class='Page-header__right-block'>
+		<div class='Page-header__overlay'></div>
+		<div class='Page-header__menu-button Hamburger-button'></div>
+		<div class='Page-header__links'>
+			<a href="https://appsto.re/us/weWofb.i" target="blank"><img src="/static/dist/img/apple_app_store_badge.svg" style="height: 34px; vertical-align:middle;"></img></a>
+			<a href='https://play.google.com/store/apps/details?id=co.krypt.kryptonite&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="blank"><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' style="height: 50px; vertical-align: middle; margin-right: -10px;"/></a>
+			<a href='/why_kryptonite_/' class='Page-header__links__link'>Why Kryptonite?</a>
+			<a href='/pricing/' class='Page-header__links__link'>Pricing</a>
+			<a href='/faq/' class='Page-header__links__link'>FAQ</a>
+			<a href='/docs/' class='Page-header__links__link'>Docs</a>			
+			<a href='/about/' class='Page-header__links__link'>Team</a>
+			<a href='//blog.krypt.co' class='Page-header__links__link'>Blog</a>
+		</div>
+	</div>
+</header>
+
+        <div class="container">
+            <div class="row">
+                <div id="header" class="col-sm-12">
+                    <h4><a class="brand" href="/docs/">Docs</a>
+    <br><small></small>
+</h4>
+
+                </div>
+            </div>
+
+            <div class="row">
+                
+                
+                    <div id="navigation" class="col-sm-2">
+                        <ul class="nav nav-list">
+    
+        
+        
+
+        
+            
+                <li class="nav-header">Get Started</li>
+            
+
+            
+                <li data-order="">
+                    <a href="/docs/start/installation.html"> &gt; Install</a>
+                </li>
+            
+        
+    
+        
+        
+
+        
+    
+        
+        
+
+        
+    
+    <li class="divider">Other Resources</li>
+    <li>
+        <a href="https://blog.krypt.co">Blog</a>
+    </li>
+<!-- List additional links. It is recommended to add a divider
+    e.g. <li class="divider"></li> first to break up the content. -->
+</ul>
+
+                    </div>
+
+                    <div id="content" class="col-sm-10">
+                        <h2 id="install">Install</h2>
+
+<h3 id="kryptonite-app">Kryptonite app</h3>
+<p>Go to your <a href="https://get.krypt.co">https://get.krypt.co</a> on your iOS or Android device and you will be redirected to the Kryptonite app download page on the Apple App Store (iOS) or the Google Play Store (Android).</p>
+
+<h3 id="kr-cli">Kr cli</h3>
+<p>The easiest way to install <code class="highlighter-rouge">kr</code> on any supported machine is the following:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>curl https://krypt.co/kr | sh
+</code></pre>
+</div>
+<p>You can check out the source or download the script locally with curl https://krypt.co/kr &gt; kr and inspect it</p>
+
+<blockquote>
+  <p><strong>Note:</strong> The rest of this document describes the what the install script does and how to manually install <code class="highlighter-rouge">kr</code> from source.</p>
+</blockquote>
+<hr />
+
+<h3 id="whats-inside-the-install-script">What’s inside the install script?</h3>
+<p>Below is an explanation of what the install script does on each supported platform.</p>
+
+<h4 id="macos">macOS</h4>
+<ul>
+  <li>Download the correct homebrew bottle from GitHub and verify its hash</li>
+  <li>Untar and install <code class="highlighter-rouge">kr</code>, <code class="highlighter-rouge">krd</code>, <code class="highlighter-rouge">kr-pkcs11.so</code>, and <code class="highlighter-rouge">krssh</code> binaries</li>
+  <li>Backup and append to your ~/.ssh/config to point to <code class="highlighter-rouge">krd</code></li>
+</ul>
+
+<p>Equivalent command:</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install kryptco/tap/kr 
+</code></pre>
+</div>
+
+<h4 id="debian-linux-ubuntu-kali">Debian Linux (Ubuntu, Kali)</h4>
+<ul>
+  <li>Install necessary software for adding new repository: <code class="highlighter-rouge">software-properties-common</code>, <code class="highlighter-rouge">dirmngr</code>, <code class="highlighter-rouge">apt-transport-https</code></li>
+  <li>Add krypt.co’s binary signing key from the Ubuntu keyserver (fingerprint <code class="highlighter-rouge">C4A05888A1C4FA02E1566F859F2A29A569653940</code>)</li>
+  <li>Add krypt.co’s apt repository hosted at <code class="highlighter-rouge">kryptco.github.io/deb</code></li>
+  <li>run <code class="highlighter-rouge">apt-get install kr</code></li>
+</ul>
+
+<p>Equivalent commands:</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo apt-get install software-properties-common dirmngr apt-transport-https -y 
+<span class="gp">$ </span>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C4A05888A1C4FA02E1566F859F2A29A569653940 
+<span class="gp">$ </span>sudo add-apt-repository <span class="s2">"deb http://kryptco.github.io/deb kryptco main"</span> <span class="c"># non-Kali Linux only </span>
+<span class="gp">$ </span>sudo <span class="nb">printf</span> <span class="s2">"deb http://kryptco.github.io/deb kryptco main"</span> &gt;&gt; /etc/apt/sources.list <span class="c"># Kali Linux only </span>
+<span class="gp">$ </span>sudo apt-get update 
+<span class="gp">$ </span>sudo apt-get install kr -y 
+</code></pre>
+</div>
+
+<h4 id="rpm-linux-redhat-centos-fedora">RPM Linux (RedHat, CentOS, Fedora)</h4>
+<ul>
+  <li>Add krypt.co’s binary signing key from the MIT keyserver (fingerprint <code class="highlighter-rouge">C4A05888A1C4FA02E1566F859F2A29A569653940</code>)</li>
+  <li>Add krypt.co’s yum repository hosted at <code class="highlighter-rouge">kryptco.github.io/yum</code></li>
+  <li>Run <code class="highlighter-rouge">yum install kr</code></li>
+</ul>
+
+<p>Equivalent commands:</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>gpg --keyserver<span class="o">=</span>hkp://pgp.mit.edu:80 --recv-keys <span class="s2">"C4A05888A1C4FA02E1566F859F2A29A569653940"</span> 
+<span class="gp">$ </span>gpg --export --armor C4A05888A1C4FA02E1566F859F2A29A569653940 &gt; /tmp/kryptco.key 
+<span class="gp">$ </span>sudo rpm --import /tmp/kryptco.key 
+<span class="gp">$ </span>sudo yum-config-manager --add-repo https://kryptco.github.io/yum <span class="c"># non-fedora only </span>
+<span class="gp">$ </span>sudo yum config-manager --add-repo https://kryptco.github.io/yum <span class="c"># fedora only </span>
+<span class="gp">$ </span>sudo yum install kr -y 
+</code></pre>
+</div>
+
+<h3 id="installing-from-source">Installing from source</h3>
+
+<h4 id="macos-1">macOS</h4>
+<p>Dependencies: Golang and Rust are both installed.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install --HEAD kryptco/tap/kr
+</code></pre>
+</div>
+
+<h4 id="linux">linux</h4>
+<p>Dependencies:</p>
+<ul>
+  <li><a href="https://golang.org/doc/install">Install Go 1.7+</a></li>
+  <li><a href="https://www.rustup.rs/">Install Rust 1.15+ and cargo</a></li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/kryptco/kr src/github.com/kryptco/kr 
+<span class="gp">$ </span><span class="nb">export </span><span class="nv">GOPATH</span><span class="o">=</span><span class="nv">$PWD</span> <span class="o">&amp;&amp;</span> <span class="nb">cd </span>src/github.com/kryptco/kr <span class="o">&amp;&amp;</span> make install <span class="o">&amp;&amp;</span> kr restart
+</code></pre>
+</div>
+
+<h3 id="how-kr-interfaces-with-ssh">How Kr interfaces with SSH</h3>
+<p><code class="highlighter-rouge">kr</code> automatically adds the following to your <code class="highlighter-rouge">~/.ssh/config</code> file:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># Added by Kryptonite </span>
+Host <span class="k">*</span> 
+    PKCS11Provider /usr/local/lib/kr-pkcs11.so 
+    ProxyCommand /usr/local/bin/krssh %h %p 
+    IdentityFile ~/.ssh/id_kryptonite 
+    IdentityFile ~/.ssh/id_ed25519 
+    IdentityFile ~/.ssh/id_rsa 
+    IdentityFile ~/.ssh/id_ecdsa 
+    IdentityFile ~/.ssh/id_dsa 
+</code></pre>
+</div>
+
+<ul>
+  <li>
+    <p>Kryptonite’s PKCS11Provider directs SSH to <code class="highlighter-rouge">krd</code> as an SSH agent by setting the <code class="highlighter-rouge">SSH_AUTH_SOCK</code> environment variable. It also links <code class="highlighter-rouge">~/.kr/original-agent.sock</code> to any already-running SSH agent. This allows krd to fallback to the original agent if necessary.</p>
+  </li>
+  <li>
+    <p>The krssh ProxyCommand detects which host is being connected to and reads the signature returned from the remote server. These are transmitted to krd and eventually verified by the Kryptonite phone app.</p>
+  </li>
+  <li>
+    <p>The IdentityFile options make sure that the Kryptonite public key is presented to servers when trying to log in, as well as any default-named SSH keys users already have.</p>
+  </li>
+</ul>
+
+                    </div>
+                
+            </div>
+
+            <div class="row">
+                <div id="footer" class="col-sm-12">
+                    Contribute at <a href="https://github.com/kryptco/docs">github.com/kryptco/docs</a><br>
+Email us at <a href="mailto:support@krypt.co"> support@krypt.co </a>. 
+
+                </div>
+            </div>
+        </div>    
+
+        <script>
+            function orderNav() {
+                var list,
+                    section,
+                    header,
+                    sections = [],
+                    lists = {},
+                    headers = {};
+
+                var navUl = document.querySelectorAll('#navigation ul')[0],
+                    navLis = document.querySelectorAll('#navigation ul li');
+
+                if (!navUl) return;
+
+                for (var i = 0; i < navLis.length; i++) {
+                    var order, li = navLis[i];
+
+                    if (li.classList.contains('nav-header')) {
+                        section = li.textContent || li.innerText;
+                        sections.push(section);
+                        headers[section] = li;
+                        continue;
+                    }
+
+                    if (!lists[section]) {
+                        lists[section] = [];
+                    }
+
+                    order = parseFloat(li.getAttribute('data-order'))
+                    lists[section].push([order, li]);
+                }
+
+                for (var i = 0; i < sections.length; i++) {
+                    section = sections[i];
+                    list = lists[section].sort(function(a, b) {
+                        return a[0] - b[0];
+                    });
+
+                    if (header = headers[section]) {
+                        navUl.appendChild(header);
+                    }
+                    for (var j = 0; j < list.length; j++) {
+                        navUl.appendChild(list[j][1]);
+                    }
+                }
+            }
+
+            if (document.querySelectorAll) orderNav();
+        </script>
+    </body>
+</html>
