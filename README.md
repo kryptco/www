@@ -21,7 +21,7 @@ Edit files in `static/src/*`
 
 ## Docs
 Edit files in `static/src/docs/*`
-See the [Docs ReadMe](https://github.com/kryptco/krwww/static/src/docs/README.md).
+See the [Docs ReadMe](static/src/docs/README.md).
 
 # Deployment
 `make deploy`
