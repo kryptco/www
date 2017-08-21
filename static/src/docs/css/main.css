@@ -19,6 +19,9 @@ pre code table {
     word-wrap: break-word;
 }
 
+h4 {
+    margin-top: 40px;
+}
 pre {
     overflow: auto;
 }
@@ -28,8 +31,8 @@ pre code {
 }
 
 code {
-    background-color: #5bc894; 
-    color: #ffffff;
+    background-color: transparent; 
+    color: #343434;
     font-weight: bold;
     font-family: "Source Code Pro";
 }
