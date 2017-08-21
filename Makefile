@@ -14,7 +14,7 @@ build: setup docs-build
 	gulp build
 
 serve:
-	cd _site && gost 
+	spark -address localhost -port 8080 _site
 
 deploy: build
 	./deploy.sh

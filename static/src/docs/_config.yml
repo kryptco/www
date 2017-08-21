@@ -15,13 +15,13 @@ google_analytics_id: ''
 navigation: 2
 
 # URL to source code, used in _includes/footer.html
-codeurl: 'https://github.com/kryptco/docs'
+codeurl: 'https://github.com/kryptco/krwww/'
 
 # Default categories (in order) to appear in the navigation
 sections: [
     ['start', 'Get Started'],
     ['tut', 'Tutorials'],
-    ['conf', 'Configuration']
+    ['conf', 'Configure']
 ]
 
 # Keep as an empty string if served up at the root. If served up at a specific

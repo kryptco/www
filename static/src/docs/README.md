@@ -1,3 +1,16 @@
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/bruth/jekyll-docs-template/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+Put markdown articles in `static/src/docs/_posts`.
 
-Read the docs: http://bruth.github.io/jekyll-docs-template
+Generate a new article by running:
+```ruby 
+ruby static/src/docs/bin/jekyll-page "The Page Title" category
+```
+
+where category is one of these: 
+```
+sections: [
+    ['start', 'Get Started'],
+    ['tut', 'Tutorials'],
+    ['conf', 'Configure']
+]
+```
+
