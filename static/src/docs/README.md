@@ -5,7 +5,7 @@ Generate a new article by running:
 ruby static/src/docs/bin/jekyll-page "The Page Title" category
 ```
 
-where category is one of these: 
+where `category` is one of these: 
 ```
 sections: [
     ['start', 'Get Started'],
