@@ -16,3 +16,5 @@ build: setup docs-build
 serve:
 	cd _site && gost 
 
+deploy: build
+	./deploy.sh

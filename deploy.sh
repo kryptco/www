@@ -1,1 +1,1 @@
-s3cmd sync "--exclude=node_modules/*" "--exclude=.git/*" "--exclude=deploy.sh" . s3://www.krypt.co
+s3cmd sync ./_site/ s3://www.krypt.co
