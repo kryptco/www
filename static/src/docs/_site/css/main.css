@@ -1,0 +1,146 @@
+body {
+    font-weight: 400;
+    font-size: 17px;
+    float: left;
+}
+
+.highlight {
+    border: none;    
+    border-radius: 4px;
+    background-color: #343434; 
+    font-size: 14px;
+
+    white-space: nowrap; 
+    overflow-x: auto;
+    
+    margin-bottom: 40px;    
+}
+
+code {
+    background-color: #5bc894; 
+    color: #ffffff;
+    font-weight: bold;
+    font-family: "Source Code Pro";
+    white-space: pre;      
+    overflow-x: auto;    
+}
+
+.contribute {
+    vertical-align: top;    
+    margin-top: 0;
+}
+.contribute img {
+    width: 20px;
+    height: 20px;
+}
+.contribute a {
+    text-decoration: underline;
+    color: #343434;
+    font-weight: bold;
+    font-size: 14px;
+}
+.contribute a:hover {
+    text-decoration: underline;
+    color: #5bc894;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+  
+#header a:hover {
+    text-decoration: none;
+}
+
+#footer {
+    margin: 20px 0;
+    font-size: 0.85em;
+    color: #999;
+    text-align: center;
+}
+
+#content > .page-header:first-child {
+    margin-top: 0;
+}
+
+#content > .page-header:first-child h2 {
+    margin-top: 0;
+}
+
+blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 0px;
+    padding: 6px 10px;
+  }  
+
+#navigation {
+    font-size: 14px;
+}
+#navigation li {
+    font-size: 14px;
+    list-style: none;
+    font-weight: bold;
+}
+#navigation li a {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#navigation .nav-header {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.nav-selected {
+    text-decoration: underline;
+}
+.nav-normal {
+    text-decoration: none;
+}
+
+body.rtl {
+	direction: rtl;
+}
+
+body.rtl #header .brand {
+	float: right;
+    margin-left: 5px;
+}
+body.rtl .row-fluid [class*="span"] {
+	float: right !important;
+	margin-left: 0;
+    margin-right: 2.564102564102564%;
+    margin-bottom: 20px;
+}
+body.rtl .row-fluid [class*="span"]:first-child {
+	margin-right: 0;
+}
+
+body.rtl ul, body.rtl ol {
+    margin: 0 25px 10px 0;
+}
+
+p {
+    margin-top: 10px;
+    line-height: 2em;
+    margin-bottom: 10px;
+}
+table {
+  margin-bottom: 2rem;
+  border: 1px solid #e5e5e5;
+  border-collapse: collapse;
+}
+
+td, th {
+  padding: .25rem .5rem;
+  border: 1px solid #e5e5e5;
+}
+
+ul {
+    margin-bottom: 20px;
+}
+li {
+    font-family: 'Karla';
+    font-weight: normal;
+}

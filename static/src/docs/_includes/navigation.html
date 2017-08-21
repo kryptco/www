@@ -1,0 +1,31 @@
+<ul class="nav nav-list">
+    {% for section in site.sections %}
+        {% assign attr = section[0] %}
+        {% assign label = section[1] %}
+
+        {% for thepage in site.categories[attr] %}
+            {% if forloop.first %}
+                <li class="nav-header">{{ label }}</li>
+            {% endif %}
+
+            {% if thepage.title == page.title %}
+                <li data-order="{{ thepage.order }}">
+                    <a class="nav-selected" href="{{ site.baseurl }}{{ thepage.url }}">{{ thepage.title }}</a>
+                </li>
+            {% else %}
+              <li data-order="{{ thepage.order }}">
+                  <a class="nav-normal" href="{{ site.baseurl }}{{ thepage.url }}">{{ thepage.title }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+    <li class="divider">Other Resources</li>
+
+    <li>
+        <a href="/app/krd_changelog/">Kr Changelog</a>
+    </li>
+    <li>
+        <a href="/app/open-source-libraries/"> App OSS Libraries</a>
+    </li>    
+    
+</ul>

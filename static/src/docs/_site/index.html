@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Docs | Kryptonite - The new home for your private key</title>
+
+    <link href="/docs/css/bootstrap.min.css" rel="stylesheet">        
+    @@include("static/src/html_head.html")  
+    <link rel="stylesheet" href="/docs/css/main.css">
+    <link rel="stylesheet" href="/docs/css/syntax.css">        
+</head>
+
+<body>
+        @@include("static/src/header.html")
+        <div class="container">
+            <div class="row">
+                <div id="header" class="col-sm-8">
+                    <h4>
+    <a href="/docs/">Docs</a>
+</h4>
+
+                </div>
+            </div>
+
+            <div class="row">
+                
+                
+                    <div id="navigation" class="col-sm-2">
+                        <ul class="nav nav-list">
+    
+        
+        
+
+        
+            
+                <li class="nav-header">Get Started</li>
+            
+
+            
+              <li data-order="2">
+                  <a class="nav-normal" href="/docs/start/pair.html">Pair your computer</a>
+                </li>
+            
+        
+            
+
+            
+              <li data-order="1">
+                  <a class="nav-normal" href="/docs/start/installation.html">Install</a>
+                </li>
+            
+        
+    
+        
+        
+
+        
+    
+        
+        
+
+        
+    
+    <li class="divider">Other Resources</li>
+
+    <li>
+        <a href="/app/krd_changelog/">Kr Changelog</a>
+    </li>
+    <li>
+        <a href="/app/open-source-libraries/"> App OSS Libraries</a>
+    </li>    
+    
+</ul>
+
+                    </div>    
+                    <div id="content" class="col-sm-10">
+                        <h3 id="get-started">Get Started</h3>
+
+<p>Start by <a href="http://jekyllrb.com/docs/posts/">creating a new post</a> one of the categories listed in <code class="highlighter-rouge">_config.yml</code>. It will appear in the navigation on the left once recompiled. Or use the supplied script to make creating pages easier:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>ruby bin/jekyll-page <span class="s2">"Some Page Title"</span> ref
+</code></pre>
+</div>
+
+<h4 id="dont-forget">Don’t Forget</h4>
+
+<ul>
+  <li>Add your own content to this page (i.e. <code class="highlighter-rouge">index.md</code>) and change the <code class="highlighter-rouge">title</code></li>
+  <li>Change <code class="highlighter-rouge">title</code> and <code class="highlighter-rouge">subtitle</code> defined in <code class="highlighter-rouge">config.yml</code> for your site</li>
+  <li>Set the <code class="highlighter-rouge">baseurl</code> in <code class="highlighter-rouge">_config.yml</code> for your repo if deploying to GitHub pages</li>
+</ul>
+
+                    </div>
+                
+                <!-- <div id="content" class="contribute col-sm-1">
+                        <a href="//https://github.com/kryptco/docs"> 
+                            <img src="/static/dist/img/github.png"/>EDIT                        
+                        </a>                        
+                </div> -->
+            </div>
+            
+            <div class="row">
+                <br>
+                <div id="footer" class="col-sm-12">
+                    Contribute at <a href="https://github.com/kryptco/docs">github.com/kryptco/docs</a><br>
+Email us at <a href="mailto:support@krypt.co"> support@krypt.co </a>. 
+
+                </div>
+                <br>
+                <br>
+                <div id="footer" class="col-sm-12">
+                    @@include("static/src/footer.html")  
+                </div>    
+            </div>
+        </div>    
+
+        <script>
+            function orderNav() {
+                var list,
+                    section,
+                    header,
+                    sections = [],
+                    lists = {},
+                    headers = {};
+
+                var navUl = document.querySelectorAll('#navigation ul')[0],
+                    navLis = document.querySelectorAll('#navigation ul li');
+
+                if (!navUl) return;
+
+                for (var i = 0; i < navLis.length; i++) {
+                    var order, li = navLis[i];
+
+                    if (li.classList.contains('nav-header')) {
+                        section = li.textContent || li.innerText;
+                        sections.push(section);
+                        headers[section] = li;
+                        continue;
+                    }
+
+                    if (!lists[section]) {
+                        lists[section] = [];
+                    }
+
+                    order = parseFloat(li.getAttribute('data-order'))
+                    lists[section].push([order, li]);
+                }
+
+                for (var i = 0; i < sections.length; i++) {
+                    section = sections[i];
+                    list = lists[section].sort(function(a, b) {
+                        return a[0] - b[0];
+                    });
+
+                    if (header = headers[section]) {
+                        navUl.appendChild(header);
+                    }
+                    for (var j = 0; j < list.length; j++) {
+                        navUl.appendChild(list[j][1]);
+                    }
+                }
+            }
+
+            if (document.querySelectorAll) orderNav();
+        </script>
+    </body>
+</html>
