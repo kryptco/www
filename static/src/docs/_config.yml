@@ -20,8 +20,8 @@ codeurl: 'https://github.com/kryptco/krwww/'
 # Default categories (in order) to appear in the navigation
 sections: [
     ['start', 'Get Started'],
-    ['tut', 'Tutorials'],
-    ['conf', 'Configure']
+    ['settings', 'Settings'],
+    ['security', 'Security']
 ]
 
 # Keep as an empty string if served up at the root. If served up at a specific

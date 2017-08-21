@@ -11,4 +11,3 @@ where `category` is one of these:
 'tut'   (Tutorials)
 'conf'  (Configure)
 ```
-

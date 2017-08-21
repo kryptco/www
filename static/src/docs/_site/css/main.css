@@ -2,6 +2,7 @@ body {
     font-weight: 400;
     font-size: 17px;
     float: left;
+    width: 100%;
 }
 
 .highlight {
@@ -9,11 +10,21 @@ body {
     border-radius: 4px;
     background-color: #343434; 
     font-size: 14px;
-
-    white-space: nowrap; 
-    overflow-x: auto;
     
     margin-bottom: 40px;    
+}
+
+pre code table {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+pre {
+    overflow: auto;
+}
+
+pre code {
+    white-space: pre;
 }
 
 code {
@@ -21,8 +32,6 @@ code {
     color: #ffffff;
     font-weight: bold;
     font-family: "Source Code Pro";
-    white-space: pre;      
-    overflow-x: auto;    
 }
 
 .contribute {
