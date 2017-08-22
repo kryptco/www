@@ -10,7 +10,9 @@ Kryptonite provides the best of both worlds: the security of your private key ne
 
 A phone is a great place to store your private key as it is easier to provide isolation on your phone from malicious applications. If you’re curious why this is, read our blog post [*“Why Store an SSH Key With Kryptonite?”*](https://blog.krypt.co/why-store-an-ssh-key-with-kryptonite-9f24c1f983d5).
 
-> Kryptonite is designed such that you do not have to trust us, krypt.co, to operate any third party service. You need only trust the code running on the Kryptonite phone app. **The private key never leaves your phone.**
+> Kryptonite is designed such that you do not have to trust us, krypt.co, to operate any third party service. You need only trust the code running on the Kryptonite phone app. 
+
+>**The private key never leaves your phone.**
 
 ### System Components
 Our system consists of three components: (1) the Kryptonite phone app for iOS and Android, (2) the `krd` daemon that runs in the background on a macOS or Linux computer, and (3) the `kr` command line utility that manages `krd`.
