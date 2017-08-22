@@ -1,3 +1,5 @@
+clean: 
+	rm -r _site/
 setup:
 	mkdir -p _site
 
@@ -5,10 +7,10 @@ docs-build:
 	mkdir -p _site/docs/
 	jekyll build --source static/src/docs/ --destination _site/docs/
 
-build: setup docs-build
+build: clean setup docs-build
 	gulp build
 
-serve:
+serve: build
 	spark -address localhost -port 8080 _site
 
 deploy: build

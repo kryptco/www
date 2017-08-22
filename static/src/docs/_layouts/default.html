@@ -10,49 +10,48 @@
 </head>
 
 <body>
-        @@include("static/src/header.html")
-        <div class="container">
-            <div class="row">
-                <div id="header" class="col-sm-8">
-                    {% include header.html %}
-                </div>
-            </div>
-
-            <div class="row">
-                {% assign post_count = site.posts|size %}
-                {% if site.navigation != 0 and site.navigation == 1 or post_count > 0 %}
-                    <div id="navigation" class="col-sm-2">
-                        {% include navigation.html %}
-                    </div>    
-                    <div id="content" class="col-sm-10">
-                        {{ content }}
+     <div id="page-wrapper" class='Page-about'>
+         @@include("static/src/header.html")
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div id="header" class="col-sm-8">
+                        {% include header.html %}
                     </div>
-                {% else %}
-                    <div id="content" class="col-sm-10">
-                        {{ content }}
-                    </div>
-                {% endif %}
-                <!-- <div id="content" class="contribute col-sm-1">
-                        <a href="//{{ site.codeurl }}"> 
-                            <img src="/static/dist/img/github.png"/>EDIT                        
-                        </a>                        
-                </div> -->
-            </div>
-            
-            <div class="row">
-                <br>
-                <div id="footer" class="col-sm-12">
-                    {% include footer.html %}
                 </div>
-                <br>
-                <br>
-                <div id="footer" class="col-sm-12">
-                    @@include("static/src/footer.html")  
-                </div>    
-            </div>
-        </div>    
-
-        <script>
+                <div class="row">
+                    {% assign post_count = site.posts|size %}
+                    {% if site.navigation != 0 and site.navigation == 1 or post_count > 0 %}
+                        <div id="navigation" class="col-sm-2">
+                            {% include navigation.html %}
+                        </div>    
+                        <div id="content" class="col-sm-10">
+                            {{ content }}
+                        </div>
+                    {% else %}
+                        <div id="content" class="col-sm-10">
+                            {{ content }}
+                        </div>
+                    {% endif %}
+                    <!-- <div id="content" class="contribute col-sm-1">
+                            <a href="//{{ site.codeurl }}"> 
+                                <img src="/static/dist/img/github.png"/>EDIT                        
+                            </a>                        
+                    </div> -->
+                </div>            
+                <div class="row">
+                    <br>
+                    <div id="footer" class="col-sm-12">
+                        {% include footer.html %}
+                    </div>
+                    <br>
+                    <br>
+                </div>
+            </div>                     
+        </main>
+        @@include("static/src/footer.html")                          
+    </div>
+    <script>
             function orderNav() {
                 var list,
                     section,

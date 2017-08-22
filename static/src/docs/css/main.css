@@ -10,7 +10,6 @@ body {
     border-radius: 4px;
     background-color: #343434; 
     font-size: 14px;
-    
     margin-bottom: 40px;    
 }
 
@@ -27,15 +26,18 @@ pre code table {
 h4 {
     margin-top: 40px;
 }
-pre {
-    overflow: auto;
-}
-
 pre code {
+    overflow: auto;
     white-space: pre;
 }
 
+.highlight pre {
+    overflow-x: auto;
+}
+
 code {
+    overflow-x: auto;
+
     background-color: transparent; 
     color: #343434;
     font-weight: bold;
