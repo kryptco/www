@@ -121,14 +121,14 @@ gulp.task('fileinclude', function() {
     prefix: '@@',
     basepath: '@file'
   }))
-  .pipe(gulp.dest('./_site/kr'));
+  .pipe(gulp.dest('./_site/'));
 
   gulp.src(['kr-beta'])
   .pipe(fileinclude({
     prefix: '@@',
     basepath: '@file'
   }))
-  .pipe(gulp.dest('./_site/kr-beta'));
+  .pipe(gulp.dest('./_site/'));
 
   gulp.src(['static/src/app/**/*'])
   .pipe(fileinclude({
