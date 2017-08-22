@@ -130,7 +130,7 @@ gulp.task('fileinclude', function() {
   }))
   .pipe(gulp.dest('./_site/kr-beta'));
 
-  gulp.src(['app/**/*'])
+  gulp.src(['static/src/app/**/*'])
   .pipe(fileinclude({
     prefix: '@@',
     basepath: '@file'
