@@ -176,7 +176,8 @@ gulp.task('fileinclude', function() {
     }))
     .pipe(gulp.dest('./_site/get_started/'));   
 
-  gulp.src(['static/src/docs/_site/**/*'])
+  // process the gulp includes for the built jekyll docs site
+  gulp.src(['./_site/docs/**/*'])
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@root'

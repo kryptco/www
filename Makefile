@@ -2,13 +2,8 @@ setup:
 	mkdir -p _site
 
 docs-build:
-	cd static/src/docs/ && jekyll build
-
-docs-watch:
-	cd static/src/docs/ && jekyll build --watch &
-
-watch: docs-watch
-	gulp watch
+	mkdir -p _site/docs/
+	jekyll build --source static/src/docs/ --destination _site/docs/
 
 build: setup docs-build
 	gulp build

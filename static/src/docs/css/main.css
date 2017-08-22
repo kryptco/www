@@ -19,6 +19,11 @@ pre code table {
     word-wrap: break-word;
 }
 
+.img-responsive {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
 h4 {
     margin-top: 40px;
 }
