@@ -15,6 +15,7 @@ codeurl: 'https://github.com/kryptco/www/'
 sections: [
     ['start', 'Get Started'],
     ['settings', 'Settings'],
+    ['ssh', 'SSH Features'],
     ['security', 'Security']
 ]
 
