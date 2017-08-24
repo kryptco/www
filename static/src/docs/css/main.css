@@ -163,3 +163,15 @@ li {
     font-family: 'Karla';
     font-weight: normal;
 }
+
+.img-phone {
+    max-height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Caption */
+.img-phone + em {
+    display: block;
+    text-align: center;
+}
