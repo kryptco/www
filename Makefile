@@ -1,16 +1,17 @@
 clean: 
 	rm -r _site/
+	rm -r static/src/docs/_site
+
 setup:
 	mkdir -p _site
 
 docs-build:
-	rm -r static/src/docs/_site
 	mkdir -p static/src/docs/_site
 	mkdir -p _site/docs/
-	jekyll build --source static/src/docs/ --destination static/src/docs/_site/
+	jekyll build --source static/src/docs/ --destination static/src/docs/_site/ --incremental
 
-watch: build
-	jekyll build --source static/src/docs/ --destination static/src/docs/_site/ --watch &
+watch: clean docs-build
+	jekyll build --source static/src/docs/ --destination static/src/docs/_site/ --incremental --watch &
 	gulp watch &
 
 build: clean setup docs-build
