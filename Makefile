@@ -4,6 +4,8 @@ setup:
 	mkdir -p _site
 
 docs-build:
+	rm -r static/src/docs/_site
+	mkdir -p static/src/docs/_site
 	mkdir -p _site/docs/
 	jekyll build --source static/src/docs/ --destination static/src/docs/_site/
 
