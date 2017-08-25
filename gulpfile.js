@@ -19,6 +19,8 @@ var gulp = require('gulp'),
         dist: './_site/static/dist',
         distJs: './_site/static/dist/js',
         watchSCSS: './static/src/scss/**/*.scss',
+        watchDocsHTML: './static/src/docs/_site/**/*.html',
+        watchDocsCSS: './static/src/docs/_site/**/*.css',
         srcSCSSMainFile: './static/src/scss/[^_]*.scss',
         distCSS: './_site/static/dist/css',
         srcFonts: './static/src/fonts/**/*',
@@ -100,6 +102,8 @@ const gutil = require('gulp-util');
 gulp.task('watch', ['build', 'clean', 'styles'], function () {
     gulp.start(['watchify']);
     gulp.watch(p.watchSCSS, ['styles']);
+	gulp.watch(p.watchDocsHTML, ['build']);
+	gulp.watch(p.watchDocsCSS, ['build']);
 });
 
 gulp.task('build', ['clean'], function () {
@@ -177,7 +181,7 @@ gulp.task('fileinclude', function() {
     .pipe(gulp.dest('./_site/get_started/'));   
 
   // process the gulp includes for the built jekyll docs site
-  gulp.src(['./_site/docs/**/*'])
+  gulp.src(['./static/src/docs/_site/**/*'])
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@root'
