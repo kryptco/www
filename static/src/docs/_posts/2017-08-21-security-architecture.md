@@ -5,7 +5,7 @@ category: security
 order: 1
 ---
 
-### The Kryptonite Security Architecture
+# The Kryptonite Security Architecture
 Kryptonite provides the best of both worlds: the security of your private key never leaving your phone with the convenience of using SSH as you normally do, i.e: `ssh root@server.com` or `git push origin master`. 
 
 A phone is a great place to store your private key as it is easier to provide isolation on your phone from malicious applications. If you’re curious why this is, read our blog post [*“Why Store an SSH Key With Kryptonite?”*](https://blog.krypt.co/why-store-an-ssh-key-with-kryptonite-9f24c1f983d5).
@@ -14,25 +14,25 @@ A phone is a great place to store your private key as it is easier to provide is
 
 >**The private key never leaves your phone.**
 
-### System Components
+## System Components
 Our system consists of three components: (1) the Kryptonite phone app for iOS and Android, (2) the `krd` daemon that runs in the background on a macOS or Linux computer, and (3) the `kr` command line utility that manages `krd`.
 
 ![The System Components: Kryptonite, kr, and krd]({{ site.url }}/static/dist/img/docs/system.png){:class="img-responsive"}
 
 
-#### Kryptonite
+### Kryptonite
 The Kryptonite phone app, referred to as “Kryptonite” in this post, generates and stores your private key on your phone and uses it to sign SSH login requests from a paired computer that is running `krd`. The private key never leaves the phone. If you are curious how the private key is stored on the phone read about it here.
 
 
-#### krd
+### krd
 `krd` acts as an SSH agent. During installation, a few lines are added to `~/.ssh/config` to point SSH to krd and offer your Kryptonite public key when connecting to servers. Every time you SSH, krd is responsible for communicating with the Kryptonite app, requesting a signature with the private key, and waiting for a response.
 
 
-#### kr
+### kr
 `kr` is the user interface to `krd`. The main functionality of kr is to initiate pairing the phone with the computer, discussed in the next section. `kr` also makes it easy to upload your public key to GitHub, AWS, Heroku, Google Cloud, and other services that store SSH public keys
 
 <br>
-### Cryptography Library
+## Cryptography Library
 For the public-key cryptography primitives in the protocols discussed below, Kryptonite utilizes [**libsodium**](https://download.libsodium.org/doc/). The `encrypt_and_sign` primitive corresponds to libsodium’s [Authenticated Encryption algorithms](https://download.libsodium.org/doc/public-key_cryptography/authenticated_encryption.html) and the `encrypt` primitive corresponds to libsodium’s [Sealed Boxes algorithms](https://download.libsodium.org/doc/public-key_cryptography/sealed_boxes.html).
 <br>
 
@@ -57,29 +57,29 @@ Next, `krd` generates a new key pair for this pairing: `c_pub_key`, `c_priv_key`
 ![A QR code appears in the terminal, the user scans it with the Kryptonite app]({{ site.url }}/static/dist/img/docs/qr_pair.png){:class="img-responsive"}
 
 
-#### (1) Bootstrapping a secure pairing
+### (1) Bootstrapping a secure pairing
 Kryptonite obtains `c_pub_key`, represented as *step (1)* in the diagram above, by scanning the QR code with the in-app camera. Scanning the QR code is the only communication channel assumed to be free of tampering. We assume the data in the QR code is transmitted to the phone untampered, but not necessarily secretly. The adversary seeing the QR code is not a threat as it only contains public information. Communication between kr and Kryptonite is always encrypted and signed using krd and Kryptonite’s session key pairs to create a fully trusted channel.
 
 
-#### (2) Sending Kryptonite’s session public key
+### (2) Sending Kryptonite’s session public key
 Upon receiving `c_pub_key`, Kryptonite generates its own session key pair denoted `s_pub_key`, `s_priv_key`.
 Next, Kryptonite sends its session public key encrypted with krd’s public key, denoted as *step (2)* in the diagram above, to krd. This tells the computer that a Kryptonite client has scanned the QR code and wants to initiate a pairing.
 
 `s_pub_key` is encrypted under `c_pub_key` to prevent an active adversary from switching out `s_pub_key` to another public key. An adversary would have to know `c_pub_key` to be able to insert its own public key. This creates a race: `krd` only remembers and responds to the first Kryptonite client to send the message in *step (2)*. The next step allows Kryptonite to confirm that krd paired with it and not any other client.
 
 
-#### (3) The “Me Request”
+### (3) The “Me Request”
 Upon receiving `s_pub_key`, `krd` can now send encrypted requests to Kryptonite. Kryptonite can verify these requests with `c_pub_key` from *step (1)*. To acknowledge receipt of `s_pub_key`, krd sends the encrypted and signed “me request,” asking Kryptonite for its SSH identity (*step (3)* in the diagram above). If some other client completes *step (2)* first, Kryptonite will timeout while waiting to receive a “me request.” In the case of a timeout, the user runs kr pair to try again with new session keys.
 
 
-#### (4) The “Me Response” (`id_kryptonite.pub`)
+### (4) The “Me Response” (`id_kryptonite.pub`)
 Upon receiving the “me request,” Kryptonite sends the final pairing message, shown in *step (4)*. The “me response” contains the Kryptonite SSH public key as well as a push token identifier so it can be reached via AWS SNS. This message serves as a pairing confirmation acknowledgement for `krd`.
 
 > `krd` is now succesfully paired with Kryptonite.
 
 <hr>
 
-### Signature Request Protocol
+## Signature Request Protocol
 `krd` forwards login requests from SSH to Kryptonite. Kryptonite then signs the request if it is approved.
 
 The signature request protocol works as follows:

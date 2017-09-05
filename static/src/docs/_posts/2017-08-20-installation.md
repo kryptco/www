@@ -5,12 +5,12 @@ category: start
 order: 1
 ---
 
-### Install
+# Install Kryptonite & `kr`
 
-#### Kryptonite app
+## Kryptonite app
 Go to [https://get.krypt.co](https://get.krypt.co) on your iOS or Android device and you will be redirected to the Kryptonite app download page on the Apple App Store (iOS) or the Google Play Store (Android).
 
-#### Kr cli
+## Kr cli
 The easiest way to install `kr` on any supported machine is the following: 
 
 ```bash
@@ -21,10 +21,10 @@ You can check out the source or download the script locally with curl https://kr
 > **Note:** The rest of this document describes the what the install script does and how to manually install `kr` from source.
 <hr>
 
-### What's inside the install script?
+## What's inside the install script?
 Below is an explanation of what the install script does on each supported platform. 
 
-#### macOS
+### macOS
 - Download the correct homebrew bottle from GitHub and verify its hash
 - Untar and install `kr`, `krd`, `kr-pkcs11.so`, and `krssh` binaries
 - Backup and append to your ~/.ssh/config to point to `krd`
@@ -34,7 +34,7 @@ Equivalent command:
 $ brew install kryptco/tap/kr 
 ```
 
-#### Debian Linux (Ubuntu, Kali)
+### Debian Linux (Ubuntu, Kali)
 - Install necessary software for adding new repository: `software-properties-common`, `dirmngr`, `apt-transport-https`
 - Add krypt.co's binary signing key from the Ubuntu keyserver (fingerprint `C4A05888A1C4FA02E1566F859F2A29A569653940`)
 - Add krypt.co's apt repository hosted at `kryptco.github.io/deb`
@@ -50,7 +50,7 @@ $ sudo apt-get update
 $ sudo apt-get install kr -y 
 ```
 
-#### RPM Linux (RedHat, CentOS, Fedora)
+### RPM Linux (RedHat, CentOS, Fedora)
 - Add krypt.co's binary signing key from the MIT keyserver (fingerprint `C4A05888A1C4FA02E1566F859F2A29A569653940`)
 - Add krypt.co's yum repository hosted at `kryptco.github.io/yum`
 - Run `yum install kr`
@@ -65,15 +65,15 @@ $ sudo yum config-manager --add-repo https://kryptco.github.io/yum # fedora only
 $ sudo yum install kr -y 
 ```
 
-### Installing from source
+## Installing from source
 
-#### macOS
+### macOS
 *Golang & Rust are automatically installed by `brew`*
 ```bash
 $ brew install --HEAD kryptco/tap/kr
 ```
 
-#### linux
+### linux
 Dependencies:
 - [Install Go 1.7+](https://golang.org/doc/install)
 - [Install Rust 1.15+ and cargo](https://www.rustup.rs/)
@@ -83,7 +83,7 @@ $ git clone https://github.com/kryptco/kr src/github.com/kryptco/kr
 $ export GOPATH=$PWD && cd src/github.com/kryptco/kr && make install && kr restart
 ```
 
-### How Kr interfaces with SSH
+## How Kr interfaces with SSH
 `kr` automatically adds the following to your `~/.ssh/config` file:
 
 ```bash

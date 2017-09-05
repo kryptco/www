@@ -5,7 +5,7 @@ category: start
 order: 3
 ---
 
-### Use Kryptonite with your development stack
+# Use Kryptonite with your development stack
 
 Kryptonite and the `kr` CLI make it easy to get your public key on all of the servers and services you use. 
 For example, one of the most common uses is to upload your SSH public key to GitHub:
@@ -16,7 +16,7 @@ $ kr github
 
 > **Note**: First make sure you're [paired with your computer]({{ site.baseurl }}{% post_url 2017-08-20-pair %}).
 
-#### Print out your SSH public key
+## Print out your SSH public key
 The simplest way to print out your public key is to simply run:
 ```bash
 $ kr me
@@ -27,7 +27,7 @@ If you want to send it to someone or paste it on some server or developer websit
 $ kr copy
 ```
 
-#### Integrations
+## Integrations
 Run `$ kr` to see all the available commands. You'll see there's a comma seperated list of commands that provide support various services: AWS, Bitbucket, DigitalOcean, Google Cloud Platform, GitHub, GitHub Enterprise, and Heroku.
 
 These commands will help you add your public key to this service. For example, to add your SSH public key to your heroku account, run:
@@ -43,7 +43,7 @@ $ kr gcloud
 
 In some cases, like Heroku, `kr` uses your local credentials to add your public key. In most other cases (like GitHub or DigitalOcean), `kr` will copy your public key to the clipboard and open your webrowser to the right settings page for the service (like https://github.com/settings/keys) so you can paste your public key to save it to your account.
 
-#### Servers
+## Servers
 To use Kryptonite with any SSH server that's already running, you'll need to add your Kryptonite public key to the `~/.ssh/authorized_keys` file on that server. The `kr add` command makes this easy. Run
 
 ```bash
