@@ -1,6 +1,6 @@
 body {
     font-weight: 400;
-    font-size: 17px;
+    font-size: 16px;
     float: left;
     width: 100%;
 }
@@ -23,8 +23,8 @@ pre code table {
     margin-bottom: 40px;
 }
 
-h4 {
-    margin-top: 40px;
+.site-header {
+    margin-top: 1.5em;
 }
 pre code {
     overflow: auto;
@@ -142,7 +142,7 @@ body.rtl ul, body.rtl ol {
 
 p {
     margin-top: 10px;
-    line-height: 2em;
+    line-height: 1.5em;
     margin-bottom: 10px;
 }
 
