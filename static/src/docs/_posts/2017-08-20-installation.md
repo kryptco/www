@@ -16,7 +16,7 @@ The easiest way to install `kr` on any supported machine is the following:
 ```bash
 $ curl https://krypt.co/kr | sh
 ``` 
-You can check out the source or download the script locally with curl https://krypt.co/kr > kr and inspect it
+You can check out the source or download the script locally with `curl https://krypt.co/kr > kr` and inspect it
 
 > **Note:** The rest of this document describes the what the install script does and how to manually install `kr` from source.
 <hr>
