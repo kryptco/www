@@ -32,7 +32,7 @@ Now everytime you do a `git commit` or a `git tag -s`, Kryptonite will ask you i
 
 <hr>
 
-## Adding your PGP Public Key to GitHub
+## GitHub + PGP
 GitHub is one of the few source code management services that supports verifying PGP signed Git Commits and Tags. Learn more about this feature on their [code signing blog post](https://github.com/blog/2144-gpg-signature-verification).
 
 ## Git Config & Bash Profile Additions
@@ -47,7 +47,7 @@ Enabling code signing with `kr` makes **two** additions to your global `gitconfi
 	gpgSign = true
 ```
 
-These config options specifies that Git should use the `krgpg` program when it is asked to sign commits and tags and it enables signing commits by default. If you want to disable this, `kr` provides a helpful command to toggle this setting:
+These config options specify that Git should use the `krgpg` program when it is asked to sign commits and tags and enable signing commits by default. If you want to disable this, `kr` provides a helpful command to toggle this setting:
 
 ```bash
 $ kr codesign off # disable code signing by default
@@ -67,7 +67,7 @@ Kryptonite ▶ Phone approval required. Respond using the Kryptonite app
 ```
 
 ## View/Copy/Export your PGP Public Key
-In general, every helper command specified in [here]([paired with your computer]({{ site.baseurl }}{% post_url 2017-08-21-upload-your-ssh-publickey %}) works for your PGP public key as well. 
+In general, every helper command specified [here]({{ site.baseurl }}{% post_url 2017-08-21-upload-your-ssh-publickey %}) works for your PGP public key as well. 
 
 To do the PGP version, append `pgp` to the end of those commands. For example: 
 
