@@ -39,12 +39,12 @@ GitHub is one of the few source code management services that supports verifying
 Enabling code signing with `kr` makes **two** additions to your global `gitconfig` file, typically located at `~/.gitconfig`, and **one** addition to your bash profile.
 
 ### Git Config
-```bash
+```
 [gpg]
     program = /usr/local/bin/krgpg
 
 [commit]
-	gpgSign = true
+    gpgSign = true
 ```
 
 These config options specify that Git should use the `krgpg` program when it is asked to sign commits and tags and enable signing commits by default. If you want to disable this, `kr` provides a helpful command to toggle this setting:
