@@ -17,7 +17,7 @@ sections: [
     ['settings', 'Settings'],
     ['ssh', 'SSH Features'],
     ['security', 'Security'],
-    ['use-kryptonite-with', 'Use Kryptonite With']
+    ['use-kryptonite-with', 'Using Kryptonite With']
 ]
 
 # Keep as an empty string if served up at the root. If served up at a specific
