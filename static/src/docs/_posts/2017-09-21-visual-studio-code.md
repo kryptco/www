@@ -3,6 +3,7 @@ layout: page
 title: "Visual Studio Code"
 category: use-kryptonite-with
 date: 2017-09-21 15:52:45
+order: 1
 ---
 
 # Using Kryptonite with Visual Studio Code
