@@ -14,6 +14,92 @@
 			<section class='Section--faq'>
                 <h1>Frequently Asked Questions</h1>
                 <div class='FAQ'>
+                    <div class='FAQ__question' name='whyKryptonite'>
+                            <div class='FAQ__question__question'>
+                                Why Kryptonite?
+                            </div>
+                            <div class='FAQ__question__answer'>
+                                    Kryptonite combines the secure key storage of
+                                    a USB smart card with a familiar mobile phone interface. The
+                                    Kryptonite app performs SSH signatures without revealing the
+                                    private key to a paired computer. A Kryptonite SSH key can be
+                                    used without modifying any servers, allowing users to secure
+                                    their GitHub, AWS, and Google Cloud SSH authentication without
+                                    any changes to their infrastructure. Communication with
+                                    Kryptonite occurs over encrypted and signed push notifications and
+                                    Bluetooth, ensuring high availability and low latency.
+                                    Kryptonite also verifies and displays exactly which server
+                                    is being logged in to, unlike USB solutions that do not
+                                    have a user interface.
+                            </div>
+                    </div>
+                    <div class='FAQ__question' name='passwordAuth'>
+                            <div class='FAQ__question__question'>
+                                I use password-based authentication to connect to GitHub and my servers, why should I use Kryptonite?
+                            </div>
+                            <div class='FAQ__question__answer'>
+                                    It is well known that users reuse passwords or small variations on passwords for different services, allowing a compromise of one to cause the compromise of many. Requiring users to remember highly random passwords for every different service is unreasonable, and many passwords are brute-forceable. Finally, passwords are annoying to type every time code is pushed or you login to a server.
+                            </div>
+                    </div>
+
+                    <div class='FAQ__question' name='homeFolder'>
+                            <div class='FAQ__question__question'>
+                                I keep my private key in ~/.ssh, why should I use Kryptonite?
+                            </div>
+                            <div class='FAQ__question__answer'>
+                                Any application you run or install can silently read, use, and send off your private key without your knowledge. Kryptonite requires your explicit permission to use the private key and records every SSH access.
+                            </div>
+                    </div>
+                    <div class='FAQ__question' name='passwordProtected'>
+                            <div class='FAQ__question__question'>
+                                I passphrase encrypt my SSH private key, why should I use Kryptonite?
+                            </div>
+                            <div class='FAQ__question__answer'>
+                                    A passphrase-encrypted key is decrypted upon entry of
+                                    the password and given to a running SSH agent. A user-level process or malware
+                                    can use a decrypted key stored in an agent without knowledge of the user.
+                                    Furthermore, the same malware can pose as an SSH agent and direct SSH to use it
+                                    using the <code>SSH_AUTH_SOCK</code> environment variable, receiving the key in plaintext
+                                    the first time it is used.
+                            </div>
+                    </div>
+
+                    <div class='FAQ__question' name='server2FA'>
+                            <div class='FAQ__question__question'>
+                                I have two-factor authentication enabled on my servers, why should I use Kryptonite?
+                            </div>
+                            <div class='FAQ__question__answer'>
+                                    Adding two-factor authentication to either password or public key authentication requires changes to every SSH server. Kryptonite works out of the box without any changes to a server. 
+                                    
+                                    In some cases, such as third-party hosted services (GitHub, Bitbucket, etc.), integrating third-party two-factor is impossible. Many solutions require users to type a 6-digit passcode for every login, and others rely on a centralized server to perform the two-factor verification.                                    
+                            </div>
+                        </div>
+
+
+                    <div class='FAQ__question' name='github2FA'>
+                            <div class='FAQ__question__question'>
+                                I have two-factor authentication enabled on my GitHub account. Why should I use Kryptonite?
+                            </div>
+                            <div class='FAQ__question__answer'>
+                                GitHub does not enforce two-factor authentication when you push or pull code with SSH. Using Kryptonite requires access to your phone to use the SSH key.
+                            </div>
+                        </div>
+
+                    <div class='FAQ__question' name='hardwareKey'>
+                            <div class='FAQ__question__question'>
+                                I use a smart card (NitroKey, YubiKey, etc) to store my private key securely. Why should I use Kryptonite?
+                            </div>
+                            <div class='FAQ__question__answer'>
+                                    With a smart cards you can generate and store SSH keys in a separate piece of
+                                    hardware connected via USB. While the private key might not be extractable from the
+                                    device, users now have to purchase and carry around another piece of hardware
+                                    that takes up a USB port. Configuration of the smart card occurs on the
+                                    workstation itself, which may be compromised. When you approve a
+                                    signature, the only information conveyed to you is a blinking light, meaning
+                                    you don't know what you're actually signing.
+                            </div>
+                    </div>
+    
                     <div class='FAQ__question' name='installKR'>
                         <div class='FAQ__question__question'>
 							How do I install <code>kr</code> on my computer?
@@ -26,22 +112,7 @@
 							For more ways to install <code>kr</code>, visit <a href="/install">https://krypt.co/install</a>.
                         </div>
                     </div>
-                    <div class='FAQ__question' name='homeFolder'>
-                        <div class='FAQ__question__question'>
-							I keep my private key in ~/.ssh, why should I use Kryptonite?
-                        </div>
-                        <div class='FAQ__question__answer'>
-							Any application you run can read, use, and send off your private key without your knowledge. Kryptonite requires your explicit permission to use the private key and records every SSH access.
-                        </div>
-                    </div>
-                    <div class='FAQ__question' name='github2FA'>
-                        <div class='FAQ__question__question'>
-							I have two-factor authentication enabled on my GitHub account. Why should I use Kryptonite?
-                        </div>
-                        <div class='FAQ__question__answer'>
-							GitHub does not enforce two-factor authentication when you push or pull code with SSH. Using Kryptonite requires access to your phone to use the SSH key.
-                        </div>
-                    </div>
+               
                     <div class='FAQ__question' name='privateKeyKryptCo'>
                         <div class='FAQ__question__question'>
 							Does krypt.co have access to my SSH private key?

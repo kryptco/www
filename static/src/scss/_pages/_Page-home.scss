@@ -1,4 +1,8 @@
 #page-wrapper.Page-home {
     &.loading {
     }
+
+    .underlined-link {
+        text-decoration: underline;
+    }
 }

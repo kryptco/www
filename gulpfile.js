@@ -160,12 +160,6 @@ gulp.task('fileinclude', function() {
       basepath: '@file'
     }))
     .pipe(gulp.dest('./_site/why_kryptonite/'));
-  gulp.src(['static/src/why_kryptonite_/index.html'])
-    .pipe(fileinclude({
-      prefix: '@@',
-      basepath: '@file'
-    }))
-    .pipe(gulp.dest('./_site/why_kryptonite_/'));
   gulp.src(['static/src/about/index.html'])
     .pipe(fileinclude({
       prefix: '@@',
@@ -187,6 +181,14 @@ gulp.task('fileinclude', function() {
       basepath: '@root'
     }))
     .pipe(gulp.dest('./_site/docs/')); 
+
+    // process the gulp includes for the built jekyll jobs site
+  gulp.src(['./static/src/jobs/_site/**/*'])
+  .pipe(fileinclude({
+    prefix: '@@',
+    basepath: '@root'
+  }))
+  .pipe(gulp.dest('./_site/jobs/')); 
 
   gulp.src(['static/src/index.html'])
     .pipe(fileinclude({
