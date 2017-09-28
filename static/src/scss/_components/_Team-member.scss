@@ -33,9 +33,18 @@ $_photo-right-margin: 1em;
         }
     }
 
+    &__role {
+        font-family: $f-body;
+        padding-left: $_photo-size + $_photo-right-margin;
+        font-weight: bold;
+        color: $c-green-accent;        
+        font-size: 1em;
+    }
+
     &__bio {
         font-family: $f-body;
         padding-left: $_photo-size + $_photo-right-margin;
+        font-weight: normal;
     }
 
     &--advisor {
