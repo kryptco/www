@@ -58,10 +58,11 @@ Transform the device that every developer carries in their pocket into a secure 
 - storyboard (interface builder, auto-layout)
 
 *Android*:
-- `Java` 
+- `Java`, Android Studio, JNI
+- libraries: android keystore, ORMLite (sqlite), bluetooth
+- fragments / constraint layouts
 
 > **Requirements**: You have significant experience in at least one of these platforms and enjoy shipping safe, stable, and reliable phone apps. You published at least one app to the iOS or Android app store. It's a plus if you have worked on teams that have shipped large-scale iOS or Android apps.
-
 
 ------
 Sound interesting? Ping us at <a href="mailto:join@krypt.co">join@krypt.co</a>.
