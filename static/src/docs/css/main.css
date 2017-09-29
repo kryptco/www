@@ -4,7 +4,9 @@ body {
     float: left;
     width: 100%;
 }
-
+a:hover {
+    text-decoration: none;
+}
 .highlight {
     border: none;    
     border-radius: 4px;
