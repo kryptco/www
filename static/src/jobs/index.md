@@ -23,27 +23,45 @@ Join us to change how engineers secure their keys, servers, and code repositorie
 Without `kr` there's no Kryptonite. As our first platform engineer, you will be honing the workstation software that makes pairing Kryptonite with a computer seem like magic.
 You will design, build, and deploy new features for `kr` which connects Kryptonite with core developer tools like `ssh` and `git`. 
 
-Platforms:
-- macOS
-- Linux
-- Windows
+*Platforms*: `macOS`, `Linux`, `Windows`
 
-Technologies:
+*Technologies*:
 - `ssh`, `git`
-- Package Managers (`brew`, `npm`, `apt`, `yum`, `aur`, etc)
-- Bluetooth LE
+- package managers (`brew`, `npm`, `apt`, `yum`, `aur`, etc)
+- bluetooth low-energy
 - AWS SQS/SNS
 - PGP
 
-Languages:
-- `go`
-- `rust`
+*Languages*: `go`, `rust`
 
-> Experience. You have a knowledge of and/or interest in learning these platforms, technologies, and languages. It's a plus if you have deployed large-scale desktop software with a focus on stability and safety.
+> **Requirements**: You have a knowledge of and/or interest in learning these platforms, technologies, and languages. It's a plus if you have deployed large-scale desktop software with a focus on stability and safety.
 
 ### UX Engineer 
+Usability and ease-of-us are just as important as security -- at krypt.co they are equal pillars. You will be responible for the design and user experience of every krypt.co product: the Kryptonite iOS and Android apps, the command line interface `kr`, and our upcoming *Teams* web dashboard. You will be the user advocate at every step of product development.
 
-### Android Engineer
+*Role*:
+- build the Kryptonite for Teams web front-end
+- use your favorite design tools to create mockup designs of user-flows on all of our product platforms
+- create beautiful assets that echo Kryptonite's brand of simplicity and security
+- turn user engagemnet data and feedback into product improvements
+
+*Languages*: web front-end technologies
+
+
+### iOS/Android Engineer
+Transform the device that every developer carries in their pocket into a secure vault for their most powerful credential. You will be building technology that users directly interact with every time they push code or log into a server. Smoothness and reliability are top priorities.
+
+*iOS*:
+- `swift` 
+- libraries: core bluetooth, core data, common crypto, security, notification content/service extensions
+- concurrency (operation queues, mutexes, GCD)
+- storyboard (interface builder, auto-layout)
+
+*Android*:
+- `Java` 
+
+> **Requirements**: You have significant experience in at least one of these platforms and enjoy shipping safe, stable, and reliable phone apps. You published at least one app to the iOS or Android app store. It's a plus if you have worked on teams that have shipped large-scale iOS or Android apps.
+
 
 ------
 Sound interesting? Ping us at <a href="mailto:join@krypt.co">join@krypt.co</a>.
