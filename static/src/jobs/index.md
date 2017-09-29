@@ -37,7 +37,7 @@ You will design, build, and deploy new features for `kr` which connects Kryptoni
 > **Requirements**: You have a knowledge of and/or interest in learning these platforms, technologies, and languages. It's a plus if you have deployed large-scale desktop software with a focus on stability and safety.
 
 ### UX Engineer 
-Usability and ease-of-us are just as important as security -- at krypt.co they are equal pillars. You will be responible for the design and user experience of every krypt.co product: the Kryptonite iOS and Android apps, the command line interface `kr`, and our upcoming *Teams* web dashboard. You will be the user advocate at every step of product development.
+Usability and ease-of-use are just as important as security -- at krypt.co they are equal pillars. You will be responible for the design and user experience of every krypt.co product: the Kryptonite iOS and Android apps, the command line interface `kr`, and our upcoming *Teams* web dashboard. You will be the user advocate at every step of product development.
 
 *Role*:
 - build the Kryptonite for Teams web front-end
