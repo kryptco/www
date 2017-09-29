@@ -15,7 +15,7 @@ How can big organizations trust krypt.co with their most sensitive internal soft
 Join us to change how engineers secure their keys, servers, and code repositories!
 
 - stack: `rust`, `go`, `swift`, `java`, `javascript`.
-- code: [github.com/kryptco](https://github.com/kryptco)
+- code: <a href="https://github.com/kryptco" target="_blank">github.com/kryptco</a> 
 
 ## Open Positions
 
