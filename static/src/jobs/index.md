@@ -9,7 +9,7 @@ Our core values lie in the intersection of strong cryptography and breathtaking 
 
 We released our first product, **Kryptonite**, for *free* in early May 2017. Kryptonite is the new home for every developer's SSH private key. Kryptonite provides the best of both worlds: the security of having your private key never leave your phone with the convenience of using `git` and `ssh` as you normally do on your computer: `git push` or `ssh root@server`.
 
-Our next product builds on top of Kryptonite to provide world-class security for every member of both small and large engineering teams.
+Our next product builds on top of Kryptonite to provide a new level of security for every member of both small and large engineering teams.
 How can big organizations trust krypt.co with their most sensitive internal software? Our answer is a `trustless`, `end-to-end verifiable` infrastructure. While companies depend on us exclusively for liveness, they need *not* trust krypt.co for the authenticity of their public data (like public keys, team membership, etc.) and privacy of their non-public data like audit logs.
 
 Join us to change how engineers secure their keys, servers, and code repositories!
@@ -18,11 +18,32 @@ Join us to change how engineers secure their keys, servers, and code repositorie
 - code: [github.com/kryptco](https://github.com/kryptco)
 
 ## Open Positions
-### Systems Engineer
 
-### Mobile Engineer
+### Platform Engineer
+Without `kr` there's no Kryptonite. As our first platform engineer, you will be honing the workstation software that makes pairing Kryptonite with a computer seem like magic.
+You will design, build, and deploy new features for `kr` which connects Kryptonite with core developer tools like `ssh` and `git`. 
 
-### UX Engineer
+Platforms:
+- macOS
+- Linux
+- Windows
+
+Technologies:
+- `ssh`, `git`
+- Package Managers (`brew`, `npm`, `apt`, `yum`, `aur`, etc)
+- Bluetooth LE
+- AWS SQS/SNS
+- PGP
+
+Languages:
+- `go`
+- `rust`
+
+> Experience. You have a knowledge of and/or interest in learning these platforms, technologies, and languages. It's a plus if you have deployed large-scale desktop software with a focus on stability and safety.
+
+### UX Engineer 
+
+### Android Engineer
 
 ------
 Sound interesting? Ping us at <a href="mailto:join@krypt.co">join@krypt.co</a>.
