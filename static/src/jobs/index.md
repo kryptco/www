@@ -43,10 +43,11 @@ Usability and ease-of-us are just as important as security -- at krypt.co they a
 - build the Kryptonite for Teams web front-end
 - use your favorite design tools to create mockup designs of user-flows on all of our product platforms
 - create beautiful assets that echo Kryptonite's brand of simplicity and security
-- turn user engagemnet data and feedback into product improvements
+- turn user engagement data and feedback into product improvements
 
 *Languages*: web front-end technologies
 
+> **Requirements**: You have deployed web products all the way from the conception and design phase. You can start a future-proof codebase from scratch that will grow and withstand the test of time. You have extensive experience with JavaScript and know when to build something yourself versus use a framework.
 
 ### iOS/Android Engineer
 Transform the device that every developer carries in their pocket into a secure vault for their most powerful credential. You will be building technology that users directly interact with every time they push code or log into a server. Smoothness and reliability are top priorities.
