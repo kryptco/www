@@ -62,6 +62,10 @@
             font-size: 0.8em;
         }
 
+        .Page-header__new:hover {
+            background-color: $c-green-accent;            
+        }
+
         .Page-header__menu-button {
             display: none;
             position: relative;

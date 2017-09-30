@@ -11,16 +11,16 @@
 
             {% if thepage.title == page.title %}
                 <li data-order="{{ thepage.order }}">
-                    <a class="nav-selected" href="{{ site.baseurl }}{{ thepage.url }}">{{ thepage.title }}</a>
+                    <a class="nav-selected nav-post-title" href="{{ site.baseurl }}{{ thepage.url }}">{{ thepage.title }}</a>
                 </li>
             {% else %}
               <li data-order="{{ thepage.order }}">
-                  <a class="nav-normal" href="{{ site.baseurl }}{{ thepage.url }}">{{ thepage.title }}</a>
+                  <a class="nav-normal nav-post-title" href="{{ site.baseurl }}{{ thepage.url }}">{{ thepage.title }}</a>
                 </li>
             {% endif %}
         {% endfor %}
     {% endfor %}
-    <li class="divider">Other Resources</li>
+    <li class="divider nav-header">Other Resources</li>
 
     <li>
             <a target="_blank" href="/faq">FAQ</a>

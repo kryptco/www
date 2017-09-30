@@ -99,13 +99,13 @@ blockquote {
     font-size: 14px;
 }
 #navigation li {
-    font-size: 14px;
     list-style: none;
     font-weight: bold;
 }
 #navigation li a {
     padding-left: 10px;
     padding-right: 10px;
+    color: #343434;    
 }
 
 #navigation .nav-header {
@@ -113,8 +113,12 @@ blockquote {
     padding-right: 0;
 }
 
+.nav-header {
+    color: #5bc894;
+}
 .nav-selected {
-    text-decoration: underline;
+    /* text-decoration: underline; */
+    border-left: 2px solid #5bc894;
 }
 .nav-normal {
     text-decoration: none;
