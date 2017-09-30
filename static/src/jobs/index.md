@@ -19,6 +19,8 @@ Join us to change how engineers secure their keys, servers, and code repositorie
 
 ## Open Positions
 
+-----
+
 ### Platform Engineer
 Without `kr` there's no Kryptonite. As our first platform engineer, you will be honing the workstation software that makes pairing Kryptonite with a computer seem like magic.
 You will design, build, and deploy new features for `kr` which connects Kryptonite with core developer tools like `ssh` and `git`. 
@@ -36,6 +38,8 @@ You will design, build, and deploy new features for `kr` which connects Kryptoni
 
 > **Requirements**: You have a knowledge of and/or interest in learning these platforms, technologies, and languages. It's a plus if you have deployed large-scale desktop software with a focus on stability and safety.
 
+-----
+
 ### UX Engineer 
 Usability and ease-of-use are just as important as security -- at krypt.co they are equal pillars. You will be responible for the design and user experience of every krypt.co product: the Kryptonite iOS and Android apps, the command line interface `kr`, and our upcoming *Teams* web dashboard. You will be the user advocate at every step of product development.
 
@@ -48,6 +52,8 @@ Usability and ease-of-use are just as important as security -- at krypt.co they 
 *Languages*: web front-end technologies
 
 > **Requirements**: You have deployed web products all the way from the conception and design phase. You can start a future-proof codebase from scratch that will grow and withstand the test of time. You have extensive experience with JavaScript and know when to build something yourself versus use a framework.
+
+-----
 
 ### iOS/Android Engineer
 Transform the device that every developer carries in their pocket into a secure vault for their most powerful credential. You will be building technology that users directly interact with every time they push code or log into a server. Smoothness and reliability are top priorities.
