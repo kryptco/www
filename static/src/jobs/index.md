@@ -73,4 +73,4 @@ Transform the device that every developer carries in their pocket into a secure 
 
 ------
 ## Sound interesting? Ping us at <a href="mailto:join@krypt.co">join@krypt.co</a>.
-Don't see your job here? Email us anyways and tell us what you enjoy :)
+Don't see your job here? Email us anyways and tell us what you enjoy working on :)
