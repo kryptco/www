@@ -6,11 +6,11 @@ order: 1
 ---
 
 # The Kryptonite Security Architecture
-Kryptonite provides the best of both worlds: the security of your private key never leaving your phone with the convenience of using SSH as you normally do, i.e: `ssh root@server.com` or `git push origin master`. 
+Kryptonite provides the best of both worlds: the security of your private key never leaving your phone with the convenience of using SSH as you normally do, i.e: `ssh root@server.com` or `git push origin master`.
 
 A phone is a great place to store your private key as it is easier to provide isolation on your phone from malicious applications. If you’re curious why this is, read our blog post [*“Why Store an SSH Key With Kryptonite?”*](https://blog.krypt.co/why-store-an-ssh-key-with-kryptonite-9f24c1f983d5).
 
-> Kryptonite is designed such that you do not have to trust us, krypt.co, to operate any third party service. You need only trust the code running on the Kryptonite phone app. 
+> Kryptonite is designed such that you do not have to trust us, krypt.co, to operate any third party service. You need only trust the code running on the Kryptonite phone app.
 
 >**The private key never leaves your phone.**
 
@@ -21,7 +21,7 @@ Our system consists of three components: (1) the Kryptonite phone app for iOS an
 
 
 ### Kryptonite
-The Kryptonite phone app, referred to as “Kryptonite” in this post, generates and stores your private key on your phone and uses it to sign SSH login requests from a paired computer that is running `krd`. The private key never leaves the phone. If you are curious how the private key is stored on the phone read about it here.
+The Kryptonite phone app, referred to as “Kryptonite” in this post, generates and stores your private key on your phone and uses it to sign SSH login requests from a paired computer that is running `krd`. The private key never leaves the phone. If you are curious how the private key is stored on the phone read about it [here]({{ site.url}}/faq/?faq=privateKeyStorage).
 
 
 ### krd
@@ -93,7 +93,7 @@ $ ssh alex@me.krypt.co
 
 ![Step 2 Approval notification for host_auth data shown to user]({{ site.url }}/static/dist/img/docs/ssh_mekryptco.png){:class="img-responsive"}
 
- 
+
 1. First, `krd` is invoked by SSH and receives the `ssh_session_id`, `host`, and `user`. `krd` packages these items, along with a random `request_id` and the current time `unix_seconds`, into a `sign_request`. As *step (1)* shows, `krd` encrypts and signs `sign_request` and sends it to Kryptonite.
 
 2. Upon receiving `sign_request`, Kryptonite shows the user an approval notification (see image below) containing the login information as shown in *step (2)*.
@@ -106,5 +106,3 @@ $ ssh alex@me.krypt.co
 
 <hr>
 *Note: the formal white paper on our protocols will be available shortly*
-
-

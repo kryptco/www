@@ -17,6 +17,7 @@
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.0.12",
+    "gulp-file-include": "^1.2.0",
     "gulp-minify": "0.0.14",
     "gulp-notify": "^2.2.0",
     "gulp-sass": "^2.3.2",
