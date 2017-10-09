@@ -1,5 +1,5 @@
-# krypt.co web
-A simple static site to serve the krypt.co website. Built with `gulp` as the build system and `jekyll` for the krypt.co docs sub-site.
+# krypt.co's website
+A simple static site to serve the krypt.co website. Built with `gulp` as the build system and `jekyll` for the krypt.co docs/jobs sub-sites.
 
 # Build the project
 ## Dependencies
@@ -22,6 +22,10 @@ Edit files in `static/src/*`
 ## Docs
 Edit files in `static/src/docs/*`
 See the [Docs ReadMe](static/src/docs/README.md).
+
+## Jobs
+Edit files in `static/src/jobs/*`
+See the [Jobs ReadMe](static/src/jobs/README.md).
 
 # Deployment
 `make deploy`
