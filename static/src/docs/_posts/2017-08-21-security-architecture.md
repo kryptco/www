@@ -21,7 +21,7 @@ Our system consists of three components: (1) the Kryptonite phone app for iOS an
 
 
 ### Kryptonite
-The Kryptonite phone app, referred to as “Kryptonite” in this post, generates and stores your private key on your phone and uses it to sign SSH login requests from a paired computer that is running `krd`. The private key never leaves the phone. If you are curious how the private key is stored on the phone read about it here.
+The Kryptonite phone app, referred to as “Kryptonite” in this post, generates and stores your private key on your phone and uses it to sign SSH login requests from a paired computer that is running `krd`. The private key never leaves the phone. If you are curious how the private key is stored on the phone read about it [here](https://krypt.co/docs/security/privacy-policy.html#private-key-storage).
 
 
 ### krd
