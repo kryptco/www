@@ -16,10 +16,8 @@ html, body {
     text-rendering: geometricPrecision;
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
-}
 
-html {
-    // overflow: hidden;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
