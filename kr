@@ -54,8 +54,8 @@ install_darwin_manual() {
 	case $MAJOR_MAC_VERSION in
 		#10.10 NO LONGER SUPPORTED
 		10.11) OS_NAME=el_capitan;	BOTTLE_HASH=ca97f72a0c0983269e3bcf6b2e838098ebf8ecb86291da0eee1f7f5a83860183;;
-		10.12) OS_NAME=sierra;     	BOTTLE_HASH=72552a17e9f4e0c16a1e383525ebe275d0ab072f057b34e2ebf5d67066a13303;;
-		10.13) OS_NAME=high_sierra;	BOTTLE_HASH=c8218c22345aea05fcc17cb763425462018033f6ec5478426c4c7564b9275619;;
+		10.12) OS_NAME=sierra;     	BOTTLE_HASH=72552a17e9f4e0c16a1e383525ebe275d0ab072f057b34e2ebf5d67066a13303; USE_KRBTLE=1;;
+		10.13) OS_NAME=high_sierra;	BOTTLE_HASH=c8218c22345aea05fcc17cb763425462018033f6ec5478426c4c7564b9275619; USE_KRBTLE=1;;
 		*) say "Unsupported OS X version $MAJOR_MAC_VERSION. Kryptonite requires 10.11+" && exit 1 ;;
 	esac
 	say Downloading Kryptonite.
@@ -68,14 +68,19 @@ install_darwin_manual() {
 
 	ensure mk_owned_dir_if_not_exists $PREFIX/lib
 	ensure mk_owned_dir_if_not_exists $PREFIX/bin
-	ensure mk_owned_dir_if_not_exists $PREFIX/Frameworks
+
+	if [ "$USE_KRBTLE" = '1' ]; then
+		ensure mk_owned_dir_if_not_exists $PREFIX/Frameworks
+	fi
 
 	ignore rm -rf /tmp/kr
 	ensure tar xf /tmp/$KR_FILE_PREFIX.tar.gz -C /tmp/
 	ensure mv_maybe_sudo "/tmp/kr/$VERSION/bin/*" $PREFIX/bin/
 	ensure mv_maybe_sudo "/tmp/kr/$VERSION/lib/*" $PREFIX/lib/
-	ensure rmrf_maybe_sudo "$PREFIX/Frameworks/krbtle.framework"
-	ensure mv_maybe_sudo "/tmp/kr/$VERSION/Frameworks/krbtle.framework" $PREFIX/Frameworks/
+	if [ "$USE_KRBTLE" = '1' ]; then
+		ensure rmrf_maybe_sudo "$PREFIX/Frameworks/krbtle.framework"
+		ensure mv_maybe_sudo "/tmp/kr/$VERSION/Frameworks/krbtle.framework" $PREFIX/Frameworks/
+	fi
 
 	ensure mkdir -p ~/.ssh
 	ensure touch ~/.ssh/config
