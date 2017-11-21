@@ -27,7 +27,7 @@ For `NIST P-256` key pairs, Kryptonite generates and stores the private key in t
 To learn more about the security of Apple cryptography libaries and the Apple iOS Keychain see the [iOS Security Guide](https://www.apple.com/business/docs/iOS_Security_Guide.pdf).
 
 ### Android
-On Android, Kryptonite generates a `3072-bit RSA` key pair (because of the long secure hardware key generation time) or optionally an `Ed25519` key pair using [libsodium](https://download.libsodium.org/doc/). The private key is stored in secure hardware called the Android Keystore and cannot be extracted, even by Kryptonite. The Android Keystore performs private key operations as a black box.
+On Android, Kryptonite generates a `3072-bit RSA` key pair (stored in the AndroidKeystore crypto coprocessor) or optionally an `Ed25519` key pair using [libsodium](https://download.libsodium.org/doc/) (stored in app-private file storage). When the private key is stored in the AndroidKeystore it cannot be extracted, even by Kryptonite, since the AndroidKeystore performs private key operations as a black box.
 
 ## What information do we collect?
 If analytics are enabled, we collect the following information about usage of the Kryptonite app:
