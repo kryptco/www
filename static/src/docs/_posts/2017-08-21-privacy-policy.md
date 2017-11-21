@@ -13,9 +13,21 @@ Kryptonite is an iOS and Android application that generates and stores a key pai
 
 ## Private Key Storage
 
-On iOS, Kryptonite generates a `4096-bit RSA` key pair using the Apple iOS Security framework or optionally an `Ed25519` key pair using libsodium. Kryptonite stores the private key in the iOS Keychain with accessibility level `kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly`. To learn more about the security of Apple cryptography libaries and the Apple iOS Keychain see the [iOS Security Guide](https://www.apple.com/business/docs/iOS_Security_Guide.pdf).
+### iOS
+On iOS, Kryptonite by default generates a `4096-bit RSA` key pair using the Apple iOS Security framework.
 
-On Android, Kryptonite generates a `3072-bit RSA` key pair (because of the long secure hardware key generation time). The private key is stored in secure hardware called the Android Keystore and cannot be extracted, even by Kryptonite. The Android Keystore performs private key operations as a black box.
+Optionally, Kryptonite can be asked instead to generate one of the following key types:
+- A `Ed25519` key pair using [libsodium](https://download.libsodium.org/doc/)
+- A `NIST P-256` key pair using the Apple iOS Security framework (introduced in 2.3.0) 
+
+For `Ed25519` and `4096-bit RSA` key pairs, Kryptonite stores the private key in the iOS Keychain with accessibility level `kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly`. 
+
+For `NIST P-256` key pairs, Kryptonite generates and stores the private key in the iOS Secure Enclave.
+
+To learn more about the security of Apple cryptography libaries and the Apple iOS Keychain see the [iOS Security Guide](https://www.apple.com/business/docs/iOS_Security_Guide.pdf).
+
+### Android
+On Android, Kryptonite generates a `3072-bit RSA` key pair (because of the long secure hardware key generation time) or optionally an `Ed25519` key pair using [libsodium](https://download.libsodium.org/doc/). The private key is stored in secure hardware called the Android Keystore and cannot be extracted, even by Kryptonite. The Android Keystore performs private key operations as a black box.
 
 ## What information do we collect?
 If analytics are enabled, we collect the following information about usage of the Kryptonite app:
