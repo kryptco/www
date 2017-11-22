@@ -45,6 +45,23 @@
 			krd changelog
         </div>
 
+        <h1>2.3.0</h1>
+        <ul>
+			<li>Use bluetooth peripheral role instead of central role (requires
+				<code>krd</code> ^2.3.0 which now acts as a central). Most
+				Android 5+ devices support acting as a peripheral, but some do
+				not (i.e. Nexus 5). This results in more reliable bluetooth
+				performance.</li>
+			<li>Added kr transfer support to give another Kryptonite key (on
+				another phone) access to some of the servers this key has
+				access to. This greatly simplifies adding Kryptonite to a new
+				phone (and the old phone can remain as a backup). Running kr
+				transfer (which requires <code>krd</code> ^2.3.0) prompts
+				pairing of the old (source) device then the new (destination)
+				device. Then the owner picks which servers to add the new key
+				to.</li>
+		</ul>
+
         <h1>2.2.7</h1>
         <ul>
 			<li>Create <code>~/Library/LaunchAgents</code> on macOS if not present.</li>
