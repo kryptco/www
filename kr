@@ -1,6 +1,7 @@
 #!/bin/bash
 
 VERSION=2.3.0
+REBUILD=8.
 
 install_darwin() {
 	command -v brew &>/dev/null && test "$1" = "brew"
@@ -53,14 +54,14 @@ install_darwin_manual() {
 	MAJOR_MAC_VERSION=$(sw_vers -productVersion | awk -F '.' '{print $1 "." $2}')
 	case $MAJOR_MAC_VERSION in
 		#10.10 NO LONGER SUPPORTED
-		10.11) OS_NAME=el_capitan;	BOTTLE_HASH=8eb19cae9e600a1fce25c5e8d0b08b7589f26b055c48d998e599558672a9b718;;
-		10.12) OS_NAME=sierra;     	BOTTLE_HASH=0c26baab3c204cdac590f9bb6c2b49d6332b234c2b97991cd41f7524a32f48c5; USE_KRBTLE=1;;
-		10.13) OS_NAME=high_sierra;	BOTTLE_HASH=8c3a76db5d1705be9fe17385580ec740fc2dd88314fa91e4366471c174ae347e; USE_KRBTLE=1;;
+		10.11) OS_NAME=el_capitan;	BOTTLE_HASH=5688792e79692a5873b2eab249e39b57c34aac9979c19e96f6c895274d6990f2;;
+		10.12) OS_NAME=sierra;     	BOTTLE_HASH=2fe93574d959031ae572b0119215156f3d653dfe15f865190b5c33cfdc655045; USE_KRBTLE=1;;
+		10.13) OS_NAME=high_sierra;	BOTTLE_HASH=07aaf8b57e1e8c52efff7749498d448397296def6abb3bb5f28bec17a567d104; USE_KRBTLE=1;;
 		*) say "Unsupported OS X version $MAJOR_MAC_VERSION. Kryptonite requires 10.11+" && exit 1 ;;
 	esac
 	say Downloading Kryptonite.
 	KR_FILE_PREFIX=kr-$VERSION.$OS_NAME
-	ensure curl -# -o /tmp/$KR_FILE_PREFIX.tar.gz -L https://github.com/KryptCo/bottles/raw/master/$KR_FILE_PREFIX.bottle.tar.gz
+	ensure curl -# -o /tmp/$KR_FILE_PREFIX.tar.gz -L https://github.com/KryptCo/bottles/raw/master/$KR_FILE_PREFIX.bottle.${REBUILD}tar.gz
 
 	command -v openssl &>/dev/null && verify_bottle_hash
 	PREFIX=${PREFIX:-$HOMEBREW_PREFIX}
