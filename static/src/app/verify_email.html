@@ -5,13 +5,14 @@
 
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">	
+	<link rel="apple-touch-icon" href='/static/dist/img/apple-touch-icon.png'>
 	<link rel="icon" type="image/png" href='/static/dist/img/favicon.png'/>
 	<link rel="stylesheet" href='/static/dist/fonts/Montserrat/font_montserrat.css' />
-	<link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600,700" rel="stylesheet">
+	<link rel="stylesheet" href='/static/dist/fonts/Karla/font_karla.css' />
+	<link rel="stylesheet" href='/static/dist/fonts/SourceCodePro/font_sourcecodepro.css' />
 	<link rel="stylesheet" href='/static/dist/css/main.css' />
 		
-
     <style>
         .new {
             border-radius: 10px;
@@ -45,7 +46,7 @@
 </head>
 
 <body>
-	<div id="page-wrapper" class='Page-about'>
+	<div id="page-wrapper" class='Page-home'>
 		<header id='page-header' class='Page-header'>
 			<div class='Page-header__left-block'>
 				<a href='/'><img src='/static/dist/img/kryptonite-logo-green-on-white.svg' /></a>
@@ -55,8 +56,8 @@
 					<div class='Page-header__menu-button Hamburger-button'></div>					
 					<div class='Page-header__links'>
 						<a href="https://appsto.re/us/weWofb.i" target="blank"><img src="/static/dist/img/apple_app_store_badge.svg" style="height: 36px; vertical-align:middle;"></img></a>
-						<a href='https://play.google.com/store/apps/details?id=co.krypt.kryptonite&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="blank"><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' style="height: 56px; vertical-align: middle; margin-right: -10px;"/></a>
-				
+						<a href='https://play.google.com/store/apps/details?id=co.krypt.kryptonite&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="blank"><img alt='Get it on Google Play' src='/static/dist/img/android_play_badge.png' style="height: 44px; vertical-align: middle; margin-right: -10px;"/></a>
+						
 					</div>
 				</div>
 							
@@ -70,31 +71,34 @@
 					width: 128px;
 					height: 128px;
 					display: block;
-				    margin: 0 auto;
+					margin: 0 auto;
+					margin-top: 100px;
 				}
 
 				.header-message {
 					text-align: center;
-					font-family: "Karla"
+					font-family: "Karla";
+					font-weight: bold;
+					font-size: 2em;
 				}
 				.inline-green {
 					font-family: inherit;
 					display: inline;
 					color: #5bc984;
 				}	
+
+				@media only screen and (max-width: 500px) {
+				}
+
 			</style>
             <section class='Section--about-us'>
 				<img class="app-icon-round" src="/static/dist/img/apple-touch-icon.png"></img>				
-				<h1 class="header-message">Open this link <p class="inline-green">on your phone</p> to verify your email.</h1>		
+				<p class="header-message">Open this link <span class="inline-green">on your phone</span> to verify your email.</p>		
             </section>
-			<br>
-			<br>
-			<br>
-			<footer>
-				<h4>Have questions? <a href='mailto:support@krypt.co'>support@krypt.co</a></h4>	
-			</footer>
+			
 		</main>		
 		<div id="site_footer" style="position: absolute;right: 0;bottom: 0;left: 0;text-align: center;">
+				<h4>Have questions? <a href='mailto:support@krypt.co'>support@krypt.co</a></h4>			
 				<br>
 				<footer style="font-size:.4em;">
 					<p> 
@@ -106,6 +110,6 @@
 			</div>
 		
     </div>
-    <script src='/static/dist/js/app.js'></script>
+	@@include('../body_tail.html')	
 </body>
 </html>

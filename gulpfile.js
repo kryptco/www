@@ -18,6 +18,8 @@ var gulp = require('gulp'),
         bundle: 'app.js',
         dist: './_site/static/dist',
         distJs: './_site/static/dist/js',
+        distLibJs: './_site/static/dist/js/lib/',                
+        srcLibJs: './static/src/js/lib/**',        
         watchSCSS: './static/src/scss/**/*.scss',
         watchDocsHTML: './static/src/docs/_site/**/*.html',
         watchDocsCSS: './static/src/docs/_site/**/*.css',
@@ -48,6 +50,13 @@ gulp.task('images', function () {
         .src(p.srcImg)
         .pipe(gulp.dest(p.distImg));
 });
+
+gulp.task('libJS', function () {
+  return gulp 
+      .src(p.srcLibJs)
+      .pipe(gulp.dest(p.distLibJs));
+});
+
 
 gulp.task('data', function () {
     return gulp
@@ -112,6 +121,7 @@ gulp.task('build', ['clean'], function () {
     gulp.start(['fonts']);
     gulp.start(['data']);
     gulp.start(['images']);
+    gulp.start(['libJS']);    
     gulp.start(['styles']);
     gulp.start(['browserify']);
 });

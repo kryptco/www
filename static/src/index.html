@@ -4,7 +4,8 @@
     <title>Kryptonite - The new way to protect your private key on your phone.</title>
 
 	@@include('./html_head.html')
-	<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+	<script async defer src='/static/dist/js/lib/github-button/github-buttons.js'></script>	
 </head>
 
 <body>
@@ -70,7 +71,7 @@
 						<div class='Step__counter'><span>1</span></div>
 						<h3>Download Kryptonite on the app store</h3>
 						<a href="https://appsto.re/us/weWofb.i" target="blank"><img src="static/dist/img/apple_app_store_badge.svg" style="padding: 10px;"></img></a>
-						<a href='https://play.google.com/store/apps/details?id=co.krypt.kryptonite&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="blank"><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' style="height: 60px;"/></a>
+						<a href='https://play.google.com/store/apps/details?id=co.krypt.kryptonite&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="blank"><img alt='Get it on Google Play' src='/static/dist/img/android_play_badge.png' style="height: 60px;"/></a>
 					</div>
 					<div class='Section--get-started__steps__step Step'>
 						<div class='Step__counter'><span>2</span></div>
@@ -85,7 +86,7 @@
 						<div class='Step__counter'><span>3</span></div>
 						<h3>Use SSH normally</h3>
 						<p>After you add your public key to a server or GitHub, use SSH or git as you normally would.</p>
-						<div class='Terminal'>
+						<div class=	'Terminal'>
 							<span class='Terminal-Prompt'>$</span>ssh root@server
 						</div>
 						<p>Every time you SSH, your computer will request a signature from your phone. <br> <a href='/faq/?faq=keyOnYourPhone'>Read more</a></p>
@@ -98,12 +99,7 @@
 		</main>
 
 		@@include('./footer.html')
-    </div>
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
-    <script src='//cdn.jsdelivr.net/theaterjs/latest/theater.min.js'></script>
-    <script src='//cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser-polyfill.min.js'></script>
-    <script src='/static/dist/js/app.js'></script>
-
+	</div>
+	@@include('./body_tail.html')	
 </body>
 </html>
