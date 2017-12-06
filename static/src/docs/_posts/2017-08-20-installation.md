@@ -80,7 +80,7 @@ Dependencies:
 
 ```bash
 $ git clone https://github.com/kryptco/kr src/github.com/kryptco/kr 
-$ export GOPATH=$PWD && cd src/github.com/kryptco/kr && make install && kr restart
+$ cd src/github.com/kryptco/kr && GOPATH=$OLDPWD make install && kr restart
 ```
 
 ## How Kr interfaces with SSH
