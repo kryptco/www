@@ -14,7 +14,6 @@ codeurl: 'https://github.com/kryptco/www/'
 # Default categories (in order) to appear in the navigation
 sections: [
     ['start', 'Get Started'],
-    ['settings', 'Settings'],
     ['ssh', 'SSH Features'],
     ['security', 'Security'],
     ['use-kryptonite-with', 'Using Kryptonite With']

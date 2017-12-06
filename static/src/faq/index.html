@@ -134,12 +134,7 @@
 							How is the SSH private key stored on my phone?
                         </div>
                         <div class='FAQ__question__answer'>
-							<p>
-							On iOS, Kryptonite generates a 4096-bit RSA key pair using the Apple iOS Security framework or optionally an Ed25519 key pair using <a href="https://download.libsodium.org/doc/">libsodium</a>. Kryptonite stores the private key in the iOS Keychain with accessibility level “kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly”. To learn more about the security of Apple cryptography libaries and the Apple iOS Keychain see: <a href="https://www.apple.com/business/docs/iOS_Security_Guide.pdf">https://www.apple.com/business/docs/iOS_Security_Guide.pdf</a>.
-							</p>
-							<p>
-							On Android, Kryptonite generates a 3072-bit RSA key pair (because of the long secure hardware key generation time). The private key is stored in secure hardware called the <a href="https://developer.android.com/training/articles/keystore.html">Android Keystore</a> and cannot be extracted, even by Kryptonite. The Android Keystore performs private key operations as a black box.
-							</p>
+                            Read about how Kryptonite stores private keys in our <a href="/docs/security/privacy-policy.html#private-key-storage">security documentation</a>.
                         </div>
                     </div>
                     <div class='FAQ__question' name='keyOnYourPhone'>

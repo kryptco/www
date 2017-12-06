@@ -3,10 +3,11 @@
 <head>
     <title>Docs | Kryptonite - The new home for your private key</title>
 
-    <link href="{{ site.baseurl }}/css/bootstrap.min.css" rel="stylesheet">        
     @@include("static/src/html_head.html")  
     <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/syntax.css">        
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/nav.css">            
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/syntax.css"> 
+
 </head>
 
 <body>
@@ -15,32 +16,15 @@
         <main>
             <div class="container">
                 <div class="row">
-                    {% assign post_count = site.posts|size %}
-                    {% if site.navigation != 0 and site.navigation == 1 or post_count > 0 %}
-                        <div id="navigation" class="col-sm-2">
-                            {% include navigation.html %}
-                        </div>    
-                        <div id="content" class="col-sm-10">
-                            {{ content }}
-                        </div>
-                    {% else %}
-                        <div id="content" class="col-sm-10">
-                            {{ content }}
-                        </div>
-                    {% endif %}
-                    <!-- <div id="content" class="contribute col-sm-1">
-                            <a href="//{{ site.codeurl }}"> 
-                                <img src="/static/dist/img/github.png"/>EDIT                        
-                            </a>                        
-                    </div> -->
+                    <div id="navigation">
+                        {% include navigation.html %}
+                    </div>    
+                    <div id="content">
+                            {{ content }}                            
+                    </div>    
                 </div>            
-                <div class="row">
-                    <br>
-                    <div id="footer" class="col-sm-12">
-                        {% include footer.html %}
-                    </div>
-                    <br>
-                    <br>
+                <div id="footer">
+                    {% include footer.html %}
                 </div>
             </div>                     
         </main>

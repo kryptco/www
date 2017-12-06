@@ -1,36 +1,58 @@
 <div class="site-header"> <a href="{{ site.baseurl }}/">{{ site.title }}</a> </div>
-<ul class="nav nav-list">
-    {% for section in site.sections %}
-        {% assign attr = section[0] %}
-        {% assign label = section[1] %}
+<div class="nav">
+    
+    <!-- ARTICLE CATEGORIES -->
+    <ul>
+        {% for section in site.sections %}
+            {% assign attr = section[0] %}
+            {% assign label = section[1] %}
+            {% assign sorted = site.categories[attr] | sort:"order" %}
+            
+            <li>
+                {% if page.category == attr %}
+                    <input type="checkbox" checked ="true" id="list-item-{{attr}}">                        
+                    <label for="list-item-{{attr}}" class="nav-header category-selected">{{ label }}</label>        
+                {% elsif page.category == "index" %}
+                    <input type="checkbox" checked ="true" id="list-item-{{attr}}">                        
+                    <label for="list-item-{{attr}}" class="nav-header">{{ label }}</label>        
+                {% else %}
+                    <input type="checkbox" id="list-item-{{attr}}">                        
+                    <label for="list-item-{{attr}}" class="nav-header">{{ label }}</label>        
+                {% endif %}
+                
+                <ul class="page-list">                       
+                <!-- ARTICLE PAGES -->
+                {% for thepage in sorted %}
 
-        {% for thepage in site.categories[attr] %}
-            {% if forloop.first %}
-                <li class="nav-header">{{ label }}</li>
-            {% endif %}
-
-            {% if thepage.title == page.title %}
-                <li data-order="{{ thepage.order }}">
-                    <a class="nav-selected nav-post-title" href="{{ site.baseurl }}{{ thepage.url }}">{{ thepage.title }}</a>
-                </li>
-            {% else %}
-              <li data-order="{{ thepage.order }}">
-                  <a class="nav-normal nav-post-title" href="{{ site.baseurl }}{{ thepage.url }}">{{ thepage.title }}</a>
-                </li>
-            {% endif %}
+                    {% if thepage.title == page.title %}
+                        <li  data-order="{{ thepage.order }}">
+                            <a class="page-selected" href="{{ site.baseurl }}{{ thepage.url }}">{{ thepage.title }}</a>
+                        </li>
+                    {% else %}
+                    <li data-order="{{ thepage.order }}">
+                        <a href="{{ site.baseurl }}{{ thepage.url }}">{{ thepage.title }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+                </ul>
+            </li>
         {% endfor %}
-    {% endfor %}
-    <li class="divider nav-header">Other Resources</li>
 
-    <li>
-            <a target="_blank" href="/faq">FAQ</a>
+        <li>
+            <!-- OTHER RESOURCES -->
+        {% if page.category == "index" %}
+            <input type="checkbox" checked ="true" id="list-item-misc">                
+        {% else %}
+            <input type="checkbox" id="list-item-misc">        
+        {% endif %}
+            <label for="list-item-misc" class="nav-header">Misc</label>        
+            <ul class="page-list">
+                <li><a target="_blank" href="/faq">FAQ</a></li>                
+                <li><a target="_blank" href="/app/krd_changelog/">Kr Changelog</a></li>
+                <li><a target="_blank" href="/app/open-source-libraries/"> App OSS Libraries</a></li>                
+            </ul>
         </li>
+    </ul>
+
     
-    <li>
-        <a target="_blank" href="/app/krd_changelog/">Kr Changelog</a>
-    </li>
-    <li>
-        <a target="_blank" href="/app/open-source-libraries/"> App OSS Libraries</a>
-    </li>    
-    
-</ul>
+</div>
