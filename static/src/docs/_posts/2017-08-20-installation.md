@@ -79,8 +79,9 @@ Dependencies:
 - [Install Rust 1.15+ and cargo](https://www.rustup.rs/)
 
 ```bash
-$ git clone https://github.com/kryptco/kr src/github.com/kryptco/kr 
-$ export GOPATH=$PWD && cd src/github.com/kryptco/kr && make install && kr restart
+$ export GOPATH=${GOPATH:-$PWD}
+$ go get github.com/kryptco/kr
+$ cd $GOPATH/src/github.com/kryptco/kr && make install && kr restart
 ```
 
 ## How Kr interfaces with SSH
