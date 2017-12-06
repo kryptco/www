@@ -75,7 +75,7 @@ $ brew install --HEAD kryptco/tap/kr
 
 ### linux
 Dependencies:
-- [Install Go 1.7+](https://golang.org/doc/install)
+- [Install Go 1.8+](https://golang.org/doc/install)
 - [Install Rust 1.15+ and cargo](https://www.rustup.rs/)
 
 ```bash
