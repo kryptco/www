@@ -5,7 +5,7 @@ category: start
 order: 1
 ---
 
-# Install Kryptonite & `kr`
+# Install Kryptonite + kr
 
 ## Kryptonite app
 Go to [https://get.krypt.co](https://get.krypt.co) on your iOS or Android device and you will be redirected to the Kryptonite app download page on the Apple App Store (iOS) or the Google Play Store (Android).

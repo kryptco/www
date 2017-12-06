@@ -1,8 +1,8 @@
 /** Nav **/
 
 .nav {
-    padding-top: 10px;
     font-size: 0.8em;
+    padding-top: 10px;
 }
 .nav>ul{
     list-style: none;
@@ -49,9 +49,6 @@ label{
   padding-bottom: 0;
 }
 
-label:hover{
-}
-
 input[type="checkbox"]{
   position: absolute;
   left: -9999px;
@@ -69,5 +66,61 @@ input[type="checkbox"]:checked ~ ul{
   transform: scaleY(1); 
 }
 
-input[type="checkbox"]:checked + label{
+
+/** chevron **/
+
+.show-menu {
+    font-weight: normal;
+    padding: 10px;
+
+    border-radius: 4px;
+    box-shadow: 0px 0px 8px #3636362f;
+
+}
+
+.show-menu:hover {
+    border: 1px solid #5bc894;    
+}
+.chevron-down {
+    display: inline-block;
+    border: solid #5bc894;
+    border-width: 0 2px 2px 0;
+    padding: 2px;
+    margin-left: 4px;
+    margin-bottom: 2px;
+    transition: transform 0.2s ease,margin-bottom 0.2s ease;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+/** collapsable **/
+
+#collapsed-nav {
+    display: none;
+    margin-left: 20px;
+}
+
+/*Show menu when invisible checkbox is checked*/
+input[type="checkbox"]:checked ~ #navigation {
+    display: inline;
+}
+
+
+/*Responsive Styles*/
+@media screen and (max-width : 760px){
+    #navigation {
+        margin-top: 20px;            
+        grid-column: span 10;
+        display: none;
+    }
+
+    #content {
+        padding-left: 20px;
+        margin-right: 0px;
+        max-width: none;  
+        grid-column: span 10;
+    }
+
+    #collapsed-nav {
+        display: inline;
+    }
 }

@@ -92,7 +92,12 @@ pre code table {
 }
 
 .site-header {
-    margin-top: 1.5em;
+    margin-bottom: 20px;    
+}
+.site-header a {
+    font-size: 1.2em;
+    margin-left: 20px;
+    /* color: #343434 !important; */
 }
 pre code {
     overflow: auto;

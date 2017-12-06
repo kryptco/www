@@ -14,8 +14,30 @@
      <div id="page-wrapper" class='Page-about'>
          @@include("static/src/header.html")
         <main>
+            <div class="site-header"> 
+                <a href="{{ site.baseurl }}/">{{ site.title }}</a> 
+            </div> 
+            
+            <div id="collapsed-nav">
+                    {% if page.category == "index" %}
+                        <label for="show-menu" class="show-menu"> Table of Contents &#x2304;   </label>                                                
+                    {% else %}
+                        {% for section in site.sections %}
+                            {% assign attr = section[0] %}
+                            {% assign label = section[1] %}
+                        
+                        {% if page.category == attr %}                        
+                            <label for="show-menu" class="show-menu">{{ label }} / {{ page.title }} <span class="chevron-down"></span></label>                            
+                        {% endif %}
+                        {% endfor %}   
+
+                    {% endif %}                     
+                
+            </div>
+
             <div class="container">
                 <div class="row">
+                    <input type="checkbox" id="show-menu" role="button">                        
                     <div id="navigation">
                         {% include navigation.html %}
                     </div>    
