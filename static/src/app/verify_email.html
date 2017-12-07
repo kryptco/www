@@ -37,9 +37,9 @@
 
 		setTimeout(function() {
 			if(navigator.userAgent.match(/iPhone|iPod/i) ) {
-				window.location = "kr://verify_email/" + getParameterByName("nonce");
+				window.location = "kryptonite://verify_email/" + getParameterByName("nonce");
 			} else if(navigator.userAgent.match(/Android/i) ) {
-				window.location = "kr://verify_email/" + getParameterByName("nonce");
+				window.location = "kryptonite://verify_email/" + getParameterByName("nonce");
 			}
 		}, 100);
 	</script>
