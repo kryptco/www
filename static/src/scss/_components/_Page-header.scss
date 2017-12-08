@@ -106,7 +106,7 @@
             @include transition(all 0.38s cubic-bezier(0.645, 0.045, 0.355, 1));
         }
 
-        @media (max-width: 50em) {
+        @media (max-width: 58em) {
             .Page-header__menu-button {
                 display: block;
             }
