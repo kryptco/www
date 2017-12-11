@@ -115,7 +115,7 @@ input[type="checkbox"]:checked ~ #navigation {
 
     #content {
         padding-left: 20px;
-        margin-right: 0px;
+        margin-right: 20px;
         max-width: none;  
         grid-column: span 10;
     }
