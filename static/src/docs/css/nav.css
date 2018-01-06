@@ -112,6 +112,9 @@ input[type="checkbox"]:checked ~ #navigation {
         grid-column: span 10;
         display: none;
     }
+    .site-header {
+        margin-bottom: 20px;    
+    }
 
     #content {
         padding-left: 20px;

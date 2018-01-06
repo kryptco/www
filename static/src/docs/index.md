@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "Kryptonite Docs"
+title: "Krypton Docs"
 category: index
 ---
 
-# Kryptonite Docs
-Kryptonite provides the best of both worlds: the **security** of having your _private key never leave your phone_ with the **convenience** of using `git` and `ssh` as you normally do on your computer: `git push` or `ssh root@server`.
+# Documentation
+Krypton provides the best of both worlds: the **security** of having your _private key never leave your phone_ with the **convenience** of using `git` and `ssh` as you normally do on your computer: `git push` or `ssh root@server`.
 
-The Kryptonite app generates an SSH key and pairs with one or more computers. Paired computers may request operations using the key such that **the private key never leaves the phone.**
+The Krypton app generates an SSH key and pairs with one or more computers. Paired computers may request operations using the key such that **the private key never leaves the phone.**
 
 
 <div id="start-page">

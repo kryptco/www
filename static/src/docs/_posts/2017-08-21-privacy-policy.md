@@ -7,30 +7,30 @@ order: 3
 
 # App Privacy Policy
 
-## What are Kryptonite and krd?
+## What are Krypton and krd?
 
-Kryptonite is an iOS and Android application that generates and stores a key pair for use with SSH (Secure Shell) and provides a mechanism to delegate access to the private key to computers running krd. The private key never leaves Kryptonite. Instead, through a pairing procedure, Kryptonite creates a channel for krd to send “signature requests” whereby upon a valid request, Kryptonite cryptographically signs the requested data with the private key and only sends the resulting signature back to krd. This communication channel is encrypted and signed with a session key established during the pairing procedure.
+Krypton is an iOS and Android application that generates and stores a key pair for use with SSH (Secure Shell) and provides a mechanism to delegate access to the private key to computers running krd. The private key never leaves Krypton. Instead, through a pairing procedure, Krypton creates a channel for krd to send “signature requests” whereby upon a valid request, Krypton cryptographically signs the requested data with the private key and only sends the resulting signature back to krd. This communication channel is encrypted and signed with a session key established during the pairing procedure.
 
 ## Private Key Storage
 
 ### iOS
-On iOS, Kryptonite by default generates a `4096-bit RSA` key pair using the Apple iOS Security framework.
+On iOS, Krypton by default generates a `4096-bit RSA` key pair using the Apple iOS Security framework.
 
-Optionally, Kryptonite can be asked instead to generate one of the following key types:
+Optionally, Krypton can be asked instead to generate one of the following key types:
 - A `Ed25519` key pair using [libsodium](https://download.libsodium.org/doc/)
 - A `NIST P-256` key pair using the Apple iOS Security framework (introduced in 2.3.0) 
 
-For `Ed25519` and `4096-bit RSA` key pairs, Kryptonite stores the private key in the iOS Keychain with accessibility level `kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly`. 
+For `Ed25519` and `4096-bit RSA` key pairs, Krypton stores the private key in the iOS Keychain with accessibility level `kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly`. 
 
-For `NIST P-256` key pairs, Kryptonite generates and stores the private key in the iOS Secure Enclave.
+For `NIST P-256` key pairs, Krypton generates and stores the private key in the iOS Secure Enclave.
 
 To learn more about the security of Apple cryptography libaries and the Apple iOS Keychain see the [iOS Security Guide](https://www.apple.com/business/docs/iOS_Security_Guide.pdf).
 
 ### Android
-On Android, Kryptonite generates a `3072-bit RSA` key pair (stored in the AndroidKeystore crypto coprocessor) or optionally an `Ed25519` key pair using [libsodium](https://download.libsodium.org/doc/) (stored in app-private file storage). When the private key is stored in the AndroidKeystore it cannot be extracted, even by Kryptonite, since the AndroidKeystore performs private key operations as a black box.
+On Android, Krypton generates a `3072-bit RSA` key pair (stored in the AndroidKeystore crypto coprocessor) or optionally an `Ed25519` key pair using [libsodium](https://download.libsodium.org/doc/) (stored in app-private file storage). When the private key is stored in the AndroidKeystore it cannot be extracted, even by Krypton, since the AndroidKeystore performs private key operations as a black box.
 
 ## What information do we collect?
-If analytics are enabled, we collect the following information about usage of the Kryptonite app:
+If analytics are enabled, we collect the following information about usage of the Krypton app:
 
 - App version
 - iOS/Android Model, Version, Carrier, ISP
@@ -54,15 +54,15 @@ We do NOT collect any properties of your SSH communication. These are examples o
 - Computer names
 
 ## How do we collect information?
-We report all collected information, except user email addresses, to Google Analytics by sending HTTP requests to the [Google Analytics Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/v1/). This data is governed by the Google privacy policy located at https://www.google.com/policies/privacy/. We do NOT use the Google Analytics iOS or Android SDKs. Every Kryptonite app generates a 128-bit random ID to be used only for analytics. User email addresses, along with the `128-bit` analytics ID, are stored in Amazon Web Services’ DynamoDB Service, governed by the [AWS privacy policy](https://aws.amazon.com/privacy/). Using the email address and analytics ID stored in DynamoDB, krypt.co is able to associate a Google Analytics session to the corresponding user’s email address.
+We report all collected information, except user email addresses, to Google Analytics by sending HTTP requests to the [Google Analytics Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/v1/). This data is governed by the Google privacy policy located at https://www.google.com/policies/privacy/. We do NOT use the Google Analytics iOS or Android SDKs. Every Krypton app generates a 128-bit random ID to be used only for analytics. User email addresses, along with the `128-bit` analytics ID, are stored in Amazon Web Services’ DynamoDB Service, governed by the [AWS privacy policy](https://aws.amazon.com/privacy/). Using the email address and analytics ID stored in DynamoDB, krypt.co is able to associate a Google Analytics session to the corresponding user’s email address.
 
 ## Disable information collection
 
-Users can disable all information collection by navigating to the Kryptonite settings page and enabling the “Disable Google Analytics” setting. Kryptonite WILL report to Google Analytics that analytics have been disabled, but will not report any future events until analytics have been re-enabled by toggling the same setting.
+Users can disable all information collection by navigating to the Krypton settings page and enabling the “Disable Google Analytics” setting. Krypton WILL report to Google Analytics that analytics have been disabled, but will not report any future events until analytics have been re-enabled by toggling the same setting.
 
 ## How we use your information
 
-We use your information to improve Kryptonite’s performance and quality. We use this information to learn which features are being used and how often. We also use this information to detect irregularities. This enables us to modify functionality, diagnose potential bugs, and determine which features to select for product updates. 
+We use your information to improve Krypton’s performance and quality. We use this information to learn which features are being used and how often. We also use this information to detect irregularities. This enables us to modify functionality, diagnose potential bugs, and determine which features to select for product updates. 
 We collect email addresses for the purpose of communicating new features, product updates, and company updates. We will never spam email addresses and provide users with a way to opt out.
 
 ## Contact

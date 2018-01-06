@@ -5,9 +5,9 @@ category: start
 order: 3
 ---
 
-# Use Kryptonite with your development stack
+# Use Krypton with your development stack
 
-Kryptonite and the `kr` CLI make it easy to get your public key on all of the servers and services you use. 
+Krypton and the `kr` CLI make it easy to get your public key on all of the servers and services you use. 
 For example, one of the most common uses is to upload your SSH public key to GitHub:
 
 ```bash
@@ -44,7 +44,7 @@ $ kr gcloud
 In some cases, like Heroku, `kr` uses your local credentials to add your public key. In most other cases (like GitHub or DigitalOcean), `kr` will copy your public key to the clipboard and open your web browser to the right settings page for the service (like [https://github.com/settings/keys](https://github.com/settings/keys)) so you can paste your public key to save it to your account.
 
 ## Servers
-To use Kryptonite with any SSH server that's already running, you'll need to add your Kryptonite public key to the `~/.ssh/authorized_keys` file on that server. The `kr add` command makes this easy.
+To use Krypton with any SSH server that's already running, you'll need to add your Krypton public key to the `~/.ssh/authorized_keys` file on that server. The `kr add` command makes this easy.
 
 ```bash
 $ kr add <user>@<server>
@@ -52,4 +52,4 @@ $ kr add <user>@<server>
 
 `<user>` is the user name for the account on `<server>`. 
 
-> **Note**:`kr` uses your local SSH keys authenticate to the server/user account and then it runs the command to copy your Kryptonite public key to the corresponding `authorized_keys` file.
+> **Note**:`kr` uses your local SSH keys authenticate to the server/user account and then it runs the command to copy your Krypton public key to the corresponding `authorized_keys` file.

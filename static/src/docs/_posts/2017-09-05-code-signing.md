@@ -5,8 +5,8 @@ category: start
 order: 4
 ---
 
-# PGP Signing Git Commits with Kryptonite
-Kryptonite now supports PGP signing Git Commits and Tags (v2.2.0+). This means that Kryptonite now also generates and stores your PGP private key. This guide will go through setting up code signing for the first time.
+# PGP Signing Git Commits with Krypton
+Krypton now supports PGP signing Git Commits and Tags (v2.2.0+). This means that Krypton now also generates and stores your PGP private key. This guide will go through setting up code signing for the first time.
 
 > **Note**: first make sure you're [paired with your computer]({{ site.baseurl }}{% post_url 2017-08-20-pair %}).
 
@@ -26,9 +26,9 @@ $ export GPG_TTY=$(tty); kr codesign test
 
 You should see a request show up on your phone, asking for your permission to sign a test commit.
 
-Now everytime you do a `git commit` or a `git tag -s`, Kryptonite will ask you if it should PGP sign the commit/tag.
+Now everytime you do a `git commit` or a `git tag -s`, Krypton will ask you if it should PGP sign the commit/tag.
 
-> The remainder of the post talks about configurations changes and other tips for PGP signing git commits with Kryptonite.
+> The remainder of the post talks about configurations changes and other tips for PGP signing git commits with Krypton.
 
 <hr>
 
@@ -62,8 +62,8 @@ export GPG_TTY=$(tty)
 This enables `git` to write outputs of the `krgpg` command to standard error, so you will be able to see status messages like:
 
 ```bash
-Kryptonite ▶ Requesting git commit signature from phone
-Kryptonite ▶ Phone approval required. Respond using the Kryptonite app
+Krypton ▶ Requesting git commit signature from phone
+Krypton ▶ Phone approval required. Respond using the Krypton app
 ```
 
 ## View/Copy/Export your PGP Public Key

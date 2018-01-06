@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>FAQ | Kryptonite - The new home for your private key</title>
+    <title>FAQ | Krypton - The new home for your private key</title>
 
 	@@include("../html_head.html")
 </head>
@@ -16,26 +16,26 @@
                 <div class='FAQ'>
                     <div class='FAQ__question' name='whyKryptonite'>
                             <div class='FAQ__question__question'>
-                                Why Kryptonite?
+                                Why did we build Krypton Core?
                             </div>
                             <div class='FAQ__question__answer'>
-                                    Kryptonite combines the secure key storage of
+                                    Krypton Core combines the secure key storage of
                                     a USB smart card with a familiar mobile phone interface. The
-                                    Kryptonite app performs SSH signatures without revealing the
-                                    private key to a paired computer. A Kryptonite SSH key can be
+                                    Krypton app performs SSH signatures without revealing the
+                                    private key to a paired computer. A Krypton SSH key can be
                                     used without modifying any servers, allowing users to secure
                                     their GitHub, AWS, and Google Cloud SSH authentication without
                                     any changes to their infrastructure. Communication with
-                                    Kryptonite occurs over encrypted and signed push notifications and
+                                    Krypton occurs over encrypted and signed push notifications and
                                     Bluetooth, ensuring high availability and low latency.
-                                    Kryptonite also verifies and displays exactly which server
+                                    Krypton also verifies and displays exactly which server
                                     is being logged in to, unlike USB solutions that do not
                                     have a user interface.
                             </div>
                     </div>
                     <div class='FAQ__question' name='passwordAuth'>
                             <div class='FAQ__question__question'>
-                                I use password-based authentication to connect to GitHub and my servers, why should I use Kryptonite?
+                                I use password-based authentication to connect to GitHub and my servers, why should I use Krypton?
                             </div>
                             <div class='FAQ__question__answer'>
                                     It is well known that users reuse passwords or small variations on passwords for different services, allowing a compromise of one to cause the compromise of many. Requiring users to remember highly random passwords for every different service is unreasonable, and many passwords are brute-forceable. Finally, passwords are annoying to type every time code is pushed or you login to a server.
@@ -44,15 +44,15 @@
 
                     <div class='FAQ__question' name='homeFolder'>
                             <div class='FAQ__question__question'>
-                                I keep my private key in ~/.ssh, why should I use Kryptonite?
+                                I keep my private key in ~/.ssh, why should I use Krypton?
                             </div>
                             <div class='FAQ__question__answer'>
-                                Any application you run or install can silently read, use, and send off your private key without your knowledge. Kryptonite requires your explicit permission to use the private key and records every SSH access.
+                                Any application you run or install can silently read, use, and send off your private key without your knowledge. Krypton requires your explicit permission to use the private key and records every SSH access.
                             </div>
                     </div>
                     <div class='FAQ__question' name='passwordProtected'>
                             <div class='FAQ__question__question'>
-                                I passphrase encrypt my SSH private key, why should I use Kryptonite?
+                                I passphrase encrypt my SSH private key, why should I use Krypton?
                             </div>
                             <div class='FAQ__question__answer'>
                                     A passphrase-encrypted key is decrypted upon entry of
@@ -66,10 +66,10 @@
 
                     <div class='FAQ__question' name='server2FA'>
                             <div class='FAQ__question__question'>
-                                I have two-factor authentication enabled on my servers, why should I use Kryptonite?
+                                I have two-factor authentication enabled on my servers, why should I use Krypton?
                             </div>
                             <div class='FAQ__question__answer'>
-                                    Adding two-factor authentication to either password or public key authentication requires changes to every SSH server. Kryptonite works out of the box without any changes to a server. 
+                                    Adding two-factor authentication to either password or public key authentication requires changes to every SSH server. Krypton works out of the box without any changes to a server. 
                                     
                                     In some cases, such as third-party hosted services (GitHub, Bitbucket, etc.), integrating third-party two-factor is impossible. Many solutions require users to type a 6-digit passcode for every login, and others rely on a centralized server to perform the two-factor verification.                                    
                             </div>
@@ -78,16 +78,16 @@
 
                     <div class='FAQ__question' name='github2FA'>
                             <div class='FAQ__question__question'>
-                                I have two-factor authentication enabled on my GitHub account. Why should I use Kryptonite?
+                                I have two-factor authentication enabled on my GitHub account. Why should I use Krypton?
                             </div>
                             <div class='FAQ__question__answer'>
-                                GitHub does not enforce two-factor authentication when you push or pull code with SSH. Using Kryptonite requires access to your phone to use the SSH key.
+                                GitHub does not enforce two-factor authentication when you push or pull code with SSH. Using Krypton requires access to your phone to use the SSH key.
                             </div>
                         </div>
 
                     <div class='FAQ__question' name='hardwareKey'>
                             <div class='FAQ__question__question'>
-                                I use a smart card (NitroKey, YubiKey, etc) to store my private key securely. Why should I use Kryptonite?
+                                I use a smart card (NitroKey, YubiKey, etc) to store my private key securely. Why should I use Krypton?
                             </div>
                             <div class='FAQ__question__answer'>
                                     With a smart cards you can generate and store SSH keys in a separate piece of
@@ -118,15 +118,15 @@
 							Does krypt.co have access to my SSH private key?
                         </div>
                         <div class='FAQ__question__answer'>
-							No, the SSH private key is generated on the mobile device and never leaves. Furthermore, there are no trusted third-parties and all of the Kryptonite source code is published to the public. <a href="?faq=publicSource">See more</a>.
+							No, the SSH private key is generated on the mobile device and never leaves. Furthermore, there are no trusted third-parties and all of the Krypton source code is published to the public. <a href="?faq=publicSource">See more</a>.
                         </div>
                     </div>
                     <div class='FAQ__question' name='publicSource'>
                         <div class='FAQ__question__question'>
-                            Where can I inspect the Kryptonite source code?
+                            Where can I inspect the Krypton source code?
                         </div>
                         <div class='FAQ__question__answer'>
-                            The Kryptonite source code for <code>kr</code>, <code>kryptonite-ios</code>, and <code>kryptonite-android</code> is published at <a href="https://github.com/kryptco">github.com/kryptco</a>. Feel free to compile Kryptonite from source and run it on your phone and workstation.
+                            The Krypton source code for <code>kr</code>, <code>kryptonite-ios</code>, and <code>kryptonite-android</code> is published at <a href="https://github.com/kryptco">github.com/kryptco</a>. Feel free to compile Krypton from source and run it on your phone and workstation.
                         </div>
                     </div>
                     <div class='FAQ__question' name='privateKeyStorage'>
@@ -134,7 +134,7 @@
 							How is the SSH private key stored on my phone?
                         </div>
                         <div class='FAQ__question__answer'>
-                            Read about how Kryptonite stores private keys in our <a href="/docs/security/privacy-policy.html#private-key-storage">security documentation</a>.
+                            Read about how Krypton stores private keys in our <a href="/docs/security/privacy-policy.html#private-key-storage">security documentation</a>.
                         </div>
                     </div>
                     <div class='FAQ__question' name='keyOnYourPhone'>
@@ -142,7 +142,7 @@
 							If the SSH private key never leaves my phone, how does it work?
                         </div>
                         <div class='FAQ__question__answer'>
-							The role of a private key in an SSH login is to sign the SSH handshake. When a signature is required, your workstation calls out to Kryptonite running on the paired phone with the data that must be signed. If authorized, Kryptonite performs the signature using the private key and returns only the signature to the workstation.
+							The role of a private key in an SSH login is to sign the SSH handshake. When a signature is required, your workstation calls out to Krypton running on the paired phone with the data that must be signed. If authorized, Krypton performs the signature using the private key and returns only the signature to the workstation.
                         </div>
                     </div>
                     <div class='FAQ__question' name='losePhone'>
@@ -150,18 +150,18 @@
 							What happens if I lose my phone?
                         </div>
                         <div class='FAQ__question__answer'>
-							First make sure you remove the old SSH public key from any of your accounts. Once you have Kryptonite installed on your new phone, add the new public key to the accounts you were using SSH with before.
+							First make sure you remove the old SSH public key from any of your accounts. Once you have Krypton installed on your new phone, add the new public key to the accounts you were using SSH with before.
                         </div>
                     </div>
                     <div class='FAQ__question' name='config'>
                         <div class='FAQ__question__question'>
-							How does Kryptonite affect my SSH client?
+							How does Krypton affect my SSH client?
                         </div>
                         <div class='FAQ__question__answer'>
-							Upon install, Kryptonite adds a few lines to your SSH
+							Upon install, Krypton adds a few lines to your SSH
 							configuration (at ~/.ssh/config) that cause SSH to
-							offer your Kryptonite key. Your other keys will
-							still be presented and your Kryptonite key will
+							offer your Krypton key. Your other keys will
+							still be presented and your Krypton key will
 							only be used if it has access to the service you
 							are connecting to.
                         </div>
@@ -182,6 +182,22 @@
 							Backing up your private key reduces its security to the security of the backup. We do not currently support backing up or extracting your private key. In the future we may add key splitting among team members or transferring your private key directly to a new phone.
                         </div>
                     </div>
+                    <div class='FAQ__question' name='name'>
+                        <div class='FAQ__question__question'>
+							Why "Krypton Core"?
+                        </div>
+                        <div class='FAQ__question__answer'>
+                            Krypton is an invisible, oderless chemical element that does not interact with other elements. 
+                            In this way, Krypton is isolated and hidden, much how one should store secret data -- like a cryptographic private key. 
+                            <br>
+                            <br>
+                            We named our product Krypton Core because it represents the essential properites of the element Krypton and our threat model on how to store keys.
+                            <br>
+                            <br>
+                            <em>Note: Previously Krypton Core was known as Kryptonite Core (for the same reasons above), we have since rebranded to simplify the name.</em>                            
+                        </div>
+                    </div>
+
                 </div>
 			</section>
 			<section class='Section--contact-us'>

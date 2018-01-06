@@ -1,13 +1,13 @@
 ---
 layout: page
 title: "Advanced SSH"
-category: use-kryptonite-with
+category: use-krypton-with
 date: 2017-09-21 16:06:36
 order: 5
 ---
 
-# Using Kryptonite with Advanced SSH (`assh`)
-Change the `ProxyCommand` directive added by Kryptonite inside the `Host *` block in `~/.ssh/config` to:
+# Using Krypton with Advanced SSH (`assh`)
+Change the `ProxyCommand` directive added by Krypton inside the `Host *` block in `~/.ssh/config` to:
 
 ```bash
     ProxyCommand krssh -p "assh connect --port=%p %h" -h %h

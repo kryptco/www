@@ -7,7 +7,7 @@ order: 2
 
 # Security Disclosure Policy
 
-Kryptonite follows a 7-day disclosure policy. If you find a security flaw, please send it to `disclose@krypt.co` encrypted to the PGP key with fingerprint `B873685251A928262210E094A70D71BE0646732C` (full key below). 
+Krypton follows a 7-day disclosure policy. If you find a security flaw, please send it to `disclose@krypt.co` encrypted to the PGP key with fingerprint `B873685251A928262210E094A70D71BE0646732C` (full key below). 
 We ask that you delay publication of the flaw until we have published a fix, or seven days have passed.
 
 ```bash

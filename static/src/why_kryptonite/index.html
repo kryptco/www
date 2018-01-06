@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Kryptonite - The new way to protect your private key on your phone.</title>
+    <title>Krypton - The new way to protect your private key on your phone.</title>
 
 	@@include('../html_head.html')
-	<script async defer src="/static/dist/js/lib/github-button/github-buttons.js"></script>
+
+	<script async defer src='/static/dist/js/lib/github-button/github-buttons.js'></script>	
 </head>
 
 <body>
@@ -23,9 +24,12 @@
                 -->
             </section>
 			<section class='Section--value-prop'>
-				<h2 style="margin-top: 10px; margin-bottom: 0px; max-width: none;">Introducing Kryptonite <a class="underlined-link" target="_blank" href="https://blog.krypt.co/the-end-of-id-rsa-d8fd2951d406">the end of ~/.ssh/id_rsa</a></h2>
-				<p class="Section--value-prop__points" style="margin-top: 0px; margin-bottom: 10px; max-width: none;"> Where do you store your private key? <a href='/faq/?faq=whyKryptonite'> Read our FAQ to learn why you should use Kryptonite.</a>
-				</p>
+				<h2 style="margin-top: 10px; margin-bottom: 0px;">
+					Introducing Krypton
+				</h2>
+				<h3 style="display: inline; margin-top: 0; margin-bottom: 50px; border-bottom: 3px solid #5bc894;"><a target="_blank" href="https://blog.krypt.co/the-end-of-id-rsa-d8fd2951d406">the end of ~/.ssh/id_rsa</a></h3>
+				<!-- <p style="margin-top: 0px; margin-bottom: 40px;"> Where do you store your private key? <a href='/faq/?faq=whyKryptonite'> Read our FAQ to learn why you should use Krypton.</a> </p>  -->
+				
 				
 				<div class='Section--value-prop__points'>
 					<div class='Section--value-prop__points__point Point'>
@@ -39,7 +43,7 @@
 					<div class='Section--value-prop__points__point Point'>
 						<img src='/static/dist/img/icons/points/shareKey.svg' />
 						<h3>Easily upload & share your public key</h3>
-						<p>Upload your key to Github, Digital Ocean and other services with Kryptonite.
+						<p>Upload your key to Github, Digital Ocean and other services with Krypton.
 							<br>
 						</p>
 					</div>
@@ -54,7 +58,7 @@
                     <div class='Section--value-prop__points__point Point'>
                         <img src='/static/dist/img/icons/points/publicSource.svg' />
                         <h3>Public Source Code</h3>
-                        <p>All of the Kryptonite source code is published at <a href="https://github.com/kryptco">github.com/kryptco</a>.
+                        <p>All of the Krypton source code is published at <a href="https://github.com/kryptco">github.com/kryptco</a>.
 							<br/>
 							<a class="github-button" href="https://github.com/kryptco/kr" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star kryptco/kr on GitHub">Star</a>
 							<br>
@@ -68,25 +72,25 @@
 				<div class='Section--get-started__steps'>
 					<div class='Section--get-started__steps__step Step'>
 						<div class='Step__counter'><span>1</span></div>
-						<h3>Download Kryptonite on the app store</h3>
+						<h3>Download Krypton on the app store</h3>
 						<a href="https://appsto.re/us/weWofb.i" target="blank"><img src="static/dist/img/apple_app_store_badge.svg" style="padding: 10px;"></img></a>
-						<a href='https://play.google.com/store/apps/details?id=co.krypt.kryptonite&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="blank"><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' style="height: 60px;"/></a>
+						<a href='https://play.google.com/store/apps/details?id=co.krypt.kryptonite&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="blank"><img alt='Get it on Google Play' src='/static/dist/img/android_play_badge.png' style="height: 60px;"/></a>
 					</div>
 					<div class='Section--get-started__steps__step Step'>
 						<div class='Step__counter'><span>2</span></div>
-						<h3>Install <code>kr</code> and pair your computer</h3>
+						<h3>Install <code style="font-family: 'Source Code Pro'; font-weight: bold; color: #5bc984;">kr</code> and pair your computer</h3>
 						<p>Follow the instructions <a target="_blank" href="/install">here</a> to install <code>kr</code> on your computer.</p>
-						<p>Then open the app to the 'pair' screen. Run ‘kr pair’ and scan the QR code using Kryptonite on your phone.</p>
+						<p>Then open the app to the 'pair' screen. Run ‘kr pair’ and scan the QR code using Krypton on your phone.</p>
 						<div class='Terminal'>
-							<span>$</span>kr pair
+							<span class='Terminal-Prompt'>$</span>kr pair
 						</div>
 					</div>
 					<div class='Section--get-started__steps__step Step'>
 						<div class='Step__counter'><span>3</span></div>
 						<h3>Use SSH normally</h3>
 						<p>After you add your public key to a server or GitHub, use SSH or git as you normally would.</p>
-						<div class='Terminal'>
-							<span>$</span>ssh root@server
+						<div class=	'Terminal'>
+							<span class='Terminal-Prompt'>$</span>ssh root@server
 						</div>
 						<p>Every time you SSH, your computer will request a signature from your phone. <br> <a href='/faq/?faq=keyOnYourPhone'>Read more</a></p>
 					</div>
@@ -98,7 +102,7 @@
 		</main>
 
 		@@include('../footer.html')
-    </div>
+	</div>
 	@@include('../body_tail.html')	
 </body>
 </html>

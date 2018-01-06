@@ -6,22 +6,22 @@ REBUILD=8.
 install_darwin() {
 	command -v brew &>/dev/null && test "$1" = "brew"
 	if [ "$?" != "0" ]; then
-		say Installing Kryptonite...
+		say Installing Krypton...
 		install_darwin_manual
 	else
 		#	Check if already installed with brew
 		ls -l `command -v kr` | grep Cellar &>/dev/null
 		if [ "$?" = "0" ]; then
-			say Upgrading Kryptonite with Homebrew...
+			say Upgrading Krypton with Homebrew...
 			ensure brew update -v
 			ensure brew upgrade kryptco/tap/kr && brew link --overwrite kryptco/tap/kr
 		else
-			say "Installing Kryptonite with Homebrew. If Homebrew is too slow or fails, try \"curl https://krypt.co/kr | sh\""
+			say "Installing Krypton with Homebrew. If Homebrew is too slow or fails, try \"curl https://krypt.co/kr | sh\""
 			ensure brew update -v
 			ensure brew install kryptco/tap/kr && brew link --overwrite kryptco/tap/kr
 			if [ "$?" != "0"  ]; then
 				echo 
-				read -p "Kryptonite Homebrew install failed. Try manual installation?" -n 1 -r < /dev/tty
+				read -p "Krypton Homebrew install failed. Try manual installation?" -n 1 -r < /dev/tty
 
 				if [ $REPLY != ^[Yy]$ ]
 				then
@@ -57,9 +57,9 @@ install_darwin_manual() {
 		10.11) OS_NAME=el_capitan;	BOTTLE_HASH=5688792e79692a5873b2eab249e39b57c34aac9979c19e96f6c895274d6990f2;;
 		10.12) OS_NAME=sierra;     	BOTTLE_HASH=07aaf8b57e1e8c52efff7749498d448397296def6abb3bb5f28bec17a567d104; USE_KRBTLE=1;;
 		10.13) OS_NAME=high_sierra;	BOTTLE_HASH=2fe93574d959031ae572b0119215156f3d653dfe15f865190b5c33cfdc655045; USE_KRBTLE=1;;
-		*) say "Unsupported OS X version $MAJOR_MAC_VERSION. Kryptonite requires 10.11+" && exit 1 ;;
+		*) say "Unsupported OS X version $MAJOR_MAC_VERSION. Krypton requires 10.11+" && exit 1 ;;
 	esac
-	say Downloading Kryptonite.
+	say Downloading Krypton.
 	KR_FILE_PREFIX=kr-$VERSION.$OS_NAME
 	ensure curl -# -o /tmp/$KR_FILE_PREFIX.tar.gz -L https://github.com/KryptCo/bottles/raw/master/$KR_FILE_PREFIX.bottle.${REBUILD}tar.gz
 
@@ -86,7 +86,7 @@ install_darwin_manual() {
 	ensure mkdir -p ~/.ssh
 	ensure touch ~/.ssh/config
 	
-	say Kryptonite installed successfully. Type \"kr pair\" to pair with the Kryptonite mobile app.
+	say Krypton installed successfully. Type \"kr pair\" to pair with the Krypton mobile app.
 	kr restart &>/dev/null
 }
 

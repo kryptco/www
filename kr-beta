@@ -5,22 +5,22 @@ VERSION=2.0.3
 install_darwin() {
 	command -v brew &>/dev/null && test "$1" = "brew"
 	if [ "$?" != "0" ]; then
-		say Installing Kryptonite...
+		say Installing Krypton...
 		install_darwin_manual
 	else
 		#	Check if already installed with brew
 		ls -l `command -v kr` | grep Cellar &>/dev/null
 		if [ "$?" = "0" ]; then
-			say Upgrading Kryptonite with Homebrew...
+			say Upgrading Krypton with Homebrew...
 			ensure brew update -v
 			ensure brew upgrade kryptco/tap/kr && brew link --overwrite kryptco/tap/kr
 		else
-			say "Installing Kryptonite with Homebrew. If Homebrew is too slow or fails, try \"curl https://krypt.co/kr | sh\""
+			say "Installing Krypton with Homebrew. If Homebrew is too slow or fails, try \"curl https://krypt.co/kr | sh\""
 			ensure brew update -v
 			ensure brew install kryptco/tap/kr && brew link --overwrite kryptco/tap/kr
 			if [ "$?" != "0"  ]; then
 				echo 
-				read -p "Kryptonite Homebrew install failed. Try manual installation?" -n 1 -r < /dev/tty
+				read -p "Krypton Homebrew install failed. Try manual installation?" -n 1 -r < /dev/tty
 
 				if [ $REPLY != ^[Yy]$ ]
 				then
@@ -55,9 +55,9 @@ install_darwin_manual() {
 		10.10) OS_NAME=yosemite; BOTTLE_HASH=dbcf28b9f00bd0b85d7670ad646aca0d5052bd0785e4f311211ff3bd82d061a8;;
 		10.11) OS_NAME=el_capitan; BOTTLE_HASH=aa5eba355ce043899911146b133be01a965a3e5302bd6e4e8a8b8136c49b4f7d;;
 		10.12) OS_NAME=sierra; BOTTLE_HASH=67daf0d9f68734afe0183091c6693c697865fac167afa2b303431047b2329767;;
-		*) say "Unsupported OS X version $MAJOR_MAC_VERSION. Kryptonite requires 10.10+" && exit 1 ;;
+		*) say "Unsupported OS X version $MAJOR_MAC_VERSION. Krypton requires 10.10+" && exit 1 ;;
 	esac
-	say Downloading Kryptonite.
+	say Downloading Krypton.
 	KR_FILE_PREFIX=kr-$VERSION.$OS_NAME
 	ensure curl -# -o /tmp/$KR_FILE_PREFIX.tar.gz -L https://github.com/KryptCo/bottles/raw/master/$KR_FILE_PREFIX.bottle.tar.gz
 
@@ -84,12 +84,12 @@ install_darwin_manual() {
 	ensure mkdir -p ~/.ssh
 	ensure touch ~/.ssh/config
 	#	remove old ssh_configs
-	perl -0777 -p -i.bak1 -e 's/\n# Added by Kryptonite\nHost \*\n\tPKCS11Provider \/usr\/local\/lib\/kr-pkcs11.so\n\tProxyCommand \`find \/usr\/local\/bin\/krssh 2\>\/dev\/null \|\| which nc\` %h %p\n\tIdentityFile ~\/.ssh\/id_kryptonite\n\tIdentityFile ~\/.ssh\/id_ed25519\n\tIdentityFile ~\/.ssh\/id_rsa\n\tIdentityFile ~\/.ssh\/id_ecdsa\n\tIdentityFile ~\/.ssh\/id_dsa//g' ~/.ssh/config
-	perl -0777 -p -i.bak2 -e 's/\n# Added by Kryptonite\nHost \*\n\tPKCS11Provider \/usr\/local\/lib\/kr-pkcs11.so//g' ~/.ssh/config
+	perl -0777 -p -i.bak1 -e 's/\n# Added by Krypton\nHost \*\n\tPKCS11Provider \/usr\/local\/lib\/kr-pkcs11.so\n\tProxyCommand \`find \/usr\/local\/bin\/krssh 2\>\/dev\/null \|\| which nc\` %h %p\n\tIdentityFile ~\/.ssh\/id_kryptonite\n\tIdentityFile ~\/.ssh\/id_ed25519\n\tIdentityFile ~\/.ssh\/id_rsa\n\tIdentityFile ~\/.ssh\/id_ecdsa\n\tIdentityFile ~\/.ssh\/id_dsa//g' ~/.ssh/config
+	perl -0777 -p -i.bak2 -e 's/\n# Added by Krypton\nHost \*\n\tPKCS11Provider \/usr\/local\/lib\/kr-pkcs11.so//g' ~/.ssh/config
 
-	perl -0777 -ne '/\n# Added by Kryptonite\nHost \*\n\tPKCS11Provider \/usr\/local\/lib\/kr-pkcs11.so\n\tProxyCommand \`find \/usr\/local\/bin\/krssh 2\>\/dev\/null \|\| which nc\` %h %p\n\tIdentityFile kryptonite/ || exit(1)' ~/.ssh/config || printf "\n# Added by Kryptonite\nHost *\n\tPKCS11Provider /usr/local/lib/kr-pkcs11.so\n\tProxyCommand \`find /usr/local/bin/krssh 2>/dev/null || which nc\` %%h %%p\n\tIdentityFile ~/.ssh/id_kryptonite\n\tIdentityFile ~/.ssh/id_ed25519\n\tIdentityFile ~/.ssh/id_rsa\n\tIdentityFile ~/.ssh/id_ecdsa\n\tIdentityFile ~/.ssh/id_dsa" >> ~/.ssh/config
+	perl -0777 -ne '/\n# Added by Krypton\nHost \*\n\tPKCS11Provider \/usr\/local\/lib\/kr-pkcs11.so\n\tProxyCommand \`find \/usr\/local\/bin\/krssh 2\>\/dev\/null \|\| which nc\` %h %p\n\tIdentityFile kryptonite/ || exit(1)' ~/.ssh/config || printf "\n# Added by Krypton\nHost *\n\tPKCS11Provider /usr/local/lib/kr-pkcs11.so\n\tProxyCommand \`find /usr/local/bin/krssh 2>/dev/null || which nc\` %%h %%p\n\tIdentityFile ~/.ssh/id_kryptonite\n\tIdentityFile ~/.ssh/id_ed25519\n\tIdentityFile ~/.ssh/id_rsa\n\tIdentityFile ~/.ssh/id_ecdsa\n\tIdentityFile ~/.ssh/id_dsa" >> ~/.ssh/config
 
-	say Kryptonite installed successfully. Type \"kr pair\" to pair with the Kryptonite mobile app.
+	say Krypton installed successfully. Type \"kr pair\" to pair with the Krypton mobile app.
 	kr restart &>/dev/null
 }
 

@@ -5,10 +5,10 @@ category: start
 order: 1
 ---
 
-# Install Kryptonite + kr
+# Install Krypton + kr
 
-## Kryptonite app
-Go to [https://get.krypt.co](https://get.krypt.co) on your iOS or Android device and you will be redirected to the Kryptonite app download page on the Apple App Store (iOS) or the Google Play Store (Android).
+## Krypton Core app
+Go to [https://get.krypt.co](https://get.krypt.co) on your iOS or Android device and you will be redirected to the Krypton app download page on the Apple App Store (iOS) or the Google Play Store (Android).
 
 ## Kr cli
 The easiest way to install `kr` on any supported machine is the following: 
@@ -88,19 +88,19 @@ $ cd $GOPATH/src/github.com/kryptco/kr && make install && kr restart
 `kr` automatically adds the following to your `~/.ssh/config` file:
 
 ```bash
-# Added by Kryptonite 
+# Added by Krypton
 Host * 
     PKCS11Provider /usr/local/lib/kr-pkcs11.so 
     ProxyCommand /usr/local/bin/krssh %h %p 
-    IdentityFile ~/.ssh/id_kryptonite 
+    IdentityFile ~/.ssh/id_krypton
     IdentityFile ~/.ssh/id_ed25519 
     IdentityFile ~/.ssh/id_rsa 
     IdentityFile ~/.ssh/id_ecdsa 
     IdentityFile ~/.ssh/id_dsa 
 ```
 
-- Kryptonite's PKCS11Provider directs SSH to `krd` as an SSH agent by setting the `SSH_AUTH_SOCK` environment variable. It also links `~/.kr/original-agent.sock` to any already-running SSH agent. This allows krd to fallback to the original agent if necessary.
+- Krypton's PKCS11Provider directs SSH to `krd` as an SSH agent by setting the `SSH_AUTH_SOCK` environment variable. It also links `~/.kr/original-agent.sock` to any already-running SSH agent. This allows krd to fallback to the original agent if necessary.
 
-- The krssh ProxyCommand detects which host is being connected to and reads the signature returned from the remote server. These are transmitted to krd and eventually verified by the Kryptonite phone app.
+- The krssh ProxyCommand detects which host is being connected to and reads the signature returned from the remote server. These are transmitted to krd and eventually verified by the Krypton phone app.
 
-- The IdentityFile options make sure that the Kryptonite public key is presented to servers when trying to log in, as well as any default-named SSH keys users already have.
+- The IdentityFile options make sure that the Krypton public key is presented to servers when trying to log in, as well as any default-named SSH keys users already have.

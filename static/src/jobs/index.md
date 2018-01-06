@@ -7,9 +7,9 @@ krypt.co is a newly-funded startup born out of MIT and based in Boston. We're bu
 Security products should be built from the ground-up with strong cryptographic protocols, but cryptography alone is not enough -- it must be usable too. 
 Our core values lie in the intersection of strong cryptography and breathtaking user experience. 
 
-We released our first product, **Kryptonite**, for *free* in early May 2017. Kryptonite is the new home for every developer's SSH private key. Kryptonite provides the best of both worlds: the security of having your private key never leave your phone with the convenience of using `git` and `ssh` as you normally do on your computer: `git push` or `ssh root@server`.
+We released our first product, **Krypton Core**, for *free* in early May 2017. Krypton is the new home for every developer's SSH private key. Krypton provides the best of both worlds: the security of having your private key never leave your phone with the convenience of using `git` and `ssh` as you normally do on your computer: `git push` or `ssh root@server`.
 
-Our next product builds on top of Kryptonite to provide a new level of security for every member of both small and large engineering teams.
+Our next product builds on top of Krypton to provide a new level of security for every member of both small and large engineering teams.
 How can big organizations trust krypt.co with their most sensitive internal software? Our answer is a `trustless`, `end-to-end verifiable` infrastructure. While companies depend on us exclusively for liveness, they need *not* trust krypt.co for the authenticity of their public data (like public keys, team membership, etc.) and privacy of their non-public data like audit logs.
 
 Join us to change how engineers secure their keys, servers, and code repositories!
@@ -22,8 +22,8 @@ Join us to change how engineers secure their keys, servers, and code repositorie
 -----
 
 ### Platform Engineer
-Without `kr` there's no Kryptonite. As our first platform engineer, you will be honing the workstation software that makes pairing Kryptonite with a computer seem like magic.
-You will design, build, and deploy new features for `kr` which connects Kryptonite with core developer tools like `ssh` and `git`. 
+Without `kr` there's no Krypton. As our first platform engineer, you will be honing the workstation software that makes pairing Krypton with a computer seem like magic.
+You will design, build, and deploy new features for `kr` which connects Krypton with core developer tools like `ssh` and `git`. 
 
 *Platforms*: `macOS`, `Linux`, `Windows`
 
@@ -42,12 +42,12 @@ You will design, build, and deploy new features for `kr` which connects Kryptoni
 -----
 
 ### UX Engineer 
-Usability and ease-of-use are just as important as security -- at krypt.co they are equal pillars. You will be responible for the design and user experience of every krypt.co product: the Kryptonite iOS and Android apps, the command line interface `kr`, and our upcoming *Teams* web dashboard. You will be the user advocate at every step of product development.
+Usability and ease-of-use are just as important as security -- at krypt.co they are equal pillars. You will be responible for the design and user experience of every krypt.co product: the Krypton iOS and Android apps, the command line interface `kr`, and our upcoming *Teams* web dashboard. You will be the user advocate at every step of product development.
 
 *Role*:
-- build the Kryptonite for Teams web front-end
+- build the Krypton for Teams web front-end
 - use your favorite design tools to create mockup designs of user-flows on all of our product platforms
-- create beautiful assets that echo Kryptonite's brand of simplicity and security
+- create beautiful assets that echo Krypton's brand of simplicity and security
 - turn user engagement data and feedback into product improvements
 
 *Languages*: web front-end technologies

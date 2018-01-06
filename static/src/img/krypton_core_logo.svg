@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-12.0%" y="-12.0%" width="124.0%" height="124.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.162250906 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="kryptonite_by_kryptco" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard">
+            <g id="Group-2" filter="url(#filter-1)" transform="translate(25.000000, 25.000000)">
+                <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="150" height="150" rx="30"></rect>
+                <g id="shield" transform="translate(26.519337, 22.375691)" fill="#5BC894">
+                    <g id="Icon">
+                        <g id="Logo-corrections">
+                            <g id="Kryptonite_Icon_WhiteOnGreen">
+                                <g id="Group">
+                                    <path d="M47.6345991,0 C78.7006421,0 95.2691983,20.558861 95.2691983,20.558861 L95.2691983,67.8442414 C95.2691983,94.5707608 60.0610163,104.850191 47.6345991,106.906077 L47.6345991,0 L47.6345991,0 Z M47.6345991,24.6706333 C62.5042606,24.6706333 74.558503,36.6365036 74.558503,51.3971526 C74.558503,66.1578016 62.5042606,78.1236719 47.6345991,78.1236719 L47.6345991,106.906077 C35.2081819,104.850191 -7.69236782e-15,94.5707608 0,67.8442414 C7.69236782e-15,41.1177221 0,41.1177237 0,20.558861 C-7.69236782e-15,20.558861 16.5685562,0 47.6345991,0 L47.6345991,24.6706333 Z M47.6345991,24.6706333 C32.7649376,24.6706333 20.7106953,36.6365036 20.7106953,51.3971526 C20.7106953,66.1578016 32.7649376,78.1236719 47.6345991,78.1236719 L47.6345991,24.6706333 Z" id="Combined-Shape"></path>
+                                    <ellipse id="Oval-Copy-2" cx="47.6345991" cy="51.3971526" rx="18.6396257" ry="18.5029749"></ellipse>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
