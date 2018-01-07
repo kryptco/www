@@ -7,7 +7,7 @@ order: 1
 
 # Install Krypton + kr
 
-## Krypton Core app
+## Krypton app
 Go to [https://get.krypt.co](https://get.krypt.co) on your iOS or Android device and you will be redirected to the Krypton app download page on the Apple App Store (iOS) or the Google Play Store (Android).
 
 ## Kr cli
@@ -104,3 +104,12 @@ Host *
 - The krssh ProxyCommand detects which host is being connected to and reads the signature returned from the remote server. These are transmitted to krd and eventually verified by the Krypton phone app.
 
 - The IdentityFile options make sure that the Krypton public key is presented to servers when trying to log in, as well as any default-named SSH keys users already have.
+
+# Uninstalling kr
+Running `kr uninstall` will remove `kr` from your computer. In the event `kr uninstall` does not succeed, manually remove the above lines from `~/.ssh/config`. If you have also used Krypton for code sigining, remove the following lines from `~/.gitconfig`:
+```
+[gpg]
+	program = /.../krgpg
+[commit]
+	gpgSign = true
+```
