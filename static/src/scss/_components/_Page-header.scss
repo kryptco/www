@@ -8,8 +8,12 @@
         height: 3em;
         position: relative;
 
+        @media (max-width: 58em) {
+          left: calc(50vw - 1em - 56px);
+        }
+
         img {
-            height: 8em;            
+            height: 8em;
         }
     }
 
@@ -63,7 +67,7 @@
         }
 
         .Page-header__new:hover {
-            background-color: $c-green-accent;            
+            background-color: $c-green-accent;
         }
 
         .Page-header__menu-button {
@@ -107,6 +111,7 @@
         }
 
         @media (max-width: 58em) {
+
             .Page-header__menu-button {
                 display: block;
             }
@@ -147,6 +152,7 @@
 
     @media (max-width: 50em) {
         // @include justify-content(center);
+        justify-content: none;
     }
 }
 
