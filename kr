@@ -136,7 +136,7 @@ install_yum() {
         need_cmd gpg
 
 		
-        ensure gpg --keyserver=hkp://pgp.mit.edu:80 --recv-keys "C4A05888A1C4FA02E1566F859F2A29A569653940"
+        ensure gpg --keyserver=hkp://keyserver.ubuntu.com:80 --recv-keys "C4A05888A1C4FA02E1566F859F2A29A569653940"
         ensure gpg --export --armor C4A05888A1C4FA02E1566F859F2A29A569653940 > /tmp/kryptco.key
 		echo Importing KryptCo GPG key...
         ensure sudo rpm --import /tmp/kryptco.key
