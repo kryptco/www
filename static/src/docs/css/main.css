@@ -94,7 +94,8 @@ pre code table {
 .site-header {
     margin-top: 40px;
     margin-left: 10px;
-    margin-bottom: 0px;    
+    margin-bottom: 0px;   
+    visibility: hidden; 
 }
 .site-header a {
     font-size: 1.2em;
