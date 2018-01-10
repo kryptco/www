@@ -89,12 +89,12 @@
                 text-align: center;
                 margin: 2em 0;
                 img {
-                    position: relative;
+                    position: initial;
                     left: initial;
                     right: initial;
                     bottom: 100%;
                     top: initial;
-                    margin: 0;
+                    margin: auto;
                 }
             }
         }
