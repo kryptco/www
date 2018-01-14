@@ -51,13 +51,13 @@ $ sudo apt-get install kr -y
 ```
 
 ### RPM Linux (RedHat, CentOS, Fedora)
-- Add krypt.co's binary signing key from the MIT keyserver (fingerprint `C4A05888A1C4FA02E1566F859F2A29A569653940`)
+- Add krypt.co's binary signing key from the Ubuntu keyserver (fingerprint `C4A05888A1C4FA02E1566F859F2A29A569653940`)
 - Add krypt.co's yum repository hosted at `kryptco.github.io/yum`
 - Run `yum install kr`
 
 Equivalent commands:
 ```bash
-$ gpg --keyserver=hkp://pgp.mit.edu:80 --recv-keys "C4A05888A1C4FA02E1566F859F2A29A569653940" 
+$ gpg --keyserver=hkp://keyserver.ubuntu.com:80 --recv-keys "C4A05888A1C4FA02E1566F859F2A29A569653940" 
 $ gpg --export --armor C4A05888A1C4FA02E1566F859F2A29A569653940 > /tmp/kryptco.key 
 $ sudo rpm --import /tmp/kryptco.key 
 $ sudo yum-config-manager --add-repo https://kryptco.github.io/yum # non-fedora only 
