@@ -158,6 +158,13 @@ gulp.task('fileinclude', function() {
     }))
     .pipe(gulp.dest('./_site/pricing/'));
 
+  gulp.src(['static/src/install/index.html'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('./_site/install/'));
+
   gulp.src(['static/src/faq/index.html'])
     .pipe(fileinclude({
       prefix: '@@',
