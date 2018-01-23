@@ -27,5 +27,8 @@ build: clean setup docs-build jobs-build
 serve: watch
 	spark -address localhost -port 8080 _site
 
+deploy-dev: build
+	s3cmd sync "./_site/." s3://www-dev.krypt.co
+
 deploy: build
 	./deploy.sh

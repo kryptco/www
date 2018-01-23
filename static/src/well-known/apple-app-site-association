@@ -4,7 +4,7 @@
         "details": [
             {
                 "appID": "W7AMYM5LPN.co.krypt.kryptonite",
-                "paths": [ "/app/verify_email.html?nonce=*"]
+                "paths": [ "/app/*"]
             }
         ]
     }
