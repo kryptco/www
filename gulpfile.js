@@ -30,7 +30,9 @@ var gulp = require('gulp'),
         srcImg: './static/src/img/**/*',
         distImg: './_site/static/dist/img',
         srcData: './static/src/data/**/*',
-        distData: './_site/static/dist/data'
+        distData: './_site/static/dist/data',
+        srcWellKnown: './static/src/well-known/*',
+        distWellKnown: './_site/.well_known/',
     };
 
 gulp.task('clean', function (cb) {
@@ -62,6 +64,12 @@ gulp.task('data', function () {
     return gulp
         .src(p.srcData)
         .pipe(gulp.dest(p.distData));
+});
+
+gulp.task('wellknown', function () {
+  return gulp
+      .src(p.srcWellKnown)
+      .pipe(gulp.dest(p.distWellKnown));
 });
 
 gulp.task('styles', function() {
@@ -120,6 +128,7 @@ gulp.task('build', ['clean'], function () {
 	  gulp.start(['fileinclude']);
     gulp.start(['fonts']);
     gulp.start(['data']);
+    gulp.start(['wellknown']);
     gulp.start(['images']);
     gulp.start(['libJS']);    
     gulp.start(['styles']);
