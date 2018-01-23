@@ -32,7 +32,7 @@ var gulp = require('gulp'),
         srcData: './static/src/data/**/*',
         distData: './_site/static/dist/data',
         srcWellKnown: './static/src/well-known/*',
-        distWellKnown: './_site/.well_known/'
+        distWellKnown: './_site/.well-known/'
     };
 
 gulp.task('clean', function (cb) {
