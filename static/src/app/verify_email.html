@@ -6,6 +6,8 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">	
+	<meta name="apple-itunes-app" content="app-id=1161494806">
+
 	<link rel="apple-touch-icon" href='/static/dist/img/apple-touch-icon.png'>
 	<link rel="icon" type="image/png" href='/static/dist/img/favicon.png'/>
 	<link rel="stylesheet" href='/static/dist/fonts/Montserrat/font_montserrat.css' />
@@ -107,7 +109,9 @@
 		}
 
 		setTimeout(function() {
-			if(navigator.userAgent.match(/iPhone|iPod/i) ) {
+			document.getElementsByTagName("meta")["apple-itunes-app"].content += ", app-argument=krypton://verify_email/" + getParameterByName("nonce");
+
+			if(navigator.userAgent.match(/iPhone|iPod|iPad/i) ) {
 				window.location = "krypton://verify_email/" + getParameterByName("nonce");
 			} else if(navigator.userAgent.match(/Android/i) ) {
 				window.location = "krypton://verify_email/" + getParameterByName("nonce");
