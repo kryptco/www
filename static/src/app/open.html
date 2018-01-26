@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Open Krypton | The new home for your private key</title>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">	
+	<meta name="apple-itunes-app" content="app-id=1161494806">
+
+	<link rel="apple-touch-icon" href='/static/dist/img/apple-touch-icon.png'>
+	<link rel="icon" type="image/png" href='/static/dist/img/favicon.png'/>
+	<link rel="stylesheet" href='/static/dist/fonts/Montserrat/font_montserrat.css' />
+	<link rel="stylesheet" href='/static/dist/fonts/Karla/font_karla.css' />
+	<link rel="stylesheet" href='/static/dist/fonts/SourceCodePro/font_sourcecodepro.css' />
+	<link rel="stylesheet" href='/static/dist/css/main.css' />
+		
+    <style>
+        .new {
+            border-radius: 10px;
+            background-color: #2DCC70;
+            color: white;
+            padding: 5px;
+            font-weight: 700;
+            font-size: 16px;
+            vertical-align: middle;
+        }
+	</style>
+</head>
+
+<body>
+	<div id="page-wrapper" class='Page-home'>
+		<header id='page-header' class='Page-header'>
+			<div class='Page-header__left-block'>
+				
+			</div>
+			<div class='Page-header__right-block'>
+					<div class='Page-header__overlay'></div>
+					<div class='Page-header__menu-button Hamburger-button'></div>					
+					<div class='Page-header__links'>
+						<a href="https://appsto.re/us/weWofb.i" target="blank"><img src="/static/dist/img/apple_app_store_badge.svg" style="height: 36px; vertical-align:middle;"></img></a>
+						<a href='https://play.google.com/store/apps/details?id=co.krypt.kryptonite&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="blank"><img alt='Get it on Google Play' src='/static/dist/img/android_play_badge.png' style="height: 55px; vertical-align: middle; margin-right: -10px;"/></a>
+						
+					</div>
+				</div>
+							
+		</header>		
+        <main>
+			<style>
+				.app-icon-round {
+					text-align: center;
+					border-radius: 20%;
+					box-shadow: 0px 0px 8px #3636361c;
+					width: 128px;
+					height: 128px;
+					display: block;
+					margin: 0 auto;
+					margin-top: 100px;
+				}
+
+				.header-message {
+					text-align: center;
+					font-family: "Karla";
+					font-weight: bold;
+					font-size: 2em;
+				}
+				.inline-green {
+					font-family: inherit;
+					display: inline;
+					color: #5bc984;
+				}	
+
+				@media only screen and (max-width: 500px) {
+				}
+
+			</style>
+            <section class='Section--about-us'>
+				<img class="app-icon-round" src="/static/dist/img/apple-touch-icon.png"></img>				
+				<p class="header-message"> Download Krypton Core </p>
+            </section>
+			<div style="bottom: 0; text-align:center;">
+					<p>Have questions? <a href='mailto:support@krypt.co'>support@krypt.co</a></p>			
+			</div>
+		
+		</main>		
+
+		<div id="site_footer" style="position: absolute;right: 0;bottom: 0;left: 0;text-align: center;">
+				<br>
+				<footer style="font-size:.4em;">
+					<p> 
+						Apple, the Apple logo, iPhone, and iPod touch are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc., registered in the U.S. and other countries.
+						<br>
+						Google Play and the Google Play logo are trademarks of Google Inc.			
+					</p>
+				</footer>		
+			</div>
+		
+    </div>
+	@@include('../body_tail.html')	
+	<script>
+		function getParameterByName(name, url) {
+			if (!url) url = window.location.href;
+			name = name.replace(/[\[\]]/g, "\\$&");
+			var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+			results = regex.exec(url);
+			if (!results) return null;
+			if (!results[2]) return '';
+			return decodeURIComponent(results[2].replace(/\+/g, " "));
+		}
+
+		setTimeout(function() {
+			if(navigator.userAgent.match(/iPhone|iPod|iPad/i) ) {
+				window.location = "krypton://verify_email/" + getParameterByName("nonce");
+			} else if(navigator.userAgent.match(/Android/i) ) {
+				window.location = "krypton://verify_email/" + getParameterByName("nonce");
+			}
+		}, 100);
+	</script>
+</body>
+</html>
