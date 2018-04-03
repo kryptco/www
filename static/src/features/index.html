@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Features | Krypton - The new home for your private key</title>
+
+  @@include("../html_head.html")
+</head>
+
+<body>
+	<div id="page-wrapper" class='Page-features'>
+		@@include("../header.html")
+		<main>
+      <section class='Section--about-features'>
+        <h1>Features</h1>
+        <p> This is a blurb about features. It's gonna be real short. End with like here's a quick overview of some of our main features</p>
+      </section>
+
+      <section class="Section--feature-grid">
+        <div class="feature">
+          <div class="feature-image">
+            <img src="/static/dist/img/icons/teamManagement.svg" style="width: 110px"></img>
+          </div>
+          <div class="feature-details">
+            <p class="feature-title">
+              Team Management
+            </p>
+            <p class="feature-description">
+              Invite your team members to join your Krypton team. Create custom temporary approval rules and usage policies.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-image">
+            <img src="/static/dist/img/icons/realTimeAudit.svg" style="width: 90px"></img>
+          </div>
+          <div class="feature-details">
+            <p class="feature-title">
+              Real-time Audit Logs
+            </p>
+            <p class="feature-description">
+              Automatically export and aggregate your team's SSH access logs in real-time. Store logs in an AWS S3 bucket or forward logs to a third-party service.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-image">
+            <img src="/static/dist/img/icons/sigChain.svg" style="max-width: 180px; width: 70%"></img>
+          </div>
+          <div class="feature-details">
+            <p class="feature-title">
+              Trustless Infrastructure
+            </p>
+            <p class="feature-description">
+              Krypton Teams is built on top of an end-to-end verified infrastructure. Public keys and team policies are cryptographically verified, and audit logs are encrypted to team admins. krypt.co hosts the team infrastructure, but the data is unmodifiable by krypt.co or any other party.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-image" style="margin-top: 0">
+            <img src="/static/dist/img/icons/pinHost.svg" style="width: 90px"></img>
+          </div>
+          <div class="feature-details">
+            <p class="feature-title">
+              Real-Time Host Pinning
+            </p>
+            <p class="feature-description">
+              Protect your team from man-in-the-middle (MITM) attacks. Pin public keys of known servers and securely and seamlessly distribute them to your team members in real-time. Host verification is performed in the Krypton app so your team members will verifiably know where they're connecting to.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-image">
+            <img src="/static/dist/img/icons/manageKeys.svg" style="width: 80px"></img>
+          </div>
+          <div class="feature-details">
+            <p class="feature-title">
+              Public-Key Management
+            </p>
+            <p class="feature-description">
+              The one place to manage your team's SSH and PGP public-keys. Easily onboard new team members by granting access to the resources they need to do their work. When a developer leaves your team, easily ensure their access is revoked in real-time.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-image">
+            <img src="/static/dist/img/icons/twoPersonRule.svg" style="width: 220px"></img>
+          </div>
+          <div class="feature-details">
+            <p class="feature-title">
+              Two-Person Rule
+            </p>
+            <p class="feature-description">
+              Require approval from 2-out-of-3 (or more) team members for pushing production code or logging into sensitive servers. Satisfy PCI Dual Control compliance by ensuring high-stakes resources are not accessible by any single team member.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <br>
+      <br>
+
+    </main>
+
+    @@include('../footer.html')
+  	</div>
+  	@@include('../body_tail.html')
+  </body>
+
+  </html>

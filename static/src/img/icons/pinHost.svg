@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="62px" height="62px" viewBox="0 0 62 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>pinHost</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="45" height="12.1891892" rx="1"></rect>
+        <rect id="path-2" x="0" y="14.4054054" width="45" height="12.1891892" rx="1"></rect>
+        <rect id="path-3" x="0" y="28.8108108" width="45" height="12.1891892" rx="1"></rect>
+        <rect id="path-4" x="0" y="0" width="45" height="12.1891892" rx="1"></rect>
+        <rect id="path-5" x="0" y="14.4054054" width="45" height="12.1891892" rx="1"></rect>
+        <rect id="path-6" x="0" y="28.8108108" width="45" height="12.1891892" rx="1"></rect>
+        <rect id="path-7" x="0" y="28.8108108" width="17.5609756" height="12.1891892" rx="1"></rect>
+        <rect id="path-8" x="0" y="0" width="17.5609756" height="12.1891892" rx="1"></rect>
+        <rect id="path-9" x="0" y="14.4054054" width="17.5609756" height="12.1891892" rx="1"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="pinHost">
+            <g id="more-shadows" transform="translate(3.000000, 21.000000)">
+                <g id="Rectangle-10">
+                    <use fill="#DEF4EA" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <rect stroke="#DEF4EA" stroke-width="2" x="1" y="1" width="43" height="10.1891892" rx="1"></rect>
+                </g>
+                <g id="Rectangle-10-Copy">
+                    <use fill="#DEF4EA" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    <rect stroke="#DEF4EA" stroke-width="2" x="1" y="15.4054054" width="43" height="10.1891892" rx="1"></rect>
+                </g>
+                <g id="Rectangle-10-Copy-2">
+                    <use fill="#DEF4EA" fill-rule="evenodd" xlink:href="#path-3"></use>
+                    <rect stroke="#DEF4EA" stroke-width="2" x="1" y="29.8108108" width="43" height="10.1891892" rx="1"></rect>
+                </g>
+            </g>
+            <g id="shadow" transform="translate(44.000000, 26.500000) rotate(28.000000) translate(-44.000000, -26.500000) translate(34.000000, 7.000000)" fill="#DEF4EA">
+                <path d="M3.88888889,15.6 L3.88888889,5.57142857 C3.24718084,5.06843961 2.71424587,4.28522791 2.29008398,3.22179345 C1.86592209,2.15835899 1.65811632,1.08442784 1.66666667,0 L18.3333333,0 C18.1503667,1.35625092 17.9010121,2.43018207 17.5852697,3.22179345 C17.2695273,4.01340483 16.7781411,4.79661654 16.1111111,5.57142857 L16.1111111,15.6 C17.19328,16.6009693 17.9509387,17.4117297 18.3840871,18.0322811 C18.8172356,18.6528326 19.3558732,19.6992151 20,21.1714286 L0,21.1714286 C0.563374784,19.7041701 1.06336574,18.6577877 1.49997287,18.0322811 C1.93658,17.4067746 2.73288534,16.5960142 3.88888889,15.6 Z" id="Combined-Shape" stroke="#DEF4EA" stroke-width="2"></path>
+                <path d="M11.1111111,37.8857143 L10,39 L8.88888889,37.8857143 L8.88888889,22.2857143 L11.1111111,22.2857143 L11.1111111,37.8857143 Z" id="Combined-Shape"></path>
+            </g>
+            <g id="servers" transform="translate(0.000000, 18.000000)">
+                <g id="Rectangle-10">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-4"></use>
+                    <rect stroke="#5BC894" stroke-width="2" x="1" y="1" width="43" height="10.1891892" rx="1"></rect>
+                </g>
+                <g id="Rectangle-10-Copy">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-5"></use>
+                    <rect stroke="#5BC894" stroke-width="2" x="1" y="15.4054054" width="43" height="10.1891892" rx="1"></rect>
+                </g>
+                <g id="Rectangle-10-Copy-2">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-6"></use>
+                    <rect stroke="#5BC894" stroke-width="2" x="1" y="29.8108108" width="43" height="10.1891892" rx="1"></rect>
+                </g>
+                <g id="Rectangle-10-Copy-2">
+                    <use fill="#5BC894" fill-rule="evenodd" xlink:href="#path-7"></use>
+                    <rect stroke="#5BC894" stroke-width="2" x="1" y="29.8108108" width="15.5609756" height="10.1891892" rx="1"></rect>
+                </g>
+                <g id="Rectangle-10-Copy-2">
+                    <use fill="#5BC894" fill-rule="evenodd" xlink:href="#path-8"></use>
+                    <rect stroke="#5BC894" stroke-width="2" x="1" y="1" width="15.5609756" height="10.1891892" rx="1"></rect>
+                </g>
+                <g id="Rectangle-10-Copy-2">
+                    <use fill="#5BC894" fill-rule="evenodd" xlink:href="#path-9"></use>
+                    <rect stroke="#5BC894" stroke-width="2" x="1" y="15.4054054" width="15.5609756" height="10.1891892" rx="1"></rect>
+                </g>
+                <ellipse id="Oval-8" fill="#FFFFFF" cx="6.03658537" cy="6.09459459" rx="1.64634146" ry="1.66216216"></ellipse>
+                <ellipse id="Oval-8-Copy" fill="#FFFFFF" cx="6.03658537" cy="20.5" rx="1.64634146" ry="1.66216216"></ellipse>
+                <ellipse id="Oval-8-Copy-2" fill="#FFFFFF" cx="6.03658537" cy="34.9054054" rx="1.64634146" ry="1.66216216"></ellipse>
+                <ellipse id="Oval-8" fill="#FFFFFF" cx="12.6219512" cy="6.09459459" rx="1.64634146" ry="1.66216216"></ellipse>
+                <ellipse id="Oval-8-Copy" fill="#FFFFFF" cx="12.6219512" cy="20.5" rx="1.64634146" ry="1.66216216"></ellipse>
+                <ellipse id="Oval-8-Copy-2" fill="#FFFFFF" cx="12.6219512" cy="34.9054054" rx="1.64634146" ry="1.66216216"></ellipse>
+            </g>
+            <g id="Pin-Color" transform="translate(46.000000, 14.500000) rotate(28.000000) translate(-46.000000, -14.500000) translate(36.000000, 4.000000)">
+                <path d="M11.4404556,-1.13686838e-13 L11.4404556,21 L0,21 C0.563374784,19.5446222 1.06336574,18.5067125 1.49997287,17.8862707 C1.93658,17.265829 2.73288534,16.4616335 3.88888889,15.4736842 L3.88888889,5.52631579 C3.24718084,5.02739962 2.71424587,4.25052971 2.29008398,3.19570605 C1.86592209,2.1408824 1.65811632,1.07564705 1.66666667,-1.13686838e-13 L11.4404556,-1.13686838e-13 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+                <path d="M10,-3.41060513e-13 L18.3333333,-3.41060513e-13 C18.1503667,1.34526913 17.9010121,2.41050448 17.5852697,3.19570605 C17.2695273,3.98090763 16.7781411,4.75777754 16.1111111,5.52631579 L16.1111111,15.4736842 C17.19328,16.4665485 17.9509387,17.270744 18.3840871,17.8862707 C18.8172356,18.5017975 19.3558732,19.5397072 20,21 L10,21 L10,-3.41060513e-13 Z" id="Combined-Shape" fill="#DEF4EA"></path>
+            </g>
+            <g id="Pin" transform="translate(42.234736, 22.058526) rotate(28.000000) translate(-42.234736, -22.058526) translate(32.234736, 3.058526)">
+                <path d="M3.88888889,15.6 L3.88888889,5.57142857 C3.24718084,5.06843961 2.71424587,4.28522791 2.29008398,3.22179345 C1.86592209,2.15835899 1.65811632,1.08442784 1.66666667,0 L18.3333333,0 C18.1503667,1.35625092 17.9010121,2.43018207 17.5852697,3.22179345 C17.2695273,4.01340483 16.7781411,4.79661654 16.1111111,5.57142857 L16.1111111,15.6 C17.19328,16.6009693 17.9509387,17.4117297 18.3840871,18.0322811 C18.8172356,18.6528326 19.3558732,19.6992151 20,21.1714286 L0,21.1714286 C0.563374784,19.7041701 1.06336574,18.6577877 1.49997287,18.0322811 C1.93658,17.4067746 2.73288534,16.5960142 3.88888889,15.6 Z" id="Combined-Shape" stroke="#5BC894" stroke-width="2"></path>
+                <path d="M11.5245871,36.5332951 L10.413476,37.6475808 L9.30236492,36.5332951 L9.30236492,20.9332951 L11.5245871,20.9332951 L11.5245871,36.5332951 Z" id="Combined-Shape" fill="#5BC894"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Billing | Krypton Teams</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="apple-touch-icon" href='/static/dist/img/apple-touch-icon.png'>
+    <link rel="icon" type="image/png" href='/static/dist/img/favicon.png' />
+    <link rel="stylesheet" href='/static/dist/fonts/Montserrat/font_montserrat.css' />
+    <link rel="stylesheet" href='/static/dist/fonts/Karla/font_karla.css' />
+    <link rel="stylesheet" href='/static/dist/fonts/SourceCodePro/font_sourcecodepro.css' />
+    <link rel="stylesheet" href='/static/dist/css/main.css' />
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+
+<body>
+    <div id="page-wrapper" class="Page-home">
+        <header id='page-header' class='Page-header-billing'>
+            <div class='Page-header-billing__left-block'>
+                <a target="_blank" href='/'>
+                    <img src='/static/dist/img/krypton_core_logo.svg' />
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <p id="billing-title">Krypton Teams </br>
+                <span class="light-emphasis">Billing</span>
+            </p>
+            <div class="contents">
+                <div id="team">
+                    <div id="team-header">
+                        <div class="team-name">
+                            <span class="subject">Team</span>
+                            <span id="team-name-value" class="value">AcmeDev</span>
+                        </div>
+                        <div class="team-admin">
+                            <span class="subject">MANAGER</span>
+                            <span id="admin-email-value" class="value">alice@acme.co</span>
+                        </div>
+                    </div>
+                    <div class="team-id">
+                        <span class="subject">Account</span>
+                        <span id="team-id-value" class="value">OIw2NLi8Jy+zUmptbzjCnfzTP1P/MeJf/wuD3fJFRbg=</span>
+                    </div>
+                </div>
+            </div>
+            <div class="contents" id="tier-card">
+                <div class="tier">
+                    <div class="tier-role">
+                        <span class="subject">TIER</span>
+                        <span class="value">PRO</span>
+                    </div>
+                    <div class="tier-price">
+                        <span class="subject">PRICE</span>
+                        <span class="value">
+                            <span class="dollar-sign">$</span>
+                            <span class="dollars">999</span>
+                            <span class="per-month">/month</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div id="success" class="contents">
+                <div class="success-icon">
+                    <img src="/static/dist/img/icons/manageKeys.svg"></img>
+                </div>
+                <div class="success-details">
+                    <h1>Thanks for choosing
+                        <span class="product-name">Krypton Teams</span>! </h1>
+                    <p class="success-text">
+                        Team <span class="team-name" id="team-name-success">AcmeDev</span> is now enrolled in the
+                        <span class="tier-name">Professional</span> plan.</p>
+                    <p class="note">Your payment information went through successfully, and we just sent a receipt to your email address.</p>
+                </div>
+            </div>
+
+            <div id="checkout">
+                <span class="section-title">BILLING INFORMATION</span>
+
+                <form action="/charge" method="post" id="payment-form">
+
+                    <fieldset class="with-state">
+                        <label>
+                            <span>Name</span>
+                            <input name="name" class="field" placeholder="Alice Smith" required>
+                        </label>
+                        <label>
+                            <span>Email</span>
+                            <input name="email" type="email" class="field" placeholder="alice@acme.co" required>
+                        </label>
+                        <label>
+                            <span>Address</span>
+                            <input name="address" class="field" placeholder="31 St James Ave">
+                        </label>
+                        <label>
+                            <span>City</span>
+                            <input name="city" class="field" placeholder="Boston">
+                        </label>
+                        <label class="state">
+                            <span>State</span>
+                            <input name="state" class="field" placeholder="MA">
+                        </label>
+                        <label class="zip">
+                            <span>ZIP</span>
+                            <input name="postal_code" class="field" placeholder="02118">
+                        </label>
+                        <label class="select">
+                            <span>Country</span>
+                            <div id="country" class="field US">
+                                <select name="country">
+                                    <option value="AU">Australia</option>
+                                    <option value="AT">Austria</option>
+                                    <option value="BE">Belgium</option>
+                                    <option value="BR">Brazil</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="CN">China</option>
+                                    <option value="DK">Denmark</option>
+                                    <option value="FI">Finland</option>
+                                    <option value="FR">France</option>
+                                    <option value="DE">Germany</option>
+                                    <option value="HK">Hong Kong</option>
+                                    <option value="IE">Ireland</option>
+                                    <option value="IT">Italy</option>
+                                    <option value="JP">Japan</option>
+                                    <option value="LU">Luxembourg</option>
+                                    <option value="MX">Mexico</option>
+                                    <option value="NL">Netherlands</option>
+                                    <option value="NZ">New Zealand</option>
+                                    <option value="NO">Norway</option>
+                                    <option value="PT">Portugal</option>
+                                    <option value="SG">Singapore</option>
+                                    <option value="ES">Spain</option>
+                                    <option value="SE">Sweden</option>
+                                    <option value="CH">Switzerland</option>
+                                    <option value="GB">United Kingdom</option>
+                                    <option value="US" selected="selected">United States</option>
+                                </select>
+                            </div>
+                        </label>
+                    </fieldset>
+
+                    <span class="section-title" id="payment-title">PAYMENT INFORMATION</span>
+                    <fieldset>
+                        <div id="card-element" class="field"></div>
+                    </fieldset>
+                    <div id="card-errors" role="alert"></div>
+                    <button id="pay-button">Submit Payment</button>
+                </form>
+            </div>
+    </div>
+
+    <div id="share-link">
+        <button class="copy-button" onclick="copyTextToClipboard(window.location.href);">
+            Share Pay Link
+        </button>
+        <p class="hint">You can copy and send this link to your purchasing department.</p>
+    </div>
+    <section class='Section--contact-us' id="billing-contact">
+        <h2 style="font-size: 1em;">
+            Have questions? Email
+            <a href='mailto:support@krypt.co'>support@krypt.co</a>
+        </h2>
+    </section>
+
+    </main>
+
+    </div>
+    @@include('../footer.html') @@include('../body_tail.html')
+    <script src="stripe.js"></script>
+    <script>
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+            results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+    </script>
+    <script>
+        // first clear out fields
+        document.getElementById("team-name-value").innerHTML = "--";
+        document.getElementById("admin-email-value").innerHTML = "--";
+        document.getElementById("team-id-value").innerHTML = "--";
+        document.getElementById("team-name-success").innerHTML = "--";
+        
+        // next place real values if they exist
+        var teamName = getParameterByName("tn");
+        if (teamName) {
+            document.getElementById("team-name-value").innerHTML = "";
+            document.getElementById("team-name-success").innerHTML = "";
+
+            document.getElementById("team-name-value").appendChild(document.createTextNode(teamName));
+            document.getElementById("team-name-success").appendChild(document.createTextNode(teamName));
+        }
+
+        var adminEmail = getParameterByName("aem");
+        if (adminEmail) {
+            document.getElementById("admin-email-value").innerHTML = "";
+            document.getElementById("admin-email-value").appendChild(document.createTextNode(adminEmail));
+        }
+
+        var teamID = getParameterByName("tid");
+        if (teamID) {
+            document.getElementById("team-id-value").innerHTML = "";
+            document.getElementById("team-id-value").appendChild(document.createTextNode(teamID));
+        }
+
+    </script>
+</body>
+
+</html>

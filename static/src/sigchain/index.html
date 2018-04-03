@@ -1,0 +1,538 @@
+<html>
+
+<head>
+    <title>Krypton Team Sigchain</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Krypton is the new home for your SSH private key.">
+    <meta name="keywords" content="Krypton, SSH, key, private key, public key">
+    <meta name="google-site-verification" content="" />
+    <meta name="apple-itunes-app" content="app-id=1161494806">
+    <meta name="msvalidate.01" content="" />
+
+    <meta property='og:title' content='Krypton - the new home for your SSH private key.'>
+    <meta property='og:type' content='website'>
+    <meta property='og:description' content='The private key never leaves your phone.'>
+    <meta property='og:image' content='https://krypt.co/static/dist/img/meta-image.png'>
+
+    <meta property='twitter:card' content='summary_large_image'>
+    <meta property='twitter:title' content='Krypton - The new way to protect your private key.'>
+    <meta name="twitter:creator" content="@kryptco" />
+    <meta property='twitter:description' content='The private key never leaves your phone.'>
+    <meta property='twitter:image' content='https://krypt.co/static/dist/img/meta-image.png'>
+
+    <link rel="apple-touch-icon" href='/static/dist/img/apple-touch-icon.png'>
+    <link rel="icon" type="image/png" href='/static/dist/img/favicon.png' />
+
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="js/scroll.js"></script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-85073737-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+</head>
+
+<body onload="scrollWatcher()">
+    <div id="reading-progress">
+        <ul>
+            <li class="bookmark" id="sigchain_bookmark" onclick="goToBookmark('sigchain', scrollWatcher)">sigchain</li>
+            <li class="bookmark" id="operation_bookmark" onclick="goToBookmark('operation', scrollWatcher)">operation</li>
+            <li class="bookmark" id="signature_bookmark" onclick="goToBookmark('signature', scrollWatcher)">signature</li>
+            <li class="bookmark" id="hash_bookmark" onclick="goToBookmark('hash', scrollWatcher)">hash</li>
+            <li class="bookmark" id="append_bookmark" onclick="goToBookmark('append', scrollWatcher)">append</li>
+            <li class="bookmark" id="distribute_bookmark" onclick="goToBookmark('distribute', scrollWatcher)">distribute</li>
+            <li class="bookmark" id="verify_bookmark" onclick="goToBookmark('verify', scrollWatcher)">verify</li>
+            <li class="bookmark" id="secure_bookmark" onclick="goToBookmark('secure', scrollWatcher)">confirm</li>
+            <li class="bookmark" id="end_bookmark" onclick="goToBookmark('end', scrollWatcher)">end</li>
+        </ul>
+        <div class="scroll down">
+            <i class="fa fa-chevron-down fa-2x" onclick="toNext(document.body.scrollTop, scrollWatcher)"></i>
+        </div>
+        <div class="scroll up">
+            <i class="fa fa-chevron-up fa-2x" onclick="toLast(document.body.scrollTop, scrollWatcher)"></i>
+        </div>
+    </div>
+    <div id="slides">
+        <div class="major-frame" id="intro-frame">
+            <div class="fixed-title">
+                <div class="fixed-inside">
+					<h2>the sig<span id="sig_nature">nature</span><span id="sig_chain">chain</span>
+                    </h2>
+                    <p id="sig_p">is a chain of "blocks"</p>
+                </div>
+            </div>
+            <div class="fixed-container">
+                <div class="slide" id="landing">
+                    <div class="title">
+                        <h1>Krypton</h1>
+                    </div>
+                    <p class="content">
+                        <span class="mini-title">A look inside the
+                            <em>end-to-end verified </br> infrastructure</em> of
+                            <span style="color: #5bc894; font-weight: 800;">Krypton Teams</span>.</br>
+                        </span>
+                        </br>
+                        SSH public keys, team policies, and known hosts </br>
+                        are all cryptographically signed and verified with</br>
+                        keys that
+                        <span style="color: #5bc894; font-weight: 800;">only you</span> have.</br>
+                    </p>
+                    <div class="chain_top"></div>
+                </div>
+                <div class="slide" id="sigchain">
+                    <div class="chain_bot"></div>
+                    <div class="chain_top"></div>
+                    <div class="blocks">
+                        <div class="four">
+                            <svg width="100px" viewBox="0 0 26 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                                <desc>Created with Sketch.</desc>
+                                <defs></defs>
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g transform="translate(-1.000000, -4.000000)">
+                                        <polygon id="Top" fill="#F7F6F4" transform="translate(13.992786, 12.026665) scale(-1, 1) rotate(120.000000) translate(-13.992786, -12.026665) "
+                                            points="7.49278579 0.751665544 20.4927858 8.26833196 20.4927858 23.3016648 7.49278579 15.7849984"></polygon>
+                                        <polygon id="Right" fill="#C6C6C6" transform="translate(20.500000, 23.250000) scale(-1, 1) translate(-20.500000, -23.250000) "
+                                            points="14 12 27 19.5 27 34.5 14 27"></polygon>
+                                        <polygon id="Left" fill="#E2EDF4" points="1 12 14 19.5 14 34.5 1 27"></polygon>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="three">
+                            <svg width="100px" viewBox="0 0 26 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                                <desc>Created with Sketch.</desc>
+                                <defs></defs>
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g transform="translate(-1.000000, -4.000000)">
+                                        <polygon id="Top" fill="#F7F6F4" transform="translate(13.992786, 12.026665) scale(-1, 1) rotate(120.000000) translate(-13.992786, -12.026665) "
+                                            points="7.49278579 0.751665544 20.4927858 8.26833196 20.4927858 23.3016648 7.49278579 15.7849984"></polygon>
+                                        <polygon id="Right" fill="#C6C6C6" transform="translate(20.500000, 23.250000) scale(-1, 1) translate(-20.500000, -23.250000) "
+                                            points="14 12 27 19.5 27 34.5 14 27"></polygon>
+                                        <polygon id="Left" fill="#E2EDF4" points="1 12 14 19.5 14 34.5 1 27"></polygon>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="two">
+                            <svg width="100px" viewBox="0 0 26 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                                <desc>Created with Sketch.</desc>
+                                <defs></defs>
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g transform="translate(-1.000000, -4.000000)">
+                                        <polygon id="Top" fill="#F7F6F4" transform="translate(13.992786, 12.026665) scale(-1, 1) rotate(120.000000) translate(-13.992786, -12.026665) "
+                                            points="7.49278579 0.751665544 20.4927858 8.26833196 20.4927858 23.3016648 7.49278579 15.7849984"></polygon>
+                                        <polygon id="Right" fill="#C6C6C6" transform="translate(20.500000, 23.250000) scale(-1, 1) translate(-20.500000, -23.250000) "
+                                            points="14 12 27 19.5 27 34.5 14 27"></polygon>
+                                        <polygon id="Left" fill="#E2EDF4" points="1 12 14 19.5 14 34.5 1 27"></polygon>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="one">
+                            <svg width="100px" viewBox="0 0 26 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                                <desc>Created with Sketch.</desc>
+                                <defs></defs>
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g transform="translate(-1.000000, -4.000000)">
+                                        <polygon id="Top" fill="#F7F6F4" transform="translate(13.992786, 12.026665) scale(-1, 1) rotate(120.000000) translate(-13.992786, -12.026665) "
+                                            points="7.49278579 0.751665544 20.4927858 8.26833196 20.4927858 23.3016648 7.49278579 15.7849984"></polygon>
+                                        <polygon id="Right" fill="#C6C6C6" transform="translate(20.500000, 23.250000) scale(-1, 1) translate(-20.500000, -23.250000) "
+                                            points="14 12 27 19.5 27 34.5 14 27"></polygon>
+                                        <polygon id="Left" fill="#E2EDF4" points="1 12 14 19.5 14 34.5 1 27"></polygon>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="floating_block">
+            <div class="fixed-frame">
+                <div class="chain_bot"></div>
+                <div class="chain_top"></div>
+                <div class="blocks">
+                    <div class="one">
+                        <svg width="100px" viewBox="0 0 26 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                            <desc>Created with Sketch.</desc>
+                            <defs></defs>
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g transform="translate(-1.000000, -4.000000)">
+                                    <polygon id="Top" fill="#F7F6F4" transform="translate(13.992786, 12.026665) scale(-1, 1) rotate(120.000000) translate(-13.992786, -12.026665) "
+                                        points="7.49278579 0.751665544 20.4927858 8.26833196 20.4927858 23.3016648 7.49278579 15.7849984"></polygon>
+                                    <polygon id="Right" fill="#C6C6C6" transform="translate(20.500000, 23.250000) scale(-1, 1) translate(-20.500000, -23.250000) "
+                                        points="14 12 27 19.5 27 34.5 14 27"></polygon>
+                                    <polygon id="Left" fill="#E2EDF4" points="1 12 14 19.5 14 34.5 1 27"></polygon>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="two" id="block">
+                        <svg width="100px" viewBox="0 0 26 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                            <desc>Created with Sketch.</desc>
+                            <defs></defs>
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g transform="translate(-1.000000, -4.000000)">
+                                    <polygon id="Right" fill="#BC245C" transform="translate(20.500000, 23.250000) scale(-1, 1) translate(-20.500000, -23.250000) "
+                                        points="14 12 27 19.5 27 34.5 14 27"></polygon>
+                                    <polygon id="Left" fill="#37BDBF" points="1 12 14 19.5 14 34.5 1 27"></polygon>
+                                    <polygon id="Top" fill="#F8D600" transform="translate(13.992786, 12.026665) scale(-1, 1) rotate(120.000000) translate(-13.992786, -12.026665) "
+                                        points="7.49278579 0.751665544 20.4927858 8.26833196 20.4927858 23.3016648 7.49278579 15.7849984"></polygon>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="three">
+                        <svg width="100px" viewBox="0 0 26 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                            <desc>Created with Sketch.</desc>
+                            <defs></defs>
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g transform="translate(-1.000000, -4.000000)">
+                                    <polygon id="Top" fill="#F7F6F4" transform="translate(13.992786, 12.026665) scale(-1, 1) rotate(120.000000) translate(-13.992786, -12.026665) "
+                                        points="7.49278579 0.751665544 20.4927858 8.26833196 20.4927858 23.3016648 7.49278579 15.7849984"></polygon>
+                                    <polygon id="Right" fill="#C6C6C6" transform="translate(20.500000, 23.250000) scale(-1, 1) translate(-20.500000, -23.250000) "
+                                        points="14 12 27 19.5 27 34.5 14 27"></polygon>
+                                    <polygon id="Left" fill="#E2EDF4" points="1 12 14 19.5 14 34.5 1 27"></polygon>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <svg height="90px" viewBox="0 0 1 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    id="hash_line" preserveAspectRatio="none">
+                    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                    <desc>Created with Sketch.</desc>
+                    <defs></defs>
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+                        <g transform="translate(-15.000000, -8.000000)">
+                            <path class="hash_line" d="M15.5,8.5 L15.5,25.5" stroke="#979797"></path>
+                        </g>
+                    </g>
+                </svg>
+                <div class="major-frame" id="data-frame">
+                    <div class="fixed-text">
+                        <h2 class="show" id="data-title">data</h2>
+                        <p id="operation_p">every team operation is </br>
+                            stored as a
+                            <span style="color: #5bc894; font-weight: 800;">block</span>
+                        </p>
+                        <p id="signature_p">every block is
+                            <span style="color: #5bc894; font-weight: 800;">signed</span>
+                            </br>
+                            only your team admins can sign blocks </br>
+                            admin signing keys
+                            <span style="color: #5bc894; font-weight: 800;">never</span> leave their device</p>
+                        <p id="hash_p">each block cryptographically points </br>
+                            to the previous block by including its
+                            <span style="color: #5bc894; font-weight: 800;">hash</span>
+                        </p>
+                    </div>
+                    <div id="operation">
+                        <div class="descript">
+                            <h3>operation</h3>
+                            <div class="option one">
+                                <p class="code">
+                                    <span class="operation">PinKnownHost</span>(github.com,
+                                    <i class="fa fa-key"></i>)</p>
+                                <div class="intuit">
+                                    <p class="code">add known host github</p>
+                                </div>
+                            </div>
+                            <div class="option two">
+                                <p class="code">
+                                    <span class="operation">Invite</span>(alex@acme.co,
+                                    <i class="fa fa-key"></i>)</p>
+                                <div class="intuit">
+                                    <p class="code">my team +
+                                        <img src="img/alex.jpeg" />
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="option three">
+                                <p class="code">
+                                    <span class="operation">Promote</span>(kevin@acme.co,
+                                    <i class="fa fa-key"></i>)</p>
+                                <div class="intuit">
+                                    <p class="code">admins +
+                                        <img src="img/kevin.jpg" />
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <svg width="140px" viewBox="0 0 26 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                            <g stroke="none" stroke-width=".5" fill="none" fill-rule="evenodd" stroke-linecap="square">
+                                <path d="M0.5,16.5 C3.81568545,10.5947923 8.01021285,6.21103912 13.0835822,3.34874034 C18.1569516,0.486441554 22.351479,-0.11477257 25.6671644,1.54509796"
+                                    stroke="white"></path>
+                            </g>
+                        </svg>
+                    </div>
+                    <div id="signature">
+                        <div class="descript">
+                            <h3>signature</h3>
+                            <div class="intuit">
+                                <p class="code">
+                                    <span class="terminal" style="color: rgb(55, 189, 191);">NqicAbjp6jTHZVVPC...</span>
+                                </p>
+                            </div>
+                            <div class="intuit">
+                                <p class="signature">-admin</p>
+                            </div>
+                        </div>
+                        <svg width="120px" viewBox="0 0 26 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                            <g stroke="none" stroke-width=".5" fill="none" fill-rule="evenodd" stroke-linecap="square">
+                                <path d="M0.5,16.5 C3.81568545,10.5947923 8.01021285,6.21103912 13.0835822,3.34874034 C18.1569516,0.486441554 22.351479,-0.11477257 25.6671644,1.54509796"
+                                    stroke="white"></path>
+                            </g>
+                        </svg>
+                    </div>
+                    <div id="hash">
+                        <div class="descript">
+                            <h3>lastBlockHash</h3>
+                            <div class="intuit">
+                                <p class="code">
+                                    <span style="color: #BC245C; font-weight: 600;" class="terminal">3WpGvJ1Tsg9u2hKrm7...</span>
+                                </p>
+                            </div>
+                        </div>
+                        <svg width="160px" viewBox="0 0 23 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                            <desc>Created with Sketch.</desc>
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+                                <g transform="translate(-6.000000, -6.000000)" stroke="#FFFFFF" stroke-width="0.4">
+                                    <path d="M6.04421691,7.87663125 C8.76215619,6.43021799 12.079773,6.76209946 15.9970674,8.87227565 C19.9143618,10.9824518 23.897164,14.9077569 27.945474,20.6481908"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="major-frame" id="append-frame">
+                    <div class="fixed-text" id="append-info">
+                        <h2>append</h2>
+                        <p>the new block is then
+                            <span style="color: #5bc894; font-weight: 800;">appended</span>
+                            </br>
+                            to your team's sigchain</p>
+                    </div>
+                </div>
+                <div class="major-frame" id="distribute-frame">
+                    <div class="fixed-text">
+                        <div id="distribute-info">
+                            <h2>distribute</h2>
+                            <p>new blocks are broadcasted</br>
+                                to each member's device</p>
+                        </div>
+                        <div id="verify-info">
+                            <h2>verify</h2>
+                            <p> each device then
+                                <span style="color: #5bc894; font-weight: 800;">verifies</span> the block's </br>
+                                operation, signature, &#38; previous block hash</p>
+                        </div>
+                        <div id="secure-info">
+                            <h2>confirm</h2>
+                            <p>if verification passes, </br>
+                                the new team operation is
+                                <span style="color: #5bc894; font-weight: 800;">confirmed</span>.</p>
+                        </div>
+                    </div>
+                    <div class="paths" id="distribute_paths">
+                        <svg class="one" viewBox="0 0 26 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            preserveAspectRatio="none">
+                            <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                            <g stroke="none" stroke-width=".2" fill="none" fill-rule="evenodd" stroke-linecap="square">
+                                <path d="M0.5,16.5 C3.81568545,10.5947923 8.01021285,6.21103912 13.0835822,3.34874034 C18.1569516,0.486441554 22.351479,-0.11477257 25.6671644,1.54509796"
+                                    stroke="white"></path>
+                            </g>
+                        </svg>
+                        <svg class="two" viewBox="0 0 5 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            preserveAspectRatio="none">
+                            <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                            <desc>Created with Sketch.</desc>
+                            <defs></defs>
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+                                <g stroke="white">
+                                    <path d="M0.5,0.5 C1.51628175,1.54758323 2.34961508,4.59840418 3,9.65246284 C3.65038492,14.7065215 4.15038492,21.6557005 4.5,30.5"></path>
+                                </g>
+                            </g>
+                        </svg>
+                        <svg class="three" viewBox="0 0 26 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            preserveAspectRatio="none">
+                            <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                            <g stroke="none" stroke-width=".2" fill="none" fill-rule="evenodd" stroke-linecap="square">
+                                <path d="M0.5,16.5 C3.81568545,10.5947923 8.01021285,6.21103912 13.0835822,3.34874034 C18.1569516,0.486441554 22.351479,-0.11477257 25.6671644,1.54509796"
+                                    stroke="white"></path>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="phones" id="distribute_phones">
+                        <div class="one">
+                            <svg width="80px" viewBox="0 0 24 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                                <desc>Created with Sketch.</desc>
+                                <defs>
+                                    <path d="M12,45 C10.8954305,45 10,44.1045695 10,43 C10,41.8954305 10.8954305,41 12,41 C13.1045695,41 14,41.8954305 14,43 C14,44.1045695 13.1045695,45 12,45 Z M8.5,2 L15.5,2 C15.7761424,2 16,2.22385763 16,2.5 C16,2.77614237 15.7761424,3 15.5,3 L8.5,3 C8.22385763,3 8,2.77614237 8,2.5 C8,2.22385763 8.22385763,2 8.5,2 Z M1.5,5 L22.5,5 L22.5,40 L1.5,40 L1.5,5 Z M2,0 L22,0 C23.1045695,-2.02906125e-16 24,0.8954305 24,2 L24,44 C24,45.1045695 23.1045695,46 22,46 L2,46 C0.8954305,46 1.3527075e-16,45.1045695 0,44 L0,2 C-1.3527075e-16,0.8954305 0.8954305,2.02906125e-16 2,0 Z"
+                                        id="phone_inner"></path>
+                                </defs>
+                                <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g id="Icon---Check-Phone-Copy">
+                                        <mask id="mask-2" fill="white">
+                                            <use xlink:href="#phone_inner"></use>
+                                        </mask>
+                                        <use id="Mask" fill="white" xlink:href="#phone_inner"></use>
+                                    </g>
+                                </g>
+                            </svg>
+                            <div class="mini-chain"></div>
+                            <div class="block">
+                                <svg width="16px" viewBox="0 0 26 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                                    <desc>Created with Sketch.</desc>
+                                    <defs></defs>
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g transform="translate(-1.000000, -4.000000)">
+                                            <polygon id="Right" fill="#BC245C" transform="translate(20.500000, 23.250000) scale(-1, 1) translate(-20.500000, -23.250000) "
+                                                points="14 12 27 19.5 27 34.5 14 27"></polygon>
+                                            <polygon id="Left" fill="#37BDBF" points="1 12 14 19.5 14 34.5 1 27"></polygon>
+                                            <polygon id="Top" fill="#F8D600" transform="translate(13.992786, 12.026665) scale(-1, 1) rotate(120.000000) translate(-13.992786, -12.026665) "
+                                                points="7.49278579 0.751665544 20.4927858 8.26833196 20.4927858 23.3016648 7.49278579 15.7849984"></polygon>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="two">
+                            <svg width="80px" viewBox="0 0 24 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                                <desc>Created with Sketch.</desc>
+                                <defs>
+                                    <path d="M12,45 C10.8954305,45 10,44.1045695 10,43 C10,41.8954305 10.8954305,41 12,41 C13.1045695,41 14,41.8954305 14,43 C14,44.1045695 13.1045695,45 12,45 Z M8.5,2 L15.5,2 C15.7761424,2 16,2.22385763 16,2.5 C16,2.77614237 15.7761424,3 15.5,3 L8.5,3 C8.22385763,3 8,2.77614237 8,2.5 C8,2.22385763 8.22385763,2 8.5,2 Z M1.5,5 L22.5,5 L22.5,40 L1.5,40 L1.5,5 Z M2,0 L22,0 C23.1045695,-2.02906125e-16 24,0.8954305 24,2 L24,44 C24,45.1045695 23.1045695,46 22,46 L2,46 C0.8954305,46 1.3527075e-16,45.1045695 0,44 L0,2 C-1.3527075e-16,0.8954305 0.8954305,2.02906125e-16 2,0 Z"
+                                        id="phone_inner"></path>
+                                </defs>
+                                <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g id="Icon---Check-Phone-Copy">
+                                        <mask id="mask-2" fill="white">
+                                            <use xlink:href="#phone_inner"></use>
+                                        </mask>
+                                        <use id="Mask" fill="white" xlink:href="#phone_inner"></use>
+                                    </g>
+                                </g>
+                            </svg>
+                            <div class="mini-chain"></div>
+                            <div class="block">
+                                <svg width="16px" viewBox="0 0 26 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                                    <desc>Created with Sketch.</desc>
+                                    <defs></defs>
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g transform="translate(-1.000000, -4.000000)">
+                                            <polygon id="Right" fill="#BC245C" transform="translate(20.500000, 23.250000) scale(-1, 1) translate(-20.500000, -23.250000) "
+                                                points="14 12 27 19.5 27 34.5 14 27"></polygon>
+                                            <polygon id="Left" fill="#37BDBF" points="1 12 14 19.5 14 34.5 1 27"></polygon>
+                                            <polygon id="Top" fill="#F8D600" transform="translate(13.992786, 12.026665) scale(-1, 1) rotate(120.000000) translate(-13.992786, -12.026665) "
+                                                points="7.49278579 0.751665544 20.4927858 8.26833196 20.4927858 23.3016648 7.49278579 15.7849984"></polygon>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="three">
+                            <svg width="80px" viewBox="0 0 24 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                                <desc>Created with Sketch.</desc>
+                                <defs>
+                                    <path d="M12,45 C10.8954305,45 10,44.1045695 10,43 C10,41.8954305 10.8954305,41 12,41 C13.1045695,41 14,41.8954305 14,43 C14,44.1045695 13.1045695,45 12,45 Z M8.5,2 L15.5,2 C15.7761424,2 16,2.22385763 16,2.5 C16,2.77614237 15.7761424,3 15.5,3 L8.5,3 C8.22385763,3 8,2.77614237 8,2.5 C8,2.22385763 8.22385763,2 8.5,2 Z M1.5,5 L22.5,5 L22.5,40 L1.5,40 L1.5,5 Z M2,0 L22,0 C23.1045695,-2.02906125e-16 24,0.8954305 24,2 L24,44 C24,45.1045695 23.1045695,46 22,46 L2,46 C0.8954305,46 1.3527075e-16,45.1045695 0,44 L0,2 C-1.3527075e-16,0.8954305 0.8954305,2.02906125e-16 2,0 Z"
+                                        id="phone_inner"></path>
+                                </defs>
+                                <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g id="Icon---Check-Phone-Copy">
+                                        <mask id="mask-2" fill="white">
+                                            <use xlink:href="#phone_inner"></use>
+                                        </mask>
+                                        <use id="Mask" fill="white" xlink:href="#phone_inner"></use>
+                                    </g>
+                                </g>
+                            </svg>
+                            <div class="mini-chain"></div>
+                            <div class="block">
+                                <svg width="16px" viewBox="0 0 26 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                                    <desc>Created with Sketch.</desc>
+                                    <defs></defs>
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g transform="translate(-1.000000, -4.000000)">
+                                            <polygon id="Right" fill="#BC245C" transform="translate(20.500000, 23.250000) scale(-1, 1) translate(-20.500000, -23.250000) "
+                                                points="14 12 27 19.5 27 34.5 14 27"></polygon>
+                                            <polygon id="Left" fill="#37BDBF" points="1 12 14 19.5 14 34.5 1 27"></polygon>
+                                            <polygon id="Top" fill="#F8D600" transform="translate(13.992786, 12.026665) scale(-1, 1) rotate(120.000000) translate(-13.992786, -12.026665) "
+                                                points="7.49278579 0.751665544 20.4927858 8.26833196 20.4927858 23.3016648 7.49278579 15.7849984"></polygon>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="verification">
+                        <p class="code">
+                            <span class="terminal">BgQaDE2a5S8W5VE2qe...</span>
+                        </p>
+                        <p class="code">my team +
+                            <img src="img/alex.jpeg" />
+                        </p>
+                        <p class="signature">-admin</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="major-frame" id="end-frame">
+            <div class="chain"></div>
+            <div class="fixed-frame">
+                <p>
+                    <em>Trust, but verify</em>
+                    </br>
+                    <span class="hilight">
+                        <em> Everything.</em>
+                        </br>
+                    </span>
+                </p>
+            </div>
+            <div class="fixed-title">
+                <h1>Krypton</h1>
+                <p>learn more at
+                    <a href="http://krypt.co">krypt.co</a>
+                </p>
+            </div>
+        </div>
+        <footer>
+            <p>have questions?
+                <a class="code" href="mailto:hello@krypt.co">hello@krypt.co</a>
+            </p>
+            <p class="meta">built in boston made with mirage</p>
+        </footer>
+    </div>
+</body>
+
+</html>

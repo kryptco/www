@@ -7,6 +7,25 @@
     grid-template-columns: repeat(10, 1fr);
 }
 
+#content p a {
+    color: #3ea372 !important;
+    border-bottom: 2px dotted #3ea372;
+}
+
+#content li a {
+    color: #3ea372 !important;
+    border-bottom: 2px dotted #3ea372;
+}
+
+#content li a:hover {
+    opacity: 0.5;
+}
+
+
+#content p a:hover {
+    opacity: 0.5;
+}
+
 #navigation {
     grid-column: span 2;
     padding: 0;
@@ -15,14 +34,10 @@
     padding-right: 10px;
     border-right: 1px solid #c2c2c217;
 }
-h1 {
-    font-family: "Karla";
-}
 #content {
-    font-family: "Karla";
     grid-column: span 8;
     margin-right: 20px;
-    max-width: 800px;
+    max-width: 900px;
     padding-left: 50px;
 }
 
@@ -35,9 +50,9 @@ h1 {
 }
 /** body **/
 body {
-    font-family: "Montserrat";    
     float: left;
     width: 100%;
+    color: black;
 }
 
 hr {
@@ -105,6 +120,7 @@ pre code table {
 pre code {
     overflow: auto;
     white-space: pre;
+    font-size: 1.1em;
 }
 
 .highlight pre {
@@ -112,12 +128,24 @@ pre code {
 }
 
 code {
+    font-family: "Source Code Pro";
     overflow-x: auto;
+}
+p code, li code {
 
     background-color: transparent; 
+    font-weight: 400;
+
     color: #343434;
-    font-weight: bold;
-    font-family: "Source Code Pro";
+    background: rgba(0,0,0,.025);
+    border-radius: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 0.9em;
+    font-style: normal;
+    font-weight: 600;
 }
 
 .contribute {
@@ -187,17 +215,87 @@ body.rtl ul, body.rtl ol {
     margin: 0 25px 10px 0;
 }
 
-p {
-    margin-top: 10px;
-    line-height: 1.5em;
-    margin-bottom: 10px;
+#content ol {
+    font-weight: 700;
 }
 
-ul {
+#content ol li p {
+    font-weight: normal;
+}
+
+#content p {
+    margin-bottom: 1em !important;
+    margin-top: 0.5em !important;
+}
+
+#content h6 {
+    margin-top: 1em !important;
+    margin-bottom: 0 !important;
+    line-height: normal;
+    font-weight: 600;
+    font-family: "Karla";
+    font-size: 1em;
+}
+
+#content h5 {
+    margin-top: 1em !important;
+    margin-bottom: 0 !important;
+    line-height: normal;
+    font-weight: 600;
+    font-family: "Karla";
+    font-size: 1.2em;
+}
+
+#content h4 {
+    margin-top: 1em !important;
+    margin-bottom: 0 !important;
+    line-height: normal;
+    font-weight: 600;
+    font-family: "Karla";
+    font-size: 1.4em;
+}
+
+#content h3 {
+    margin-top: 1em !important;
+    margin-bottom: 0 !important;
+    line-height: normal;
+    font-weight: 500;
+    font-family: "Karla";
+    font-size: 1.6em;
+}
+
+#content h2 {
+    margin-top: 1em !important;
+    margin-bottom: 0 !important;
+    line-height: normal;
+    font-weight: 600;
+    font-family: "Karla";
+    font-size: 1.8em;
+
+}
+
+#content h1 {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    line-height: normal;
+    font-family: "Karla";
+    font-weight: 900;
+    font-size: 2em;
+}
+
+
+#content {
+    line-height: 1.58em;
+    margin-bottom: 1.5em;
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+.nav ul {
     margin-bottom: 20px;
 }
-li {
-    font-weight: normal;
+#content li {
+    font-family: "Karla";
 }
 
 .img-phone {

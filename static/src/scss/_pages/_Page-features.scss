@@ -1,0 +1,34 @@
+#page-wrapper.Page-features {
+  section {
+    max-width: 60em;
+    padding: 0 1em;
+    margin: 0 auto;
+  }
+
+  .Section--about-features{
+    margin-top: 5em;
+    h1{ text-align: center; }
+  }
+
+  .Section--feature-grid{
+    margin-top: 4em;
+    display: grid;
+    grid-gap: 25px;
+		grid-template-columns: repeat(auto-fill, minmax(20em, 1fr) );
+    justify-content: space-between;
+
+    .feature{
+      border-top: 3px solid $c-green-accent;
+      grid-column: auto / span 1;
+      height: 20em;
+      background: white;
+      box-shadow: 0 0em .75em rgba(54, 54, 54, 0.15);
+      padding: 1em;
+
+      .feature-image{
+        margin: 1em 0 1em;
+        text-align: center;
+      }
+    }
+  }
+}

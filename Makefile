@@ -1,3 +1,6 @@
+verify-versions:
+	./check_jekyll.sh
+	
 clean: 
 	rm -rf _site/
 	rm -rf static/src/docs/_site
@@ -21,11 +24,11 @@ watch: clean setup docs-build jobs-build
 	jekyll build --source static/src/jobs/ --destination static/src/jobs/_site/ --incremental --watch &
 	gulp watch &
 
-build: clean setup docs-build jobs-build
+build: clean verify-versions setup docs-build jobs-build
 	gulp build
 
 serve: watch
-	spark -address localhost -port 8080 _site
+	spark -address localhost -port 1234 _site
 
 deploy-dev: build
 	s3cmd sync "./_site/." s3://www-dev.krypt.co

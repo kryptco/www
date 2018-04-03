@@ -18,8 +18,8 @@ var gulp = require('gulp'),
         bundle: 'app.js',
         dist: './_site/static/dist',
         distJs: './_site/static/dist/js',
-        distLibJs: './_site/static/dist/js/lib/',                
-        srcLibJs: './static/src/js/lib/**',        
+        distLibJs: './_site/static/dist/js/lib/',
+        srcLibJs: './static/src/js/lib/**',
         watchSCSS: './static/src/scss/**/*.scss',
         watchDocsHTML: './static/src/docs/_site/**/*.html',
         watchDocsCSS: './static/src/docs/_site/**/*.css',
@@ -48,13 +48,13 @@ gulp.task('fonts', function () {
 });
 
 gulp.task('images', function () {
-    return gulp 
+    return gulp
         .src(p.srcImg)
         .pipe(gulp.dest(p.distImg));
 });
 
 gulp.task('libJS', function () {
-  return gulp 
+  return gulp
       .src(p.srcLibJs)
       .pipe(gulp.dest(p.distLibJs));
 });
@@ -130,13 +130,13 @@ gulp.task('build', ['clean'], function () {
     gulp.start(['data']);
     gulp.start(['wellknown']);
     gulp.start(['images']);
-    gulp.start(['libJS']);    
+    gulp.start(['libJS']);
     gulp.start(['styles']);
     gulp.start(['browserify']);
 });
 
 var fileinclude = require('gulp-file-include');
- 
+
 gulp.task('fileinclude', function() {
 
   gulp.src(['kr'])
@@ -158,7 +158,7 @@ gulp.task('fileinclude', function() {
     prefix: '@@',
     basepath: '@file'
   }))
-  .pipe(gulp.dest('./_site/app/')); 
+  .pipe(gulp.dest('./_site/app/'));
 
   gulp.src(['static/src/pricing/index.html'])
     .pipe(fileinclude({
@@ -166,6 +166,16 @@ gulp.task('fileinclude', function() {
       basepath: '@file'
     }))
     .pipe(gulp.dest('./_site/pricing/'));
+
+  gulp.src(['static/src/features/index.html'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('./_site/features/'));
+
+  gulp.src(['static/src/sigchain/**/*'])
+    .pipe(gulp.dest('./_site/sigchain/'));
 
   gulp.src(['static/src/install/index.html'])
     .pipe(fileinclude({
@@ -192,13 +202,20 @@ gulp.task('fileinclude', function() {
       basepath: '@file'
     }))
     .pipe(gulp.dest('./_site/about/'));
-    
+
   gulp.src(['static/src/get_started/index.html'])
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
     }))
-    .pipe(gulp.dest('./_site/get_started/'));   
+    .pipe(gulp.dest('./_site/get_started/'));
+
+    gulp.src(['static/src/billing/*'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('./_site/billing/'));
 
   // process the gulp includes for the built jekyll docs site
   gulp.src(['./static/src/docs/_site/**/*'])
@@ -206,7 +223,7 @@ gulp.task('fileinclude', function() {
       prefix: '@@',
       basepath: '@root'
     }))
-    .pipe(gulp.dest('./_site/docs/')); 
+    .pipe(gulp.dest('./_site/docs/'));
 
     // process the gulp includes for the built jekyll jobs site
   gulp.src(['./static/src/jobs/_site/**/*'])
@@ -214,7 +231,7 @@ gulp.task('fileinclude', function() {
     prefix: '@@',
     basepath: '@root'
   }))
-  .pipe(gulp.dest('./_site/jobs/')); 
+  .pipe(gulp.dest('./_site/jobs/'));
 
   gulp.src(['static/src/index.html'])
     .pipe(fileinclude({
@@ -223,6 +240,3 @@ gulp.task('fileinclude', function() {
     }))
     .pipe(gulp.dest('./_site/'));
 });
-
-
-

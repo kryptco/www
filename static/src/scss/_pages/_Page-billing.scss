@@ -1,0 +1,676 @@
+.Page-header-billing {
+    display: inline-flex;
+    justify-content: space-around;
+    height: 4em;
+    img {
+        height: 8em;
+    }
+}
+
+#page-wrapper {
+    min-height: auto;
+}
+body {
+    min-width: 30em;
+    overflow-x: auto;
+}
+
+.contents {
+    max-width: 38em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#checkout {
+    max-width: 38em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#pay-button {
+    width: 100%;
+}
+
+@media screen and (max-width: 40em) {
+    main {
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+    #checkout {
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+}
+
+#billing-title {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-weight: 600;
+}
+
+.light-emphasis {
+    font-weight: 300;
+}
+
+.contents {
+    margin-top: 1em;
+    padding: 1em;
+    border-radius: 4px;
+    box-shadow: 0 0 1em rgba(54, 54, 54, 0.2);
+    font-family: "Karla";
+    transition: visibility 2s linear;
+}
+
+#checkout {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+}
+
+.subject {
+    font-size: 0.8em;
+    display: block;
+    text-transform: uppercase;
+    opacity: 0.5;
+    font-weight: bold;
+    font-family: "Karla";
+}
+
+.section-title {
+    font-size: 1em;
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: "Karla";
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+} // TEAM CARD
+#team-header {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content;
+}
+.team-name {
+    margin-right: 1em;
+}
+#team .team-name .value {
+    font-size: 1.25em;
+    font-weight: bold;
+    font-family: "Karla";
+    word-wrap: break-word;
+}
+
+#team .team-id .value {
+    display: inline;
+    font-family: "Source Code Pro";
+    background-color: rgb(241, 243, 245);
+    border-radius: 4px;
+    font-size: 0.8em;
+    padding: 4px;
+    word-wrap: break-word;
+}
+
+#team .team-id {
+    margin-top: 1em;
+}
+
+#team .team-admin .value {
+    font-size: 1.25em;
+    font-weight: bold;
+    word-wrap: break-word;
+    display: inline;
+    overflow-wrap: break-word;
+
+} // TIER CARD
+.tier {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr;
+}
+
+.tier-role .value {
+    font-weight: normal;
+    font-size: 1em;
+    padding: 2px;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+.tier-price .value {
+    font-size: 1.5em;
+    font-family: "Source Code Pro";
+    font-weight: 600;
+    display: flex;
+}
+
+.tier-price .dollar-sign {
+    font-size: 0.6em;
+    color: black;
+    font-weight: 600;
+    padding-right: 0.2em;
+}
+
+.tier-description {
+    margin-top: 1em;
+}
+
+.tier-description .value {
+    font-size: 0.9em;
+}
+
+#payment-title {
+    margin-top: 1em;
+}
+
+/** Fields **/
+
+fieldset {
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: 4px;
+    border: none;
+    overflow: hidden;
+    padding: 0;
+    box-shadow: 0 0 1em rgba(54, 54, 54, 0.2);
+}
+
+fieldset label {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    font-family: "Karla";
+    color: #343434;
+    font-weight: 400;
+}
+
+.per-month {
+    margin-top: 0;
+    margin-bottom: 0em;
+    text-align: center;
+    font-weight: 400;
+    font-size: 0.7em !important;
+    color: #343434;
+}
+
+fieldset label:not(:last-child) {
+    border-bottom: 1px solid #f0f5fa;
+}
+
+fieldset label.state {}
+
+fieldset:not(.with-state) label.state {
+    display: none;
+}
+
+fieldset label.zip {
+    padding-right: 60px;
+}
+
+fieldset label span {
+    min-width: 6.5em;
+    padding: 0 15px;
+    text-align: right;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    opacity: 0.5;
+    font-weight: bold;
+}
+
+fieldset .redirect label span {
+    text-align: center;
+}
+
+.field {
+    flex: 1;
+    padding: 0 15px;
+    background: transparent;
+    font-weight: 400;
+    color: #343434;
+    font-size: 1.2em;
+    font-weight: 500;
+    font-family: "Karla";
+    outline: none;
+    cursor: text;
+}
+
+.field::-webkit-input-placeholder {
+    color: #aab7c4;
+}
+
+.field::-moz-placeholder {
+    color: #aab7c4;
+}
+
+.field:-ms-input-placeholder {
+    color: #aab7c4;
+}
+
+fieldset .select::after {
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    right: 20px;
+    top: 50%;
+    margin-top: -2px;
+    background-image: url(/static/dist/img/dropdown.svg);
+    pointer-events: none;
+}
+
+input {
+    border-style: none;
+    outline: none;
+    color: #343434;
+}
+
+select {
+    flex: 1;
+    border-style: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    color: #313b3f;
+    cursor: pointer;
+    font-size: 1em;
+    background: transparent;
+    font-family: "Karla",
+}
+
+select:focus {
+    color: #5bc894;
+}
+
+::-webkit-input-placeholder {
+    color: #cfd7e0;
+}
+
+::-moz-placeholder {
+    color: #cfd7e0;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: #cfd7e0;
+}
+
+input:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-text-fill-color: #666ee8;
+    transition: background-color 100000000s;
+    -webkit-animation: 1ms void-animation-out 1s;
+}
+
+.StripeElement--webkit-autofill {
+    background: transparent !important;
+}
+
+#card-element {
+    margin-top: -1px;
+}
+
+.element-errors {
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto 15px;
+    padding-left: 20px;
+    color: #e25950;
+    opacity: 0;
+    transform: translateY(10px);
+    transition-property: opacity, transform;
+    transition-duration: 0.35s;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    background: url(/static/dist/img/error.svg) center left no-repeat;
+    background-size: 15px 15px;
+}
+
+.element-errors.visible {
+    opacity: 1;
+    transform: none;
+}
+
+#pay-button:focus {
+    background: #5bc894;
+}
+
+#pay-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 7px 14px 0 rgba(50, 50, 93, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.08);
+}
+
+#pay-button:active {
+    background: #43458b;
+}
+
+#country {
+    display: flex;
+    align-items: center;
+}
+
+#country select {
+    margin: 0 -15px 0 -30px;
+    padding: 0 15px 0 30px;
+}
+
+#country::before {
+    display: inline-flex;
+    content: '';
+    width: 21px;
+    height: 15px;
+    background: url(/static/dist/img/flags.svg);
+    background-position: -1000px -1000px;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    font-size: 1em;
+}
+
+.AT::before {
+    background-position: -165px -10px !important;
+}
+
+.AU::before {
+    background-position: -196px -10px !important;
+}
+
+.BE::before {
+    background-position: -227px -10px !important;
+}
+
+.BR::before {
+    background-position: -351px -10px !important;
+}
+
+.CA::before {
+    background-position: -382px -10px !important;
+}
+
+.CH::before {
+    background-position: -475px -10px !important;
+}
+
+.CN::before {
+    background-position: -41px -35px !important;
+}
+
+.DE::before {
+    background-position: -134px -35px !important;
+}
+
+.DK::before {
+    background-position: -196px -35px !important;
+}
+
+.ES::before {
+    background-position: -320px -35px !important;
+}
+
+.EU::before {
+    background-position: -351px -35px !important;
+}
+
+.FI::before {
+    background-position: -382px -35px !important;
+}
+
+.FR::before {
+    background-position: -413px -35px !important;
+}
+
+.GB::before {
+    background-position: -475px -35px !important;
+}
+
+.HK::before {
+    background-position: -41px -60px !important;
+}
+
+.IE::before {
+    background-position: -196px -60px !important;
+}
+
+.IT::before {
+    background-position: -351px -60px !important;
+}
+
+.JP::before {
+    background-position: -444px -60px !important;
+}
+
+.LU::before {
+    background-position: -258px -85px !important;
+}
+
+.MX::before {
+    background-position: -475px -85px !important;
+}
+
+.NL::before {
+    background-position: -103px -110px !important;
+}
+
+.NO::before {
+    background-position: -134px -110px !important;
+}
+
+.NZ::before {
+    background-position: -165px -110px !important;
+}
+
+.PT::before {
+    background-position: -413px -110px !important;
+}
+
+.SE::before {
+    background-position: -103px -135px !important;
+}
+
+.SG::before {
+    background-position: -134px -135px !important;
+}
+
+.US::before {
+    background-position: -475px -135px !important;
+}
+
+/**
+ * Stripe
+ */
+
+#card-errors {
+    color: #fa755a;
+}
+
+#pay-button {
+    font-size: 1.1em;
+    margin-top: 1.2em;
+    font-family: "Source Code Pro";
+    display: block;
+    background: #666ee8;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    border: 0;
+    font-weight: 700;
+    height: 40px;
+    outline: none;
+    cursor: pointer;
+    margin: auto;
+    transition: all 0.15s ease;
+}
+
+#pay-button:hover {
+    opacity: 0.7;
+}
+
+.visuallyhidden {
+    opacity: 0;
+}
+
+.visuallyvisible {
+    opacity: 1;
+}
+
+#pay-button:active {
+    transform: scale(1.05);
+}
+
+.StripeElement {
+    background-color: white;
+    padding: 0.5em;
+}
+
+.StripeElement--focus {
+    border-bottom: 1px solid $c-green-accent;
+}
+
+.StripeElement--invalid {
+    border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+}
+
+/** Success **/
+
+#success {
+    margin-bottom: 1em;
+    border-color: $c-green-accent;
+    border-width: 1px;
+    border-style: solid;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    display: none;
+}
+
+#success h1 {
+    color: $c-green-accent;
+    font-size: 1.4em;
+}
+
+#success .team-name {
+    font-family: "Source Code Pro";
+    font-weight: 600;
+    margin-right: 0;
+}
+
+.success-text {
+    margin-bottom: 0;
+}
+
+#success .tier-name {
+    border-radius: 2px;
+    font-family: "Source Code Pro";
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+#success .note {
+    margin-top: 0;
+    font-size: 1em;
+    opacity: 0.5;
+}
+
+#success .success-icon {
+    grid-column: 1;
+    margin: auto;
+}
+
+#success .success-icon img {
+    width: 5em;
+}
+
+#success .success-text {
+    grid-column: span 3;
+}
+
+// share link
+#share-link {
+    margin-top: 8em;
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#share-link button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1em;
+    font-family: "Source Code Pro";
+    color: #666ee8;
+    background: transparent;
+    border: none;
+    font-weight: 900;
+    outline: none;
+    cursor: pointer;
+}
+
+#share-link button:active {
+    opacity: 0.5;
+}
+
+#billing-contact {
+    padding-top: 2em;
+    border-top: 1px solid #f1eaea;
+    font-size: 1em;
+    padding-top: 0;
+}
+
+.hint {
+    color: rgb(52, 52, 52);
+    font-family: "Montserrat";
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    display: inline;
+    font-weight: 300;
+}
+
+.copy-button:before {
+    content: "Copied!";
+    font-size: 0.7em;
+    visibility: hidden;
+}
+
+// copy tooltip
+.copy-button:after {
+    display: inline-flex;
+    color: #343434;
+    font-size: 0.7em;
+    content: "Copied!";
+    visibility: hidden;
+    opacity: 1.0 !important;
+}
+
+.copy-button:active:after {
+    animation-name: toggle-tooltip;
+    animation-duration: 3s;
+}
+
+@keyframes toggle-tooltip {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+    15% {
+        visibility: visible;
+        opacity: 1;
+    }
+    85% {
+        visibility: visible;
+        opacity: 1;
+    }
+    100% {
+        visibility: hidden;
+        opacity: 0;
+    }
+}

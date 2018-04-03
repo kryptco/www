@@ -14,6 +14,8 @@ codeurl: 'https://github.com/kryptco/www/'
 # Default categories (in order) to appear in the navigation
 sections: [
     ['start', 'Get Started'],
+    ['teams', 'Krypton Teams'],
+    ['sigchain', 'Team Sigchain'],
     ['ssh', 'SSH Features'],
     ['security', 'Security'],
     ['use-krypton-with', 'Use with']
