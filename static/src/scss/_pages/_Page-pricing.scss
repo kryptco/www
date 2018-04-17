@@ -187,7 +187,10 @@
     line-height: 100%;
     color: #343434;
     font-size: 3.4em;
-    font-family: "Source Code Pro";
+    font-family: "Karla";
+}
+.no-month {
+    margin-top: 2.2em;
 }
 .free {
     color: #5bc894;
@@ -198,7 +201,7 @@
 .price-contact {
     font-weight: 600;
     font-size: 1.8em;
-    line-height: 2.3em;
+    line-height: 3.1em;
     text-align: center;
 }
 
@@ -223,23 +226,34 @@
     font-weight: 400;
     color: #343434;
     font-style: italic;
+    font-family: "Source Code Pro";
 }
 .per-month-pricing {
     margin-top: 0;
     margin-bottom: 0em;
     text-align: center;
-    font-weight: 600;
-    font-size: 1.3em !important;
+    font-weight: 500;
+    font-size: 1em !important;
+    font-style: italic;
     color: #343434;
 }
 
 .price-detail {
-    font-size: 0.7em;
+    font-size: 1em;
     text-align: center;
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
+.unlimited-tier {
+    font-size: 3.4em;
+    font-family: "Montserrat";
+    font-weight: 300;
+    vertical-align: middle;
+    margin: auto;
+    padding-bottom: 0.7em;
+    color: #343434;
+}
 .feature-separator {
     height: 1px;
     background-color: #f9f5f5;
@@ -284,7 +298,7 @@
     text-align: center;
     margin-top: 1em;
     display: grid;
-    grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0fr;
     border-right: 1px solid #5bc894;
     border-left: none;
 }
@@ -341,7 +355,7 @@
 
 .teams-features-title {
     font-weight: 600;
-    font-size: 1.2em;
+    font-size: 1.7em;
     text-align: center;
     margin: 0;
     text-transform: uppercase;

@@ -141,7 +141,7 @@ body {
 
 .tier-price .value {
     font-size: 1.5em;
-    font-family: "Source Code Pro";
+    font-family: "Karla";
     font-weight: 600;
     display: flex;
 }
@@ -193,9 +193,13 @@ fieldset label {
     margin-top: 0;
     margin-bottom: 0em;
     text-align: center;
+    font-family: "Karla";
     font-weight: 400;
     font-size: 0.7em !important;
     color: #343434;
+    font-style: italic;
+    padding-left: 0.2em;
+    margin-top: 0.1em;
 }
 
 fieldset label:not(:last-child) {

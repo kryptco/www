@@ -29,7 +29,9 @@ To learn more about the security of Apple cryptography libaries and the Apple iO
 ### Android
 On Android, Krypton generates a `3072-bit RSA` key pair (stored in the AndroidKeystore crypto coprocessor) or optionally an `Ed25519` key pair using [libsodium](https://download.libsodium.org/doc/) (stored in app-private file storage). When the private key is stored in the AndroidKeystore it cannot be extracted, even by Krypton, since the AndroidKeystore performs private key operations as a black box.
 
-## What information do we collect?
+## Krypton Core
+
+### What information do we collect?
 If analytics are enabled, we collect the following information about usage of the Krypton app:
 
 - App version
@@ -43,7 +45,7 @@ If analytics are enabled, we collect the following information about usage of th
 - Email addresses (public key labels)
 - Types of kr commands run (i.e. kr add, but the name of the server is not recorded)
 
-## What information do we NOT collect?
+### What information do we NOT collect?
 We do NOT collect any properties of your SSH communication. These are examples of things we DO NOT collect:
 
 - Private key
@@ -51,19 +53,43 @@ We do NOT collect any properties of your SSH communication. These are examples o
 - SSH remote host public keys
 - SSH session ids
 - SSH User names
+- Git commits and tags
 - Computer names
 
-## How do we collect information?
+### How do we collect information?
 We report all collected information, except user email addresses, to Google Analytics by sending HTTP requests to the [Google Analytics Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/v1/). This data is governed by the Google privacy policy located at https://www.google.com/policies/privacy/. We do NOT use the Google Analytics iOS or Android SDKs. Every Krypton app generates a 128-bit random ID to be used only for analytics. User email addresses, along with the `128-bit` analytics ID, are stored in Amazon Web Services’ DynamoDB Service, governed by the [AWS privacy policy](https://aws.amazon.com/privacy/). Using the email address and analytics ID stored in DynamoDB, krypt.co is able to associate a Google Analytics session to the corresponding user’s email address.
 
-## Disable information collection
+### Disable information collection
 
 Users can disable all information collection by navigating to the Krypton settings page and enabling the “Disable Google Analytics” setting. Krypton WILL report to Google Analytics that analytics have been disabled, but will not report any future events until analytics have been re-enabled by toggling the same setting.
 
-## How we use your information
+### How we use your information
+We use your information to improve Krypton’s performance and quality. We use this information to learn which features are being used and how often. We also use this information to detect irregularities. This enables us to diagnose potential bugs, and determine which features to select for product updates.
 
-We use your information to improve Krypton’s performance and quality. We use this information to learn which features are being used and how often. We also use this information to detect irregularities. This enables us to modify functionality, diagnose potential bugs, and determine which features to select for product updates. 
 We collect email addresses for the purpose of communicating new features, product updates, and company updates. We will never spam email addresses and provide users with a way to opt out.
+
+## Krypton Teams
+Your [team sigchain]({{ site.baseurl }}{% post_url 2018-02-23-team-sigchain %}) (team data) is hosted by krypt.co and is **ONLY** accessible by users you invite to your team. We never share your data with other parties. For audit logging, krypt.co only has access to **encrypted** audit logs. All audit logs are encrypted to each active team admin, using keys that only you and team admins have.
+
+### Information we have access to:
+- Team name
+- Team members' email addresses
+- Team members' SSH and PGP **public** keys
+- Team member role (admin/regular)
+- Auto-approval interval for your team
+- Pinned SSH host-names and **public** keys
+- Frequency of audit log creation
+
+### Information we do NOT have access to:
+- Team member private keys
+- Team invitation secrets
+- Audit log data:
+    - SSH remote host names
+    - SSH remote host public keys
+    - SSH session ids
+    - SSH User names
+    - Git commits and tags
+    - Computer names
 
 ## Contact
 For inquiries about our privacy policy or other information, email support@krypt.co.
