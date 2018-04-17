@@ -1,5 +1,5 @@
 // Create a Stripe client
-var stripe = Stripe('pk_live_yCL9ECfmHrdkm7gZqaf4sKWr');
+var stripe = Stripe('@@stripe_public_key');
 
 // Create an instance of Elements
 var elements = stripe.elements();
@@ -105,7 +105,15 @@ form.addEventListener('submit', async event => {
   if (token.token) {
     // determine the host
     // this points us to the right billing api
-    var host = window.location.host.replace("www", "api");
+    
+    var host = function(currentHost) {
+      if (currentHost.includes("www")) {
+        return currentHost.replace("www", "api");
+      }
+
+      return "api." + currentHost;
+    }(window.location.host);
+
 
     // send the token and other params
     var xhr = new XMLHttpRequest();

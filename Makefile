@@ -24,14 +24,19 @@ watch: clean setup docs-build jobs-build
 	jekyll build --source static/src/jobs/ --destination static/src/jobs/_site/ --incremental --watch &
 	gulp watch &
 
-build: clean verify-versions setup docs-build jobs-build
-	gulp build
+build-shared: clean verify-versions setup docs-build jobs-build
+
+build-dev: build-shared
+	gulp build --stripe_public_key=pk_test_tzn5fi8nBXyoUxADinXwZ0pM
+
+build: build-shared
+	gulp build --stripe_public_key=pk_live_yCL9ECfmHrdkm7gZqaf4sKWr
 
 serve: watch
 	spark -address localhost -port 1234 _site
 
-deploy-dev: build
+deploy-dev: build-dev
 	s3cmd sync "./_site/." s3://www-dev.krypt.co
 
 deploy: build
-	./deploy.sh
+	s3cmd sync "./_site/." s3://www.krypt.co

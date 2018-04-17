@@ -13,6 +13,7 @@ var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     minify = require('gulp-minify'),
     sourcemaps = require('gulp-sourcemaps'),
+    replace = require('gulp-replace-task'),
     p = {
         jsx: './static/src/js/app.js',
         bundle: 'app.js',
@@ -210,12 +211,21 @@ gulp.task('fileinclude', function() {
     }))
     .pipe(gulp.dest('./_site/get_started/'));
 
-    gulp.src(['static/src/billing/*'])
+  gulp.src(['static/src/billing/*'])
+    .pipe(replace({
+      patterns: [
+        {
+          match: 'stripe_public_key',
+          replacement: gutil.env.stripe_public_key,
+        }
+      ]
+    }))
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
     }))
     .pipe(gulp.dest('./_site/billing/'));
+
 
   // process the gulp includes for the built jekyll docs site
   gulp.src(['./static/src/docs/_site/**/*'])
@@ -240,3 +250,4 @@ gulp.task('fileinclude', function() {
     }))
     .pipe(gulp.dest('./_site/'));
 });
+
