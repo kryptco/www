@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Krypton Team Sigchain</title>
+    <title>Krypton Teams | Sigchain</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,13 +15,13 @@
     <meta property='og:title' content='Krypton - the new home for your SSH private key.'>
     <meta property='og:type' content='website'>
     <meta property='og:description' content='The private key never leaves your phone.'>
-    <meta property='og:image' content='https://krypt.co/static/dist/img/meta-image.png'>
+    <meta property='og:image' content='/static/dist/img/meta-image.png'>
 
     <meta property='twitter:card' content='summary_large_image'>
     <meta property='twitter:title' content='Krypton - The new way to protect your private key.'>
     <meta name="twitter:creator" content="@kryptco" />
     <meta property='twitter:description' content='The private key never leaves your phone.'>
-    <meta property='twitter:image' content='https://krypt.co/static/dist/img/meta-image.png'>
+    <meta property='twitter:image' content='/static/dist/img/meta-image.png'>
 
     <link rel="apple-touch-icon" href='/static/dist/img/apple-touch-icon.png'>
     <link rel="icon" type="image/png" href='/static/dist/img/favicon.png' />
@@ -48,7 +48,7 @@
 
 </head>
 
-<body onload="scrollWatcher()">
+<body onload="doDemo()">
     <div id="reading-progress">
         <ul>
             <li class="bookmark" id="sigchain_bookmark" onclick="goToBookmark('sigchain', scrollWatcher)">sigchain</li>
@@ -62,7 +62,8 @@
             <li class="bookmark" id="end_bookmark" onclick="goToBookmark('end', scrollWatcher)">end</li>
         </ul>
         <div class="scroll down">
-            <i class="fa fa-chevron-down fa-2x" onclick="toNext(document.body.scrollTop, scrollWatcher)"></i>
+            <i class="fa fa-chevron-down fa-2x" onclick="toNext(document.body.scrollTop, scrollWatcher)">
+            </i>
         </div>
         <div class="scroll up">
             <i class="fa fa-chevron-up fa-2x" onclick="toLast(document.body.scrollTop, scrollWatcher)"></i>
@@ -521,9 +522,7 @@
             </div>
             <div class="fixed-title">
                 <h1>Krypton</h1>
-                <p>learn more at
-                    <a href="http://krypt.co">krypt.co</a>
-                </p>
+                <p>by krypt.co</p>
             </div>
         </div>
         <footer>

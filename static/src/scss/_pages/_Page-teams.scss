@@ -1,0 +1,488 @@
+body {
+
+}
+span.for-teams {
+    border-bottom: 2px solid $c-green-accent;
+}
+
+.for {
+    font-weight: 300;
+    color: #343434;
+}
+
+.emph {
+    font-weight: bold;
+}
+.teams-title {
+    margin-top: 3em;
+    color: $c-green-accent;
+    font-weight: bold;
+    font-size: 1.25em;
+    margin-bottom: 0;
+}
+.Section--hero--teams {
+    @extend .Section;
+    @include display(flex);
+    @include flex-direction(column);
+    @include align-items(center);
+
+    h1 {
+        padding: 0;
+        margin: 0;
+        margin-top: 0.25em;
+        margin-bottom: 1em;
+        max-width: 20em;
+        text-align: center;
+    }
+}
+
+.Feature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 2em;
+    grid-gap: 1.4em;
+    max-width: 1100px;
+    margin: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 0.75em rgba(54,54,54,.3);
+    border-left: 4px solid $c-green-accent;
+
+    @media (max-width: 60em) {
+        display: flex;
+        flex-direction: column;
+        border-top: 4px solid $c-green-accent;
+        border-left: none;
+        margin-left: 1em;
+        margin-right: 1em;    
+    }
+}
+
+.first-feature {
+    margin-top: 4em;
+}
+
+.alt {
+    // background: #f4f4f4;
+    text-align: right;
+    border-left: none;
+    border-right: 4px solid $c-green-accent;
+
+    @media (max-width: 60em) {
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: left;
+        border-right: none
+    }
+
+}
+
+// the text-content
+.feature-teams-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    grid-column: span 1;
+
+    @media (max-width: 60em) {        
+        text-align: center;
+        margin-bottom: 2em;
+        flex-direction: column-reverse;
+    }
+}
+
+.alt .feature-teams-details {
+    @media (max-width: 60em) {
+        flex-direction: column-reverse;
+    }
+}
+
+.feature-icon {
+    margin-bottom: 0;
+    margin-top: auto;
+    margin-right: auto;
+    display: block;
+    text-align: left;
+    height: 5em;
+    width: auto;
+
+    @media (max-width: 60em) {
+        margin-bottom: 1.5em;
+        margin-left: auto;
+    }
+}
+
+.alt .feature-icon {
+    padding-left: 1em;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: 0;
+    
+    @media (max-width: 60em) {
+        margin-bottom: 1.5em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.rotate {
+    height: 2.25em;
+}
+
+.alt .feature-icon {
+}
+.feature-text {
+}
+
+.feature-text .feature-heading {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.feature-text .second-heading {
+    font-weight: normal;
+    font-size: 1em;
+}
+
+.feature-teams-description {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    font-size: 1em;
+    font-weight: 300;
+    text-align: justify;
+}
+
+.second-line {
+    margin-top: 1em;
+}
+.feature-media {
+    grid-column: span 1;
+}
+
+.dashboard video {
+    box-shadow: 0 0 0.75em rgba(54,54,54,.25);
+    border-radius: 4px;
+}
+
+.live-demo {
+    display: flex;
+    justify-content: space-around;
+}
+.live-demo:active {
+    opacity: 0.8;
+}
+.live-demo a {
+    background: #6772e5;
+    margin-top: 1em;
+    padding: 0.5em;
+    border-radius: 4px;
+    box-shadow: 0 0 0.75em rgba(54,54,54,.2);
+    cursor: pointer;
+
+    color: white;
+    font-size: 1em;
+}
+
+.live-demo a:hover {
+    transform: translateY(-1px);
+    opacity: 0.8;
+}
+
+.feature-media img {
+    border-radius: 0.5em;
+    box-shadow: 0 0 0.75em rgba(54,54,54,.1);
+}
+.media-image {
+    width: 100%;
+    height: auto;
+}
+
+.alt .learn-more {
+    color: $c-green-accent;
+}
+.learn-more {
+}
+
+.learn-more:hover {
+    border-bottom: 2px dotted $c-green-accent;
+}
+
+.alt .learn-more:hover {
+    border-bottom: 2px dotted $c-green-accent;
+}
+
+.explore {
+    margin-top: 3em;
+    margin-bottom: 3em;
+    .sep {
+        margin-top: 1em;
+        height: 2px;
+    }
+    .title {
+        margin-top: 1em;
+        font-family: 'Montserrat';
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.8em;
+    }
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    li {
+        box-shadow: 0 0 0.75em rgba(54,54,54,.1);
+        text-align: center;
+        border-radius: 0.75em;
+        line-height: 1em;
+        font-size: 1em;
+        margin: 0.5em;
+        padding: 0.5em;
+        font-weight: 600;
+        font-family: 'Source Code Pro';
+        border: 1px solid $c-green-accent;
+        background: linear-gradient(to right bottom, #2f3441 50%, #212531 50%);
+        color: white;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    li:active {
+        transform: scale(1.05);        
+    }
+}
+
+.teams-get-started {
+    .title {
+        font-family: 'Montserrat';
+        font-weight: bold;
+        font-size: 2.4em;
+    }
+}
+
+.team-grab {
+    width: 20em;
+    height: auto;
+}
+
+.iterm {
+    border-radius: 4px;
+    width: 39em;
+    height: 22em;
+    background: #343434;
+    display: block;
+    overflow: hidden;
+    box-shadow: 0 0 0.75em rgba(54,54,54,.35);
+    animation:
+    hide-view 16s step-end infinite;
+
+
+    @media (max-width: 60em) {
+        width: auto;
+    }
+
+    .green {
+        color: $c-green-accent;
+    }
+
+    .yellow {
+        color: #fcdf61;
+    }
+
+    .dots {
+        display: flex;
+        padding-left: 0.5em;
+        padding-top: 0.5em;
+
+        .dot {
+            box-shadow: 0 0 0.75em rgba(39, 35, 35, 0.25);
+            display: inline-flex;
+            margin: .25em;
+            border-radius: 50%;
+            height: .7em;
+            width: .7em;
+            background: #696b6a;
+        }
+    }
+
+    .line {
+        margin-top: 0.25em;
+        padding-left: 0.5em;
+        font-family: "Source Code Pro";
+        font-weight: 600;
+        font-size: 1.1em;
+        color: white; 
+        display: inline-block;
+        margin-bottom: 0;
+
+        .bang {
+            color: $c-green-accent;
+            font-weight: 900;
+            padding-right: 0.5em;
+            width: 1em;
+        }
+
+        p {
+            font-family: "Source Code Pro";
+            font-weight: 600;
+            margin-bottom: 0;
+            border-right: .3em solid transparent;
+
+            width: auto;
+            overflow: hidden;
+            white-space: nowrap;
+            padding-right: 0.25em;
+    
+            animation: 
+            show-caret 8s step-start infinite,
+            typing 8s steps(30, end) infinite; // 2s, then pause 6s
+        }   
+            
+        /* The typing effect */
+        @keyframes typing { 
+            0% { width: 1em }
+            25% {  width: 100%;}
+            100% {  }
+        }
+    }
+
+    .result {
+        visibility: hidden;
+        padding-left: 0.75em;
+        font-size: 1em;   
+        animation: 
+        show-result 8s step-end infinite; // show after 2.1s, pause for 6s
+
+        p {
+            margin: 0;
+            font-family: "Source Code Pro";
+            font-weight: 400;    
+            color: white;      
+            padding: 0; 
+            margin: 0;             
+        }   
+    }
+
+    .new-line {
+        visibility: hidden;
+        animation:
+        show-result 8s step-end infinite;
+
+        .bang {
+            padding-right: 0.25em;
+        }
+        p {
+            border-right: .3em solid $c-green-accent;
+            animation: blink-caret 1s step-end infinite;
+        }
+    }
+}
+
+@keyframes show-result {
+    0% {}
+    35% { visibility: visible; }
+    100% { visibility: visible; }
+}
+
+@keyframes blink-caret {
+    from, to {  border-color: $c-green-accent }
+    50% { border-color: transparent }
+}   
+
+@keyframes show-caret {
+    0% { border-color: transparent }
+    25% {border-color: $c-green-accent}
+    100% {  border-color: transparent }
+}   
+
+@keyframes hide-view {
+    0% {height: 22em; opacity: 1;}
+    50% {height: 0; opacity: 0;}
+    100% { }
+}   
+
+// sequential demos
+
+.iterm:nth-child(2) {
+    animation: 
+    next-animation 16s step-end infinite;
+
+    @keyframes next-animation {
+        0% { height: 0; opacity: 0;}
+        50% {  height: 22em; opacity: 1; }
+    }       
+}
+
+.host-pin {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 3em;
+    padding-bottom: 3em;
+
+    .iterm {
+        margin-top: auto;
+        height: 10em;
+
+        text-align: left;
+        animation: none !important;
+        width: 22em;
+        p {
+            animation:
+            show-caret 6s step-start infinite,
+            typing 5s steps(30, end) infinite; // 2s, then pause 6s
+        }
+    }
+
+    .line {
+        display: inline-block;
+    }
+    .new-line {
+        display: inline-block;        
+        animation:
+        show-result 6s step-end infinite;
+
+        p {
+            border-color: $c-green-accent;
+        }
+    }
+
+    display: inline-flex;
+}
+
+
+.phone-demo {
+    width: 13em;
+    position: relative;
+    overflow: hidden;
+    width: 20em;
+    height: 15em;
+    
+    img {
+        width: 20em;
+        height: auto;
+        position: absolute;
+        top: 0em;
+        left: -0.9em;
+        border-radius: 0 !important;
+        box-shadow: 0 0 0.75em rgba(54,54,54,0) !important;    
+        clip: rect(0,25em,16em,0);
+    }
+
+    video {
+        width: 14.7em;
+        position: absolute;
+        top: 2.2em;
+        left: 1.6em;
+            // clip-path: inset(0 0 7.125em 0);
+    }
+}
+
+.sigchain-demo {
+    box-shadow: 0 0 0.75em rgba(54,54,54,.25);
+    border-radius: 4px;
+}

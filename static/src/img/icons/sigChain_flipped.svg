@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="133px" viewBox="0 0 36 133" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>sigChain_flipped</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="sigChain_flipped" transform="translate(18.000000, 63.500000) rotate(270.000000) translate(-18.000000, -63.500000) translate(-49.000000, 47.000000)" fill-rule="nonzero" stroke="#5BC894" stroke-width="2">
+            <g id="block-4">
+                <polygon id="Right" fill="#5BC894" transform="translate(13.897059, 24.444444) scale(-1, 1) rotate(90.000000) translate(-13.897059, -24.444444) " points="5.86764763 10.6944438 21.9264712 19.8611105 21.9264712 38.1944438 5.86764763 29.0277772"></polygon>
+                <polygon id="Left" fill="#FFFFFF" transform="translate(13.897059, 8.555556) rotate(90.000000) translate(-13.897059, -8.555556) " points="5.86764765 -5.19444419 21.9264712 3.97222247 21.9264712 22.3055558 5.86764765 13.1388891"></polygon>
+                <polygon id="Top" fill-opacity="0.2" fill="#5BC894" transform="translate(27.761178, 16.491183) scale(-1, 1) rotate(-150.000000) translate(-27.761178, -16.491183) " points="19.7317667 2.71062807 35.7905902 11.8976648 35.7905902 30.2717382 19.7317667 21.0847015"></polygon>
+            </g>
+            <g id="block-3" transform="translate(31.000000, 0.000000)">
+                <polygon id="Right" fill="#5BC894" transform="translate(13.897059, 24.444444) scale(-1, 1) rotate(90.000000) translate(-13.897059, -24.444444) " points="5.86764763 10.6944438 21.9264712 19.8611105 21.9264712 38.1944438 5.86764763 29.0277772"></polygon>
+                <polygon id="Left" fill="#FFFFFF" transform="translate(13.897059, 8.555556) rotate(90.000000) translate(-13.897059, -8.555556) " points="5.86764765 -5.19444419 21.9264712 3.97222247 21.9264712 22.3055558 5.86764765 13.1388891"></polygon>
+                <polygon id="Top" fill-opacity="0.2" fill="#5BC894" transform="translate(27.761178, 16.491183) scale(-1, 1) rotate(-150.000000) translate(-27.761178, -16.491183) " points="19.7317667 2.71062807 35.7905902 11.8976648 35.7905902 30.2717382 19.7317667 21.0847015"></polygon>
+            </g>
+            <g id="block-2" transform="translate(61.000000, 0.000000)">
+                <polygon id="Right" fill="#5BC894" transform="translate(13.897059, 24.444444) scale(-1, 1) rotate(90.000000) translate(-13.897059, -24.444444) " points="5.86764763 10.6944438 21.9264712 19.8611105 21.9264712 38.1944438 5.86764763 29.0277772"></polygon>
+                <polygon id="Left" fill="#FFFFFF" transform="translate(13.897059, 8.555556) rotate(90.000000) translate(-13.897059, -8.555556) " points="5.86764765 -5.19444419 21.9264712 3.97222247 21.9264712 22.3055558 5.86764765 13.1388891"></polygon>
+                <polygon id="Top" fill-opacity="0.2" fill="#5BC894" transform="translate(27.761178, 16.491183) scale(-1, 1) rotate(-150.000000) translate(-27.761178, -16.491183) " points="19.7317667 2.71062807 35.7905902 11.8976648 35.7905902 30.2717382 19.7317667 21.0847015"></polygon>
+            </g>
+            <g id="block-1" transform="translate(92.000000, 0.000000)">
+                <polygon id="Right" fill="#5BC894" transform="translate(13.897059, 24.444444) scale(-1, 1) rotate(90.000000) translate(-13.897059, -24.444444) " points="5.86764763 10.6944438 21.9264712 19.8611105 21.9264712 38.1944438 5.86764763 29.0277772"></polygon>
+                <polygon id="Left" fill="#FFFFFF" transform="translate(13.897059, 8.555556) rotate(90.000000) translate(-13.897059, -8.555556) " points="5.86764765 -5.19444419 21.9264712 3.97222247 21.9264712 8.11811006 21.9264712 22.3055558 5.86764765 13.1388891"></polygon>
+                <polygon id="Top" fill-opacity="0.2" fill="#5BC894" transform="translate(27.761178, 16.491183) scale(-1, 1) rotate(-150.000000) translate(-27.761178, -16.491183) " points="19.7317667 2.71062807 35.7905902 11.8976648 35.7905902 30.2717382 19.7317667 21.0847015"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -22,7 +22,7 @@ jobs-build:
 watch: clean setup docs-build jobs-build
 	jekyll build --source static/src/docs/ --destination static/src/docs/_site/ --incremental --watch &
 	jekyll build --source static/src/jobs/ --destination static/src/jobs/_site/ --incremental --watch &
-	gulp watch &
+	gulp watch --stripe_public_key=pk_test_tzn5fi8nBXyoUxADinXwZ0pM &
 
 build-shared: clean verify-versions setup docs-build jobs-build
 

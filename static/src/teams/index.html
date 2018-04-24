@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Krypton for Teams - Simple SSH Key Storage for DevOps</title>
+
+    @@include('../html_head.html')
+</head>
+
+<body>
+    <div id="page-wrapper" class='Page-home'>
+        <header id='page-header' class='Page-header'>
+                <div class='Page-header__left-block'>
+                    <a href='/'><img src='/static/dist/img/krypton_core_logo.svg' /></a>
+                </div>
+                <div class='Page-header__right-block'>
+                    <div class='Page-header__overlay'></div>
+                    <div class='Page-header__menu-button Hamburger-button'></div>
+                    <div class='Page-header__links'>
+                        <a href='/' class='Page-header__links__link'>Krypton Core</a>
+                        <a href='/pricing/' class='Page-header__links__link'>Pricing</a>
+                        <a href='/sigchain/' target="_blank" class='Page-header__links__link'>Sigchain</a>
+                        <a href='/docs/' class='Page-header__links__link'>Docs</a>			
+                        <a href='/faq/' class='Page-header__links__link'>FAQ</a>
+                        <a href='/jobs/' class='Page-header__links__jobs Page-header__links__link'>Jobs</a>			
+                        <a href='/about/' class='Page-header__links__link'>About</a>
+                        <a href="https://appsto.re/us/weWofb.i" target="blank"><img src="/static/dist/img/apple_app_store_badge.svg" style="height: 29px; vertical-align:middle;"></img></a>
+                        <a href='https://play.google.com/store/apps/details?id=co.krypt.kryptonite&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="blank"><img alt='Get it on Google Play' src='/static/dist/img/android_play_badge.png' style="height: 44px; vertical-align: middle; margin-right: -10px;"/></a>
+                    </div>
+                </div>
+            </header>
+                
+        <main>
+            <section class='Section--hero--teams'>
+                <div class="teams-title">Krypton
+                    <span class="for">For</span> Teams</div>
+                    <h1>Simple SSH Key Storage <br> for DevOps</h1>
+                <div id='get-started-button' class='CTA'>Get started</div>
+            </section>
+            <section class="Feature first-feature">
+                <div class="feature-teams-details">
+                    <div class="feature-text">
+                        <div class="feature-heading">Secure SSH Keys for your Team</div>
+                        <div class="feature-teams-description">
+                            No more sensitive plain-text private keys floating around developer laptops and desktops. The private keys <span class="emph">never</span>
+                            leave your phone. <a class="learn-more" href="/docs/security/threat-model.html">Learn More</a>
+
+                        </div>
+                        <div class="feature-teams-description second-line">
+                            New members self-enroll in <strong>60 seconds</strong>.
+                        </div>
+                        
+                    </div>
+                    <img class="feature-icon" src='/static/dist/img/icons/points/keyOnYourPhone.svg' />
+                </div>
+                <div class="feature-media">
+                    <video autoplay loop playsinline muted style="width: 100%; height: 100%;">
+                        <source src="/static/dist/img/demo_final.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </section>
+            <section class="Feature alt">
+                <div class="feature-media dashboard">
+                    <a href="demo/" target="_blank"><video autoplay loop playsinline muted style="width: 100%; height: 100%;" class="dash-demo">
+                        <source src="/static/dist/img/demo_dash.mp4" type="video/mp4">
+                    </video></a>
+                    <div class="live-demo">
+                        <a href="demo/" target="_blank">Live Dashboard Demo</a>
+                    </div>
+                </div>
+                <div class="feature-teams-details">
+                    <div class="feature-text">
+                        <div class="feature-heading">Monitor Audit Logs in Real-Time</div>
+                        <div class="feature-teams-description">Track accesses to every host in your infrastructure in real-time. Log data is encrypted to team admins and inaccessible to krypt.co. <a class="learn-more" href="/teams/demo">Learn More</a>
+                        </div>
+                        <div class="feature-teams-description second-line">
+                            <strong>No SSH-server changes</strong> required.
+                        </div>    
+                    </div>
+                    <img class="feature-icon" src='/static/dist/img/icons/points/shareKey.svg' />
+                </div>
+            </section>
+            <section class="Feature">
+                <div class="feature-teams-details">
+                    <div class="feature-text">
+                        <div class="feature-heading">Easily Control SSH Access</div>
+                        <div class="feature-teams-description">
+                            Use your team’s SSH public-keys from one secure place. 
+                            Grant or revoke access to servers in a single command. <a class="learn-more" href="/docs/teams/command-line.html">Learn More</a>
+                        </div>
+                    </div>
+                    <img class="feature-icon" src='/static/dist/img/icons/manageKeys.svg' />
+                </div>
+                <div class="feature-media">
+                    <div class="iterm">
+                        <div class="dots">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                        <div class="line">
+                            <p><span class="bang">$</span>kr team list <span class="yellow">--ssh</span></p>
+                        </div>
+                        <div class="result">
+                            <p>Team has <span class="green">24 members</span> with SSH public keys:</p>
+                            <br>
+                            <p><span class="green">1. asmith@acme.co</span></p>
+                            <p>ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFyF4VHr5XH+C...</p>
+                            <p><span class="green">2. cwilliams@acme.co</span></p>
+                            <p>ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID3n8Y6I8NYHZf...</p>
+                            <p><span class="green">3. gmiller@acme.co</span></p>
+                            <p>ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKf8MBtmVow9bS...</p>
+                            <p>...</p>                            
+                        </div>
+                        <div class="line new-line">
+                            <p><span class="bang">$</span></p>
+                        </div>    
+                    </div>
+                    <div class="iterm">
+                            <div class="dots">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                            <div class="line">
+                                <p><span class="bang">$</span>kr add <span class="yellow">--member</span> asmith@acme.co <span class="yellow">--server</span> bastion.acme.co</p>
+                            </div>
+                            <div class="result">
+                                <p><span class="green">bastion.acme.co</span> is now accessible by:</p>
+                                <br>
+                                <p><span class="green">1. asmith@acme.co</span></p>
+                                <p><span class="green">2. oharris@acme.co</span></p>
+                                <p><span class="green">3. xlee@acme.co</span></p>
+                                <p>...</p>
+                            </div>
+                            <div class="line new-line">
+                                <p><span class="bang">$</span></p>
+                            </div>    
+                    </div>                    
+                    <!-- <img class="media-image" src="/static/dist/img/docs/hosts-logs-dash-small.png" /> -->
+                </div>
+            </section>
+            <section class="Feature alt">
+                    <div class="feature-media host-pin">
+                        <div class="iterm">
+                                <div class="dots">
+                                    <div class="dot"></div>
+                                    <div class="dot"></div>
+                                    <div class="dot"></div>
+                                </div>
+                                <div class="line">
+                                    <p><span class="bang">$</span>kr pin <span class="yellow">--host</span> bastion.acme.co</p>
+                                </div>
+                                <br>
+                                <div class="line new-line">
+                                    <p><span class="bang">$</span></p>
+                                </div>    
+                        </div>              
+                        <div class="phone-demo">
+                            <img class="phone-skeleton" src="/static/dist/img/iphone_skeleton.png"/>
+                            <video autoplay loop playsinline muted>
+                                <source src="/static/dist/img/host_pin_bare.mp4" type="video/mp4">
+                            </video>
+                        </div>                              
+                    </div>
+                    <div class="feature-teams-details">
+                        <div class="feature-text">
+                            <div class="feature-heading">Pin SSH Host Public Keys</div>
+                            <div class="feature-heading second-heading">Man-in-the-middle Protection</div>
+                            <div class="feature-teams-description">No more trust-on-first-use, pin your server’s public keys and distribute known hosts in real-time.       <a class="learn-more" href="/docs/teams/command-line.html#kr-team-hosts">Learn More</a>
+                            </div>                            
+                        </div>
+                        <img class="feature-icon" src='/static/dist/img/icons/pinHost.svg' />
+                    </div>
+            </section>    
+            <section class="Feature">
+                <div class="feature-teams-details">
+                    <div class="feature-text">
+                        <div class="feature-heading">End-to-end Verified Infrastructure</div>
+                        <div class="feature-teams-description">
+                            Built on top of an end-to-end verified infrastructure, public keys and team policies are cryptographically verified, and audit logs are encrypted to team admins. krypt.co hosts the team infrastructure, but the data is unmodifiable by krypt.co or any other party. <a class="learn-more" href="/docs/sigchain/team-sigchain.html">Learn More</a>
+                        </div>
+                        
+                    </div>
+                    <img class="feature-icon rotate" src='/static/dist/img/icons/sigChain.svg' />
+                </div>
+                <div class="feature-media">
+                    <a href="/sigchain" target="_blank">
+                        <video autoplay loop playsinline muted style="width: 100%; height: 100%;" class="sigchain-demo">
+                            <source src="/static/dist/img/sigchain_demo.mp4" type="video/mp4">
+                        </video>
+                    </a>
+                    <div class="live-demo">
+                        <a href="/sigchain/" target="_blank">How does it work?</a>
+                    </div>    
+                </div>
+            </section>          
+            <section class='Section--get-started teams-get-started'>
+                <h2 class="title">Get Started in 3 steps</h2>
+                <div class='Section--get-started__steps'>
+                    <div class='Section--get-started__steps__step Step'>
+                        <div class='Step__counter'><span>1</span></div>
+                        <h3>Download Krypton Core on the app store</h3>
+                        <a href="https://appsto.re/us/weWofb.i" target="blank"><img src="/static/dist/img/apple_app_store_badge.svg" style="padding: 10px;"></img></a>
+                        <a href='https://play.google.com/store/apps/details?id=co.krypt.kryptonite&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="blank"><img alt='Get it on Google Play' src='/static/dist/img/android_play_badge.png' style="height: 60px;"/></a>
+                    </div>
+                    <div class='Section--get-started__steps__step Step'>
+                        <div class='Step__counter'><span>2</span></div>
+                        <h3>Install <code style="font-family: 'Source Code Pro'; font-weight: bold; color: #5bc984;">kr</code> and pair your computer</h3>
+                        <p>Follow the instructions <a target="_blank" href="/install">here</a> to install <code>kr</code> on your computer.</p>
+                        <p>Then open the app to the 'pair' screen. Run ‘kr pair’ and scan the QR code using Krypton on your phone.</p>
+                        <div class='Terminal'>
+                            <span class='Terminal-Prompt'>$</span>kr pair
+                        </div>
+                    </div>
+                    <div class='Section--get-started__steps__step Step'>
+                        <div class='Step__counter'><span>3</span></div>
+                        <h3>Create your team</h3>
+                        <p>After you setup Krypton Core, create your team from the Teams tab and invite your dev org.</p>
+                        <a href='/docs/teams/getting-started.html'>Read more</a></p>
+                        <img class="team-grab" src="/static/dist/img/create_team_ios.png">
+                    </div>
+                </div>
+            </section>    
+            <section class='Section--contact-us'>
+                <h2>Have questions?
+                    <a href='mailto:hello@krypt.co'>hello@krypt.co</a>
+                </h2>
+            </section>
+        </main>
+
+        @@include('../footer.html')
+    </div>
+    @@include('../body_tail.html')
+</body>
+
+</html>
