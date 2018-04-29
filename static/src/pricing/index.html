@@ -114,15 +114,7 @@
 										<div class="feature priced-feature">
 											<div class="priced-feature-price">
 												<p class="restriction-title">1<span class="k">k</span></p>
-												<p class="restriction-subtitle">Audit Logs<br>per month</p>
-											</div>
-										</div>
-
-										<!-- Servers -->
-										<div class="feature priced-feature">
-											<div class="priced-feature-price">
-												<p class="restriction-title">5</p>
-												<p class="restriction-subtitle">Pinned<br>hosts</p>
+												<p class="restriction-subtitle">Audit Logs /month</p>
 											</div>
 										</div>
 								</div>
@@ -133,7 +125,11 @@
 												<p class="restriction-empty"> - </p>
 											</div>
 								</div>
-
+								<div class="feature priced-feature empty">
+									<div class="priced-feature-price">
+										<p class="restriction-empty"> - </p>
+									</div>
+								</div>
 								<!-- Support -->
 								<div class="feature priced-feature empty">
 										<div class="priced-feature-price">
@@ -161,7 +157,11 @@
 									<div class="unlimited-tier">
 										&#8734;
 									</div>
-
+									<div class="feature priced-feature empty">
+										<div class="priced-feature-price">
+											<p class="restriction-empty"> - </p>
+										</div>
+									</div>
 									<div class="feature priced-feature empty">
 										<div class="priced-feature-price">
 											<p class="restriction-empty"> - </p>
@@ -190,19 +190,22 @@
 										</div>
 										<p class="price-detail">Deploy Krypton across your organization.</p>
 									</div>
+									<div class="unlimited-tier" style="padding-bottom: 0.3em">
+										&#8734;
+									</div>
 
 									<div class="feature priced-feature">
 											<div class="priced-feature-price">
-												<p class="restriction-text">Multi-Person Approvals</p>
-												<p class="restriction-subtitle">Require approval from 2-out-of-3 (or more) team members to access servers.</p>
+												<p class="restriction-text">Lock-down Keys Remotely</p>
+												<p class="restriction-subtitle">Geo-fences, bluetooth-only, time-based policies, and multi-person approvals from 2-out-of-3 (or more) team members.</p>
 											</div>
 									</div>
 
 									<!-- Custom Integrations -->
 									<div class="feature priced-feature">
 											<div class="priced-feature-price">
-												<p class="restriction-text">Custom Integrations</p>
-												<p class="restriction-subtitle">Integrate Krypton Teams into your existing infrastructure with custom-built solutions.</p>
+												<p class="restriction-text">Custom Deployment</p>
+												<p class="restriction-subtitle">Integrate Krypton Teams into your existing infrastructure with custom-built solutions. Deploy Krypton's backend in your own cloud or on premises seamlessly.</p>
 											</div>
 									</div>
 
@@ -222,23 +225,6 @@
 				</div>
 
 				<div id="feature-grid">
-
-							<div class="feature">
-								<div class="feature-image">
-									<img src="/static/dist/img/icons/manageKeys.svg" style="width: 80px"></img>
-								</div>
-								<div class="feature-details">
-									<p class="feature-title">
-										SSH + PGP Public-Key Infrastructure
-									</p>
-									<p class="feature-description">
-										Manage your team's SSH and PGP public-keys in one place. Easily
-										onboard new team members by granting access to the resources
-										they need to do their work. When a developer leaves your team,
-										have confidence that their access has been properly revoked.
-									</p>
-								</div>
-							</div>
 
 							<div class="feature">
 								<div class="feature-image">
@@ -271,22 +257,6 @@
 									</p>
 								</div>
 							</div>
-
-							<div class="feature">
-									<div class="feature-image" style="margin-top: 0">
-										<img src="/static/dist/img/icons/pinHost.svg" style="width: 90px"></img>
-									</div>
-									<div class="feature-details">
-										<p class="feature-title">
-											Real-Time Host Pinning
-										</p>
-										<p class="feature-description">
-											Protect your team from man-in-the-middle (MITM) attacks. Pin public keys of known servers and seamlessly distribute
-											them to your team members in real-time. Host verification is performed in the Krypton app so your team members
-											will verifiably know where they're connecting to.
-										</p>
-									</div>
-							</div>
 					
 							<div class="feature">
 								<div class="feature-image">
@@ -309,10 +279,11 @@
 								</div>
 								<div class="feature-details">
 									<p class="feature-title">
-										Multi-Person Approvals
+										Lock-down Keys Remotely
 									</p>
 									<p class="feature-description">
-										Require approval from 2-out-of-3 (or more) team members for pushing production code or logging into sensitive servers. Satisfy PCI Dual Control compliance by ensuring high-stakes resources are not accessible by any single team member.
+										Set policies dynamically to limit when and how the security key can be used. Policies take effect in real-time. Create <strong>Geo-fences</strong> to limit where the key can be used.
+										Enable <strong>bluetooth-only</strong> to make the key usable only within-range of a paired computer. Require approval from 2-out-of-3 (or more) team members for pushing production code or logging into sensitive servers. Satisfy PCI Dual Control compliance by ensuring high-stakes resources are not accessible by any single team member.
 									</p>
 								</div>
 							</div>

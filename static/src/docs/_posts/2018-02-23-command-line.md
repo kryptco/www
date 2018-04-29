@@ -8,10 +8,54 @@ order: 4
 # Control your Team with the `kr` CLI
 Krypton Teams is built to seamlessly integrate into your existing infrastructure.
 
-For example, the following commands give `asmith@acme.co` `ssh` access to `staging.acme.co`:
-```console
-$ kr add --member asmith@acme.co --server staging.acme.co
-```
+For example, the following commands give `asmith@acme.co` `ssh` access to `bastion.acme.co`:
+<div>
+    <div class="iterm">
+    <div class="dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <div class="line">
+        <p><span class="bang">$</span>kr team list <span class="yellow">--ssh</span></p>
+    </div>
+    <div class="result">
+        <p>Team has <span class="green">24 members</span> with SSH public keys:</p>
+        <br>
+        <p><span class="green">1. asmith@acme.co</span></p>
+        <p>ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFyF4VHr5XH+C...</p>
+        <p><span class="green">2. cwilliams@acme.co</span></p>
+        <p>ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID3n8Y6I8NYHZf...</p>
+        <p><span class="green">3. gmiller@acme.co</span></p>
+        <p>ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKf8MBtmVow9bS...</p>
+        <p>...</p>                            
+    </div>
+    <div class="line new-line">
+        <p><span class="bang">$</span></p>
+    </div>    
+    </div>
+    <div class="iterm">
+        <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="line">
+            <p><span class="bang">$</span>kr add <span class="yellow">--member</span> asmith@acme.co <span class="yellow">--server</span> bastion.acme.co</p>
+        </div>
+        <div class="result">
+            <p><span class="green">bastion.acme.co</span> is now accessible by:</p>
+            <br>
+            <p><span class="green">1. asmith@acme.co</span></p>
+            <p><span class="green">2. oharris@acme.co</span></p>
+            <p><span class="green">3. xlee@acme.co</span></p>
+            <p>...</p>
+        </div>
+        <div class="line new-line">
+            <p><span class="bang">$</span></p>
+        </div>    
+    </div>
+</div>                    
 
 The `kr add` helper command is useful, but you can also plug the `kr team
 list --ssh` command into any custom provisioning script you might have.
@@ -160,6 +204,33 @@ the right `github.com` public key fingerprint, so most developers had no choice
 but to just type `yes`.  Each time this happens is an opportunity for the
 connection to be intercepted, causing code, data, or commands to be sent to an
 attacker instead of the intended destination.
+
+<div>
+    <div class="feature-media host-pin">
+        <div class="iterm">
+                <div class="dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="line">
+                    <p><span class="bang">$</span>kr pin <span class="yellow">--host</span> bastion.acme.co</p>
+                </div>
+                <br>
+                <div class="line new-line">
+                    <p><span class="bang">$</span></p>
+                </div>    
+        </div>              
+        <div class="phone-demo">
+            <img class="phone-skeleton" src="/static/dist/img/iphone_skeleton.png"/>
+            <video autoplay loop playsinline muted>
+                <source src="/static/dist/img/host_pin_bare.mp4" type="video/mp4">
+            </video>
+        </div>                              
+    </div>
+</div>
+                 
+
 
 #### `pin`
 The `kr` command line tool makes it easy to distribute pinned `ssh` known hosts (the mapping of server to `ssh` public key) to all of your team members.

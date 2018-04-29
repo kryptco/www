@@ -1,108 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Krypton - The new way to protect your private key on your phone.</title>
+    <title>Krypton - the simple Security Key</title>
 
-	@@include('./html_head.html')
-
-	<script async defer src='/static/dist/js/lib/github-button/github-buttons.js'></script>	
+    @@include('./html_head.html')
+    <script async defer src='/static/dist/js/lib/github-button/github-buttons.js'></script>	
 </head>
-
 <body>
     <div id="page-wrapper" class='Page-home'>
 		@@include("./header.html")
-		<main>
-			<section class='Section--hero'>
-				<h1>A new home for your SSH + PGP private key</h1>
-				<div id='get-started-button' class='CTA'>Get started</div>
-				<div class='Section--hero__hero-graphic Hero-graphic'>
-					<video autoplay loop playsinline muted style="width: 100%; height: 100%;">
-						<source src="static/dist/img/demo_final.mp4" type="video/mp4">
-					</video>
-				</div>
-                <!--<img style='max-width: 42em;' src='/static/dist/img/temporary-hero-graphics.png' />
-                -->
+        <main>
+            <section class='Section--hero--teams'>
+                <div class="title">Krypton</div>
+                <h1><span class="intro-emph">The</span> <span class="product-emph">Security Key</span> for Everyone</h1>
+                <h2>
+                    <span class="green-emph">Security</span> of a Hardware Security Key
+                    <br>
+                    <span class="green-emph">Simplicity</span> of Push-to-Approve
+                </h2>
+                <div id='get-started-button' class='CTA'>Get started</div>
             </section>
-			<section class='Section--value-prop'>
-				<h2 style="margin-top: 10px; margin-bottom: 0px;">
-					Introducing Krypton Core
-				</h2>
-				<h3 style="display: inline; margin-top: 0; margin-bottom: 50px; border-bottom: 3px solid #5bc894;"><a target="_blank" href="https://blog.krypt.co/the-end-of-id-rsa-d8fd2951d406">the end of ~/.ssh/id_rsa</a></h3>
-				<!-- <p style="margin-top: 0px; margin-bottom: 40px;"> Where do you store your private key? <a href='/faq/?faq=whyKryptonite'> Read our FAQ to learn why you should use Krypton.</a> </p>  -->
-				
-				
-				<div class='Section--value-prop__points'>
-					<div class='Section--value-prop__points__point Point'>
-						<img src='/static/dist/img/icons/points/keyOnYourPhone.svg' />
-						<h3>The private key is stored on your phone</h3>
-						<p>Your phone is the gatekeeper for every SSH authentication.
-							<br>
-							<a href='/faq/?faq=keyOnYourPhone'>Read more</a>
-						</p>
-					</div>
-					<div class='Section--value-prop__points__point Point'>
-						<img src='/static/dist/img/icons/points/shareKey.svg' />
-						<h3>Easily upload & share your public key</h3>
-						<p>Upload your key to Github, Digital Ocean and other services with Krypton.
-							<br>
-						</p>
-					</div>
-					<div class='Section--value-prop__points__point Point'>
-						<img src='/static/dist/img/icons/points/pairComputer.svg' />
-						<h3>Pair your phone with multiple computers</h3>
-						<p>After pairing your phone with your computers, use SSH as you normally would.
-							<br>
-							<a href='/faq/?faq=pairComputer'>Read more</a>
-						</p>
-					</div>
-                    <div class='Section--value-prop__points__point Point'>
-                        <img src='/static/dist/img/icons/points/publicSource.svg' />
-                        <h3>Public Source Code</h3>
-                        <p>All of the Krypton source code is published at <a href="https://github.com/kryptco">github.com/kryptco</a>.
-							<br/>
-							<a class="github-button" href="https://github.com/kryptco/kr" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star kryptco/kr on GitHub">Star</a>
-							<br>
-							<a href='/faq/?faq=publicSource'>Read more</a>
-                        </p>
+            <section class="Feature">
+                <div class="details">
+                    <div class="text">
+                        <div class="text-contents">
+                            <div class="heading">A Security Key that's Easy to Use</div>
+                            <div class="description">
+                                No more sensitive plain-text private keys floating around developer laptops, desktops, and servers. The private keys <span class="emph">never</span>
+                                leave your phone. <a class="learn-more" href="/docs/security/threat-model.html">Learn More</a>
+                            </div>        
+                        </div>
+                        <div class="highlights">
+                            <div class="highlight">
+                                    <span class="arrow">&#9654;</span>Setup takes less than <strong>60 seconds</strong>.
+                            </div>   
+                            <div class="highlight">
+                                <span class="arrow">&#9654;</span>Works on the devices that you already have.
+                            </div>                                    
+                            <div class="highlight">
+                                <span class="arrow">&#9654;</span>Hardware-backed via the <strong>iOS Secure Enclave</strong> and  <strong>Android Keystore</strong>.
+                            </div>                                        
+                            <div class="highlight">
+                                <span class="arrow">&#9654;</span><strong>Stops phishing</strong> by showing you what you're approving</strong>.
+                            </div>                                                    
+                        </div>
                     </div>
-				</div>
-			</section>
-			<section class='Section--get-started'>
-				<h2>Get Started in 3 steps</h2>
-				<div class='Section--get-started__steps'>
-					<div class='Section--get-started__steps__step Step'>
-						<div class='Step__counter'><span>1</span></div>
-						<h3>Download Krypton Core on the app store</h3>
-						<a href="https://appsto.re/us/weWofb.i" target="blank"><img src="static/dist/img/apple_app_store_badge.svg" style="padding: 10px;"></img></a>
-						<a href='https://play.google.com/store/apps/details?id=co.krypt.kryptonite&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="blank"><img alt='Get it on Google Play' src='/static/dist/img/android_play_badge.png' style="height: 60px;"/></a>
-					</div>
-					<div class='Section--get-started__steps__step Step'>
-						<div class='Step__counter'><span>2</span></div>
-						<h3>Install <code style="font-family: 'Source Code Pro'; font-weight: bold; color: #5bc984;">kr</code> and pair your computer</h3>
-						<p>Follow the instructions <a target="_blank" href="/install">here</a> to install <code>kr</code> on your computer.</p>
-						<p>Then open the app to the 'pair' screen. Run ‘kr pair’ and scan the QR code using Krypton on your phone.</p>
-						<div class='Terminal'>
-							<span class='Terminal-Prompt'>$</span>kr pair
-						</div>
-					</div>
-					<div class='Section--get-started__steps__step Step'>
-						<div class='Step__counter'><span>3</span></div>
-						<h3>Use SSH normally</h3>
-						<p>After you add your public key to a server or GitHub, use SSH or git as you normally would.</p>
-						<div class=	'Terminal'>
-							<span class='Terminal-Prompt'>$</span>ssh root@server
-						</div>
-						<p>Every time you SSH, your computer will request a signature from your phone. <br> <a href='/faq/?faq=keyOnYourPhone'>Read more</a></p>
-					</div>
-				</div>
-			</section>
-			<section class='Section--contact-us'>
-				<h2>Have questions? <a href='mailto:hello@krypt.co'>hello@krypt.co</a></h2>
-			</section>
-		</main>
+                    <div class="media core-demo">
+                        <video autoplay loop playsinline muted style="width: 100%; height: 100%;">
+                            <source src="/static/dist/img/demo_final.mp4" type="video/mp4">
+                        </video>
+                    </div>        
+                </div>
+                <div class="points">
+                        <div class="point">
+                                <img src='/static/dist/img/icons/points/keyOnYourPhone.svg' />
+                                <h3>Private key never leaves phone</h3>
+                                <p>Read our 
+                                    <a class="learn-more" href="/docs/security/security-architecture.html">Security Architecture</a>
+                                </p>
+                        </div>
+                        <div class='point'>
+                                <img src='/static/dist/img/icons/points/pairComputer.svg' />
+                                <h3>Pair Krypton with your computer</h3>
+                                <p>in just a few seconds</p>
+                        </div>    
+                        <div class='point'>
+                                <img src='/static/dist/img/icons/points/publicSource.svg' />
+                                <h3>Public Source Code</h3>
+                                <a href="https://github.com/kryptco"><p>github.com/kryptco</p></a>
+                                <a class="github-button" href="https://github.com/kryptco/kr" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star kryptco/kr on GitHub">Star</a>
+                        </div>        
+                    </div>
+            </section>
 
-		@@include('./footer.html')
-	</div>
-	@@include('./body_tail.html')	
+            <section class="Feature">
+                <div class="details">
+                    <div class="text">
+                        <div class="text-contents"> 
+                            <img class="feature-icon" src='/static/dist/img/icons/pinHost.svg' />      
+                            <div class="heading">Lock-down Keys Remotely</div>
+                            <div class="description">
+                                Set policies dynamically to limit when and how the security key can be used. Policies take effect in real-time.
+                            </div>
+                        </div>
+                        <div class="highlights">
+                            <div class="highlight">
+                                <span class="arrow">&#9654;</span>Create <strong>Geo-fences</strong> to limit where the key can be used.
+                            </div>               
+                            <div class="highlight">
+                                <span class="arrow">&#9654;</span>Enable <strong>bluetooth-only</strong> to make the key usable only within-range of a paired computer.
+                            </div>    
+                            <div class="highlight">
+                                <span class="arrow">&#9654;</span><strong>Whitelist</strong> applications and servers.
+                            </div>     
+                            <div class="highlight">
+                                <span class="arrow">&#9654;</span><strong>Multi-person approvals</strong>. Require 2 or more people to approve a request to authenticate to an application or server.
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="text">
+                        <div class="text-contents">    
+                            <img class="feature-icon sigchain" src='/static/dist/img/icons/sigChain.svg' />                        
+                            <div class="heading">Reliable, Fast, &amp; End-to-end Verified</div>
+                            <div class="description">
+                                Krypton uses <strong>3</strong> communication pathways <strong>in parallel</strong> to talk to your computer.        
+                            </div>
+                        </div>
+                        <div class="highlights">
+                            <div class="highlight">
+                                <span class="arrow">&#9654;</span> <strong>Reliable.</strong> Backed by AWS SQS, AWS SNS (via Apple's and Google's push notification services), and Bluetooth. <strong>USB</strong> support as a 4th pathway is coming soon.
+                            </div>               
+                            <div class="highlight">
+                                <span class="arrow">&#9654;</span> <strong>Fast.</strong> Authentication takes less than a second.
+                            </div>    
+                            <div class="highlight">
+                                <span class="arrow">&#9654;</span><strong>Secure.</strong> During pairing, Krypton and your computer establish ephemeral keys to encrypt and authenticate all communication.
+                            </div>                                                             
+                        </div>
+                    </div>
+                </div>     
+            </section>      
+            <section class="Feature">
+                <div class="details">
+                    <div class="text">
+                        <div class="text-contents">                            
+                            <div class="heading">Audit Logs in Real-Time</div>
+                            <div class="second-heading"><strong>no integrations required</strong></div>
+                            <div class="description">Track every authentication in your infrastructure in real-time. Log data is encrypted to team admins and inaccessible to krypt.co. <a class="learn-more" href="/teams/demo">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="highlights">
+                            <div class="highlight">
+                                <span class="arrow">&#9654;</span>Every-time the key is used, the action is logged.
+                            </div>               
+                            <div class="highlight">
+                                <span class="arrow">&#9654;</span>Logs are <strong>immutable</strong>.
+                            </div>    
+                            <div class="highlight">
+                                <span class="arrow">&#9654;</span>No SSH-server or application-server changes required.
+                            </div>                                                             
+                        </div>
+                        <div class="live-demo">
+                            <a href="demo/" target="_blank">Live Demo</a>
+                        </div>                        
+                    </div>
+                    <div class="media dashboard">
+                        <a href="demo/" target="_blank"><video autoplay loop playsinline muted style="width: 100%; height: 100%;" class="dash-demo">
+                            <source src="/static/dist/img/demo_dash.mp4" type="video/mp4">
+                        </video></a>
+                    </div>     
+                </div>     
+            </section>                  
+            <section class='Section--get-started teams-get-started'>
+                <h2 class="title">Get Started in 3 steps</h2>
+                <div class='Section--get-started__steps'>
+                    <div class='Section--get-started__steps__step Step'>
+                        <div class='Step__counter'><span>1</span></div>
+                        <h3>Download Krypton Core on the app store</h3>
+                        <a href="https://appsto.re/us/weWofb.i" target="blank"><img src="/static/dist/img/apple_app_store_badge.svg" style="padding: 10px;"></img></a>
+                        <a href='https://play.google.com/store/apps/details?id=co.krypt.kryptonite&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="blank"><img alt='Get it on Google Play' src='/static/dist/img/android_play_badge.png' style="height: 60px;"/></a>
+                    </div>
+                    <div class='Section--get-started__steps__step Step'>
+                        <div class='Step__counter'><span>2</span></div>
+                        <h3>Install <code style="font-family: 'Source Code Pro'; font-weight: bold; color: #5bc984;">kr</code> and pair your computer</h3>
+                        <p>Follow the instructions <a target="_blank" href="/install">here</a> to install <code>kr</code> on your computer.</p>
+                        <p>Then open the app to the 'pair' screen. Run ‘kr pair’ and scan the QR code using Krypton on your phone. That's it. just <strong>ssh</Strong> as you normally would.</p> 
+                        <div class='Terminal'>
+                            <span class='Terminal-Prompt'>$</span>kr pair
+                        </div>
+                        <br>
+                        <br>
+                        <div class='Terminal'>
+                            <span class='Terminal-Prompt'>$</span>ssh root@server
+                        </div>    
+                    </div>
+                    <div class='Section--get-started__steps__step Step'>
+                        <div class='Step__counter'><span>3</span></div>
+                        <h3>Create your team</h3>
+                        <p>After you setup Krypton Core, create your team from the Teams tab and invite your dev org.</p>
+                        <a href='/docs/teams/getting-started.html'>Read more</a></p>
+                        <img class="team-grab" src="/static/dist/img/create_team_ios.png">
+                    </div>
+                </div>
+            </section>    
+            <section class='Section--contact-us'>
+                <h2>Have questions?
+                    <a href='mailto:hello@krypt.co'>hello@krypt.co</a>
+                </h2>
+            </section>
+        </main>
+
+        @@include('./footer.html')
+    </div>
+    @@include('./body_tail.html')
 </body>
+
 </html>

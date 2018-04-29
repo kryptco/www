@@ -20,33 +20,82 @@ span.for-teams {
     font-size: 1.25em;
     margin-bottom: 0;
 }
+
 .Section--hero--teams {
     @extend .Section;
     @include display(flex);
     @include flex-direction(column);
     @include align-items(center);
 
+    .CTA {
+        margin-bottom: 2em;
+    }
+    .title {
+        margin-top: 3em;
+        margin-bottom: 0;
+        font-size: 1.6em;
+        text-transform: uppercase;       
+        font-weight: 800; 
+        font-family: "Source Code Pro";
+        color: $c-green-accent;
+        animation: alphapulse 6s ease-in-out infinite;
+
+        @media (max-width: 60em) {
+            margin-top: 4em;
+        }
+
+        @keyframes alphapulse {
+            0% { color: $c-green-accent }
+            50% { color: #45976f  }
+            100% { color: $c-green-accent }
+        }    
+    }
     h1 {
         padding: 0;
         margin: 0;
-        margin-top: 0.25em;
-        margin-bottom: 1em;
-        max-width: 20em;
+        margin-bottom: .25em;
+        max-width: 25em;
         text-align: center;
+        
+        border-bottom: 4px solid #343434;
+
+        .intro-emph {
+        }
+        .product-emph {
+        }
     }
+
+    h2 {
+        font-weight: 300;
+        margin-bottom: 1.5em;
+        margin-top: 0;
+        font-size: 1.4em;
+        max-width: 30em;
+        text-align: center;
+        .green-emph {
+            font-weight: 600;
+            font-size: 1em;
+        }
+    }
+
 }
 
 .Feature {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    
     padding: 2em;
     grid-gap: 1.4em;
-    max-width: 1100px;
+    max-width: 70em;
     margin: 1.5em;
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0 0 0.75em rgba(54,54,54,.3);
-    border-left: 4px solid $c-green-accent;
+    // border-bottom: 4px solid $c-green-accent;
+    border-top: 4px solid $c-green-accent;
 
     @media (max-width: 60em) {
         display: flex;
@@ -56,108 +105,165 @@ span.for-teams {
         margin-left: 1em;
         margin-right: 1em;    
     }
+
+
+    .details {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        @media (max-width: 60em) {
+            flex-direction: column-reverse;
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            margin-right: 1.5em;
+            .text-contents {
+                .heading {
+                    font-size: 1.4em;
+                    font-weight: bold;      
+                    @media (max-width: 60em) {
+                        text-align: center;    
+                        padding-top: 1em;    
+                    }            
+                }
+    
+                .second-heading {
+                    font-weight: normal;
+                    font-size: 1em;
+
+                    @media (max-width: 60em) {
+                        text-align: center;        
+                    }            
+                }
+    
+                .description {
+                    margin-top: 1em;
+                    font-size: 1em;
+                    font-weight: 300;
+                    text-align: justify;
+                }    
+            }
+            .highlights {
+                margin-top: 1em;
+                position: relative;
+            }
+            .highlight {
+                margin-top: 1em;
+                font-weight: normal;
+                font-family: 'Karla';
+            }
+        }
+        .media {
+            margin: auto;
+        }
+    }
+
+    .points {
+        display: flex;
+        width: 100%;
+        margin: 1em auto;
+        margin-bottom: 0;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    
+        @media (max-width: 40em) {
+            flex-direction: column;
+        }     
+        .point {
+            @media (max-width: 60em) {
+                margin-bottom: 1em;
+            }     
+    
+            img {
+                height: 3em;
+                width: auto;
+            }
+    
+            h3 {
+                font-weight: 600;
+                font-size: 1em;
+                margin-bottom: 0;            
+            }
+            p {
+                margin-top: 0;
+                font-size: 1em;
+                margin-bottom: 0;
+            }
+            iframe {
+                margin-top: 0.5em;
+            }
+            text-align: center;
+
+            @media (max-width: 60em) {
+                margin-top: 1em;        
+            }            
+        }
+    }    
 }
 
-.first-feature {
+.Feature:first-child {
     margin-top: 4em;
 }
 
-.alt {
-    // background: #f4f4f4;
-    text-align: right;
-    border-left: none;
-    border-right: 4px solid $c-green-accent;
+.Feature:nth-child(3)  {
+    box-shadow: none;    
+    border-top: none;
+    padding: 0;
 
-    @media (max-width: 60em) {
-        display: flex;
-        flex-direction: column-reverse;
-        text-align: left;
-        border-right: none
-    }
+    .details {
+        @media (max-width: 60em) {
+            flex-direction: column;
+        }
 
-}
+        .text {
+            padding: 1em;
+            box-shadow: 0 0 0.75em rgba(54,54,54,.3);
+            border-top: 4px solid $c-green-accent;
+            @media (max-width: 60em) {
+                width: 100%;
+                margin-top: 2em;
+            }            
+            width: 50%;
+    
+            .text-contents {
+                .heading {
+                    text-align: center;
+                }        
+            }
+        }
 
-// the text-content
-.feature-teams-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    grid-column: span 1;
-
-    @media (max-width: 60em) {        
-        text-align: center;
-        margin-bottom: 2em;
-        flex-direction: column-reverse;
-    }
-}
-
-.alt .feature-teams-details {
-    @media (max-width: 60em) {
-        flex-direction: column-reverse;
+        .text:nth-child(2) {
+            margin-right: 0;
+        }
     }
 }
+
 
 .feature-icon {
-    margin-bottom: 0;
-    margin-top: auto;
-    margin-right: auto;
-    display: block;
-    text-align: left;
-    height: 5em;
-    width: auto;
-
-    @media (max-width: 60em) {
-        margin-bottom: 1.5em;
-        margin-left: auto;
-    }
-}
-
-.alt .feature-icon {
-    padding-left: 1em;
-    padding-right: 0;
+    margin-bottom: 1em;
     margin-left: auto;
-    margin-right: 0;
-    
+    margin-right: auto;
+    display: block;    
+    height: auto;
+    width: 3em;
+
     @media (max-width: 60em) {
-        margin-bottom: 1.5em;
-        margin-left: auto;
-        margin-right: auto;
+        margin-top: 1em;
     }
 }
 
-.rotate {
-    height: 2.25em;
+.sigchain {
+    width: 6em;
+    padding-top: 1em;
+    padding-bottom: 0.42em;
 }
 
-.alt .feature-icon {
-}
-.feature-text {
-}
-
-.feature-text .feature-heading {
-    font-size: 1.25em;
-    font-weight: bold;
-}
-
-.feature-text .second-heading {
-    font-weight: normal;
-    font-size: 1em;
-}
-
-.feature-teams-description {
-    margin-top: 0.2em;
-    margin-bottom: 0.2em;
-    font-size: 1em;
-    font-weight: 300;
-    text-align: justify;
-}
-
-.second-line {
-    margin-top: 1em;
-}
-.feature-media {
-    grid-column: span 1;
+.arrow {
+    color: #343434;
+    padding-right: 0.5em;
 }
 
 .dashboard video {
@@ -167,8 +273,8 @@ span.for-teams {
 
 .live-demo {
     display: flex;
-    justify-content: space-around;
 }
+
 .live-demo:active {
     opacity: 0.8;
 }
@@ -272,15 +378,13 @@ span.for-teams {
 
 .iterm {
     border-radius: 4px;
-    width: 40em;
-    height: 22em;
     background: #343434;
     display: block;
     overflow: hidden;
     box-shadow: 0 0 0.75em rgba(54,54,54,.35);
     animation:
     hide-view 16s step-end infinite;
-
+    font-size: 0.8em;
 
     @media (max-width: 60em) {
         width: auto;
@@ -311,11 +415,11 @@ span.for-teams {
     }
 
     .line {
-        margin-top: 0.25em;
-        padding-left: 0.5em;
+        margin-top: 0em;
+        padding-left: 0.75em;
         font-family: "Source Code Pro";
         font-weight: 600;
-        font-size: 1.1em;
+        font-size: 1em;
         color: white; 
         display: inline-block;
         margin-bottom: 0;
@@ -330,7 +434,7 @@ span.for-teams {
         p {
             font-family: "Source Code Pro";
             font-weight: 600;
-            margin-bottom: 0;
+            margin-bottom: 0 !important;
             border-right: .3em solid transparent;
 
             width: auto;
@@ -364,7 +468,7 @@ span.for-teams {
             font-weight: 400;    
             color: white;      
             padding: 0; 
-            margin: 0;             
+            margin: 0 !important;             
         }   
     }
 
@@ -420,17 +524,17 @@ span.for-teams {
 
 .host-pin {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-top: 3em;
     padding-bottom: 3em;
 
     .iterm {
         margin-top: auto;
-        height: 10em;
+        height: 18em;
 
         text-align: left;
         animation: none !important;
-        width: 22em;
+        width: 40em;
         p {
             animation:
             show-caret 6s step-start infinite,
@@ -485,4 +589,18 @@ span.for-teams {
 .sigchain-demo {
     box-shadow: 0 0 0.75em rgba(54,54,54,.25);
     border-radius: 4px;
+}
+.core-demo {
+    // overflow: hidden;
+    // -webkit-clip-path: inset(47px 0 0 0);
+    // clip-path: inset(47px 0 0 0);
+    // top: -60px;
+    // position: relative;
+    
+
+    @media (max-width: 60em) {
+        clip-path: none;
+        overflow: visible;
+        top: 2em;
+    }
 }

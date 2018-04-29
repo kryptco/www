@@ -224,8 +224,8 @@ body.rtl ul, body.rtl ol {
 }
 
 #content p {
-    margin-bottom: 1em !important;
-    margin-top: 0.5em !important;
+    /* margin-bottom: 1em !important;
+    margin-top: 0.5em !important; */
 }
 
 #content h6 {
@@ -358,3 +358,4 @@ body.rtl ul, body.rtl ol {
     background-color: #5bc894;
     
 }
+

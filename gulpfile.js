@@ -256,7 +256,7 @@ gulp.task('fileinclude', function() {
       basepath: '@file'
     }))
     .pipe(gulp.dest('./_site/teams/'));    
-  gulp.src(['static/src/teams/demo/**/*'])
-    .pipe(gulp.dest('./_site/teams/demo/'));
+  gulp.src(['static/src/demo/**/*'])
+    .pipe(gulp.dest('./_site/demo/'));
 });
 
