@@ -250,7 +250,7 @@ gulp.task('fileinclude', function() {
     }))
     .pipe(gulp.dest('./_site/'));
 
-  gulp.src(['static/src/teams/*'])
+  gulp.src(['static/src/teams/**/*'])
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
