@@ -1,0 +1,6 @@
+[kryptco]
+name=krypt.co Repository
+baseurl=https://kryptco.github.io/yum/
+gpgkey=https://krypt.co/repo/kryptco.pgp
+enabled=1
+gpgcheck=1
