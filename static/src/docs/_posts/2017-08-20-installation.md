@@ -57,11 +57,8 @@ $ sudo apt-get install kr -y
 
 Equivalent commands:
 ```bash
-$ gpg --keyserver=hkp://keyserver.ubuntu.com:80 --recv-keys "C4A05888A1C4FA02E1566F859F2A29A569653940" 
-$ gpg --export --armor C4A05888A1C4FA02E1566F859F2A29A569653940 > /tmp/kryptco.key 
-$ sudo rpm --import /tmp/kryptco.key 
-$ sudo yum-config-manager --add-repo https://kryptco.github.io/yum # non-fedora only 
-$ sudo yum config-manager --add-repo https://kryptco.github.io/yum # fedora only 
+$ sudo yum-config-manager --add-repo https://krypt.co/repo/yum.repo # non-fedora only 
+$ sudo dnf config-manager --add-repo https://krypt.co/repo/yum.repo # fedora only 
 $ sudo yum install kr -y 
 ```
 
