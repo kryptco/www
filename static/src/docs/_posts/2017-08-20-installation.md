@@ -57,8 +57,8 @@ $ sudo apt-get install kr -y
 
 Equivalent commands:
 ```bash
-$ sudo yum-config-manager --add-repo https://krypt.co/repo/yum.repo # non-fedora only 
-$ sudo dnf config-manager --add-repo https://krypt.co/repo/yum.repo # fedora only 
+$ sudo yum-config-manager --add-repo https://krypt.co/repo/kryptco.repo # non-fedora only 
+$ sudo dnf config-manager --add-repo https://krypt.co/repo/kryptco.repo # fedora only 
 $ sudo yum install kr -y 
 ```
 
