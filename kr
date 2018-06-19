@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=2.4.9
+VERSION=2.4.10
 
 install_darwin() {
 	command -v brew &>/dev/null && test "$1" = "brew"
@@ -53,10 +53,10 @@ install_darwin_manual() {
 	MAJOR_MAC_VERSION=$(sw_vers -productVersion | awk -F '.' '{print $1 "." $2}')
 	case $MAJOR_MAC_VERSION in
 		#10.10 NO LONGER SUPPORTED
-		10.11) BOTTLE_FILE=kr-2.4.9.el_capitan.bottle.2.tar.gz;	BOTTLE_HASH=dc00a3550dc013fefadbfe5828d7baaec7a8f5036716bdaf00382d957a611481;;
-		10.12) BOTTLE_FILE=kr-2.4.9.sierra.bottle.2.tar.gz;	BOTTLE_HASH=423afad5e4c3678882ccce26e75dc7d0e576e1bb023e60172a99bc061e4eeeba; USE_KRBTLE=1;;
-		10.13) BOTTLE_FILE=kr-2.4.9.high_sierra.bottle.2.tar.gz; BOTTLE_HASH=2077aefe22b829d307dc6047050fa569bc167f1deadfa658d168cb51314dadef; USE_KRBTLE=1;;
-		10.14) BOTTLE_FILE=kr-2.4.9.mojave.bottle.2.tar.gz; BOTTLE_HASH=e6ff6b30d13455eaf51263b79c50ef75340155f074c83b08832f3d93cda9ecc7; USE_KRBTLE=1;;
+		10.11) BOTTLE_FILE=kr-2.4.10.el_capitan.bottle.2.tar.gz;	BOTTLE_HASH=fdff1ce0c05e8470d027e9b2c5b2e8cc14f7e3f4af133d58c7321f76a19443e0;;
+		10.12) BOTTLE_FILE=kr-2.4.10.sierra.bottle.2.tar.gz;	BOTTLE_HASH=592097b8fdfb93f7475bfed12647231f8dbd3519c5d54af247840b06f05c9970; USE_KRBTLE=1;;
+		10.13) BOTTLE_FILE=kr-2.4.10.high_sierra.bottle.2.tar.gz; BOTTLE_HASH=e61b0ce6fb34011dda89a38d15b7929cc8c2fca15b09dc1b6db04147eda5d03a; USE_KRBTLE=1;;
+		10.14) BOTTLE_FILE=kr-2.4.10.mojave.bottle.2.tar.gz; BOTTLE_HASH=a568f5aab55a8f7a12a40d2b72c6b3d11a9cccc610571b13b7514c4fb9f9c5aa; USE_KRBTLE=1;;
 		*) say "Unsupported OS X version $MAJOR_MAC_VERSION. Krypton requires 10.11+" && exit 1 ;;
 	esac
 	say Downloading Krypton.
