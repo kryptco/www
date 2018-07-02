@@ -2,7 +2,11 @@
     @include display(flex);
     @include justify-content(space-between);
     @include align-items(center);
-    padding: 1em 1em;
+    padding: 1em 1em; 
+       
+    a {
+        border-bottom: none;
+    }
 
     &__left-block {
         height: 3em;
@@ -13,7 +17,7 @@
         }
 
         img {
-            height: 8em;
+            height: 3em;
         }
     }
 
@@ -28,20 +32,8 @@
 
             &__link {
                 color: $c-gray-dark;
-
-                &--active {
-                    color: $c-link-color;
-                }
-
-                margin: 0em 1em;
-            }
-
-            &__jobs {
-                color: $c-gray-dark;
-                border: 1px;
-                border-color: $c-green-accent;
-                border-radius: 4px;
-
+                font-weight: bold;
+                font-size: 1.2em;
                 &--active {
                     color: $c-link-color;
                 }
@@ -51,6 +43,38 @@
 
             &__link:hover {
                 color: $c-green-accent;
+            }
+        
+            .download {
+                -webkit-box-shadow: 0 0 6px 0px rgba(119, 119, 119, 0.38);
+                box-shadow: 0 0 6px 0px rgba(119, 119, 119, 0.38);
+        
+                text-align: center;
+                background-color: #343434;
+                border-radius: calc((1.6em + 1em));
+                cursor: pointer;
+        
+                user-select: none; 
+                padding: 0.8em;
+                font-family: "Montserrat";
+                text-transform: uppercase;
+                font-weight: 800;
+                color: #fff;
+                font-size: 1em;
+
+                @media (max-width: 58em) {
+                    margin-left: auto;
+                  }
+          
+            }
+        
+            .download:hover {
+                background: #000;
+                transform: scale3d(1,1,1);
+            }
+        
+            .download:focus, .download:active {
+                transform: scale3d(0.9,0.98,1);
             }
         }
 
@@ -154,6 +178,8 @@
         // @include justify-content(center);
         justify-content: none;
     }
+
+
 }
 
 .badge1 {

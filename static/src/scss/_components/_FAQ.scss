@@ -1,71 +1,149 @@
 $c-light-gray: #E9E9E9;
 
+$c-lightgreen: #11c56f;
+$c-orange: #f98f18;
+$c-pink: #f71871;
+$c-blue: #2e81ef;
+$c-purple: #4d00ff;
+
+$c-switch-color: #343434;
+
+.switch {
+    display: flex;
+    // -webkit-box-shadow: 0 0 6px 0px rgba(119, 119, 119, 0.38);
+    // box-shadow: 0 0 6px 0px rgba(119, 119, 119, 0.38);
+
+    border: 1px solid $c-switch-color;
+    border-radius: 2.2em;
+
+    user-select: none;
+    
+    p {
+        padding: 0;
+        margin: 0;
+        font-size: 1em;
+        font-weight: 800;
+    }
+
+    .item {
+        border-top-left-radius: 2.2em;
+        border-bottom-left-radius: 2.2em;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+
+        font-family: "Montserrat";
+        color: $c-switch-color;
+        padding: 1em;
+        padding-left: 2em;
+        padding-right: 2em;
+        margin: auto;
+
+        cursor: pointer;
+    }
+
+    .item:nth-child(1) {
+        border-right: 1px solid  $c-switch-color;
+    }
+
+    .item:nth-child(2) {
+        border-top-left-radius: 0em;
+        border-bottom-left-radius: 0em;
+        border-top-right-radius: 2.2em;
+        border-bottom-right-radius: 2.2em;
+
+    }
+
+    .selected {
+        background:  $c-switch-color;
+        color: #fff;
+    }
+}
+
 .FAQ {
+    &__question:nth-child(1) {
+        background: $c-lightgreen;
+        border-color: $c-lightgreen;
+    }
+
+    &__question:nth-child(2n) {
+        background: $c-pink;
+        border-color: $c-pink;
+    }
+    &__question:nth-child(6n+3) {
+        background: $c-purple;
+        border-color: $c-purple;
+    }
+    &__question:nth-child(4n +4 ) {
+        background: $c-blue;
+        border-color: $c-blue;
+    }
+    &__question:nth-child(5n) {
+        background: $c-orange;
+        border-color: $c-orange;
+
+    }
+
     &__question {
         position: relative;
-        border: 0.1em solid $c-light-gray;
-        border-left: none;
-        border-right: none;
-        padding: 2em 1em;
+        padding: 2em;
         cursor: pointer;
+        background: $c-lightgreen;
+        border: 4px solid $c-lightgreen;
+
+        margin-bottom: 1em;
+
+        -webkit-box-shadow: 0 0 20px 0px rgba(119, 119, 119, 0.38);
+        box-shadow: 0 0 20px 0px rgba(119, 119, 119, 0.38);
+
 
         @include transition(0.5s $t-std-easing);
 
         &__question {
-            font-family: $f-title;
-            font-weight: 300;
-            font-size: 1.4em;
-
+            font-family: "Montserrat";
+            font-weight: 600;
+            font-size: 1.8em;
+            line-height: 130%;
             @include transition(0.5s $t-std-easing);
+            color: #fff;
         }
+
 
         &__answer {
             margin-top: 1em;
             font-family: $f-body;
-            font-weight: normal;
+            font-weight: 300;
             display: none;
             opacity: 0;
+            font-family: "Montserrat";
 
             @include transition(opacity 0.5s $t-std-easing);
         }
 
-        &:before {
-            @include position(absolute, 50% null null 0);
-            @include transform(translateY(-50%));
-            @include size(0.1em 60%);
-            content: '';
-            background: $c-light-gray;
-
-            @include transition(0.5s $t-std-easing);
-        }
-
         &:hover {
-            background: rgba($c-light-gray, 0.2);
-
-            &:before {
-                background: darken($c-light-gray, 10%);
-            }
+            transform: scale(1.04);
+ 
         }
 
         &.open {
+            background: #fff;
+            
+            border-width: 2px;
             .FAQ__question__question {
-                color: $c-green-accent;
+                color: #000;
             }
 
             .FAQ__question__answer {
                 opacity: 1;
             }
 
-            &:before {
-                background: $c-green-accent;
-            }
+        }
+        &.open:hover {
+            transform: scale(1);
         }
 
 
 
-
         & + & {
-            border-top: none;
         }
     }
 }

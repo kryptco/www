@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>krypt.co blog</title>
+
+    @@include("static/src/html_head.html")             
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/syntax.css"> 
+</head>
+
+<body class="blog-site">
+    {% include header.html %}
+
+    <main class="blog-page">
+        <h1 class="title">{{ page.title }}</h2>
+        <div class="subtitle">{{ page.subtitle }}</div>
+        <div class="content">
+            {{ content }}                            
+        </div>
+        <div class="posts">
+            {% assign sorted = site.posts | sort:"date" %}
+            {% for thepage in sorted reversed %}
+                <div class="post">
+                    <div class="title">
+                        <a href="{{ site.baseurl }}{{ thepage.url }}">{{ thepage.title }}</a>
+                    </div>
+                    <div class="subtitle">{{ thepage.subtitle }}</div>
+                    <div class="date">Published on {{ thepage.when }}</div>                    
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+    
+    @@include("static/src/footer.html")                          
+    @@include("static/src/body_tail.html")                                                          
+</body>
+</html>

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>FAQ | Krypton - The new home for your private key</title>
-
+    <title>Frequently Asked | Krypton </title>
 	@@include("../html_head.html")
 </head>
+
+
 
 <body>
     <div id="page-wrapper" class='Page-faq'>
@@ -13,202 +14,358 @@
 		<main>
 			<section class='Section--faq'>
                 <h1>Frequently Asked Questions</h1>
-                <div class='FAQ'>
-                    <div class='FAQ__question' name='whyKryptonite'>
-                            <div class='FAQ__question__question'>
-                                Why did we build Krypton Core?
-                            </div>
-                            <div class='FAQ__question__answer'>
-                                    Krypton Core combines the secure key storage of
-                                    a USB smart card with a familiar mobile phone interface. The
-                                    Krypton app performs SSH signatures without revealing the
-                                    private key to a paired computer. A Krypton SSH key can be
-                                    used without modifying any servers, allowing users to secure
-                                    their GitHub, AWS, and Google Cloud SSH authentication without
-                                    any changes to their infrastructure. Communication with
-                                    Krypton occurs over encrypted and signed push notifications and
-                                    Bluetooth, ensuring high availability and low latency.
-                                    Krypton also verifies and displays exactly which server
-                                    is being logged in to, unlike USB solutions that do not
-                                    have a user interface.
-                            </div>
+                <div class="switch">
+                    <div class="item selected" id="web" onclick="webClicked();">
+                        <p>Web U2F</p>
                     </div>
-                    <div class='FAQ__question' name='passwordAuth'>
-                            <div class='FAQ__question__question'>
-                                I use password-based authentication to connect to GitHub and my servers, why should I use Krypton?
-                            </div>
-                            <div class='FAQ__question__answer'>
-                                    It is well known that users reuse passwords or small variations on passwords for different services, allowing a compromise of one to cause the compromise of many. Requiring users to remember highly random passwords for every different service is unreasonable, and many passwords are brute-forceable. Finally, passwords are annoying to type every time code is pushed or you login to a server.
-                            </div>
+                    <div class="item" id="dev" onclick="devClicked();">
+                        <p>SSH + Git</p>                        
                     </div>
-
-                    <div class='FAQ__question' name='homeFolder'>
-                            <div class='FAQ__question__question'>
-                                I keep my private key in ~/.ssh, why should I use Krypton?
-                            </div>
-                            <div class='FAQ__question__answer'>
-                                Any application you run or install can silently read, use, and send off your private key without your knowledge. Krypton requires your explicit permission to use the private key and records every SSH access.
-                            </div>
-                    </div>
-                    <div class='FAQ__question' name='passwordProtected'>
-                            <div class='FAQ__question__question'>
-                                I passphrase encrypt my SSH private key, why should I use Krypton?
-                            </div>
-                            <div class='FAQ__question__answer'>
-                                    A passphrase-encrypted key is decrypted upon entry of
-                                    the password and given to a running SSH agent. A user-level process or malware
-                                    can use a decrypted key stored in an agent without knowledge of the user.
-                                    Furthermore, the same malware can pose as an SSH agent and direct SSH to use it
-                                    using the <code>SSH_AUTH_SOCK</code> environment variable, receiving the key in plaintext
-                                    the first time it is used.
-                            </div>
-                    </div>
-
-                    <div class='FAQ__question' name='server2FA'>
-                            <div class='FAQ__question__question'>
-                                I have two-factor authentication enabled on my servers, why should I use Krypton?
-                            </div>
-                            <div class='FAQ__question__answer'>
-                                    Adding two-factor authentication to either password or public key authentication requires changes to every SSH server. Krypton works out of the box without any changes to a server. 
-                                    
-                                    In some cases, such as third-party hosted services (GitHub, Bitbucket, etc.), integrating third-party two-factor is impossible. Many solutions require users to type a 6-digit passcode for every login, and others rely on a centralized server to perform the two-factor verification.                                    
-                            </div>
+                </div>
+                <div class='FAQ web' id="faq-web">
+                    <div class='FAQ__question' name='why'>
+                        <div class='FAQ__question__question'>
+                            I already use an authenticator app, why should I use Krypton?
                         </div>
-
-
-                    <div class='FAQ__question' name='github2FA'>
-                            <div class='FAQ__question__question'>
-                                I have two-factor authentication enabled on my GitHub account. Why should I use Krypton?
-                            </div>
-                            <div class='FAQ__question__answer'>
-                                GitHub does not enforce two-factor authentication when you push or pull code with SSH. Using Krypton requires access to your phone to use the SSH key.
-                            </div>
+                        <div class='FAQ__question__answer'>
+                            The simple answer is that you'll be able to login faster. No more typing 6-digit codes
+                            or even reaching for your phone. Krypton securely takes care of providing your second factor.
+                            <br>
+                            <br>
+                            Beyond convenience, you'll be immune to phishing. You don't have to worry that you're typing the code into the right website -- Krypton takes care of this for you under the hood. Krypton implements <a href="https://fidoalliance.org" target="_blank">FIDO U2F</a> to prevent phishing.
                         </div>
-
-                    <div class='FAQ__question' name='hardwareKey'>
-                            <div class='FAQ__question__question'>
-                                I use a smart card (NitroKey, YubiKey, etc) to store my private key securely. Why should I use Krypton?
-                            </div>
-                            <div class='FAQ__question__answer'>
-                                    With a smart cards you can generate and store SSH keys in a separate piece of
-                                    hardware connected via USB. While the private key might not be extractable from the
-                                    device, users now have to purchase and carry around another piece of hardware
-                                    that takes up a USB port. Configuration of the smart card occurs on the
-                                    workstation itself, which may be compromised. When you approve a
-                                    signature, the only information conveyed to you is a blinking light, meaning
-                                    you don't know what you're actually signing.
-                            </div>
                     </div>
-    
+                    <div class='FAQ__question' name='siteSupport'>
+                        <div class='FAQ__question__question'>
+                            What sites do you support?
+                        </div>
+                        <div class='FAQ__question__answer'>
+                            Krypton supports any site that supports U2F security keys. The main ones are: Google, Facebook, Dropbox, Stripe, GitHub, GitLab, BitBucket, and Salesforce.
+                            <br>
+                            <br>
+                            Want help adding U2F to your website (or further Krypton integrations) reach out to us at <a href="mailto:partners@krypt.co">partners@krypt.co</a>.
+                        </div>
+                    </div>
+                    <div class='FAQ__question' name='browserSupport'>
+                        <div class='FAQ__question__question'>
+                            What browsers do you support?
+                        </div>
+                        <div class='FAQ__question__answer'>
+                            The Krypton browser extension works <strong>Chrome</strong>, <strong>Safari</strong> and <strong>Firefox</strong>.                        
+                            <br>
+                            <br>
+                            Note that some sites unfortunately think that only Chrome supports security keys. To bypass this, you can change your user agent to Chrome. We're working with companies to move away from these types of checks.
+                        </div>
+                    </div>
+                    <div class='FAQ__question' name='phoneSupport'>
+                        <div class='FAQ__question__question'>
+                            What phones do you support?
+                        </div>
+                        <div class='FAQ__question__answer'>
+                            Krypton is available for iOS (10.0+) and Android (6.0+).
+                        </div>
+                    </div>                    
+                    <div class='FAQ__question' name='zeroTouch'>
+                        <div class='FAQ__question__question'>
+                            Is "zero touch" secure? How is it a second factor if it approves automatically?
+                        </div>
+                        <div class='FAQ__question__answer'>
+                            Yes, zero touch is safe. The security behind Krypton is established when you pair Krypton with your browser (via the extension) by scanning the QR code. This ensures that only your specific browser will be able talk to Krypton. Krypton and your browser establish a secure cryptographic channel using keys that only your phone and computer have. There is <strong>NO</strong> trusted third-party.
+                            <br>
+                            <br>
+                            Two-factor is simply a way to defend against compromised passwords. If someone knows your password and attempts to login then they'll be hit with a second-factor challenge. Since this attacker is remote and doesn't have access to your browser they won't be able to talk to Krypton.
+                        </div>
+                    </div>
+                    <div class='FAQ__question' name='maliciousProcess'>
+                        <div class='FAQ__question__question'>
+                            What if a hacker gets access to my computer/browser?
+                        </div>
+                        <div class='FAQ__question__answer'>
+                            If someone malicious gets access to your computer or browser, they can do a lot of bad stuff like install a program to wait until you login to a site and then steal that browser session. No authentication mechanism can really prevent against this type of hacker.
+                            <br>
+                            <br>
+                            <strong>Still want "user presence" verification?<br> Krypton also supports "one touch" logins.</strong> 
+                            <br>
+                            For enhanced security, you can turn on "one touch login" in Krypton. Go to Settings (the gear icon on the top left) > Toggle the "Ask me every-time" switch.
+                        </div>
+                    </div>   
+                    <div class='FAQ__question' name='zeroTouchDefault'>
+                        <div class='FAQ__question__question'>
+                            Why is "zero touch" on by default?
+                        </div>
+                        <div class='FAQ__question__answer'>
+                            Our mission is to help everyone be more secure on the web, including less technical people who don't understand or care about the differences between two-factor, U2F, or web authentication. Most 2FA authentications are stilling using SMS. They are not phishing proof, they are easy to compromise, and the UX is still pretty bad.
+                            <br>
+                            <br>
+                            Krypton's value for most people will be that it's a "zero cognitive", "zero touch" way to do two-factor. Our hope is that because it's easier and a good experience, more people will adopt the technology that actually makes them more secure (U2F's phishing protections now and FIDO2/WebAuthn soon.)                        
+                        </div>
+                    </div>                                        
+
                     <div class='FAQ__question' name='installKR'>
                         <div class='FAQ__question__question'>
-							How do I install <code>kr</code> on my computer?
+                            How do I install Krypton?
                         </div>
                         <div class='FAQ__question__answer'>
-							<code>curl https://krypt.co/kr | sh</code>
-                            <br />
-                            <br />
-							Or install from source: <code><a href="https://github.com/kryptco/kr">github.com/kryptco/kr</a></code>.<br/>
-							For more ways to install <code>kr</code>, visit <a href="/install">https://krypt.co/install</a>.
+                            Click here <a href="https://get.krypt.co">Install Krypton</a>.
                         </div>
                     </div>
-               
-                    <div class='FAQ__question' name='privateKeyKryptCo'>
+                
+                    <div class='FAQ__question' name='developer'>
                         <div class='FAQ__question__question'>
-							Does krypt.co have access to my SSH private key?
+                            Does Krypton support developer authentication like SSH/Git commit signing?
                         </div>
                         <div class='FAQ__question__answer'>
-							No, the SSH private key is generated on the mobile device and never leaves. Furthermore, there are no trusted third-parties and all of the Krypton source code is published to the public. <a href="?faq=publicSource">See more</a>.
+                            Why yes it does! Learn more here <a href="/devops">krypt.co/devops</a> or in the Krypton app go to settings (the gear icon on the top left) > Toggle "Developer Mode".
+                        </div>
+                    </div>
+                    <div class='FAQ__question' name='privateKeys'>
+                        <div class='FAQ__question__question'>
+							Does krypt.co have access to my second-factor private keys?
+                        </div>
+                        <div class='FAQ__question__answer'>
+							<strong>Absolutely not.</strong> The private key is generated on your phone's secure crypto-coprocessor (iOS Secure Enclave, Android Keystore) and never leaves your device. Furthermore, there are no trusted third-parties and all of the <a href="?faq=publicSource">Krypton source code is publicly published</a>.
                         </div>
                     </div>
                     <div class='FAQ__question' name='publicSource'>
                         <div class='FAQ__question__question'>
-                            Where can I inspect the Krypton source code?
+                            Can I inspect Krypton's source code?
                         </div>
                         <div class='FAQ__question__answer'>
-                            The Krypton source code for <code>kr</code>, <code>kryptonite-ios</code>, and <code>kryptonite-android</code> is published at <a href="https://github.com/kryptco">github.com/kryptco</a>. Feel free to compile Krypton from source and run it on your phone and workstation.
+                            Krypton is public source! You can find it here <a href="https://github.com/kryptco">github.com/kryptco</a> and compile from source.
                         </div>
-                    </div>
-                    <div class='FAQ__question' name='privateKeyStorage'>
-                        <div class='FAQ__question__question'>
-							How is the SSH private key stored on my phone?
-                        </div>
-                        <div class='FAQ__question__answer'>
-                            Read about how Krypton stores private keys in our <a href="/docs/security/privacy-policy.html#private-key-storage">security documentation</a>.
-                        </div>
-                    </div>
-                    <div class='FAQ__question' name='keyOnYourPhone'>
-                        <div class='FAQ__question__question'>
-							If the SSH private key never leaves my phone, how does it work?
-                        </div>
-                        <div class='FAQ__question__answer'>
-							The role of a private key in an SSH login is to sign the SSH handshake. When a signature is required, your workstation calls out to Krypton running on the paired phone with the data that must be signed. If authorized, Krypton performs the signature using the private key and returns only the signature to the workstation.
-                        </div>
-                    </div>
-                    <div class='FAQ__question' name='losePhone'>
-                        <div class='FAQ__question__question'>
-							What happens if I lose my phone?
-                        </div>
-                        <div class='FAQ__question__answer'>
-							First make sure you remove the old SSH public key from any of your accounts. Once you have Krypton installed on your new phone, add the new public key to the accounts you were using SSH with before.
-                        </div>
-                    </div>
-                    <div class='FAQ__question' name='config'>
-                        <div class='FAQ__question__question'>
-							How does Krypton affect my SSH client?
-                        </div>
-                        <div class='FAQ__question__answer'>
-							Upon install, Krypton adds a few lines to your SSH
-							configuration (at ~/.ssh/config) that cause SSH to
-							offer your Krypton key. Your other keys will
-							still be presented and your Krypton key will
-							only be used if it has access to the service you
-							are connecting to.
-                        </div>
-                    </div>
-                    <div class='FAQ__question' name='pairComputer'>
-                        <div class='FAQ__question__question'>
-							How does my phone communicate with my computer securely?
-                        </div>
-                        <div class='FAQ__question__answer'>
-							Your phone generates a session key pair and encrypts the public key to your workstation upon pairing. All communication is encrypted and authenticated using session key pairs.
-                        </div>
-                    </div>
-                    <div class='FAQ__question' name='backup'>
-                        <div class='FAQ__question__question'>
-							Can I backup my private key?
-                        </div>
-                        <div class='FAQ__question__answer'>
-							Backing up your private key reduces its security to the security of the backup. We do not currently support backing up or extracting your private key. In the future we may add key splitting among team members or transferring your private key directly to a new phone.
-                        </div>
-                    </div>
+                    </div>                  
                     <div class='FAQ__question' name='name'>
                         <div class='FAQ__question__question'>
-							Why "Krypton Core"?
+							Why the name "Krypton Core"?
                         </div>
                         <div class='FAQ__question__answer'>
-                            Krypton is an invisible, oderless chemical element that does not interact with other elements. 
+                            Krypton is an invisible element that does not interact with other elements. 
                             In this way, Krypton is isolated and hidden, much how one should store secret data -- like a cryptographic private key. 
                             <br>
                             <br>
-                            We named our product Krypton Core because it represents the essential properites of the element Krypton and our threat model on how to store keys.
-                            <br>
-                            <br>
-                            <em>Note: Previously Krypton Core was known as Kryptonite Core (for the same reasons above), we have since rebranded to simplify the name.</em>                            
+                            We named our product Krypton Core because it represents the essential properties of the element Krypton and our threat model on how to store keys securely (isolation) and great usability by making it seamless to use (invisible).
                         </div>
                     </div>
 
                 </div>
+                <div class='FAQ dev' id="faq-dev">
+                        <div class='FAQ__question' name='whyKryptonite'>
+                                <div class='FAQ__question__question'>
+                                    Why did we build Krypton Core?
+                                </div>
+                                <div class='FAQ__question__answer'>
+                                        Krypton Core combines the secure key storage of
+                                        a USB smart card with a familiar mobile phone interface. The
+                                        Krypton app performs SSH signatures without revealing the
+                                        private key to a paired computer. A Krypton SSH key can be
+                                        used without modifying any servers, allowing users to secure
+                                        their GitHub, AWS, and Google Cloud SSH authentication without
+                                        any changes to their infrastructure. Communication with
+                                        Krypton occurs over encrypted and signed push notifications and
+                                        Bluetooth, ensuring high availability and low latency.
+                                        Krypton also verifies and displays exactly which server
+                                        is being logged in to, unlike USB solutions that do not
+                                        have a user interface.
+                                </div>
+                        </div>
+                        <div class='FAQ__question' name='passwordAuth'>
+                                <div class='FAQ__question__question'>
+                                    I use password-based authentication to connect to GitHub and my servers, why should I use Krypton?
+                                </div>
+                                <div class='FAQ__question__answer'>
+                                        It is well known that users reuse passwords or small variations on passwords for different services, allowing a compromise of one to cause the compromise of many. Requiring users to remember highly random passwords for every different service is unreasonable, and many passwords are brute-forceable. Finally, passwords are annoying to type every time code is pushed or you login to a server.
+                                </div>
+                        </div>
+    
+                        <div class='FAQ__question' name='homeFolder'>
+                                <div class='FAQ__question__question'>
+                                    I keep my private key in ~/.ssh, why should I use Krypton?
+                                </div>
+                                <div class='FAQ__question__answer'>
+                                    Any application you run or install can silently read, use, and send off your private key without your knowledge. Krypton requires your explicit permission to use the private key and records every SSH access.
+                                </div>
+                        </div>
+                        <div class='FAQ__question' name='passwordProtected'>
+                                <div class='FAQ__question__question'>
+                                    I passphrase encrypt my SSH private key, why should I use Krypton?
+                                </div>
+                                <div class='FAQ__question__answer'>
+                                        A passphrase-encrypted key is decrypted upon entry of
+                                        the password and given to a running SSH agent. A user-level process or malware
+                                        can use a decrypted key stored in an agent without knowledge of the user.
+                                        Furthermore, the same malware can pose as an SSH agent and direct SSH to use it
+                                        using the <code>SSH_AUTH_SOCK</code> environment variable, receiving the key in plaintext
+                                        the first time it is used.
+                                </div>
+                        </div>
+    
+                        <div class='FAQ__question' name='server2FA'>
+                                <div class='FAQ__question__question'>
+                                    I have two-factor authentication enabled on my servers, why should I use Krypton?
+                                </div>
+                                <div class='FAQ__question__answer'>
+                                        Adding two-factor authentication to either password or public key authentication requires changes to every SSH server. Krypton works out of the box without any changes to a server. 
+                                        
+                                        In some cases, such as third-party hosted services (GitHub, Bitbucket, etc.), integrating third-party two-factor is impossible. Many solutions require users to type a 6-digit passcode for every login, and others rely on a centralized server to perform the two-factor verification.                                    
+                                </div>
+                            </div>
+    
+    
+                        <div class='FAQ__question' name='github2FA'>
+                                <div class='FAQ__question__question'>
+                                    I have two-factor authentication enabled on my GitHub account. Why should I use Krypton?
+                                </div>
+                                <div class='FAQ__question__answer'>
+                                    GitHub does not enforce two-factor authentication when you push or pull code with SSH. Using Krypton requires access to your phone to use the SSH key.
+                                </div>
+                            </div>
+    
+                        <div class='FAQ__question' name='hardwareKey'>
+                                <div class='FAQ__question__question'>
+                                    I use a smart card (NitroKey, YubiKey, etc) to store my private key securely. Why should I use Krypton?
+                                </div>
+                                <div class='FAQ__question__answer'>
+                                        With a smart cards you can generate and store SSH keys in a separate piece of
+                                        hardware connected via USB. While the private key might not be extractable from the
+                                        device, users now have to purchase and carry around another piece of hardware
+                                        that takes up a USB port. Configuration of the smart card occurs on the
+                                        workstation itself, which may be compromised. When you approve a
+                                        signature, the only information conveyed to you is a blinking light, meaning
+                                        you don't know what you're actually signing.
+                                </div>
+                        </div>
+        
+                        <div class='FAQ__question' name='installKR'>
+                            <div class='FAQ__question__question'>
+                                How do I install <code>kr</code> on my computer?
+                            </div>
+                            <div class='FAQ__question__answer'>
+                                <code>curl https://krypt.co/kr | sh</code>
+                                <br />
+                                <br />
+                                Or install from source: <code><a href="https://github.com/kryptco/kr">github.com/kryptco/kr</a></code>.<br/>
+                                For more ways to install <code>kr</code>, visit <a href="/install">https://krypt.co/install</a>.
+                            </div>
+                        </div>
+                   
+                        <div class='FAQ__question' name='privateKeyKryptCo'>
+                            <div class='FAQ__question__question'>
+                                Does krypt.co have access to my SSH private key?
+                            </div>
+                            <div class='FAQ__question__answer'>
+                                No, the SSH private key is generated on the mobile device and never leaves. Furthermore, there are no trusted third-parties and all of the Krypton source code is published to the public. <a href="?faq=publicSource">See more</a>.
+                            </div>
+                        </div>
+                        <div class='FAQ__question' name='publicSource'>
+                            <div class='FAQ__question__question'>
+                                Where can I inspect the Krypton source code?
+                            </div>
+                            <div class='FAQ__question__answer'>
+                                The Krypton source code for <code>kr</code>, <code>kryptonite-ios</code>, and <code>kryptonite-android</code> is published at <a href="https://github.com/kryptco">github.com/kryptco</a>. Feel free to compile Krypton from source and run it on your phone and workstation.
+                            </div>
+                        </div>
+                        <div class='FAQ__question' name='privateKeyStorage'>
+                            <div class='FAQ__question__question'>
+                                How is the SSH private key stored on my phone?
+                            </div>
+                            <div class='FAQ__question__answer'>
+                                Read about how Krypton stores private keys in our <a href="/docs/security/privacy-policy.html#private-key-storage">security documentation</a>.
+                            </div>
+                        </div>
+                        <div class='FAQ__question' name='keyOnYourPhone'>
+                            <div class='FAQ__question__question'>
+                                If the SSH private key never leaves my phone, how does it work?
+                            </div>
+                            <div class='FAQ__question__answer'>
+                                The role of a private key in an SSH login is to sign the SSH handshake. When a signature is required, your workstation calls out to Krypton running on the paired phone with the data that must be signed. If authorized, Krypton performs the signature using the private key and returns only the signature to the workstation.
+                            </div>
+                        </div>
+                        <div class='FAQ__question' name='losePhone'>
+                            <div class='FAQ__question__question'>
+                                What happens if I lose my phone?
+                            </div>
+                            <div class='FAQ__question__answer'>
+                                First make sure you remove the old SSH public key from any of your accounts. Once you have Krypton installed on your new phone, add the new public key to the accounts you were using SSH with before.
+                            </div>
+                        </div>
+                        <div class='FAQ__question' name='config'>
+                            <div class='FAQ__question__question'>
+                                How does Krypton affect my SSH client?
+                            </div>
+                            <div class='FAQ__question__answer'>
+                                Upon install, Krypton adds a few lines to your SSH
+                                configuration (at ~/.ssh/config) that cause SSH to
+                                offer your Krypton key. Your other keys will
+                                still be presented and your Krypton key will
+                                only be used if it has access to the service you
+                                are connecting to.
+                            </div>
+                        </div>
+                        <div class='FAQ__question' name='pairComputer'>
+                            <div class='FAQ__question__question'>
+                                How does my phone communicate with my computer securely?
+                            </div>
+                            <div class='FAQ__question__answer'>
+                                Your phone generates a session key pair and encrypts the public key to your workstation upon pairing. All communication is encrypted and authenticated using session key pairs.
+                            </div>
+                        </div>
+                        <div class='FAQ__question' name='backup'>
+                            <div class='FAQ__question__question'>
+                                Can I backup my private key?
+                            </div>
+                            <div class='FAQ__question__answer'>
+                                Backing up your private key reduces its security to the security of the backup. We do not currently support backing up or extracting your private key. In the future we may add key splitting among team members or transferring your private key directly to a new phone.
+                            </div>
+                        </div>
+                        <div class='FAQ__question' name='name'>
+                            <div class='FAQ__question__question'>
+                                Why "Krypton Core"?
+                            </div>
+                            <div class='FAQ__question__answer'>
+                                Krypton is an invisible, oderless chemical element that does not interact with other elements. 
+                                In this way, Krypton is isolated and hidden, much how one should store secret data -- like a cryptographic private key. 
+                                <br>
+                                <br>
+                                We named our product Krypton Core because it represents the essential properites of the element Krypton and our threat model on how to store keys.
+                                <br>
+                                <br>
+                                <em>Note: Previously Krypton Core was known as Kryptonite Core (for the same reasons above), we have since rebranded to simplify the name.</em>                            
+                            </div>
+                        </div>
+    
+                    </div>
 			</section>
 			<section class='Section--contact-us'>
 				<h2>Have more questions? <a href='mailto:hello@krypt.co'>hello@krypt.co</a></h2>
 			</section>
 		</main>
 
-		@@include('../footer.html')
     </div>
-	@@include('../body_tail.html')	
+    @@include('../footer.html')
+    @@include('../body_tail.html')
+
+    <script type="application/javascript">
+        var webBttn = document.getElementById("web");
+        var devBttn = document.getElementById("dev");
+        var webFAQ = document.getElementById("faq-web");
+        var devFAQ = document.getElementById("faq-dev");
     
+        function webClicked() {
+            devBttn.classList.remove("selected");
+            webBttn.classList.add("selected");
+            webFAQ.style.display = "";
+            devFAQ.style.display = "none";
+        }
+        function devClicked() {
+            devBttn.classList.add("selected");
+            webBttn.classList.remove("selected");
+            webFAQ.style.display = "none";
+            devFAQ.style.display = "";
+        }
+        
+        webClicked();
+        
+    </script>
     <script>
         $(function () {
             // http://localhost:8300/faq/?faq=keyOnYourPhone

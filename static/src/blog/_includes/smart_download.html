@@ -1,0 +1,25 @@
+<div class="mobile-download blog-download">
+    <a href="https://appsto.re/us/weWofb.i" target="_blank" id="ios-link">
+        <img class="apple-store" src="/static/dist/img/apple_app_store_badge.svg"></img>
+    </a>
+    <a href="https://play.google.com/store/apps/details?id=co.krypt.kryptonite&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" target="_blank" id="android-link">
+        <img class="play-store" src='/static/dist/img/android_play_badge.png'
+        />
+    </a>        
+    <a class="download" id="universal-link" href="/krext" target="_blank">
+        Install Krypton
+    </a>	                                        
+</div>		
+<script type="application/javascript">
+    if(navigator.userAgent.match(/iPhone|iPod/i) ) {
+        document.getElementById("android-link").remove();
+        document.getElementById("universal-link").remove();
+
+    } else if(navigator.userAgent.match(/Android/i) ) {
+        document.getElementById("ios-link").remove();
+        document.getElementById("universal-link").remove();
+    } else {
+        document.getElementById("ios-link").remove();
+        document.getElementById("android-link").remove();
+    }
+</script>    

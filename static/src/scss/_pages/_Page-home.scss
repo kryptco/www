@@ -6,3 +6,19 @@
         text-decoration: underline;
     }
 }
+
+.redirect-page {
+    margin: auto;
+    text-align: center;
+    margin-top: 10em;
+    margin-bottom: 10em;
+    a {
+        font-size: 1.5em;
+    }
+    a:hover {
+        border-bottom: unset;
+        opacity: 0.5;
+    }
+    
+
+}

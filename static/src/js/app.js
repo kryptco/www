@@ -5,6 +5,9 @@ $(document).ready(function () {
 		$(this).toggleClass('open');
 		$(this).find('.FAQ__question__answer').slideToggle(500, 'easeInOutQuad');
 	});
+	$('.Section--jobs__jobs__job').on('click', function () {
+		$(this).toggleClass('open');
+	});
 	$('.Page-header__menu-button').on('click', function () {
 		let $p = $(this).parent();
 		if ($p.hasClass('open')) {
@@ -28,3 +31,4 @@ function scrollToGetStartedSection() {
 		scrollTop: offset
 	}, 1000, 'easeInOutQuart');
 }
+

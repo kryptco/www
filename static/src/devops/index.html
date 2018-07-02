@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Krypton - Easy and secure authentication for teams</title>
+
+    @@include('./html_head.html')
+    <script async defer src='/static/dist/js/lib/github-button/github-buttons.js'></script>
+</head>
+
+<body>
+    <div id="page-wrapper" class='Page-home'>
+        @@include("./header.html")
+        <main>
+            <section class='Section--hero--teams'>
+                <h1>Easy &amp; secure authentication for teams</h1>
+                <div id='get-started-button' class='CTA'>Get started</div>
+            </section>
+            <section class="tiles">
+                <div class="tile-group-h">
+                    <div class="tile ssh">
+                        <div class="logo">
+                            <div class="terminal-icon"></div>
+                        </div>
+                        <div class="title">
+                            <p>Secure SSH keys with a strong second factor</p>
+                        </div>
+                        <div class="description">
+                            No more sensitive plain-text private keys floating around developer laptops, desktops, and servers. The private keys
+                            <span
+                                class="emph">never</span>
+                                leave your phone.
+                                <a class="learn-more" href="/docs/security/threat-model.html">Learn More</a>.
+
+                        </div>
+                    </div>
+                    <div class="tile phishing-teams">
+                        <div class="logo">
+                            <img src="/static/dist/img/icons/no-phish.png"/>
+                        </div>
+                        <div class="title">
+                            <p>Make everyone on your team Un-phishable</p>
+                        </div>
+                        <div class="description">
+                            <p>
+                                    <br>
+                                Krypton uses strong cryptography to prevent your team members from being phished on the web.
+                                
+                            </p>
+                        </div>
+                    </div>                 
+                </div>   
+            </section>
+            <section class="tiles">
+                    <div class="tile-group-w">
+                        <div class="tile features">
+                                <div class="points">                                            
+                                    <div class="point">
+                                        <img src='/static/dist/img/icons/points/keyOnYourPhone.svg' />
+                                        <h3>Private Keys are Secure</h3>
+                                        <p>Keys never leave the phone.
+                                        </p>
+                                    </div>
+                                    <div class='point'>
+                                        <img src='/static/dist/img/icons/points/pairComputer.svg' />
+                                        <h3>Lightning Fast Setup </h3>
+                                        <p>Get going in just a few minutes.</p>
+                                    </div>                           
+                                    <div class='point'>
+                                        <img src='/static/dist/img/icons/auditLogs.svg' />
+                                        <h3>Real-time Audit Logs</h3>
+                                        <p>Immutable audit logs in real-time.</p>
+                                    </div>
+                                    <div class='point'>
+                                        <img src='/static/dist/img/icons/twoPersonRule.svg' />
+                                        <h3>Multi-person Auth</h3>
+                                        <p>Require 2-out-3 people to login.</p>
+                                    </div>                        
+                                    <div class='point'>
+                                        <img src='/static/dist/img/icons/points/geolock.svg' />
+                                        <h3>Geo-fences</h3>
+                                        <p>Lock down keys by location.</p>
+                                    </div>
+                                    <div class='point'>
+                                        <img src='/static/dist/img/icons/points/timelock.svg' />
+                                        <h3>Time-based Policies</h3>
+                                        <p>Lock-down keys during off hours.</p>
+                                    </div>                        
+                                </div>
+                            </div>
+                    </div>
+                   
+                </section>                        
+            <section class="tiles">
+                <div class="tile-group-audit-demo">
+                    <div class="tile audit-demo">
+                        <div class="title">
+                            <p>Know everytime a key is used</p>
+                        </div>        
+                        <div class="live-demo">
+                                <div class="media dashboard">
+                                    <a href="demo/" target="_blank">
+                                        <video autoplay loop playsinline muted style="width: 100%; height: 100%;" class="dash-demo">
+                                            <source src="/static/dist/img/demo_dash.mp4" type="video/mp4">
+                                        </video>
+                                    </a>
+                                </div>
+                                <a href="demo/" class="live-demo-bttn" target="_blank">Launch Interactive Dashboard</a>
+                            </div>
+                
+                    </div>
+                </div>
+            </section>
+        
+
+          
+            <section class="tiles">
+                    <div class="tile-group-4">
+                        <div class="tile standards teams">
+                            <div class="title">
+                                <p class="">Reliable, End-to-End Secured, and Zero Trust</p>
+                            </div>
+                            <div class="description">
+                                <br>
+                                <p class="heading">Reliable and Fast</p>
+                                <p>Krypton uses 3 communication pathways in parallel to talk to your computer.</p>
+                                <p class="">Backed by AWS SQS, AWS SNS (via Apple's and Google's push notification services), and Bluetooth. USB support as a 4th pathway is coming soon.</p>
+                                <br>
+                                <p class="heading">End-to-End Secured</p>
+                                <p class="">During pairing, Krypton and your computer establish ephemeral keys to encrypt and authenticate all communication end-to-end.</p>       
+                                <br>
+                                <p class="heading">Zero Trusted Third-Party</p>
+                                <p class="">Team data is cryptographically secured by signed hash chains (Sigchains). This means team membership, public keys, and policies are signed and verified with keys that <strong>only you</strong> have.</p>
+                            </div>
+    
+                            <div class="link">
+                                <a href="/docs/security/security-architecture.html">
+                                    Learn about Krypton's Security
+                                </a>      
+                                <a href="/docs/sigchain/team-sigchain.html">
+                                    Learn about Zero Trust Sigchains
+                                </a>      
+                            </div>
+            
+        
+                            <div class="source-code">
+                                <p>Krypton's Source Code is Public</p>
+                                <a href="https://github.com/kryptco"><p>github.com/kryptco</p></a>
+                                <a class="github-button" href="https://github.com/kryptco/kr" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star kryptco/kr on GitHub">Star</a>        
+                            </div>
+    
+                            
+                        </div>
+              
+                    </div>
+                </section>
+           
+            <section class='Section--get-started teams-get-started'>
+                <h2 class="title">Get Started in 3 steps</h2>
+                <div class='Section--get-started__steps'>
+                    <div class='Section--get-started__steps__step Step'>
+                        <div class='Step__counter'>
+                            <span>1</span>
+                        </div>
+                        <h3>Download Krypton Core on the app store</h3>
+                        <a href="https://appsto.re/us/weWofb.i" target="blank">
+                            <img src="/static/dist/img/apple_app_store_badge.svg" style="padding: 10px;"></img>
+                        </a>
+                        <a href='https://play.google.com/store/apps/details?id=co.krypt.kryptonite&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'
+                            target="blank">
+                            <img alt='Get it on Google Play' src='/static/dist/img/android_play_badge.png' style="height: 60px;"
+                            />
+                        </a>
+                    </div>
+                    <div class='Section--get-started__steps__step Step'>
+                        <div class='Step__counter'>
+                            <span>2</span>
+                        </div>
+                        <h3>Install
+                            <code style="font-family: 'Source Code Pro'; font-weight: bold; color: #5bc984;">kr</code> and pair your computer</h3>                        
+                        <p>Then open the app to the 'pair' screen. Run ‘kr pair’ and scan the QR code using Krypton on your
+                            phone. That's it.
+                        <div class='Terminal'>
+                            <span class='Terminal-Prompt'>$</span>curl https://krypt.co/kr | sh
+                            <br>
+                            <br>
+                            <span class='Terminal-Prompt'>$</span>kr pair
+                        </div>
+                    </div>
+                    <div class='Section--get-started__steps__step Step'>
+                        <div class='Step__counter'>
+                            <span>3</span>
+                        </div>
+                        <h3>Create your team</h3>
+                        <p>After you setup Krypton Core, create your team from the Teams tab and invite your dev org.</p>
+                        <a href='/docs/teams/getting-started.html'>Read more</a>
+                        </p>
+                        <img class="team-grab" src="/static/dist/img/create_team_ios.png">
+                    </div>
+                </div>
+            </section>
+            <section class='Section--contact-us'>
+                <h2>Have questions?
+                    <a href='mailto:hello@krypt.co'>hello@krypt.co</a>
+                </h2>
+            </section>
+        </main>
+
+    </div>
+    @@include('./footer.html') @@include('../body_tail.html')
+</body>
+
+</html>

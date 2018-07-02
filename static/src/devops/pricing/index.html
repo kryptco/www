@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Pricing | Krypton - The new home for your private key</title>
+	@@include("../html_head.html")
+</head>
+
+<body>
+	<div id="page-wrapper" class='Page-home'>
+
+		@@include("../header.html")
+
+		<p class="pricing-title">Pricing</p>
+
+		<div id="pricing" class="team-show">
+			<ul class="tabs">
+				<li id="individual_tab" class="option-name" onclick="showIndividual()">For Individuals</li>
+				<li id="teams_tab" class="option-name active" onclick="showTeam()">For Teams</li>
+			</ul>
+
+			<div class="pricing-box">
+
+				<!-- Individual Pricing -->
+				<div id="individual">
+					<p class="price free">Free</p>
+
+					<div class="feature-groups">
+						<div class="feature">
+							<div class="feature-image">
+								<img src="/static/dist/img/icons/points/keyOnYourPhone.svg"></img>
+							</div>
+							<div class="feature-details">
+								<p class="feature-title">
+									Krypton Core
+								</p>
+								<p class="feature-description">
+									A secure, convenient new home for your U2F, SSH, and PGP private key on your phone.
+								</p>
+							</div>
+						</div>
+
+						<div class="feature">
+							<div class="feature-image">
+								<img src="/static/dist/img/icons/publicKeyExport.svg"></img>
+							</div>
+							<div class="feature-details">
+								<p class="feature-title">
+									Easy Public Key Export
+								</p>
+								<p class="feature-description">
+									Easily upload your  SSH and PGP public keys to services like GitHub, AWS, GoogleCloud, DigitalOcean, Bitbucket, and more.
+								</p>
+							</div>
+						</div>
+
+						<div class="feature">
+							<div class="feature-image">
+								<img src="/static/dist/img/icons/auditLogs.svg"></img>
+							</div>
+							<div class="feature-details">
+								<p class="feature-title">
+									Personal Audit Logs
+								</p>
+								<p class="feature-description">
+									Manually export your audit logs over email, AirDrop, Slack, etc.
+								</p>
+							</div>
+						</div>
+						<br>
+					</div>
+				</div>
+
+				<!-- Teams pricing -->
+				<div id="teams">
+					<!-- Title -->
+					<div id="teams-header">
+					</div>
+
+
+					<!-- Primary Grid -->
+					<div id="teams-grid">
+
+						<!-- Starter Column -->
+						<div class="teams-column" id="starter">
+							<div id="teams-features-small-title">
+									<p class="teams-features-title">Free</p>
+							</div>
+							<div class="teams-price-header-detail">
+								<p class="price-line">
+									<span class="price">
+										<span class="dollar-sign">$</span>0</span>
+										<br>
+										<span class="per-month-pricing"></span>
+								</p>
+								<p class="price-detail no-month">Try Krypton Teams on us.</p>
+							</div>
+
+							<div class="feature-tier-numbers">
+									<!-- Team members -->
+									<div class="feature priced-feature">
+										<div class="priced-feature-price">
+											<p class="restriction-title">3</p>
+											<p class="restriction-subtitle">Team members</p>
+										</div>
+									</div>
+
+									<!--  Audit logs -->
+									<div class="feature priced-feature">
+										<div class="priced-feature-price">
+											<p class="restriction-title">1<span class="k">k</span></p>
+											<p class="restriction-subtitle">Audit Logs /month</p>
+										</div>
+									</div>
+							</div>
+
+							<!-- MPA -->
+							<div class="feature priced-feature empty">
+									<div class="priced-feature-price">
+											<p class="restriction-empty"> - </p>
+										</div>
+							</div>
+							<div class="feature priced-feature empty">
+								<div class="priced-feature-price">
+									<p class="restriction-empty"> - </p>
+								</div>
+							</div>
+							<!-- Support -->
+							<div class="feature priced-feature empty">
+									<div class="priced-feature-price">
+										<p class="restriction-empty"> - </p>
+									</div>
+							</div>
+
+						</div>
+
+						<!-- Pro Column -->
+						<div class="teams-column" id="pro">
+								<div id="teams-features-medium-title">
+										<p class="teams-features-title">Pro</p>
+								</div>
+								<div class="teams-price-header-detail">
+									<p class="price-line">
+										<span class="price">
+											<span class="dollar-sign">$</span>10</span>
+											<br>
+										<span class="per-month-pricing">per user / month</span>
+									</p>
+									<p class="price-detail">Protect your team's infrastructure.</p>
+								</div>
+
+								<div class="unlimited-tier">
+									&#8734;
+								</div>
+								<div class="feature priced-feature empty">
+									<div class="priced-feature-price">
+										<p class="restriction-empty"> - </p>
+									</div>
+								</div>
+								<div class="feature priced-feature empty">
+									<div class="priced-feature-price">
+										<p class="restriction-empty"> - </p>
+									</div>
+								</div>
+
+								<!-- Support -->
+								<div class="feature priced-feature">
+										<div class="priced-feature-price">
+											<p class="restriction-text">Standard Support</p>
+											<p class="restriction-subtitle">Help when you need it via email.</p>
+										</div>
+									</div>
+
+
+						</div>
+
+						<!-- Enterprise Column -->
+						<div class="teams-column" id="enterprise">
+								<div id="teams-features-big-title">
+										<p class="teams-features-title">Enterprise</p>
+								</div>
+								<div class="teams-price-header-detail">
+									<div class="price-contact">
+												<a href="mailto:support@krypt.co?subject=Krypton%20Teams%20Enterprise">Contact us</a>
+									</div>
+									<p class="price-detail">Deploy Krypton across your organization.</p>
+								</div>
+								<div class="unlimited-tier" style="padding-bottom: 0.3em">
+									&#8734;
+								</div>
+
+								<div class="feature priced-feature">
+										<div class="priced-feature-price">
+											<p class="restriction-text">Lock-down Keys Remotely</p>
+											<p class="restriction-subtitle">Geo-fences, bluetooth-only, time-based policies, and multi-person approvals from 2-out-of-3 (or more) team members.</p>
+										</div>
+								</div>
+
+								<!-- Custom Integrations -->
+								<div class="feature priced-feature">
+										<div class="priced-feature-price">
+											<p class="restriction-text">Custom Deployment</p>
+											<p class="restriction-subtitle">Integrate Krypton Teams into your existing infrastructure with custom-built solutions. Deploy Krypton's backend in your own cloud or on premises seamlessly.</p>
+										</div>
+								</div>
+
+								<!-- Support -->
+								<div class="feature priced-feature">
+										<div class="priced-feature-price">
+											<p class="restriction-text">Priority Support</p>
+											<p class="restriction-subtitle">Help around the clock via call, chat, or email.</p>
+										</div>
+								</div>
+
+						</div>
+					</div>
+				</div>
+
+				</div>
+			</div>
+				<section class='Section--contact-us'>
+				<h2 >
+					Learn more and say
+					<a href='mailto:hello@krypt.co'>hello@krypt.co</a>
+				</h2>
+			</section>
+
+		</div>
+		
+		
+	</div>
+	<script>
+		function showTeam() {
+			$('#pricing').addClass('team-show');
+			$('#pricing').removeClass('individual-show');
+			$('#individual_tab').removeClass('active');
+			$('#teams_tab').addClass('active');
+			$('#feature-grid').removeClass('hidden');
+		}
+
+		function showIndividual() {
+			$('#pricing').removeClass('team-show');
+			$('#pricing').addClass('individual-show');
+			$('#individual_tab').addClass('active');
+			$('#teams_tab').removeClass('active');
+			$('#feature-grid').addClass('hidden');
+
+		}
+	</script>
+	</div>
+	@@include('../footer.html')
+    @@include('../../body_tail.html')
+</body>
+
+</html>

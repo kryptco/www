@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Jobs | krypt.co </title>
+	@@include("../html_head.html")
+</head>
+
+<body>
+    <div id="page-wrapper" class='Page-faq'>
+		@@include("../header.html")
+
+		<main>
+			<section class='Section--jobs'>
+                <h1>Join krypt.co</h1>
+                <h2>Interested? Reach out to us <a href="mailto:join@krypt.co">join@krypt.co</a></h2>
+                <div class="Section--jobs__jobs">
+                    <div class="Section--jobs__jobs__job">
+                        <h1>Engineering</h1>
+                        <p>
+                            Help us build, test, deploy Krypton on platforms like iOS, Android, Chrome, Safari, Firefox, MacOS, Windows, Linux. We promise you'll be working on some of the hardest problems in areas like designing cryptographic protocols and building a robust, end-to-end verified authentication system that doesn't have any trusted third-parties.
+                        </p>
+                        <ul>
+                            <li>Rust, Golang, Swift, Java, TypeScript </li>
+                            <li>Take a look at our code at <a href="https://github.com/kryptco">github.com/kryptco</a></li>
+                        </ul>
+                    </div>
+                    <div class="Section--jobs__jobs__job">
+                        <h1>Design</h1>
+                        <p>
+                            At krypt.co, design is an equal pillar to security. If a security tool is difficult to use, people will avoid using it and all its security benefits are lost. Come help us design the next generation of seamless, zero-touch authentication based on strong cryptography. Part of your job is take something that's complex under the hood and make it transparently easy to use for anyone. 
+                        </p>
+                        <p>Tools we love: Sketch // CSS // iOS Storyboards // Android UI Layouts</p>
+                    </div>                    
+                </div>
+
+			</section>
+		</main>
+
+    </div>
+    @@include('../footer.html')
+    @@include('../body_tail.html')
+    
+    <script>
+        $(function () {
+            // http://localhost:8300/faq/?faq=keyOnYourPhone
+
+            var QueryString = function () {
+              var query_string = {};
+              var query = window.location.search.substring(1);
+              var vars = query.split("&");
+              for (var i=0;i<vars.length;i++) {
+                var pair = vars[i].split("=");
+                    // If first entry with this name
+                if (typeof query_string[pair[0]] === "undefined") {
+                  query_string[pair[0]] = decodeURIComponent(pair[1]);
+                    // If second entry with this name
+                } else if (typeof query_string[pair[0]] === "string") {
+                  var arr = [ query_string[pair[0]],decodeURIComponent(pair[1]) ];
+                  query_string[pair[0]] = arr;
+                    // If third or later entry with this name
+                } else {
+                  query_string[pair[0]].push(decodeURIComponent(pair[1]));
+                }
+              }
+              return query_string;
+            }();
+
+            if (QueryString.faq) {
+                navigateToQuestion(QueryString.faq);
+            }
+
+            function navigateToQuestion(q) {
+                console.log(q);
+
+                $q = $('.FAQ__question[name='+q+']');
+
+                if (!$q[0]) {
+                    return;
+                } else {
+                    $q.toggleClass('open');
+                    $q.find('.FAQ__question__answer').slideToggle(500, 'easeInOutQuad');
+                    $('html, body').animate({
+                        scrollTop: $q.offset().top + 'px'
+                    }, 'slow');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="544px" height="222px" viewBox="0 0 544 222" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard">
+            <g id="Group-6" transform="translate(7.000000, 12.000000)">
+                <g id="shield" fill="#5BC894">
+                    <g id="Icon">
+                        <g id="Logo-corrections">
+                            <g id="Kryptonite_Icon_WhiteOnGreen">
+                                <g id="Group">
+                                    <path d="M86.9683516,0 C143.686842,0 173.936703,38.062662 173.936703,38.062662 L173.936703,125.606785 C173.936703,175.088246 109.655748,194.119577 86.9683516,197.925843 L86.9683516,0 L86.9683516,0 Z M86.9683516,45.6751945 C114.116474,45.6751945 136.124376,67.8287991 136.124376,95.1566552 C136.124376,122.484511 114.116474,144.638116 86.9683516,144.638116 L86.9683516,197.925843 C64.2809555,194.119577 -1.40442569e-14,175.088246 0,125.606785 C1.40442569e-14,76.1253242 0,76.1253272 0,38.062662 C-1.40442569e-14,38.062662 30.2498614,0 86.9683516,0 L86.9683516,45.6751945 Z M86.9683516,45.6751945 C59.8202288,45.6751945 37.8123268,67.8287991 37.8123268,95.1566552 C37.8123268,122.484511 59.8202288,144.638116 86.9683516,144.638116 L86.9683516,45.6751945 Z" id="Combined-Shape"></path>
+                                    <ellipse id="Oval-Copy-2" cx="86.9683516" cy="95.1566552" rx="34.0310941" ry="34.2563958"></ellipse>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <g id="Group-2" transform="translate(233.000000, 74.000000)" fill="#343434">
+                    <rect id="Rectangle" x="20" y="0" width="10" height="50"></rect>
+                    <rect id="Rectangle" transform="translate(25.000000, 25.000000) rotate(90.000000) translate(-25.000000, -25.000000) " x="20" y="0" width="10" height="50"></rect>
+                </g>
+                <g id="Group-3" transform="translate(342.000000, 12.000000)" fill="#2E81EF">
+                    <g id="Group-5" transform="translate(87.500000, 35.500000) rotate(90.000000) translate(-87.500000, -35.500000) translate(52.000000, -52.000000)">
+                        <g id="Group-4" transform="translate(0.000000, 106.000000)">
+                            <path d="M35.1794274,68.3769152 C15.7503661,68.3769152 0,53.0702214 0,34.1884576 C0,15.3066939 15.7503661,0 35.1794274,0 C54.6084887,0 70.3588548,15.3066939 70.3588548,34.1884576 C70.3588548,53.0702214 54.6084887,68.3769152 35.1794274,68.3769152 Z M34.9417286,58.6747854 C48.7258599,58.6747854 59.9001061,47.8153066 59.9001061,34.4194607 C59.9001061,21.0236148 48.7258599,10.1641361 34.9417286,10.1641361 C21.1575973,10.1641361 9.98335102,21.0236148 9.98335102,34.4194607 C9.98335102,47.8153066 21.1575973,58.6747854 34.9417286,58.6747854 Z" id="Combined-Shape"></path>
+                        </g>
+                        <rect id="Rectangle-5" x="30" y="0" width="11" height="107"></rect>
+                        <rect id="Rectangle-5" transform="translate(48.500000, 4.500000) rotate(90.000000) translate(-48.500000, -4.500000) " x="44" y="-14" width="9" height="37"></rect>
+                        <rect id="Rectangle-5" transform="translate(44.500000, 27.500000) rotate(90.000000) translate(-44.500000, -27.500000) " x="40" y="13" width="9" height="29"></rect>
+                        <rect id="Rectangle-5" transform="translate(41.500000, 47.500000) rotate(90.000000) translate(-41.500000, -47.500000) " x="37" y="37" width="9" height="21"></rect>
+                    </g>
+                    <text id="U2F" font-family="SourceCodePro-Bold, Source Code Pro" font-size="100" font-weight="bold">
+                        <tspan x="0" y="169">U2F</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

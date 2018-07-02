@@ -7,7 +7,6 @@ html, body {
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-    background: $c-white;
 	// overflow-x: hidden;
 
     @include size(100% 100%);
@@ -38,6 +37,7 @@ h1 ,h2, h3, h4, h5 {
     font-family: $f-title;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
+    line-height: unset;
 }
 
 h1 {
@@ -68,11 +68,15 @@ p {
 
 a {
     color: $c-link-color;
-    font-weight: bold;
+    // font-weight: bold;
     text-decoration: none;
 
     &:visited {
         @extend a;
+    }
+
+    &:hover {
+        border-bottom: 2px solid $c-link-color;
     }
 }
 

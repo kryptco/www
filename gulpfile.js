@@ -24,6 +24,8 @@ var gulp = require('gulp'),
         watchSCSS: './static/src/scss/**/*.scss',
         watchDocsHTML: './static/src/docs/_site/**/*.html',
         watchDocsCSS: './static/src/docs/_site/**/*.css',
+        watchBlogHTML: './static/src/blog/_site/**/*.html',
+        watchBlogCSS: './static/src/blog/_site/**/*.css',
         srcSCSSMainFile: './static/src/scss/[^_]*.scss',
         distCSS: './_site/static/dist/css',
         srcFonts: './static/src/fonts/**/*',
@@ -113,7 +115,7 @@ gulp.task('browserify', function () {
         .pipe(gulp.dest(p.distJs));
 });
 
-// Jekyll for docs site
+// Jekyll sites
 const child = require('child_process');
 const gutil = require('gulp-util');
 
@@ -121,7 +123,9 @@ gulp.task('watch', ['build', 'clean', 'styles'], function () {
     gulp.start(['watchify']);
     gulp.watch(p.watchSCSS, ['styles']);
 	gulp.watch(p.watchDocsHTML, ['build']);
-	gulp.watch(p.watchDocsCSS, ['build']);
+  gulp.watch(p.watchDocsCSS, ['build']);
+  gulp.watch(p.watchBlogHTML, ['build']);
+	gulp.watch(p.watchBlogCSS, ['build']);
 });
 
 gulp.task('build', ['clean'], function () {
@@ -168,22 +172,37 @@ gulp.task('fileinclude', function() {
   }))
   .pipe(gulp.dest('./_site/app/'));
 
-  gulp.src(['static/src/pricing/index.html'])
+  gulp.src(['static/src/start/**/*'])
+  .pipe(fileinclude({
+    prefix: '@@',
+    basepath: '@file'
+  }))
+  .pipe(gulp.dest('./_site/start/'));
+
+  gulp.src(['static/src/krext/**/*'])
+  .pipe(fileinclude({
+    prefix: '@@',
+    basepath: '@file'
+  }))
+  .pipe(gulp.dest('./_site/krext/'));
+
+  gulp.src(['static/src/devops/pricing/index.html'])
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
     }))
-    .pipe(gulp.dest('./_site/pricing/'));
+    .pipe(gulp.dest('./_site/devops/pricing/'));
 
-  gulp.src(['static/src/features/index.html'])
+  gulp.src(['static/src/devops/index.html'])
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
     }))
-    .pipe(gulp.dest('./_site/features/'));
+    .pipe(gulp.dest('./_site/devops/'));
 
-  gulp.src(['static/src/sigchain/**/*'])
-    .pipe(gulp.dest('./_site/sigchain/'));
+
+  gulp.src(['static/src/devops/sigchain/**/*'])
+    .pipe(gulp.dest('./_site/devops/sigchain/'));
 
   gulp.src(['static/src/install/index.html'])
     .pipe(fileinclude({
@@ -192,12 +211,27 @@ gulp.task('fileinclude', function() {
     }))
     .pipe(gulp.dest('./_site/install/'));
 
-  gulp.src(['static/src/faq/index.html'])
+  gulp.src(['static/src/devops/faq/index.html'])
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
     }))
-    .pipe(gulp.dest('./_site/faq/'));
+    .pipe(gulp.dest('./_site/devops/faq/'));
+  gulp.src(['static/src/faq/index.html'])
+  .pipe(fileinclude({
+    prefix: '@@',
+    basepath: '@file'
+  }))
+  .pipe(gulp.dest('./_site/faq/'));
+
+  gulp.src(['static/src/jobs/index.html'])
+  .pipe(fileinclude({
+    prefix: '@@',
+    basepath: '@file'
+  }))
+  .pipe(gulp.dest('./_site/jobs/'));
+
+  
   gulp.src(['static/src/why_kryptonite/index.html'])
     .pipe(fileinclude({
       prefix: '@@',
@@ -241,14 +275,14 @@ gulp.task('fileinclude', function() {
       basepath: '@root'
     }))
     .pipe(gulp.dest('./_site/docs/'));
-
-    // process the gulp includes for the built jekyll jobs site
-  gulp.src(['./static/src/jobs/_site/**/*'])
+  
+  // process the gulp includes for the built jekyll blog site
+  gulp.src(['./static/src/blog/_site/**/*'])
   .pipe(fileinclude({
     prefix: '@@',
     basepath: '@root'
   }))
-  .pipe(gulp.dest('./_site/jobs/'));
+  .pipe(gulp.dest('./_site/blog/'));
 
   gulp.src(['static/src/index.html'])
     .pipe(fileinclude({
@@ -263,7 +297,7 @@ gulp.task('fileinclude', function() {
       basepath: '@file'
     }))
     .pipe(gulp.dest('./_site/teams/'));    
-  gulp.src(['static/src/demo/**/*'])
-    .pipe(gulp.dest('./_site/demo/'));
+  gulp.src(['static/src/devops/demo/**/*'])
+    .pipe(gulp.dest('./_site/devops/demo/'));
 });
 

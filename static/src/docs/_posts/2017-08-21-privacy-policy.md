@@ -24,10 +24,14 @@ For `Ed25519` and `4096-bit RSA` key pairs, Krypton stores the private key in th
 
 For `NIST P-256` key pairs, Krypton generates and stores the private key in the iOS Secure Enclave.
 
+U2F private keys are `NIST P-256` key pairs and therefore are generated and stored in the iOS Secure Enclave Processor.
+
 To learn more about the security of Apple cryptography libaries and the Apple iOS Keychain see the [iOS Security Guide](https://www.apple.com/business/docs/iOS_Security_Guide.pdf).
 
 ### Android
-On Android, Krypton generates a `3072-bit RSA` key pair (stored in the AndroidKeystore crypto coprocessor) or optionally an `Ed25519` key pair using [libsodium](https://download.libsodium.org/doc/) (stored in app-private file storage). When the private key is stored in the AndroidKeystore it cannot be extracted, even by Krypton, since the AndroidKeystore performs private key operations as a black box.
+On Android, Krypton generates a `3072-bit RSA` key pair (stored in the AndroidKeystore crypto coprocessor) or optionally an `Ed25519` key pair using [libsodium](https://download.libsodium.org/doc/) (stored in app-private file storage). When the private key is stored in the AndroidKeystore it cannot be extracted, even by Krypton, since the Android Keystore performs private key operations as a black box.
+
+U2F private keys are `NIST P-256` key pairs and are generated and stored in the AndroidKeystore.
 
 ## Krypton Core
 

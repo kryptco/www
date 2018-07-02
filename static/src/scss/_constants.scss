@@ -6,13 +6,27 @@ $c-green-accent: #5BC894;
 $c-green-dark: darken($c-green-accent, 50%);
 $c-black: #313238;
 $c-gray-dark: #343434;
+$c-blue-accent: #6D7D92;
 
 $c-cta-background: $c-green-accent;
 $c-cta-color: $c-white;
-$c-link-color: $c-green-accent;
+$c-link-color: #11c56f;
 $c-h-color: $c-gray-dark;
 $c-terminal-color: $c-white;
 $c-terminal-background: $c-gray-dark;
+
+$c-light-gray: #E9E9E9;
+$c-bg: #E5EBF1;
+$c-lightgreen: #11c56f;
+$c-orange: #f98f18;
+$c-pink: #f71871;
+$c-blue: #2e81ef;
+$c-purple: #4d00ff;
+$c-bluegray: #6D7D92;
+$c-accent: #5bc894;
+$c-revoke: rgb(245, 105, 105);
+$c-dark: #004022;
+$c-yellow: rgb(245, 105, 105);
 
 // Transitions
 

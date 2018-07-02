@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Threat Model"
+title: "Threat Model (SSH)"
 category: security
 date: 2017-09-04 09:51:13
 ---
@@ -12,7 +12,7 @@ With [Krypton](/), even the worst compromise is limited to only SSH logins expli
 ## Privilege Separation
 > The problem with storing an SSH key on your laptop boils down to how privilege separation works on laptops (by user) versus on phones (by app).
 
-Laptop operating systems (like macOS or Ubuntu) separate priviliges based on user name. Most applications you run execute with the same user privileges, meaning the files created by one can be read by the others. Just open Activity Monitor or run `ps` to see all of the processes running with the same privileges as your user account.
+Laptop operating systems (like macOS or Ubuntu) separate privileges based on user name. Most applications you run execute with the same user privileges, meaning the files created by one can be read by the others. Just open Activity Monitor or run `ps` to see all of the processes running with the same privileges as your user account.
 
 On the contrary, phone operating systems (iOS & Android) separate privileges by individual application, meaning that files created by an application are only readable by that application. This separation is essential to Krypton’s storage of the SSH private key, which is safe from other applications that may be malicious.
 

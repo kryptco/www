@@ -1,0 +1,187 @@
+/// terminal
+.terminal {
+    height: 24em;
+    width: 44em;
+    border-radius: 0.2em;
+    user-select: none;
+    background: #fff;
+        
+    position: relative;
+
+    top: 8em;
+    margin-right: -1em;
+    border-radius: 0.3em;
+
+    overflow: hidden;
+
+    -webkit-box-shadow: 0 0 20px 0px rgba(119, 119, 119, 0.38);
+    box-shadow: 0 0 20px 0px rgba(119, 119, 119, 0.38);
+
+    position: relative;
+
+    margin-left: auto;
+    
+
+    z-index: auto;
+
+
+    .header {
+        position: relative;
+        left: 0;
+        width: 100%;
+        height: 2.4em;
+        top: 0;
+        background: rgb(44, 44, 44);
+
+        span {
+            position: absolute;            
+            width: 0.8em;
+            height: 0.8em;
+            border-radius: 0.4em;
+
+            box-shadow: 0 0 4px 0px rgba(31, 31, 31, 0.1);
+
+            background: rgb(100, 100, 100);
+            top: 0.7em;
+        }
+
+        span:nth-child(1) {
+            left: 0.5em;            
+        }
+
+        span:nth-child(2) {
+            left: 1.8em;         
+            // background: rgb(246, 196, 82);
+        }
+        span:nth-child(3) {
+            left: 3.1em;         
+            // background: rgb(101, 201, 84);
+        }
+    }
+
+    .screen {
+        background: rgb(53, 53, 53);
+        height: 100%;
+        padding-left: 1em;
+
+
+        .lines {
+            padding-top: 0em;
+            display: flex;
+            flex-direction: column;
+
+            .line {
+                // width: 0;
+                margin-top: 0.6em;
+                color: #fff;
+                font-family: "Source Code Pro";
+                font-weight: 600;
+                font-size: 1.3em;
+            }
+            .stdout {
+            }
+
+            .bang {
+                content: '';
+            }
+            .bang:before {
+                content: '$';
+                color: #58eba4;
+                position: relative;
+                font-weight: 800;
+            }
+            .bang:after {
+
+            }
+
+            .cyan {
+                color: #58d5eb;
+            }
+
+            .green {
+                color: #58eba4;
+            }
+
+            .rootbang:before {
+                content: 'root:~# ';
+                color: #fff;
+                position: relative;
+                font-weight: 500;
+            }
+
+    
+            .cursor:after {
+                content: '';
+                width: 8px;
+                height: 1em;
+                margin-top: 1px;
+                margin-left: 4px;
+                position: absolute;
+
+                background-color: #58eba4;
+                animation: blink .75s step-end infinite
+            }
+
+        }
+
+
+    }
+}
+
+// ssh-line
+.line {
+    // width: 0;
+    // overflow: hidden;
+    // white-space: nowrap; /* Keeps the content on a single line */
+    // margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    // letter-spacing: .15em; /* Adjust as needed */
+}
+
+@keyframes blink {
+    from, to { 
+        background-color: transparent;
+    }
+    50% { 
+        background-color: #58eba4;
+    }
+}
+
+.note-button-tap {
+    animation: notetap 2s ease-out;
+    animation-fill-mode: forwards
+}
+
+@keyframes notetap {
+    0% {     
+        background: transparent;
+    }
+    50% { 
+        background: rgba(121, 121, 121, 0.25);
+    }
+    100% { 
+        background: transparent;
+    }
+}
+
+
+@media (max-width: 1100px) {
+    #ssh-demo {
+    }
+    .terminal {
+        top: 0;
+        width: unset;
+
+        height: 16em;
+        margin: 2em;
+        margin-top: -10em;
+        .screen .faux-loggedin .story {
+            width: 100%;
+            margin: 1em;
+        }
+        
+        margin-left: 1em;
+        margin-right: 1em;
+        z-index: 3;
+    }
+
+}
