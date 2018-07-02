@@ -43,7 +43,7 @@
                             Krypton supports any site that supports U2F security keys. The main ones are: Google, Facebook, Dropbox, Stripe, GitHub, GitLab, BitBucket, and Salesforce.
                             <br>
                             <br>
-                            Want help adding U2F to your website (or further Krypton integrations) reach out to us at <a href="mailto:partners@krypt.co">partners@krypt.co</a>.
+                            Want help adding U2F to your website (or further Krypton integrations)? Reach out to us at <a href="mailto:partners@krypt.co">partners@krypt.co</a>.
                         </div>
                     </div>
                     <div class='FAQ__question' name='browserSupport'>
@@ -51,10 +51,10 @@
                             What browsers do you support?
                         </div>
                         <div class='FAQ__question__answer'>
-                            The Krypton browser extension works <strong>Chrome</strong>, <strong>Safari</strong> and <strong>Firefox</strong>.                        
+                            The Krypton browser extension currently only works on <strong>Google Chrome</strong>.                        
                             <br>
                             <br>
-                            Note that some sites unfortunately think that only Chrome supports security keys. To bypass this, you can change your user agent to Chrome. We're working with companies to move away from these types of checks.
+							Implementations for <strong>Firefox</strong>, <strong>Safari</strong>, and <strong>Edge</strong> are coming soon.
                         </div>
                     </div>
                     <div class='FAQ__question' name='phoneSupport'>
@@ -62,7 +62,7 @@
                             What phones do you support?
                         </div>
                         <div class='FAQ__question__answer'>
-                            Krypton is available for iOS (10.0+) and Android (6.0+).
+                            Krypton U2F support is available for iOS (10.0+). Android is coming soon.
                         </div>
                     </div>                    
                     <div class='FAQ__question' name='zeroTouch'>
@@ -70,7 +70,7 @@
                             Is "zero touch" secure? How is it a second factor if it approves automatically?
                         </div>
                         <div class='FAQ__question__answer'>
-                            Yes, zero touch is safe. The security behind Krypton is established when you pair Krypton with your browser (via the extension) by scanning the QR code. This ensures that only your specific browser will be able talk to Krypton. Krypton and your browser establish a secure cryptographic channel using keys that only your phone and computer have. There is <strong>NO</strong> trusted third-party.
+                            Yes, zero touch is safe. The security behind Krypton is established when you pair Krypton with your browser (via the extension) by scanning the QR code. This ensures that only your specific browser will be able to talk to Krypton. Krypton and your browser establish a secure cryptographic channel using keys that only your phone and computer have. There is <strong>NO</strong> trusted third-party.
                             <br>
                             <br>
                             Two-factor is simply a way to defend against compromised passwords. If someone knows your password and attempts to login then they'll be hit with a second-factor challenge. Since this attacker is remote and doesn't have access to your browser they won't be able to talk to Krypton.
@@ -94,10 +94,10 @@
                             Why is "zero touch" on by default?
                         </div>
                         <div class='FAQ__question__answer'>
-                            Our mission is to help everyone be more secure on the web, including less technical people who don't understand or care about the differences between two-factor, U2F, or web authentication. Most 2FA authentications are stilling using SMS. They are not phishing proof, they are easy to compromise, and the UX is still pretty bad.
+                            Our mission is to help everyone be more secure on the web, including less technical people who don't understand or care about the differences between two-factor, U2F, or web authentication. Most second factor authentications are still done using SMS. They are not phishing proof, they are easy to compromise, and their UX is still pretty inconvenient.
                             <br>
                             <br>
-                            Krypton's value for most people will be that it's a "zero cognitive", "zero touch" way to do two-factor. Our hope is that because it's easier and a good experience, more people will adopt the technology that actually makes them more secure (U2F's phishing protections now and FIDO2/WebAuthn soon.)                        
+                            Krypton's value for most people is that it's a simple "zero touch" way to do two-factor authentication. Our hope is that because it's easier and a good experience, more people will adopt the technology that actually makes them more secure (U2F's phishing protections now and FIDO2/WebAuthn soon.)                        
                         </div>
                     </div>                                        
 
@@ -115,7 +115,7 @@
                             Does Krypton support developer authentication like SSH/Git commit signing?
                         </div>
                         <div class='FAQ__question__answer'>
-                            Why yes it does! Learn more here <a href="/devops">krypt.co/devops</a> or in the Krypton app go to settings (the gear icon on the top left) > Toggle "Developer Mode".
+							Why yes it does! Learn more here <a href="/devops">krypt.co/devops</a>. To use Krypton for SSH/Git, install <code>kr</code> in your terminal by following the directions in the app or <a href="/install">here</a>.
                         </div>
                     </div>
                     <div class='FAQ__question' name='privateKeys'>

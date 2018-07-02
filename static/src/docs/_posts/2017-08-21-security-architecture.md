@@ -6,7 +6,7 @@ order: 1
 ---
 
 # The Krypton Security Architecture
-Krypton provides the best of both worlds: the security of the private key never leaving your phone with the convenience of using the key wherever you'd like by pairing Krypton with a computer (via a simple QR code scan). In this article, we discuss how Krypton achieves a fast, reliable, user-friendly, and most importantly secure security key.
+Krypton provides the best of both worlds: the security of the private key never leaving your phone with the convenience of using the key wherever you'd like by pairing Krypton with a computer (via a simple QR code scan). In this article, we discuss how Krypton achieves fast, reliable, user-friendly, and most importantly secure private key storage.
 
 > Krypton is designed such that you do not have to trust us, krypt.co, to operate any third party service. You need only trust the code running on the Krypton phone app. 
 
@@ -46,7 +46,7 @@ The pairing protocol between a computer running krd and the Krypton app is as fo
 
 ![The pairing protocol]({{ site.url }}/static/dist/img/docs/d1.png){:class="img-responsive"}
 
-The protocol is initiated on the computer/browser when user opens kr interface for pairing.
+First, the user initiates pairing on the computer/browser.
 
 Next, `krd` generates a new key pair for this pairing: `c_pub_key`, `c_priv_key`. krd then displays `c_pub_key` in a QR code.
 

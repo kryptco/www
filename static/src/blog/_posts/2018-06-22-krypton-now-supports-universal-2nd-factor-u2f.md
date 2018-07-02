@@ -7,9 +7,9 @@ when: "July 6, 2018"
 date: 2018-06-22 15:23:21
 ---
 
-At krypt.co we've been all about making public-key crypto more usable, and portable by giving developers a convenient and secure place to store their private-key -- on the device you already have, your phone. The focus on developers is for good reason -- we, as developers, use public-key crypto all the time when we sign into servers with SSH or push code with Git.
+At krypt.co, we're all about making public-key crypto more usable and portable by giving developers a convenient and secure place to store their private-key -- on the device you already have, your phone. The focus on developers is for good reason -- we, as developers, use public-key crypto all the time when we sign into servers with SSH or push code with Git.
 
-SSH is a remarkably secure communication and authentication protocol that supports password-less, public-key based authentication. Coupled with an easy-to-use and secure private-key wallet, SSH gives us a glimpse of what the password-less future of authentication could look like.
+SSH is a remarkably secure communication and authentication protocol that supports password-less, public-key based authentication. Coupled with easy-to-use and secure private-key storage, SSH gives us a glimpse of what the password-less future of authentication could look like.
 
 Today we're announcing **Krypton for Universal 2nd Factor** -- our first step in bringing usable public-key authentication to the web.
 

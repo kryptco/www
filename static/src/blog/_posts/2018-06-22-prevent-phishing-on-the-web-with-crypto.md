@@ -7,13 +7,13 @@ when: "June 22nd, 2018"
 date: 2018-06-22 14:39:52
 ---
 
-No I don't mean crypto-*currency*. What I'm really talking is **Universal 2nd Factor (U2F)**.  U2F is a protocol for doing two-factor authentication that constructively prevents phishing on the web.
+No I don't mean crypto-*currency*. What I'm really talking about is **Universal 2nd Factor (U2F)**.  U2F is a protocol for doing two-factor authentication that constructively prevents phishing on the web.
 
 ![]({{ site.url }}/static/dist/img/blog/phishing_password.svg){:class=" img-center"}
 
 
 ## How does phishing work?
-It's very simple -- an attacker simply gets you to click on a fake link like `http://facebo0k.com` or `http://dropobox.com`, and the page looks exactly like the real thing.
+It's very simple -- an attacker gets you to click on a fake link like `http://facebo0k.com` or `http://dropobox.com`, and the page looks exactly like the real thing.
 
 <div class="browser blog-browser">
     <div class="header">
