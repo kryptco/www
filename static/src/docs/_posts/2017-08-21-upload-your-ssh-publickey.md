@@ -47,7 +47,7 @@ In some cases, like Heroku, `kr` uses your local credentials to add your public 
 To use Krypton with any SSH server that's already running, you'll need to add your Krypton public key to the `~/.ssh/authorized_keys` file on that server. The `kr add` command makes this easy.
 
 ```bash
-$ kr add <user>@<server>
+$ kr add --server <user>@<server>
 ```
 
 `<user>` is the user name for the account on `<server>`. 
