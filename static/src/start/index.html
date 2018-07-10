@@ -120,7 +120,18 @@
         </section>
 
         @@include('../footer.html')
-        @@include('../body_tail.html')	    
+        @@include('../body_tail.html')
+
+        <script type="application/javascript">
+            document.addEventListener("DOMContentLoaded", function(event) { 
+                setTimeout(function() { 
+                    if (!window.kryptonExtensionId) { 
+                        window.location = "/krext"; 
+                    } 
+                }, 
+                100); 
+            });
+        </script>	    
     </body>
 
 </html>
