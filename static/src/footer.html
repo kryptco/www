@@ -71,10 +71,10 @@
 				<a href="/krext" target="_blank">
 					<img src='/static/dist/img/u2f_services/chrome.png'/>
 				</a>
-				<a href="/krext" target="_blank" >
+				<a onclick="showComingSoon('Safari');" >
 					<img src='/static/dist/img/u2f_services/safari.png'/>
 				</a>  
-				<a href="/krext" target="_blank" >
+				<a onclick="showComingSoon('Firefox');" >
 					<img src='/static/dist/img/u2f_services/firefox.png'/>
 				</a>  				
 			</div>
@@ -93,5 +93,10 @@
 								
 	</div>
 
+	<script>
+		function showComingSoon(browser) {
+			window.alert("We're sorry! The Krypton Browser extension for " + browser + " is not available yet. We're working hard to release it as soon as possible. Please reach out to us at hello@krypt.co with any questions.");
+		}
+	</script>
 
 </div>
