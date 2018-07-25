@@ -9,7 +9,23 @@
 </head>
 <body>
     <script type="application/javascript">
-        window.location = "https://chrome.google.com/webstore/detail/krypton-authenticator/madlgmccpddkhohkdobabokeecnjonhl";
+        
+        //  https://stackoverflow.com/questions/9847580/how-to-detect-safari-chrome-ie-firefox-and-opera-browser
+        function isChrome() {
+            return !!window.chrome;
+        }
+        function isFirefox() {
+            return typeof window.InstallTrigger !== 'undefined';
+        }
+        function isSafari() {
+            return navigator.userAgent.indexOf("Safari") != -1;
+        }
+
+        if (isFirefox()) {
+            window.location = "https://addons.mozilla.org/en-US/firefox/addon/krypton-authenticator";
+        } else {
+            window.location = "https://chrome.google.com/webstore/detail/krypton-authenticator/madlgmccpddkhohkdobabokeecnjonhl";
+        }
     </script>
     <div id="page-wrapper">
         @@include("../header.html")
