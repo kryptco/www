@@ -16,7 +16,7 @@ Today we're announcing **Krypton for Universal 2nd Factor** -- our first step in
 ![]({{ site.url }}/static/dist/img/blog/krypton_plus_u2f.svg){:class="img-center sep-image"}
 
 ## Welcome U2F!
-Universal 2nd Factor or U2F is a newly standardized protocol for two-step verification that is based on strong public-key-based cryptography to create the first [**un-phishable credential** on the web]({{ site.url }}{% post_url 2018-06-22-prevent-phishing-on-the-web-with-crypto %}). 
+Universal 2nd Factor or U2F is a newly standardized protocol for two-step verification that is based on strong public-key-based cryptography to create the first [**un-phishable credential** on the web]({{ site.baseurl }}{% post_url 2018-06-22-prevent-phishing-on-the-web-with-crypto %}). 
 
 Typically you see U2F devices as standalone USB fobs that you can buy on amazon or get from your IT department. We're now making it easy for anyone to use U2F and become un-phishable on the web.
 
