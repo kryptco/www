@@ -255,10 +255,12 @@
         var welcome = document.getElementById("demo-welcome");
         var demoNote = document.getElementById("demo-note");
 
-        function doU2FAnimation() {
-
+        function doU2FAnimation(skipsFadeIn) {
             terminal.classList.add("demo-elem-fadeout");
-            browser.classList.add("demo-elem-fadein");
+
+            if (!skipsFadeIn) {
+                browser.classList.add("demo-elem-fadein");
+            }
 
             setTimeout(function(){
                 sshDemo.style.display = "none";
@@ -345,7 +347,7 @@
         var requestingText = "Krypton ▶ Requesting SSH authentication from phone";
         var sshSuccessText = "Krypton ▶ Success. Request Allowed ✔";
 
-        var typingSpeed = 100;
+        var typingSpeed = 200;
 
         function type(txt, i, div, then) {
             if (i < txt.length) {
@@ -418,7 +420,7 @@
         function resetSSHAnimation() {
             browser.classList.remove("demo-elem-fadeout");
 
-            doU2FAnimation();
+            doU2FAnimation(false);
             
             setTimeout(function() {
                 sshRequest.classList.add("remove-el");
@@ -438,16 +440,12 @@
                 demoSSHNoteOptions.classList.remove("notification-slideout");
             }, 500);
         }
-
-      
-        // initial delay
-        //setTimeout(doU2FAnimation, 500);
         
         
-        u2fDemo.style.display = "none";
+        sshDemo.style.display = "none";
         setTimeout(function() {
-            doSSHAnimation(true)
-        }, 500);
+            doU2FAnimation(true)
+        }, 100);
     </script>
 </body>
 
