@@ -9,7 +9,10 @@ order: 3
 
 ## What are Krypton and krd?
 
-Krypton is an iOS and Android application that generates and stores a key pair for use with SSH (Secure Shell) and provides a mechanism to delegate access to the private key to computers running krd. The private key never leaves Krypton. Instead, through a pairing procedure, Krypton creates a channel for krd to send “signature requests” whereby upon a valid request, Krypton cryptographically signs the requested data with the private key and only sends the resulting signature back to krd. This communication channel is encrypted and signed with a session key established during the pairing procedure.
+Krypton generates and stores key pairs and provides a mechanism to delegate access to the private key to computers running krd. The private key never leaves Krypton. Instead, through a pairing procedure, Krypton creates a channel for krd to send “signature requests” whereby upon a valid request, Krypton cryptographically signs the requested data with the private key and only sends the resulting signature back to krd. This communication channel is encrypted and signed with a session key established during the pairing procedure.
+
+> Krypton is available as an iOS and Android application.
+> krd is available as both a Command Line Interface (the "kr cli" ) or a web browser extension ("Krypton Authenticator").
 
 ## Private Key Storage
 
@@ -46,7 +49,6 @@ If analytics are enabled, we collect the following information about usage of th
 - Latency of krd responses
 - Whether a krd request times out
 - City (automatically determined by Google Analytics from IP)
-- Email addresses (public key labels)
 - Types of kr commands run (i.e. kr add, but the name of the server is not recorded)
 
 ### What information do we NOT collect?
@@ -59,6 +61,7 @@ We do NOT collect any properties of your SSH communication. These are examples o
 - SSH User names
 - Git commits and tags
 - Computer names
+- Authenticator name
 
 ### How do we collect information?
 We report all collected information, except user email addresses, to Google Analytics by sending HTTP requests to the [Google Analytics Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/v1/). This data is governed by the Google privacy policy located at https://www.google.com/policies/privacy/. We do NOT use the Google Analytics iOS or Android SDKs. Every Krypton app generates a 128-bit random ID to be used only for analytics. User email addresses, along with the `128-bit` analytics ID, are stored in Amazon Web Services’ DynamoDB Service, governed by the [AWS privacy policy](https://aws.amazon.com/privacy/). Using the email address and analytics ID stored in DynamoDB, krypt.co is able to associate a Google Analytics session to the corresponding user’s email address.
@@ -72,7 +75,7 @@ We use your information to improve Krypton’s performance and quality. We use t
 
 We collect email addresses for the purpose of communicating new features, product updates, and company updates. We will never spam email addresses and provide users with a way to opt out.
 
-## Krypton Teams
+## Krypton for DevOps Teams
 Your [team sigchain]({{ site.baseurl }}{% post_url 2018-02-23-team-sigchain %}) (team data) is hosted by krypt.co and is **ONLY** accessible by users you invite to your team. We never share your data with other parties. For audit logging, krypt.co only has access to **encrypted** audit logs. All audit logs are encrypted to each active team admin, using keys that only you and team admins have.
 
 ### Information we have access to:

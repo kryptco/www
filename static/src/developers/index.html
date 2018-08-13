@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Krypton for Developers</title>
+
+    @@include('../html_head.html')
+    <script async defer src='/static/dist/js/lib/github-button/github-buttons.js'></script>	
+</head>
+<body>
+    
+    <div id="page-wrapper">
+		@@include("./header.html")
+        <main>
+            <section class="krypton-what">
+                <h1>A convenient security key for developers</h1>
+                    
+                <div class="points">
+                    <div class="point">
+                        Universal 2nd Factor
+                    </div>
+                    <div class="point">
+                        SSH Server Auth
+                    </div>    
+                    <div class="point">
+                        Git Commit Signing 
+                    </div>
+                </div>
+
+                <div class="mobile-download">
+                    <a href="https://appsto.re/us/weWofb.i" target="_blank" id="ios-link">
+                        <img class="apple-store" src="/static/dist/img/apple_app_store_badge.svg"></img>
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=co.krypt.kryptonite&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" target="_blank" id="android-link">
+                        <img class="play-store" src='/static/dist/img/android_play_badge.png'
+                        />
+                    </a>        
+                    <a class="download" id="universal-link" href="/krext" target="_blank">
+                        Install Krypton
+                    </a>	                                        
+                </div>	
+            </section>
+            <section class="animate-demo">
+                <div class="demo-frame" id="ssh-demo">
+                    @@include("../html_components/_terminal.html")
+                    @@include("../html_components/_phoneSSH.html")                    
+                </div>
+            </section>        
+            <section class="tiles">
+                    <div class="tile works-with develop">
+                            <div class="title">
+                                <p class="light">Strong public key authentication</p>
+                            </div>   
+                            <div class="supported-services platforms">
+                                <div class="platform">
+                                    <img src="/static/dist/img/u2f_services/chrome.png"/>
+                                    <p>Web Two-Factor U2F Security Key</p>
+                                </div>
+                                <div class="platform">
+                                    <div class="terminal-icon"></div>
+                                    <p>Login to servers with SSH</p>
+                                </div>
+                                <div class="platform">
+                                    <img src="/static/dist/img/platforms/git.png"/>
+                                    <p>Sign Git commits and Tags using PGP</p>
+                                </div>  
+                            </div>
+                            <br/>
+                            <div class="subtitle">
+                                The private key never leaves your phone
+                            </div>                                               
+                        </div>
+    
+            </section>
+     
+            <section class="tiles">
+                <div class="tile-group-4">
+                    <div class="tile standards">
+                        <div class="title">
+                            <p class="">Unbeatable Security</p>
+                        </div>
+                        <div class="description">
+                            <p class="heading">SSH</p>
+                            <p class="">No more sensitive plain-text private keys floating around developer laptops, desktops, and servers. The private keys never leave your phone.</p>
+                            
+                            <p class="heading">Web</p>
+                            <p class="">Krypton implements the standardized FIDO Universal 2nd Factor (U2F) protocol to provide secure, un-phishable two-factor authentication on the web, using just your phone.</p>
+
+                            <p class="heading">End-to-end Secure</p>
+                            <p>
+                                Krypton is built on top of an end-to-end verified and encrypted architecture. This means <strong>zero</strong> trust. We, Krypt.co, cannot access your keys or see where you're authenticating. The keys only live in the Krypton app on your phone.
+                            </p>
+                        </div>
+                        <div class="badges">
+
+                            <div class="badge">
+                                <p>Public Source</p>
+                            </div>
+                            <div class="badge">
+                                <p>Zero Trust</p>
+                            </div>
+                            <div class="badge">
+                                <p>U2F<br><span class="badge-subtitle">FIDO</span></p>
+                            </div>      
+                            <div class="badge">
+                                <p>SSH<br><span class="badge-subtitle">OpenSSH</span></p>
+                            </div>  
+                            <div class="badge">
+                                <p>PGP<br><span class="badge-subtitle">Git Signing</span></p>
+                            </div>                                                
+                            <div class="badge">
+                                <p>Secure Enclave<br><span class="badge-subtitle">iOS</span></p>
+                            </div>
+                            <div class="badge">
+                                <p>Keystore<br><span class="badge-subtitle">Android</span></p>
+                            </div>                            
+                            <div class="badge">
+                                <p>WebAuth<br><span class="badge-subtitle">Coming Soon</span></p>
+                            </div>
+                        </div>
+
+                        <div class="link">
+                            <a href="/docs/security/security-architecture.html">
+                                Learn about Krypton's Security
+                            </a>        
+                        </div>
+    
+                        <div class="source-code">
+                            <a href="https://github.com/kryptco"><p>github.com/kryptco</p></a>
+                            <a class="github-button" href="https://github.com/kryptco/kr" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star kryptco/kr on GitHub">Star</a>        
+                        </div>
+
+                        
+                    </div>
+          
+                </div>
+            </section>
+            <section class='Section--contact-us'>
+                <h2>Have questions?
+                    <a href='mailto:hello@krypt.co'>hello@krypt.co</a>
+                </h2>
+            </section>
+
+        </main>
+        <div class="stripes">
+                <span></span>
+                <span></span>
+            </div>
+    </div>
+    @@include('../footer.html')
+    @@include('../body_tail.html')
+    <script type="application/javascript">
+        if(navigator.userAgent.match(/iPhone|iPod/i) ) {
+            document.getElementById("android-link").remove();
+            document.getElementById("universal-link").remove();
+
+        } else if(navigator.userAgent.match(/Android/i) ) {
+            document.getElementById("ios-link").remove();
+            document.getElementById("universal-link").remove();
+        } else {
+            document.getElementById("ios-link").remove();
+            document.getElementById("android-link").remove();
+        }
+    </script>
+    <script type="application/javascript">
+        // ssh
+        var doSSH = document.getElementById("do-ssh");
+        var sshRequest = document.getElementById("ssh-requesting");
+        var sshSuccess = document.getElementById("ssh-success");
+        var sshLoggedIn = document.getElementById("ssh-loggedin");
+
+        var demoSSHNote = document.getElementById("demo-ssh-note");
+        var demoSSHYesButton = document.getElementById("ssh-yes-button");
+        var demoSSHNoteOptions = document.getElementById("demo-ssh-note-options");
+
+        var doSSHText = "ssh root@server";
+        var requestingText = "Krypton ▶ Requesting SSH authentication from phone";
+        var sshSuccessText = "Krypton ▶ Success. Request Allowed ✔";
+
+        var typingSpeed = 200;
+
+        function type(txt, i, div, then) {
+            if (i < txt.length) {
+                div.innerHTML += txt.charAt(i);
+                setTimeout(function() {
+                    type(txt, i + 1, div, then)
+                }, typingSpeed);
+            } else {
+                then();
+            }
+        }
+
+        function clear(div) {
+            div.innerHTML = " ";
+        }
+
+        function doSSHAnimation() {
+
+            setTimeout(function() {
+                doSSH.classList.remove("remove-el");
+
+                type(doSSHText, 0, doSSH, function() {
+                    doSSH.classList.remove("cursor");
+                    setTimeout(function() {
+                        sshRequest.classList.remove("remove-el");
+
+                        setTimeout(function() {
+                            demoSSHNote.classList.add("notification-slidein");
+
+                            setTimeout(function() {
+                                demoSSHNoteOptions.classList.add("notification-slidein");
+
+                                setTimeout(function() {
+                                    demoSSHYesButton.classList.add("note-button-tap");
+
+                                    setTimeout(function() {
+                                        sshSuccess.classList.remove("remove-el");
+
+                                        setTimeout(function() {
+                                            sshLoggedIn.classList.remove("remove-el");    
+                                            
+                                            setTimeout(function(){
+                                                demoSSHNote.classList.add("notification-slideout");
+                                                demoSSHNoteOptions.classList.add("notification-slideout");
+                                                setTimeout(resetSSHAnimation, 3000);           
+                                            }, 500);
+
+                                        }, 1000);
+                                    }, 1000);
+                                }, 1000);
+                            }, 1000);
+
+                        }, 500);
+
+                    }, 500);
+                });
+
+            }, 500);
+        }
+
+
+        function resetSSHAnimation() {
+
+            doU2FAnimation();
+            
+            setTimeout(function() {
+                sshRequest.classList.add("remove-el");
+                sshSuccess.classList.add("remove-el");
+                sshLoggedIn.classList.add("remove-el");    
+                doSSH.classList.add("remove-el"); 
+                doSSH.classList.add("cursor");
+
+                clear(doSSH);
+
+                demoSSHNote.classList.remove("notification-slidein");
+                demoSSHNoteOptions.classList.remove("notification-slidein");
+
+                demoSSHYesButton.classList.remove("note-button-tap");
+
+                demoSSHNote.classList.remove("notification-slideout");
+                demoSSHNoteOptions.classList.remove("notification-slideout");
+            }, 500);
+        }
+        
+        
+        setTimeout(function() {
+            doSSHAnimation()
+        }, 100);
+    </script>
+</body>
+
+</html>

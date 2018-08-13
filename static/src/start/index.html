@@ -58,7 +58,7 @@
                 </div>
             </div>     
             <div class="cell">
-                <a target="_blank" href="https://github.com/settings/two_factor_authentication/configure"></a><img src="/static/dist/img/logos/github.png" class="icon">
+                <a target="_blank" href="https://github.com/settings/two_factor_authentication/configure"><img src="/static/dist/img/logos/github.png" class="icon"></a>
                 <p class="name">GitHub</p>
                 <div class="links">
                     <a target="_blank" href="https://github.com/settings/two_factor_authentication/configure" class="link account">Account</a>
@@ -146,7 +146,9 @@
 
             document.addEventListener("DOMContentLoaded", function(event) { 
                 setTimeout(function() { 
-                    if (!window.kryptonExtensionId && !QueryString.noredirect) { 
+                    var hasKrypton = (window.u2f && window.u2f.hasOwnProperty('native'));
+
+                    if (!hasKrypton && !QueryString.noredirect) { 
                         window.location = "/krext"; 
                     } 
                 }, 

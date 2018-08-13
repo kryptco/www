@@ -186,6 +186,13 @@ gulp.task('fileinclude', function() {
   }))
   .pipe(gulp.dest('./_site/krext/'));
 
+  gulp.src(['static/src/developers/index.html'])
+  .pipe(fileinclude({
+    prefix: '@@',
+    basepath: '@file'
+  }))
+  .pipe(gulp.dest('./_site/developers/'));
+
   gulp.src(['static/src/devops/pricing/index.html'])
     .pipe(fileinclude({
       prefix: '@@',

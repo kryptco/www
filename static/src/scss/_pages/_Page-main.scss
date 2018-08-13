@@ -73,10 +73,8 @@
     
     .points {
         margin-top: 1em;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 2em;
-        justify-content: start;
+        display: flex;        
+        justify-content: space-evenly;
 
         .point {
             font-family: "Montserrat";
@@ -186,8 +184,8 @@
         grid-template-rows: unset;
 
         .terminal-icon {
-            width: 3em;
-            height: 3em;
+            width: 4.2em;
+            height: 4.2em;
             border-radius: 50%;
             background: #343434;
             margin: auto;
@@ -195,19 +193,45 @@
         .terminal-icon:before {
             content: '>_';
             position: relative;
-            font-size: 1.8em;
+            font-size: 2.2em;
             text-align: center;
             font-family: "Source Code Pro";
             color: #fff;
             font-weight: bold;
             letter-spacing: -5px;
-            left: 8px;
-            top: 10px;
+            left: 14px;
+            top: 18px;
         }
      
-        .service {
-            img {
-                height: auto;;
+        .platform {
+            
+            display: flex;
+            flex-direction: column;
+            p { 
+                color: #343434;
+                font-weight: 500;
+                font-family: "Karla";
+                font-size: 1em;
+                width: 100%;
+    
+                color: $c-dark;
+                margin: 0;
+                padding: 8px;
+                padding-bottom: 0;
+                text-align: center;
+    
+            }
+            a:hover {
+                border-bottom: unset;
+            }
+            img {            
+                height: 5em;
+                width: 5em;
+    
+                margin: auto;
+                padding: 4px;
+                border-radius: 8px;
+                background: #fff;
             }
         }
 
@@ -302,6 +326,11 @@
         display: flex;
     }
 
+    .develop {
+        max-width: unset;
+        width: 100%;
+    }
+
 
     @media (max-width: 64em) {
         flex-direction: column;
@@ -325,8 +354,8 @@
     margin-top: 1.5em;
     margin-bottom: 1em;
     display: grid;
-    grid-gap: 1em;
-    grid-template-columns: repeat(3,1fr);
+    grid-gap: 0.5em;
+    grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(2,1fr);
 
     p {
@@ -339,19 +368,35 @@
         flex-direction: column;
         p { 
             color: #343434;
-            font-weight: 300;
+            font-weight: 500;
             font-family: "Montserrat";
             font-size: 0.8em;
             width: 100%;
+
+            color: $c-dark;
+            margin: 0;
+            padding: 8px;
+            padding-bottom: 0;
+            text-align: center;
+
+        }
+        a:hover {
+            border-bottom: unset;
         }
         img {            
-            height: 3em;
-            width: 3em;
+            height: 4.8em;
+            width: 4.8em;
+            box-shadow: 0 0 10px 0px rgba(119, 119, 119, 0.38);
+
             margin: auto;
+            padding: 4px;
+            border-radius: 8px;
+            background: #fff;
         }
 
-        .rounded {
-            border-radius: 0.25em;
+        img:hover {
+            // transform: scale(1.1);
+            border: 1px solid $c-lightgreen;
         }
     }
 

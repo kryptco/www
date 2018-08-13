@@ -17,16 +17,13 @@
                     
                 <div class="points">
                     <div class="point">
-                        No Passwords or Codes
+                        No More Codes
                     </div>
                     <div class="point">
-                        Zero-touch Login
+                        Zero-touch Logins
                     </div>    
                     <div class="point">
                         Immune to Phishing
-                    </div>
-                    <div class="point">
-                        U2F, SSH, &amp; Git 
                     </div>
                 </div>
 
@@ -44,10 +41,6 @@
                 </div>	
             </section>
             <section class="animate-demo">
-                <div class="demo-frame" id="ssh-demo">
-                    @@include("./html_components/_terminal.html")
-                    @@include("./html_components/_phoneSSH.html")                    
-                </div>
                 <div class="demo-frame" id="u2f-demo">
                     @@include("./html_components/_browser.html")
                     @@include("./html_components/_phoneU2F.html")                
@@ -72,83 +65,65 @@
                                 Krypton securely pairs with your computer so that you don't have to touch your phone for each sign-in. Optionally, enable One tap sign-ins for enhanced security.
                             </p>
                         </div>
-                    </div>
-                    <div class="tile phishing">
-                        <div class="title">
-                            <p>Stops Phishing</p>
-                        </div>
-                        <div class="description">
-                            <p>SMS and authenticator app codes can easily be phished. Don't let that happen to you. Krypton protects you from phishing.</p>
-                        </div>
-                    </div>   
-                    <div class="tile quick-add">
-                        <div class="title">
-                            <p>Quickly protect your accounts</p>
-                        </div>
-                        <div class="description">
-                            <p>Setting up two-factor can be time consuming and repetitive. Just scan once with Krypton.</p>
-                        </div>
-                    </div>                                           
-                     
-                </div>
+                    </div>                     
+                </div>            
                 <div class="tile-group-2">
-                    <div class="tile works-with">
-                        <div class="title">
-                            <p class="light">Strong public key authentication</p>
-                        </div>   
-                        <div class="supported-services platforms">
-                            <div class="service">
-                                <img src="/static/dist/img/u2f_services/chrome.png"/>
-                                <p>Web Two-Factor<br>U2F Security Key</p>
-                            </div>
-                            <div class="service">
-                                <div class="terminal-icon"></div>
-                                <p>Login to servers<br>with SSH</p>
-                            </div>
-                            <div class="service">
-                                <img src="/static/dist/img/platforms/git.png"/>
-                                <p>Sign Git commits and Tags (PGP)</p>
-                            </div>  
-                        </div>
-                        <div class="subtitle">
-                            The private key lives securely on your phone
-                        </div>        
-                                     
+                    <div class="tile works-with"> 
                         <div class="title">
                             <p class="light">Works with the sites you love</p>
                         </div>        
                         <div class="supported-services">
                             <div class="service">
-                                <img src="/static/dist/img/u2f_services/google.png"/>
-                                <p>Google</p>
-                            </div>
+                                <a target="_blank" href="https://myaccount.google.com/signinoptions/two-step-verification"><img src="/static/dist/img/logos/google.png" class="icon"></a>
+                                </div>
                             <div class="service">
-                                <img src="/static/dist/img/u2f_services/facebook.png"/>
-                                <p>Facebook</p>
-                            </div>
+                                <a target="_blank" href="https://www.facebook.com/security/2fac/settings/"><img src="/static/dist/img/logos/facebook.png" class="icon"></a>
+                                </div>
                             <div class="service">
-                                <img src="/static/dist/img/u2f_services/dropbox.png"/>
-                                <p>Dropbox</p>
-                            </div>
+                                    <a target="_blank" href="https://www.dropbox.com/account/security"><img src="/static/dist/img/logos/dropbox.png" class="icon"></a>
+                                </div>
                             <div class="service">
-                                <img src="/static/dist/img/logos/twitter.png"/>
-                                <p>Twitter</p>
-                            </div>                                
+                                <a target="_blank" href="https://twitter.com/settings/account/login_verification"><img src="/static/dist/img/logos/twitter.png" class="icon"></a>
+                                </div>                                
                             <div class="service">
-                                <img src="/static/dist/img/u2f_services/github.png"/>
-                                <p>GitHub</p>
-                            </div>
+                                <a target="_blank" href="https://dashboard.stripe.com/settings/user"><img src="/static/dist/img/logos/stripe.png" class="icon"></a>
+                                </div>                    
                             <div class="service">
-                                <img class="rounded" src="/static/dist/img/u2f_services/stripe.png"/>
-                                <p>Stripe</p>
-                            </div>                    
+                                <a target="_blank" href="https://github.com/settings/two_factor_authentication/configure"><img src="/static/dist/img/logos/github.png" class="icon"></a>
+                                </div> 
+                            <div class="service">
+                                <a target="_blank" href="https://gitlab.com/profile/two_factor_auth"><img src="/static/dist/img/logos/gitlab.png" class="icon"></a>
+                                </div>                                   
+                            <div class="service">
+                                <a target="_blank" href="https://bitbucket.org/account"><img src="/static/dist/img/logos/bitbucket.jpg" class="icon"></a>
+                            </div>                                                        
                         </div>
-                        <p class="light footer"><a href="/start?noredirect=true">Plus many more</a></p>
+                        <p class="light footer"><a href="/start/?noredirect=true">Plus many more</a></p>
                         <p class="footer"><a href="mailto:partners@krypt.co">Become a Partner</a></p>    
                     </div>
                 </div>
+              
             </section>
-     
+            <section class="tiles">
+                <div class="tile-group-3">
+                        <div class="tile phishing">
+                            <div class="title">
+                                <p>Stops Phishing</p>
+                            </div>
+                            <div class="description">
+                                <p>SMS and authenticator app codes can easily be phished. Don't let that happen to you. Krypton protects you from phishing.</p>
+                            </div>
+                        </div>   
+                        <div class="tile quick-add">
+                            <div class="title">
+                                <p>Quickly protect your accounts</p>
+                            </div>
+                            <div class="description">
+                                <p>Setting up two-factor can be time consuming and repetitive. Just scan once with Krypton.</p>
+                            </div>
+                        </div>                                                   
+                    </div>                
+            </section>
             <section class="tiles">
                 <div class="tile-group-4">
                     <div class="tile standards">
@@ -156,10 +131,6 @@
                             <p class="">Unbeatable Security</p>
                         </div>
                         <div class="description">
-                            <p class="heading">SSH</p>
-                            <p class="">No more sensitive plain-text private keys floating around developer laptops, desktops, and servers. The private keys never leave your phone.</p>
-                            
-                            <p class="heading">Web</p>
                             <p class="">Krypton implements the standardized FIDO Universal 2nd Factor (U2F) protocol to provide secure, un-phishable two-factor authentication on the web, using just your phone.</p>
 
                             <p class="heading">End-to-end Secure</p>
@@ -168,7 +139,6 @@
                             </p>
                         </div>
                         <div class="badges">
-
                             <div class="badge">
                                 <p>Public Source</p>
                             </div>
@@ -176,22 +146,13 @@
                                 <p>Zero Trust</p>
                             </div>
                             <div class="badge">
-                                <p>U2F<br><span class="badge-subtitle">FIDO</span></p>
-                            </div>      
-                            <div class="badge">
-                                <p>SSH<br><span class="badge-subtitle">OpenSSH</span></p>
-                            </div>  
-                            <div class="badge">
-                                <p>PGP<br><span class="badge-subtitle">Git Signing</span></p>
-                            </div>                                                
-                            <div class="badge">
                                 <p>Secure Enclave<br><span class="badge-subtitle">iOS</span></p>
                             </div>
                             <div class="badge">
                                 <p>Keystore<br><span class="badge-subtitle">Android</span></p>
                             </div>                            
                             <div class="badge">
-                                <p>WebAuth<br><span class="badge-subtitle">Coming Soon</span></p>
+                                <p>WebAuth<br><span class="badge-subtitle">Supported</span></p>
                             </div>
                         </div>
 
@@ -239,11 +200,6 @@
         }
     </script>
     <script type="application/javascript">
-        var sshDemo = document.getElementById("ssh-demo");
-        var u2fDemo = document.getElementById("u2f-demo");
-        var terminal = document.getElementById("demo-terminal");
-        var browser = document.getElementById("demo-browser");
-
         // u2f
         var loginButton = document.getElementById("login-button");
         var login = document.getElementById("demo-login");
@@ -255,17 +211,8 @@
         var welcome = document.getElementById("demo-welcome");
         var demoNote = document.getElementById("demo-note");
 
-        function doU2FAnimation(skipsFadeIn) {
-            terminal.classList.add("demo-elem-fadeout");
-
-            if (!skipsFadeIn) {
-                browser.classList.add("demo-elem-fadein");
-            }
-
+        function doU2FAnimation() {
             setTimeout(function(){
-                sshDemo.style.display = "none";
-                u2fDemo.style.display = "";
-
                 loginButton.classList.add("login-tap");
 
                 setTimeout(function() {
@@ -296,16 +243,10 @@
                 }, 2000);
 
             }, 500); 
-
-
-
         }
 
         function resetAnimation() {
-            terminal.classList.remove("demo-elem-fadeout");
-            browser.classList.remove("demo-elem-fadein");
-
-            doSSHAnimation(false);
+            doU2FAnimation();
 
             setTimeout(function() {
                 // hide stories
@@ -331,120 +272,10 @@
 
             }, 500);
         }
-
-
-        // ssh
-        var doSSH = document.getElementById("do-ssh");
-        var sshRequest = document.getElementById("ssh-requesting");
-        var sshSuccess = document.getElementById("ssh-success");
-        var sshLoggedIn = document.getElementById("ssh-loggedin");
-
-        var demoSSHNote = document.getElementById("demo-ssh-note");
-        var demoSSHYesButton = document.getElementById("ssh-yes-button");
-        var demoSSHNoteOptions = document.getElementById("demo-ssh-note-options");
-
-        var doSSHText = "ssh root@server";
-        var requestingText = "Krypton ▶ Requesting SSH authentication from phone";
-        var sshSuccessText = "Krypton ▶ Success. Request Allowed ✔";
-
-        var typingSpeed = 200;
-
-        function type(txt, i, div, then) {
-            if (i < txt.length) {
-                div.innerHTML += txt.charAt(i);
-                setTimeout(function() {
-                    type(txt, i + 1, div, then)
-                }, typingSpeed);
-            } else {
-                then();
-            }
-        }
-
-        function clear(div) {
-            div.innerHTML = " ";
-        }
-
-        function doSSHAnimation(skipsTermFadeIn) {
-
-            if (!skipsTermFadeIn) {
-                terminal.classList.add("demo-elem-fadein");
-            }
-            browser.classList.add("demo-elem-fadeout");
-
-            setTimeout(function() {
-                sshDemo.style.display = "";
-                u2fDemo.style.display = "none";
-
-                doSSH.classList.remove("remove-el");
-
-                type(doSSHText, 0, doSSH, function() {
-                    doSSH.classList.remove("cursor");
-                    setTimeout(function() {
-                        sshRequest.classList.remove("remove-el");
-
-                        setTimeout(function() {
-                            demoSSHNote.classList.add("notification-slidein");
-
-                            setTimeout(function() {
-                                demoSSHNoteOptions.classList.add("notification-slidein");
-
-                                setTimeout(function() {
-                                    demoSSHYesButton.classList.add("note-button-tap");
-
-                                    setTimeout(function() {
-                                        sshSuccess.classList.remove("remove-el");
-
-                                        setTimeout(function() {
-                                            sshLoggedIn.classList.remove("remove-el");    
-                                            
-                                            setTimeout(function(){
-                                                demoSSHNote.classList.add("notification-slideout");
-                                                demoSSHNoteOptions.classList.add("notification-slideout");
-                                                setTimeout(resetSSHAnimation, 3000);           
-                                            }, 500);
-
-                                        }, 1000);
-                                    }, 1000);
-                                }, 1000);
-                            }, 1000);
-
-                        }, 500);
-
-                    }, 500);
-                });
-
-            }, 500);
-        }
-
-
-        function resetSSHAnimation() {
-            browser.classList.remove("demo-elem-fadeout");
-
-            doU2FAnimation(false);
-            
-            setTimeout(function() {
-                sshRequest.classList.add("remove-el");
-                sshSuccess.classList.add("remove-el");
-                sshLoggedIn.classList.add("remove-el");    
-                doSSH.classList.add("remove-el"); 
-                doSSH.classList.add("cursor");
-
-                clear(doSSH);
-
-                demoSSHNote.classList.remove("notification-slidein");
-                demoSSHNoteOptions.classList.remove("notification-slidein");
-
-                demoSSHYesButton.classList.remove("note-button-tap");
-
-                demoSSHNote.classList.remove("notification-slideout");
-                demoSSHNoteOptions.classList.remove("notification-slideout");
-            }, 500);
-        }
         
-        
-        sshDemo.style.display = "none";
+                
         setTimeout(function() {
-            doU2FAnimation(true)
+            doU2FAnimation()
         }, 100);
     </script>
 </body>
