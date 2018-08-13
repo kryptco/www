@@ -234,9 +234,6 @@
                             demoNote.classList.add("notification-slideout");
 
                             setTimeout(function() {
-                                welcome.classList.add("hide-el");
-                                twofa.classList.add("hide-el");
-
                                 stories.classList.add("stories-slidein"); 
                                 setTimeout(resetAnimation, 2000);           
                             }, 1100);
@@ -249,7 +246,6 @@
         }
 
         function resetAnimation() {
-            doU2FAnimation();
 
             setTimeout(function() {
                 // hide stories
@@ -264,14 +260,14 @@
                 demoNote.classList.remove("notification-slidein");
                 twofa.classList.remove("twofa-fadein");
 
-                welcome.classList.remove("hide-el");
                 twofa.classList.remove("twofa-fadeout");
-                twofa.classList.remove("hide-el");
 
                 stories.classList.remove("stories-slidein");            
                 demoNote.classList.remove("notification-slideout");
 
-                stories.classList.remove("stories-slideout");            
+                stories.classList.remove("stories-slideout"); 
+
+                doU2FAnimation();
 
             }, 500);
         }

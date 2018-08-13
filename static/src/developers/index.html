@@ -177,7 +177,7 @@
         var requestingText = "Krypton ▶ Requesting SSH authentication from phone";
         var sshSuccessText = "Krypton ▶ Success. Request Allowed ✔";
 
-        var typingSpeed = 200;
+        var typingSpeed = 150;
 
         function type(txt, i, div, then) {
             if (i < txt.length) {
@@ -240,8 +240,6 @@
 
 
         function resetSSHAnimation() {
-
-            doU2FAnimation();
             
             setTimeout(function() {
                 sshRequest.classList.add("remove-el");
@@ -259,6 +257,9 @@
 
                 demoSSHNote.classList.remove("notification-slideout");
                 demoSSHNoteOptions.classList.remove("notification-slideout");
+
+                doSSHAnimation();
+
             }, 500);
         }
         

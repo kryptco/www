@@ -5,9 +5,8 @@ html {
 
     .site-title {
         display: flex;
+        margin: auto;
         margin-left: 0.25em;
-        margin-top: 0.25em;
-        margin-bottom: auto;
         font-family: "Source Code Pro";
         font-weight: 700;
         font-size: 1.6em;
@@ -53,10 +52,11 @@ html {
 
     .title {
         text-align: left;
-        font-size: 2.4em;
+        font-size: 1.6em;
         color: #343434;
         // padding-top: 1em;
         margin-bottom: 0;
+        font-weight: 700;
 
     }
 
