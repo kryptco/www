@@ -13,10 +13,12 @@
         @media (max-width: 58em) {
           left: calc(50vw - 1em - 56px);
         }
-
-        .glow-title {
-            padding-left: 0.5em; 
-            
+        a {
+            margin: auto;            
+        }
+        a .glow-title {
+            padding-left: 0.25em; 
+            margin: auto;            
             
             font-size: 1.6em;
             text-transform: uppercase;       
@@ -42,7 +44,9 @@
             top: -0.2em;        
         }
         img {
-            height: 2.4em;
+            display: inline-block;
+            vertical-align: middle;
+            height: 2em;
         }
     }
 }
@@ -421,8 +425,8 @@
         text-align: center;
         padding: 0.5em;
         border-radius: 50%;
-        height: 6em;
-        width: 6em;
+        height: 6.5em;
+        width: 6.5em;
         border: .15em solid #fff;
         font-weight: 400;
         display: flex;
