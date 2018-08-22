@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Get Started"
-subtitle: "Get started with Krypton for DevOps teams."
+subtitle: "Start using Krypton for DevOps teams."
 category: teams
 order: 2
 ---

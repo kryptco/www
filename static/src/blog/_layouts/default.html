@@ -3,6 +3,15 @@
 <head>         
     {% include head_meta.html %}
     @@include("static/src/head_fixed.html")   
+
+    {% if page.image %}
+        <meta property='og:image' content='https://krypt.co/static/dist/img/{{page.image}}'>
+        <meta property='twitter:image' content='https://krypt.co/static/dist/img/{{page.image}}'>    
+    {% else %}
+        <meta property='og:image' content='https://krypt.co/static/dist/img/krypton_example.png'>
+        <meta property='twitter:image' content='https://krypt.co/static/dist/img/krypton_example.png'>
+    {% endif %}
+
     <link rel="stylesheet" href="{{ site.baseurl }}/css/syntax.css"> 
 </head>
 
