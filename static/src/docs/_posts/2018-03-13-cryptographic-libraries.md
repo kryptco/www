@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Cryptographic Libraries"
+subtitle: "Sigchain's depends on libsodium for its cryptography."
 category: sigchain
 order: 4
 ---

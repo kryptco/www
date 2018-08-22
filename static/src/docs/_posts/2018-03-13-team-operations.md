@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Team Operations"
+subtitle: "Team operations on the Sigchain."
 category: sigchain
 order: 2
 ---

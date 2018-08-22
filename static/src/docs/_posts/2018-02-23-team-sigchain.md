@@ -1,12 +1,13 @@
 ---
 layout: page
-title: "Introduction"
+title: "The Sigchain"
+subtitle: "Krypton for DevOps teams is designed to be end-to-end verified: every team operation is independently verified by every member on the team using sigchains."
 category: sigchain
 order: 0
 ---
 
-# Team Sigchain
-Krypton Teams is designed to be *end-to-end verified*: every team operation is independently verified by every member on the team.
+# The Sigchain
+Krypton for DevOps teams is designed to be *end-to-end verified*: every team operation is independently verified by every member on the team.
 
 In other words, teams and their members **do not blindly trust** output from
 the krypt.co infrastructure. Instead, every team member cryptographically

@@ -1,11 +1,12 @@
 ---
 layout: page
 title: "Introduction"
+subtitle: "Welcome to Krypton for DevOps Teams."
 category: teams
 order: 1
 ---
 
-# Welcome to Krypton Teams
+# Welcome to Krypton for DevOps Teams
 **Krypton Core** combines security with ease-of-use to give every developer a secure, convenient place to store their `ssh` + `pgp` key pairs.
 
 **Krypton Teams** extends Krypton Core to provide a simple way to manage access

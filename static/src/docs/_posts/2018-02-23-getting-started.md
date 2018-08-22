@@ -1,12 +1,13 @@
 ---
 layout: page
 title: "Get Started"
+subtitle: "Get started with Krypton for DevOps teams."
 category: teams
 order: 2
 ---
 
 
-# Getting Started with Krypton Teams
+# Getting Started with Krypton DevOps Teams
 Krypton Teams comes installed with Krypton Core v2.4+ -- you can [follow the Krypton Core instructions here]({{ site.baseurl }}{% post_url 2017-08-20-installation %}).
 If you already use Krypton Core, simply update the Krypton app from the Apple App Store or Google Play Store and then run `kr upgrade`.
 

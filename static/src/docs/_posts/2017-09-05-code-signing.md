@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "PGP Code Signing"
+subtitle: "Learn how to PGP-sign your Git commits and tags with Krypton"
 category: start
 order: 4
 ---

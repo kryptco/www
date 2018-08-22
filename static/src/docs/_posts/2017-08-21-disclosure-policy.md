@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Disclosure Policy"
+subtitle: "The krypt.co security vulnerability disclosure policy."
 category: security
 order: 2
 ---

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Real-time Dashboard"
+subtitle: "Launching the Krypton Team DevOps real-time dashboard"
 category: teams
 order: 3
 ---

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Privacy Policy"
+subtitle: "Privacy policy for Krypton"
 category: security
 order: 3
 ---

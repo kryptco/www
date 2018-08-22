@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Advanced SSH"
+subtitle: "Use Krypton with assh (Advanced SSH)"
 category: use-krypton-with
 date: 2017-09-21 16:06:36
 order: 5

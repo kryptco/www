@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Install"
+subtitle: "Learn how to install Krypton and the kr command line tools."
 category: start
 order: 1
 ---

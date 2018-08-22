@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Known Hosts"
+subtitle: "Pin known hosts with Krypton"
 category: ssh
 date: 2017-08-24 11:50:23
 order: 1

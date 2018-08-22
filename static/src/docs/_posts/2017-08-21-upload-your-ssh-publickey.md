@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "My Public Key"
+subtitle: "A guide for uploading your Krypton public key to your infrastructure."
 category: start
 order: 3
 ---

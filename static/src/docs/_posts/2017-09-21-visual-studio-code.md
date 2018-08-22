@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Visual Studio Code"
+subtitle: "Tips for using Visual Studio Code with Krypton"
 category: use-krypton-with
 date: 2017-09-21 15:52:45
 order: 1

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Security Architecture"
+subtitle: "Krypton's architecture for fast, reliable, user-friendly, and secure private key storage"
 category: security
 order: 1
 ---

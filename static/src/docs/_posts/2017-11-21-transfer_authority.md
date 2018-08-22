@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Key Transfer
+subtitle: "Learn how to transfer authority to a new Krypton developer key pair"
 category: start
 order: 5
 ---

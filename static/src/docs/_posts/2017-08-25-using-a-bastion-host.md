@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Using a Bastion Host"
+subtitle: "Learn about bastion servers and how to use Krypton and kr to proxy jump through servers in your infrastructure."
 category: ssh
 date: 2017-08-24 22:17:13
 order: 2

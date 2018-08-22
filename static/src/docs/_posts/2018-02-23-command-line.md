@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Teams CLI"
+subtitle: "The Krypton DevOps command line tools"
 category: teams
 order: 4
 ---

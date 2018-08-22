@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Team Invitations"
+subtitle: "Team invitations on the Sigchain."
 category: sigchain
 order: 1
 ---
