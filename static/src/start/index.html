@@ -146,7 +146,7 @@
 
             document.addEventListener("DOMContentLoaded", function(event) { 
                 setTimeout(function() { 
-                    var hasKrypton = (window.u2f && window.u2f.hasOwnProperty('native'));
+                    var hasKrypton = (window.krU2F || (window.u2f && window.u2f.hasOwnProperty('native')));
 
                     if (!hasKrypton && !QueryString.noredirect) { 
                         window.location = "/krext"; 
