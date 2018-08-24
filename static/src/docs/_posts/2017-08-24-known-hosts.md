@@ -29,8 +29,8 @@ If you use multiple machines or a new computer, `ssh` will re-prompt you to trus
 
 When you connect to a server, `ssh` verifies the digital signature presented by the server. If you are using Krypton, `ssh` sends the signature to Krypton where it is also verified using the same TOFU policy.
 
-![You can view all known hosts from the Krypton settings screen.]({{ site.url }}/static/dist/img/docs/edit_host_keys.png){:class="img-responsive img-phone"}
-*You can view all known hosts from the Krypton settings screen.*
+![You can view all known hosts from the Krypton Developer tab.]({{ site.url }}/static/dist/img/docs/edit_host_keys.png){:class="img-responsive img-phone"}
+*You can view all known hosts from the Krypton Developer tab.*
 
 ## Host Key Mismatch
 The same list of known hosts is used for all of your devices paired with Krypton. If one paired device sends a signature from a different host public key, Krypton automatically rejects the login request.
@@ -39,8 +39,8 @@ The same list of known hosts is used for all of your devices paired with Krypton
 
 Sometimes the public key of a server legitimately changes, for example when switching which server a DNS name points to. When this happens, the old key must be removed from `~/.ssh/known_hosts` and Krypton's pinned host key list. 
 
-![When a host key has legitimately changed, delete the pinned key from the known hosts screen accessible from the settings page.]({{ site.url }}/static/dist/img/docs/delete_host_key.png){:class="img-responsive img-phone"}
-*When a host key has legitimately changed, delete the pinned key from the known hosts screen accessible from the settings page.*
+![When a host key has legitimately changed, delete the pinned key from the known hosts screen accessible from the Developer tab.]({{ site.url }}/static/dist/img/docs/delete_host_key.png){:class="img-responsive img-phone"}
+*When a host key has legitimately changed, delete the pinned key from the known hosts screen accessible from the Developer tab.*
 
  A future version of Krypton will support updating a server's public key in one command.
 
