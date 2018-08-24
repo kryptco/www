@@ -538,6 +538,82 @@
     }
 }
 
+.browser .google-screen {
+    background: #fff;
+    margin-right: 15em;
+
+
+    @media (max-width: 1100px) {
+        margin-right: unset;
+    }
+
+    .google-button {
+        background: rgb(76, 114, 228);
+        border-radius: 4px;
+        padding: 8px;
+        color: #fff;
+        box-shadow: -2px 3px 20px 0px rgba(31,31,31,.1);
+        -webkit-box-shadow: -2px 3px 20px 0px rgba(31,31,31,.1);
+        text-align: center;
+        display: block;
+        margin: auto;
+        margin-top: 1em;
+        font-size: 1em;
+        width: 50%;
+    }
+
+    .login {
+
+        .google-flow-grab {
+            display: block;
+            margin: auto;
+            text-align: center;
+            height: 14em;
+            margin-top: 4em;
+            border-radius: 8px;
+            box-shadow: -2px 3px 20px 0px rgba(31,31,31,.1);
+            -webkit-box-shadow: -2px 3px 20px 0px rgba(31,31,31,.1);
+
+            @media (max-width: 1100px) {
+                margin-top: 3em;
+            }
+        }
+
+    }
+
+    .google-twofa {
+        margin-top: -20em;
+        opacity: 0;
+        height: 12em;
+
+
+        .google-flow-grab {
+            display: block;
+            margin: auto;
+            text-align: center;
+            height: 18em;
+
+            border-radius: 8px;
+            box-shadow: -2px 3px 20px 0px rgba(31,31,31,.1);
+            -webkit-box-shadow: -2px 3px 20px 0px rgba(31,31,31,.1);
+        }
+
+        .loader-container {
+            padding-bottom: 1em;
+
+            .loader {
+                margin: auto;
+                display: block;
+                text-align: center;
+    
+                width: 3em;
+                height: 3em;
+            }
+
+        }
+    }
+}
+
 .notification-blur {
     border-radius: 0.5em;
     margin: 0.6em;
@@ -650,6 +726,13 @@
 .login-tap {
     animation: logintap 1s 1s;
 }
+
+.google-button.login-tap {
+    animation: logintapgoogle 1s 1s;
+
+}
+
+
 @keyframes logintap {
     100% {
         transform: none;
@@ -662,6 +745,20 @@
         color: rgb(66, 103, 178);
     }
     0% {}
+}
+@keyframes logintapgoogle {
+    100% {
+        transform: none;        
+        opacity: 1.0;
+        color: #fff;
+    }
+    50% {
+        transform: translateY(-2px);
+        opacity: 0.4;
+    }
+    0% {
+        opacity: 1.0;
+    }
 }
 
 .login-fade {

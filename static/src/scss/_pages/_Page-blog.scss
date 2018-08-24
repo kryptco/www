@@ -242,7 +242,29 @@ html {
 
 .blog-supported-sites .cell .name {
     font-size: 1.2em !important;
+}
 
+.blog-demo-google {
+
+    .header {
+        span:nth-child(5) {
+            background: unset;
+            box-shadow: unset;
+            img {
+                height: 1em;
+                width: 1em;    
+            }
+            left: 6em;
+            top: 1em;
+            border-radius: 0.1em;
+            color: #fff;
+            text-align: center;
+            font-size: 1em;
+            vertical-align: top;
+     }
+    }
+
+    
 }
 @media (min-width: 1100px) {
     .blog-demo {
@@ -254,9 +276,51 @@ html {
             margin-left: 2em !important;
         }
         
-        .twofa {
+        .twofa, .google-twofa {
             margin-left: 6em !important;
         }
     }
     
+}
+
+.blog-phone-small {
+    display: block;
+    margin: auto;
+
+    border-radius: 2.4em;
+
+    width: 18em;
+    height: 36em;
+
+    .screen {            
+        height: 28.2em;
+        width: 16em;
+
+        left: 1em;
+        top: 3.5em;
+        background-size: 16em;
+    }
+
+    .ear {
+        left: 7.25em;
+    }
+    .home {
+        left: 8em;
+    }
+
+    
+}
+
+.app-screencast {
+    overflow: hidden;
+    border-radius: 0.5em;
+    width: 16em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 3.5em;
+    -webkit-box-shadow: 0 0 20px 0px rgba(119, 119, 119, 0.38);
+    box-shadow: 0 0 20px 0px rgba(119, 119, 119, 0.38);
+}
+
+#iosgoogle-demo {
 }

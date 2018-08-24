@@ -1,0 +1,120 @@
+<div class="demo-frame blog-demo blog-demo-google" id="u2f-demo">
+    <div class="browser" id="demo-browser">
+        <div class="header">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span><img src="/static/dist/img/logos/google_favicon.ico"></span>
+            <span>Google</span>
+        </div>
+        <div class="tabbar">
+            <i class="arrow"></i>
+            <i class="arrow"></i>
+            <img src="/static/dist/img/app_logo_big.png" class="krypton"/>
+            <div class="search">
+                <p>https://accounts.google.com/signin</p>
+            </div>
+            <div></div>
+        </div>
+        <div class="screen google-screen">
+            <div class="login" id="demo-login">
+                <img class="google-flow-grab" src="/static/dist/img/google_demo/password.png"/>
+                <div class="google-button" id="login-button">
+                    Sign in
+                </div>
+            </div>
+            <div class="google-twofa" id="demo-2fa">
+                <div class="loader-container" id="twofa-loader">
+                    <div class="loader"></div>
+                </div>            
+                <img class="google-flow-grab" id="2fa-step" src='/static/dist/img/google_demo/security_key.png'/>
+            </div>
+        </div>
+    </div>
+    <div class="phone blog-phone-small">
+        <div class="ear"></div>
+        <div class="screen">
+            <div class="notification notification-blur" id="demo-note">
+                <div class="header">
+                    <img src="/static/dist/img/apple-touch-icon.png"/>
+                    <p>Krypton</p>
+                    <p>now</p>        
+                </div>
+                <p class="title">google.com</p>
+                <p class="body">signed in</p>
+            </div>
+            <!-- <div class="notification-buttons notification-blur">
+                <div class="allow"> <p>Yes</p> </div>
+                <div class="reject"> <p>No</p> </div>
+            </div> -->
+        </div>
+        <div class="home"></div>
+    </div>    
+</div>
+<script type="application/javascript">
+    // u2f
+    var loginButton = document.getElementById("login-button");
+    var login = document.getElementById("demo-login");
+    var user = document.getElementById("demo-faux-user");
+    var twofa = document.getElementById("demo-2fa");
+    var twofaLoader = document.getElementById("twofa-loader");
+    var twofastep = document.getElementById("2fa-step");
+    var demoNote = document.getElementById("demo-note");
+
+    function doU2FAnimation() {
+        setTimeout(function(){
+            loginButton.classList.add("login-tap");
+
+            setTimeout(function() {
+                login.classList.add("login-fade");
+                twofa.classList.add("twofa-fadein");
+
+                // loader -> success
+                setTimeout(function() {                
+                    twofaLoader.classList.add("loader-fadeout");
+                    twofastep.src = "/static/dist/img/google_demo/success.png";
+                    demoNote.classList.add("notification-slidein");
+
+                    setTimeout(function() {
+                        twofa.classList.add("twofa-fadeout");
+                        demoNote.classList.add("notification-slideout");
+
+                        setTimeout(function() {
+                            twofa.classList.add("hide-el");
+
+                            setTimeout(resetAnimation, 250);           
+                        }, 500);
+                    }, 3000);
+
+                }, 1500);
+            }, 2000);
+
+        }, 500); 
+    }
+
+    function resetAnimation() {
+        setTimeout(function() {
+            // hide stories
+            loginButton.classList.remove("login-tap");
+
+            login.classList.remove("login-fade");
+
+            twofaLoader.classList.remove("loader-fadeout");
+            twofastep.src = "/static/dist/img/google_demo/security_key.png";
+            demoNote.classList.remove("notification-slidein");
+            twofa.classList.remove("twofa-fadein");
+
+            twofa.classList.remove("twofa-fadeout");
+            twofa.classList.remove("hide-el");
+
+            demoNote.classList.remove("notification-slideout");
+
+            doU2FAnimation();
+
+        }, 250);
+    }
+
+
+    doU2FAnimation();
+</script>
