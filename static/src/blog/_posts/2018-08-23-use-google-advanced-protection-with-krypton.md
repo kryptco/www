@@ -4,6 +4,7 @@ title: "Krypton for Google's Advanced Protection Program"
 subtitle: "Krypton is now compatible with Google's Advanced Protection Program. Use your phone instead/or in addition to a hardware security key" 
 category: posts
 when: "August 23rd, 2018"
+image: "blog/google_u2f_krypton.png"
 date: 2018-08-23 16:30:00
 ---
 
