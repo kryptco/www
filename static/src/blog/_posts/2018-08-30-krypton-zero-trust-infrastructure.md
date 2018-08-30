@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Krypton's Zero-Trust Infrastructure"
+title: "Our Zero-Trust Infrastructure"
 subtitle: "Krypton's browser-to-phone communication protocol is end-to-end verified with keys that only your devices have. Read about how Krypton's pairing protocol bootstraps a zero-trust infrastructure." 
 category: posts
 when: "August 30th, 2018"
