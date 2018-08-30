@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Threat Model (SSH)"
+title: "SSH Threat Model"
 subtitle: "Learn about the Krypton SSH key storage security threat model"
 category: security
 date: 2017-09-04 09:51:13
