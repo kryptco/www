@@ -19,10 +19,10 @@ In this post we dive into the details of how the Krypton app pairs your phone to
 ![The Krypton app and the Browser extension]({{ site.url }}/static/dist/img/blog/system-components.png){:class="img-responsive"}
 
 ## Krypton phone app
-The Krypton phone app, referred to as “Krypton” in this post, generates and stores your private U2F key pairs on the [secure hardware](https://krypt.co/docs/security/privacy-policy.html#private-key-storage)on your iOS or Android phone (where available) and uses it to sign U2F authentication and registration challenges. The private key never leaves the phone.
+The Krypton phone app, referred to as “Krypton” in this post, generates and stores your private U2F key pairs on the [secure hardware](https://krypt.co/docs/security/privacy-policy.html#private-key-storage) on your iOS or Android phone (where available) and uses it to sign U2F authentication and registration challenges. The private key never leaves the phone.
 
 ## Browser extension
-The browser extension is responsible for carrying out the U2F protocol with the web page you're on and most importantly, securely communicating the origin of the page you're on (the domain) to the Krypton app. The browser extension forwards U2F signing requests to the Krypton app on your phone, and upon approval, gets returns the signature back to the web page for authentication.
+The browser extension is responsible for carrying out the U2F protocol with the web page you're on and most importantly, securely communicating the origin of the page you're on (the domain) to the Krypton app. The browser extension forwards U2F signing requests to the Krypton app on your phone which, upon approval, returns the signature back to the web page for authentication.
 
 ## Communicating over an Untrusted Channels
 Pairing establishes an authenticated and encrypted communication channel over an **untrusted** medium.
@@ -39,7 +39,7 @@ AWS SNS is a service for delivering push notifications, utilizing APNS (iOS) and
 ## Pairing Protocol
 ![Browser Pairing]({{ site.url }}/static/dist/img/blog/browser-pairing.png){:class="img-responsive"}
 
-First, the user initiates pairing on the browser extension. The extension generates a new key pair for this new pairing and displays the public key in a QR code. The user scans extension's QR code with the Krypton app.
+First, the user initiates pairing on the browser extension. The extension generates a new key pair for this new pairing and displays the public key in a QR code. The user scans the extension's QR code with the Krypton app.
 
 ![Krypton Pairing Protocol]({{ site.url }}/static/dist/img/blog/communication-proto.png){:class="img-responsive"}
 
@@ -53,7 +53,7 @@ First, the user initiates pairing on the browser extension. The extension genera
 - Next, Krypton sends its session public key encrypted to the extension's public key (*step (2) above*)
 - This message acts as an indicator to the extension that a Krypton phone client has scanned the QR code and wants to initiate a pairing
 
-> `s_pub_key` is encrypted under `c_pub_key` to prevent an active adversary from switching out `s_pub_key` to another public key. An adversary would have to know `c_pub_key` to be able to insert its own public key. This creates a race: the extension only remembers and responds to the first Krypton client to send the message in *step (2)*. The next step allows Krypton to confirm that krd paired with it and not any other client.
+> `s_pub_key` is encrypted under `c_pub_key` to prevent an active adversary from switching out `s_pub_key` to another public key. An adversary would have to know `c_pub_key` to be able to insert its own public key. This creates a race: the extension only remembers and responds to the first Krypton client to send the message in *step (2)*. The next step allows Krypton to confirm that the browser extension paired with it and not any other client.
 
 
 ### 3: extension_hello
@@ -61,7 +61,7 @@ First, the user initiates pairing on the browser extension. The extension genera
 - The extension signs messages with it's session key `c_priv_key`, Krypton can verify these requests with `c_pub_key` from *step (1)*
 - The extension then sends an *encrypted and signed* `extension_hello` request to acknowledge receipt of `s_pub_key` and ask the Krypton app to confirm the pairing (*step (3)* above). 
 
-> If some other client completes *step (2)* first, Krypton will timeout while waiting to receive a `extension_hello`. In the case of a timeout, the user would be told try again. They would pair again by re-initiating the pairing process which would cause both the app and the extension to generate new session key pairs.
+> If some other client completes *step (2)* first, Krypton will timeout while waiting to receive a `extension_hello`. In the case of a timeout, the user would be told to try again. They would pair again by re-initiating the pairing process which would cause both the app and the extension to generate new session key pairs.
 
 
 ### 4: krypton_hello
@@ -84,7 +84,7 @@ When the user navigates to a page that requests a U2F operation, the following p
 
 3. If the user rejects, the Krypton app simply sets `sign_response` to a rejection constant. If the user approves, Krypton performs a signature using the data in the `body` per the U2F protocol specification.
 
-4. As shown in *step (4)*, `sign_response` is encrypted and signed and sent back to the extension. Upon receipt of the `sign_response`, if `krd` receives a signature, it passes it back to the authentication hook to complete the login.
+4. As shown in *step (4)*, `sign_response` is encrypted and signed and sent back to the extension. Upon receipt of the `sign_response`, if the browser extension receives a signature, it passes it back to the authentication hook to complete the login.
 
 > Note that for some user-set policies, requests can be auto-approved to require user interaction.
 
