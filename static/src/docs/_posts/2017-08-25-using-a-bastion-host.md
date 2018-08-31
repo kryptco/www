@@ -21,7 +21,7 @@ Suppose our bastion host is `bastion.krypt.co` and our destination server is `de
 
 ``` bash
 Host dest.krypt.co
-    ProxyCommand krssh -p "ssh -v -W %h:%p bastion.krypt.co" -h %h
+    ProxyCommand krssh -p "ssh -W %h:%p bastion.krypt.co" -h %h
 
 # Added by Krypton...
 ```
@@ -35,11 +35,11 @@ Usually more than one server is protected by a single bastion host. We can use `
 ``` bash
 # Specify each proxied host individually
 Host dest1.krypt.co dest2.krypt.co
-    ProxyCommand krssh -p "ssh -v -W %h:%p bastion.krypt.co" -h %h
+    ProxyCommand krssh -p "ssh -W %h:%p bastion.krypt.co" -h %h
 
 # Proxy traffic for a group of servers
 Host *.dev.krypt.co
-    ProxyCommand krssh -p "ssh -v -W %h:%p bastion.krypt.co" -h %h
+    ProxyCommand krssh -p "ssh -W %h:%p bastion.krypt.co" -h %h
 
 # Added by Krypton...
 ```
@@ -52,10 +52,10 @@ For example, to proxy traffic through `hop1.krypt.co` to `hop2.krypt.co` and fin
 
 ```bash
 Host hop2.krypt.co
-    ProxyCommand krssh -p "ssh -v -W %h:%p hop1.krypt.co" -h %h
+    ProxyCommand krssh -p "ssh -W %h:%p hop1.krypt.co" -h %h
 
 Host dest.krypt.co
-    ProxyCommand krssh -p "ssh -v -W %h:%p hop2.krypt.co" -h %h
+    ProxyCommand krssh -p "ssh -W %h:%p hop2.krypt.co" -h %h
 
 # Added by Krypton...
 ```
