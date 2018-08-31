@@ -41,7 +41,9 @@ AWS SNS is a service for delivering push notifications, utilizing APNS (iOS) and
 
 First, the user initiates pairing on the browser extension. The extension generates a new key pair for this new pairing and displays the public key in a QR code. The user scans the extension's QR code with the Krypton app.
 
+<br/>
 ![Krypton Pairing Protocol]({{ site.url }}/static/dist/img/blog/communication-proto.png){:class="img-responsive"}
+<br/>
 
 ### 1: Getting the extension's session public key
 - The Krypton app obtains `c_pub_key` by scanning the QR code with the in-app camera (*step (1) above*)
@@ -76,7 +78,10 @@ First, the user initiates pairing on the browser extension. The extension genera
 ## Secure Communication Protocol
 When the user navigates to a page that requests a U2F operation, the following protocol is initiated by the browser extension.
 
+<br/>
+<br/>
 ![]({{ site.url }}/static/dist/img/blog/communication-proto.png){:class="img-responsive"}
+<br/>
 
 1. The request body is the U2F protocol request and includes the challenge data that needs to be signed as well as any additional meta-data needed by Krypton like the application id (website origin). The extension packs these items, along with a random `request_id` and the current time `unix_seconds`, into a `sign_request` that is encrypted and signed, and sends it to the Krypton app.
 
