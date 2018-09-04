@@ -27,6 +27,8 @@ In order to enroll in the advanced protection program, you previously had to pur
 {% include u2f_demo_google.html %}
 {% include smart_download.html %}                          
 
+*Note that you can add more than two security keys to your google account. If you have a hardware fob key like a Feitian or YubiKey, then we recommend adding it to your account as the secondary or tertiary backup key and storing it safely somewhere.*
+
 ## Full Support for Advanced Protection
 Krypton (version 2.5.3 and higher) now **fully supports Google's Advanced Protection program** by now allowing you to sign-in to Google on an iOS or Android device with U2F. This means that when you sign-in to Google on a mobile device, it will open Krypton to ask for your second-factor (U2F) approval.
 
@@ -47,6 +49,22 @@ You can now safely replace one (or both) of these required security keys with a 
 
 **We hope this will make Google's Advanced Protection Program more accessible and easier to get started with.**
 
+> Krypton works on regular Google accounts and GSuite accounts (even when advanced protection is not enabled.) This means you can use Krypton as your secure, unphishable 2FA for logging into Google.
 
-*Note that you can add more than two security keys to your google account. If you have a hardware fob key like a Feitian or YubiKey, then we recommend adding it to your account as the secondary or tertiary backup key and storing it safely somewhere.*
+### Setup Instructions
+1. Download [Krypton](https://get.krypt.co) and the [Browser Extension](https://krypt.co/krext)
+2. Ensure that you have two-step verification enabled on your Google account.
+3. On your desktop browser, [register your Krypton Security Key for Google](https://myaccount.google.com/signinoptions/two-step-verification)
+4. On your iOS device, open **Safari** and go to `accounts.google.com`
+5. Enter your login credentials
+6. When you get to the Smart Lock screen, tap "Already Installed". This will ask you to open Krypton to complete the login flow.
+
+Notes on usage and support:
+- You can also sign-in to Google in iOS settings. This will give you the option to open the sign-in flow with Safari, which is compatible with Krypton.
+- Ensure that you sign-in through Safari. Google apps should inherit this session and work properly.
+- Logging in through Chrome iOS is not yet supported (coming soon).
+- Logging in to the Google Smart Lock app is not yet supported.
+
+> Note: Krypton for Android also fully supports Google Advanced Protection and phone-based U2F logins.
+
 
