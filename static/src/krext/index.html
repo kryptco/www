@@ -11,18 +11,26 @@
     <script type="application/javascript">
         
         //  https://stackoverflow.com/questions/9847580/how-to-detect-safari-chrome-ie-firefox-and-opera-browser
-        function isChrome() {
-            return !!window.chrome;
-        }
-        function isFirefox() {
-            return typeof window.InstallTrigger !== 'undefined';
-        }
-        function isSafari() {
-            return navigator.userAgent.indexOf("Safari") != -1;
-        }
 
-        if (isFirefox()) {
+        // Firefox 1.0+
+        var isFirefox = typeof InstallTrigger !== 'undefined';
+
+        // Safari 3.0+ "[object HTMLElementConstructor]" 
+        var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+
+        // Edge 20+
+        // Internet Explorer 6-11
+        var isIE = /*@cc_on!@*/false || !!document.documentMode;
+        var isEdge = !isIE && !!window.StyleMedia;
+
+        // Chrome 1+
+        var isChrome = !!window.chrome && !!window.chrome.webstore;
+
+
+        if (isFirefox) {
             window.location = "https://addons.mozilla.org/en-US/firefox/addon/krypton-authenticator";
+        } else if (isSafari) {
+            window.location = "https://safari-extensions.apple.com/details/?id=co.krypt.krypton.u2f-W7AMYM5LPN";
         } else {
             window.location = "https://chrome.google.com/webstore/detail/krypton-authenticator/madlgmccpddkhohkdobabokeecnjonhl";
         }
@@ -31,7 +39,7 @@
         @@include("../header.html")
         <div class="redirect-page">
             <h1>Opening the Krypton Browser Extension download page...</h1>
-            <a class="redirect-fail-link" href="">Download the Krypton Browser Extension</a>    
+            <a class="redirect-fail-link" href="https://chrome.google.com/webstore/detail/krypton-authenticator/madlgmccpddkhohkdobabokeecnjonhl">Download the Krypton Browser Extension</a>    
         </div>
     </div>
     @@include('../footer.html')
