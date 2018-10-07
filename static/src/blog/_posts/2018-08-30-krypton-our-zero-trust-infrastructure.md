@@ -42,7 +42,7 @@ AWS SNS is a service for delivering push notifications, utilizing APNS (iOS) and
 First, the user initiates pairing on the browser extension. The extension generates a new key pair for this new pairing and displays the public key in a QR code. The user scans the extension's QR code with the Krypton app.
 
 <br/>
-![Krypton Pairing Protocol]({{ site.url }}/static/dist/img/blog/communication-proto.png){:class="img-responsive"}
+![Krypton Pairing Protocol]({{ site.url }}/static/dist/img/blog/pairing-proto.png){:class="img-responsive"}
 <br/>
 
 ### 1: Getting the extension's session public key
