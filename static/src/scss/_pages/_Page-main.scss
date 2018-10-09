@@ -332,7 +332,12 @@
 
     .develop {
         max-width: unset;
+        margin-right: auto !important;
         width: 100%;
+
+        @media (max-width: 64em) {
+            margin-right: 2em !important;
+        }
     }
 
 
@@ -352,6 +357,10 @@
     }
 }
 
+.developer {
+    flex-direction: column;
+
+}
 
 .supported-services {
         

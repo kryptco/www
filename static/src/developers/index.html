@@ -45,37 +45,70 @@
                     @@include("../html_components/_terminal.html")
                     @@include("../html_components/_phoneSSH.html")                    
                 </div>
-            </section>        
-            <section class="tiles">
-                    <div class="tile works-with develop">
-                            <div class="title">
-                                <p class="light">Strong public key authentication</p>
-                            </div>   
-                            <div class="supported-services platforms">
-                                <div class="platform">
-                                    <img src="/static/dist/img/u2f_services/chrome.png"/>
-                                    <p>Web Two-Factor U2F Security Key</p>
-                                </div>
-                                <div class="platform">
-                                    <div class="terminal-icon"></div>
-                                    <p>Login to servers with SSH</p>
-                                </div>
-                                <div class="platform">
-                                    <img src="/static/dist/img/platforms/git.png"/>
-                                    <p>Sign Git commits and Tags using PGP</p>
-                                </div>  
-                            </div>
-                            <br/>
-                            <div class="subtitle">
-                                The private key never leaves your phone
-                            </div>                                               
+            </section>       
+            <section class="tiles developer">
+                <div class="tile works-with develop">
+                    <div class="title">
+                        <p class="light">Strong public key authentication</p>
+                    </div>   
+                    <div class="supported-services platforms">
+                        <div class="platform">
+                            <img src="/static/dist/img/u2f_services/chrome.png"/>
+                            <p>Web Two-Factor U2F Security Key</p>
                         </div>
-    
+                        <div class="platform">
+                            <div class="terminal-icon"></div>
+                            <p>Login to servers with SSH</p>
+                        </div>
+                        <div class="platform">
+                            <img src="/static/dist/img/platforms/git.png"/>
+                            <p>Sign Git commits and Tags using PGP</p>
+                        </div>  
+                    </div>
+                    <br/>    
+                    <div class="subtitle">
+                        The private key never leaves your phone
+                    </div>                                               
+                </div>
+                <div class="tile works-with develop">
+                    <div class="title">
+                        <p class="light">Get started in a few steps</p>
+                    </div>   
+                    <div class='Section--get-started__steps'>
+                        <div class='Section--get-started__steps__step Step'>
+                            <div class='Step__counter'>
+                                <span>1</span>
+                            </div>
+                            <h3>Download</h3>
+                            <a href="https://appsto.re/us/weWofb.i" target="blank">
+                                <img src="/static/dist/img/apple_app_store_badge.svg" style="padding: 10px;"></img>
+                            </a>
+                            <a href='https://play.google.com/store/apps/details?id=co.krypt.kryptonite&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'
+                                target="blank">
+                                <img alt='Get it on Google Play' src='/static/dist/img/android_play_badge.png' style="height: 60px;"
+                                />
+                            </a>
+                        </div>
+                        <div class='Section--get-started__steps__step Step'>
+                            <div class='Step__counter'>
+                                <span>2</span>
+                            </div>
+                            <h3>Install
+                                <code style="font-family: 'Source Code Pro'; font-weight: bold; color: #5bc984;">kr</code> and Pair</h3>
+                            <div class='Terminal'>
+                                <span class='Terminal-Prompt'>$</span>curl https://krypt.co/kr | sh
+                                <br>
+                                <br>
+                                <span class='Terminal-Prompt'>$</span>kr pair
+                            </div>
+                        </div>
+                    </div>                                      
+                </div>    
             </section>
      
             <section class="tiles">
                 <div class="tile-group-4">
-                    <div class="tile standards">
+                    <div class="tile standards develop">
                         <div class="title">
                             <p class="">Unbeatable Security</p>
                         </div>
@@ -134,7 +167,7 @@
                     </div>
           
                 </div>
-            </section>
+            </section>            
             <section class='Section--contact-us'>
                 <h2>Have questions?
                     <a href='mailto:hello@krypt.co'>hello@krypt.co</a>

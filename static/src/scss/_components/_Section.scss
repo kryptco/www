@@ -117,8 +117,9 @@
 
     &__steps {
         @include display(flex);
-        @include flex-direction(column);
+        @include flex-direction(row);
         position: relative;
+        margin-top: 2em;
 
         &__step {
             position: relative;
@@ -194,6 +195,7 @@
         @media (max-width: 50em) {
             width: 100%;
             @include align-items (center);
+            @include flex-direction(column);
 
             &__step {
                 width: 70%;
@@ -202,7 +204,6 @@
         }
 
         &__step + &__step {
-            margin-top: 4em;
         }
     }
 }
