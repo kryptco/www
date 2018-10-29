@@ -27,9 +27,11 @@ build-shared: clean verify-versions setup jekyll-build
 
 build-dev: build-shared
 	gulp build --stripe_public_key=pk_test_tzn5fi8nBXyoUxADinXwZ0pM
+	git rev-parse HEAD > "./_site/.well-known/dev-git-commit.hash"
 
 build: build-shared
 	gulp build --stripe_public_key=pk_live_yCL9ECfmHrdkm7gZqaf4sKWr
+	git rev-parse HEAD > "./_site/.well-known/git-commit.hash"
 
 serve: watch
 	spark -address localhost -port 1234 _site
