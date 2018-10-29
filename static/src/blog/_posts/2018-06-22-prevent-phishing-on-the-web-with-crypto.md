@@ -1,13 +1,13 @@
 ---
 layout: page
-title: "Prevent phishing on the web with crypto"
+title: "Prevent phishing on the web with cryptography"
 subtitle: "What's the deal with phishing and universal 2nd factor? Make yourself un-phishable on the web by using a strong, cryptographic second-factor." 
 category: posts
 when: "June 22nd, 2018"
 date: 2018-06-22 14:39:52
 ---
 
-No I don't mean crypto-*currency*. What I'm really talking about is **Universal 2nd Factor (U2F)**.  U2F is a protocol for doing two-factor authentication that constructively prevents phishing on the web.
+**Universal 2nd Factor (U2F)** is a protocol for doing two-factor authentication that constructively prevents phishing on the web using cryptography.
 
 ![]({{ site.url }}/static/dist/img/blog/phishing_password.svg){:class=" img-center"}
 
