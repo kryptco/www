@@ -114,6 +114,11 @@ set_os() {
 	# Check for SuSE-release
 	elif [ -f "/etc/SuSE-release" ]; then
 	  OS='suse'
+        elif [ -f "/etc/os-release" ]; then
+	  ID=$(grep -oP '(?<=ID=")[a-z-_. ]+(?=")' /etc/os-release)
+	  case $ID in
+	  opensuse-leap)  OS='suse';;
+	  esac
 	fi
 }
 
@@ -123,27 +128,41 @@ install_linux() {
             fedora)  install_yum "yum config-manager";;
             centos)  need_cmd yum-config-manager && install_yum "yum-config-manager";;
             redhat)  need_cmd yum-config-manager && install_yum "yum-config-manager";;
+            suse) install_zypper;;
             *) install_debian
           esac
+}
+
+rpm_import_key() {
+	need_cmd rpm
+	need_cmd gpg
+
+	ensure gpg --keyserver=hkp://keyserver.ubuntu.com:80 --recv-keys "C4A05888A1C4FA02E1566F859F2A29A569653940"
+        ensure gpg --export --armor C4A05888A1C4FA02E1566F859F2A29A569653940 > /tmp/kryptco.key
+                echo Importing KryptCo GPG key...
+        ensure sudo rpm --import /tmp/kryptco.key
+        ignore rm /tmp/kryptco.key
 }
 
 install_yum() {
         export YUM_CONFIG_MANAGER=$1
 
         need_cmd yum
-        need_cmd rpm
-        need_cmd gpg
 
-		
-        ensure gpg --keyserver=hkp://keyserver.ubuntu.com:80 --recv-keys "C4A05888A1C4FA02E1566F859F2A29A569653940"
-        ensure gpg --export --armor C4A05888A1C4FA02E1566F859F2A29A569653940 > /tmp/kryptco.key
-		echo Importing KryptCo GPG key...
-        ensure sudo rpm --import /tmp/kryptco.key
-        ignore rm /tmp/kryptco.key
+	rpm_import_key	
 
 		ignore sudo yum clean expire-cache 1>/dev/null 2>/dev/null
         ensure sudo $YUM_CONFIG_MANAGER --add-repo https://kryptco.github.io/yum
         ensure sudo yum install kr -y
+}
+
+install_zypper() {
+	need_cmd zypper
+
+	rpm_import_key
+
+	ensure sudo zypper addrepo -f -g -n "Krypt.co kr" https://kryptco.github.io/yum kryptco
+	ensure sudo zypper install --from kryptco -y kr	
 }
 
 is_kali() {
