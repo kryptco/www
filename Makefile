@@ -34,7 +34,7 @@ build: build-shared
 	git rev-parse HEAD > "./_site/.well-known/git-commit.hash"
 
 serve: watch
-	spark -address localhost -port 1234 _site
+	cd ./_site/ && python -m SimpleHTTPServer
 
 deploy-dev: build-dev
 	s3cmd sync "./_site/." s3://www-dev.krypt.co

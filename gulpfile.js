@@ -104,7 +104,7 @@ gulp.task('watchify', function () {
     return rebundle();
 });
 
-gulp.task('browserify', function () {
+gulp.task('browserify', function (done) {
     browserify(p.jsx)
         .transform(babelify.configure({
             presets: ['es2015'] //, 'react']
@@ -113,36 +113,17 @@ gulp.task('browserify', function () {
         .pipe(source(p.bundle))
         //.pipe(minify())
         .pipe(gulp.dest(p.distJs));
+    done();
 });
 
 // Jekyll sites
 const child = require('child_process');
 const gutil = require('gulp-util');
 
-gulp.task('watch', ['build', 'clean', 'styles'], function () {
-    gulp.start(['watchify']);
-    gulp.watch(p.watchSCSS, ['styles']);
-	gulp.watch(p.watchDocsHTML, ['build']);
-  gulp.watch(p.watchDocsCSS, ['build']);
-  gulp.watch(p.watchBlogHTML, ['build']);
-	gulp.watch(p.watchBlogCSS, ['build']);
-});
-
-gulp.task('build', ['clean'], function () {
-    process.env.NODE_ENV = 'production';
-	  gulp.start(['fileinclude']);
-    gulp.start(['fonts']);
-    gulp.start(['data']);
-    gulp.start(['wellknown']);
-    gulp.start(['images']);
-    gulp.start(['libJS']);
-    gulp.start(['styles']);
-    gulp.start(['browserify']);
-});
 
 var fileinclude = require('gulp-file-include');
 
-gulp.task('fileinclude', function() {
+gulp.task('fileinclude', function(done) {
 
   gulp.src(['kr'])
   .pipe(fileinclude({
@@ -306,5 +287,31 @@ gulp.task('fileinclude', function() {
     .pipe(gulp.dest('./_site/teams/'));    
   gulp.src(['static/src/devops/demo/**/*'])
     .pipe(gulp.dest('./_site/devops/demo/'));
+
+    done();
 });
 
+
+gulp.task('build', gulp.series(['clean',        'fileinclude',
+'fonts',
+'data',
+'wellknown',
+'images',
+'libJS',
+'styles',
+'browserify'], function (done) {
+    process.env.NODE_ENV = 'production';
+    done();  
+}));
+
+
+gulp.task('watch', gulp.series(['clean', 'build', 'styles', 'watchify'], function (done) {
+  gulp.parallel('watch', function() {
+    gulp.watch(p.watchSCSS, ['styles']);
+    gulp.watch(p.watchDocsHTML, ['build']);
+    gulp.watch(p.watchDocsCSS, ['build']);
+    gulp.watch(p.watchBlogHTML, ['build']);
+    gulp.watch(p.watchBlogCSS, ['build']);  
+  })
+  done();
+}));
