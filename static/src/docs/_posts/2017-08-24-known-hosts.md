@@ -51,7 +51,7 @@ $ ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no pintest.krypt.
 ```
 
 ## Unknown Host
-If a Krypton request shows `user @ uknown host`, it means that Krypton could not verify the server's signature. The most likely cause  is that a signature was not included with the login request. This may be because the software integrating with SSH uses `libssh` instead of invoking `ssh` directly.
+If a Krypton request shows `user @ unknown host`, it means that Krypton could not verify the server's signature. The most likely cause  is that a signature was not included with the login request. This may be because the software integrating with SSH uses `libssh` instead of invoking `ssh` directly.
 
 ## Beyond TOFU
 Storing known host public keys with Krypton is just the beginning. Krypton Command will allow team admins to set and update trusted host public keys for their entire team, preventing new employees from seeing warnings from `ssh` and being vulnerable to adversaries presenting incorrect public keys.
