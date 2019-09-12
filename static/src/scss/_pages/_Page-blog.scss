@@ -46,7 +46,10 @@ html {
         font-size: unset;
     }
 
-
+    .post-header-image {
+        margin-top: 3em;
+        margin-bottom: 3em;
+    }
     
     font-weight: bold;
 
@@ -168,6 +171,10 @@ html {
         a {
             color: #11c56f !important;
             font-weight: 800;
+        }
+        .important-link {
+            color: #4b63f0 !important;
+            text-decoration: underline;
         }
         a:hover {
             border-bottom: none;

@@ -18,6 +18,8 @@
         <div class="posts">
             {% assign sorted = site.posts | sort:"date" %}
             {% for thepage in sorted reversed %}
+                {% if thepage.list == false %}
+                {% else %}
                 <div class="post">
                     <div class="title">
                         <a href="{{ site.baseurl }}{{ thepage.url }}">{{ thepage.title }}</a>
@@ -25,6 +27,7 @@
                     <div class="subtitle">{{ thepage.subtitle }}</div>
                     <div class="date">Published on {{ thepage.when }}</div>                    
                 </div>
+                {% endif %}
             {% endfor %}
         </div>
     </main>

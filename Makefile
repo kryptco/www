@@ -37,7 +37,7 @@ serve: watch
 	cd ./_site/ && python -m SimpleHTTPServer
 
 deploy-dev: build-dev
-	s3cmd sync "./_site/." s3://www-dev.krypt.co
+	netlifyctl deploy --access-token "`cat .token`" -P ./_site/ -s 5230beee-1833-4822-bd0a-65c811df8185 --draft
 
 deploy: build
-	s3cmd sync "./_site/." s3://www.krypt.co
+	netlifyctl deploy --access-token "`cat .token`" -P ./_site/ -s 5230beee-1833-4822-bd0a-65c811df8185

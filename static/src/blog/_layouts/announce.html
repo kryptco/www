@@ -27,19 +27,6 @@
         <div class="content">
             {{ content }}                            
         </div>
-        <div class="more-posts">
-            <div class="header">
-                Read more posts:
-            </div>
-            {% assign sorted = site.posts | sort:"date" %}
-            {% for thepage in sorted reversed %}
-                {% if thepage.title != page.title %}
-                    <div class="simple-post">
-                        <a href="{{ site.baseurl }}{{ thepage.url }}">{{ thepage.title }}</a>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
     </main>
     
     @@include("static/src/footer.html")                          

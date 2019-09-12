@@ -4,19 +4,31 @@
     }
 
     section {
-        max-width: 40em;
+        max-width: 42em;
         padding: 0 1em;
         margin: 0 auto;
     }
 
     .Section--about-us {
         margin-top: 6em;
+
+        p {
+            font-size: 18px;            
+            text-align: justify;
+            letter-spacing: 0.5px;
+        }
     }
     .Section--team {
         margin-top: 6em;
+        text-align: justify;
+        letter-spacing: 0.5px;
     }
     .Section--advisors {
         margin-top: 6em;
+
+        .Team-member__name:hover {
+            border-bottom: none !important;
+        }
     }
     .Section--contact-us {
         margin-top: 6em;

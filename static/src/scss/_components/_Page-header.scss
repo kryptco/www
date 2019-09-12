@@ -1,3 +1,29 @@
+
+#breaking-news {
+    width: 100%;
+    display: flex;
+    display: flex;
+    padding: 1em;
+    background: #4b63f0;
+    color: white;
+    font-weight: bold;
+
+    span {
+        width: 100%;
+        display: flex;
+    }
+    a {
+        color: white;
+        font-size: 1em;
+        letter-spacing: 0.5px;
+        margin: auto;
+        border-bottom: 1px solid white;
+    }
+    a:hover {
+        border-bottom: 1px solid white;
+        opacity: 0.5;
+    }
+}
 .Page-header {
     @include display(flex);
     @include justify-content(space-between);
