@@ -16,7 +16,7 @@
     "browserify": "^16.0.0",
     "del": "^2.2.2",
     "gulp": "^4.0.2",
-    "gulp-clean-css": "^2.0.12",
+    "gulp-clean-css": "^4.2.0",
     "gulp-file-include": "1.2.0",
     "gulp-minify": "0.0.14",
     "gulp-notify": "^2.2.0",
