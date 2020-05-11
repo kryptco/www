@@ -37,7 +37,7 @@ serve: watch
 	cd ./_site/ && python -m SimpleHTTPServer
 
 deploy-dev: build-dev
-	netlifyctl deploy --access-token "`cat .token`" -P ./_site/ -s 5230beee-1833-4822-bd0a-65c811df8185 --draft
+	netlify deploy -d ./_site/ -s 5230beee-1833-4822-bd0a-65c811df8185
 
 deploy: build
-	netlifyctl deploy --access-token "`cat .token`" -P ./_site/ -s 5230beee-1833-4822-bd0a-65c811df8185
+	netlify deploy -d ./_site/ -s 5230beee-1833-4822-bd0a-65c811df8185 --prod

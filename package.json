@@ -30,6 +30,7 @@
     "watchify": "^3.11.0"
   },
   "dependencies": {
+    "jekyll": "^3.0.0-beta1",
     "natives": "^1.1.6",
     "npm": "^6.0.1"
   },
