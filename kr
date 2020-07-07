@@ -58,6 +58,7 @@ install_darwin_manual() {
 		10.13) BOTTLE_FILE=kr-2.4.13.high_sierra.bottle.2.tar.gz; BOTTLE_HASH=b5278156184a7f50ed04790ecc7081be5c3f3d82c07da64d9683bf5db19472cb; USE_KRBTLE=1;;
 		10.14) BOTTLE_FILE=kr-2.4.13.mojave.bottle.2.tar.gz; BOTTLE_HASH=8901218264de65fdbf2dc258f00557e456416f9f32fb9511956d546fea0a804a; USE_KRBTLE=1;;
 		10.15) BOTTLE_FILE=kr-2.4.13.mojave.bottle.2.tar.gz; BOTTLE_HASH=8901218264de65fdbf2dc258f00557e456416f9f32fb9511956d546fea0a804a; USE_KRBTLE=1;;
+		10.16) BOTTLE_FILE=kr-2.4.13.mojave.bottle.2.tar.gz; BOTTLE_HASH=8901218264de65fdbf2dc258f00557e456416f9f32fb9511956d546fea0a804a; USE_KRBTLE=1;;
 		*) say "Unsupported OS X version $MAJOR_MAC_VERSION. Krypton requires 10.11+" && exit 1 ;;
 	esac
 	say Downloading Krypton.
