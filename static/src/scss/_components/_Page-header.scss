@@ -2,7 +2,7 @@
 #breaking-news {
     width: 100%;
     display: flex;
-    display: flex;
+    flex-direction: column;
     padding: 1em;
     background: #4b63f0;
     color: white;
@@ -22,6 +22,74 @@
     a:hover {
         border-bottom: 1px solid white;
         opacity: 0.5;
+    }
+    img {
+        max-width: 60em;
+    }
+    main {
+        color: #2c2c2c;
+        border-radius: 20px !important;
+        padding: 2em !important;
+
+        img {
+            height: 50% !important;
+            width: 50% !important;
+        }
+    }
+}
+
+#breaking-news-home {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    background: #4b63f0;
+    font-weight: bold;
+
+    span {
+        width: 100%;
+        display: flex;
+    }
+    a {
+        color: white;
+        font-size: 1em;
+        letter-spacing: 0.5px;
+        margin: auto;
+        border-bottom: 1px solid white;
+    }
+    a:hover {
+        border-bottom: 1px solid white;
+        opacity: 0.5;
+    }
+
+    main {
+        border-radius: 20px !important;
+        padding: 2em !important;
+
+        img {
+            width: 70% !important;
+            margin: auto;
+        }
+
+        #announce-button {
+            outline: 0;
+            font-weight: 700;
+            margin: auto;
+            line-height: 1em;
+            position: relative;
+            display: inline-block;
+            padding: 1em 2.5em;
+            background: #f1f1f1;
+            color: #2c2c2c;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        #announce-button:hover {
+            opacity: 0.5;
+        }
     }
 }
 .Page-header {

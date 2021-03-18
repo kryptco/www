@@ -1,4 +1,4 @@
-	expected="jekyll 3.8.3"
+	expected="jekyll 4.2.0"
     actual="`jekyll -v`"
 
     if [[ $actual != $expected ]]
